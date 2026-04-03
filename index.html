@@ -551,7 +551,8 @@ footer{background:var(--text);padding:64px 40px 40px;color:rgba(255,255,255,.6)}
       <h2 class="section-title">Simple y transparente</h2>
       <p class="section-sub" style="margin:0 auto">Sin sorpresas. Sin letra pequeña. El plan que necesitas al precio justo para LatAm.</p>
     </div>
-    <div class="plans-grid">
+    <div class="plans-grid" style="grid-template-columns:repeat(4,1fr);gap:20px">
+
       <!-- FREE -->
       <div class="plan-card fade-up">
         <div class="plan-name">Prueba gratuita</div>
@@ -564,15 +565,15 @@ footer{background:var(--text);padding:64px 40px 40px;color:rgba(255,255,255,.6)}
         <p class="plan-note">Sin tarjeta de crédito · Acceso completo</p>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Todos los agentes de IA sin límite</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Mensajes ilimitados durante la prueba</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Todos los agentes de IA</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Mensajes ilimitados</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>1 cuenta publicitaria conectada</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Generación de imágenes con IA</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Análisis en tiempo real</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Chat general de consultas</li>
         </ul>
         <a href="https://app.acuarius.app" class="plan-cta plan-cta-outline">Empezar gratis ahora</a>
       </div>
+
       <!-- INDIVIDUAL -->
       <div class="plan-card featured fade-up" style="transition-delay:.1s">
         <div class="plan-badge">Más popular</div>
@@ -588,38 +589,55 @@ footer{background:var(--text);padding:64px 40px 40px;color:rgba(255,255,255,.6)}
         <ul class="plan-features">
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Todos los agentes de IA</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Mensajes ilimitados</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>1 cuenta conectada</strong> — Google Ads, Meta, TikTok, LinkedIn o web</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>1 cuenta conectada</strong> por plataforma</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Generación de imágenes con IA</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Análisis y acciones en tiempo real</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Soporte por email</li>
         </ul>
-        <a href="https://app.acuarius.app" class="plan-cta plan-cta-primary">Empezar — 7 días gratis</a>
+        <a href="https://go.hotmart.com/G105202218G" class="plan-cta plan-cta-primary">Empezar — 7 días gratis</a>
       </div>
+
       <!-- AGENCIA -->
       <div class="plan-card fade-up" style="transition-delay:.2s">
         <div class="plan-name">Agencia</div>
-        <p class="plan-desc">Para agencias y freelancers con múltiples clientes</p>
+        <p class="plan-desc">Para agencias que gestionan hasta 5 cuentas de clientes</p>
         <div class="plan-price">
           <span class="plan-price-currency">$</span>
-          <span class="plan-price-amount">19</span>
+          <span class="plan-price-amount">49</span>
           <span class="plan-price-period">USD / mes</span>
         </div>
-        <p class="plan-note" style="display:flex;align-items:center;gap:6px">
-          <span style="background:var(--blue-lt);color:var(--blue);font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px">+ $8 USD</span>
-          por cada cuenta adicional conectada
-        </p>
+        <p class="plan-note">~$195.000 COP · Hasta 5 cuentas incluidas</p>
         <div class="plan-divider"></div>
         <ul class="plan-features">
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Todo lo del plan Individual</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>Cuentas ilimitadas</strong> — Google Ads, Meta, TikTok, LinkedIn y web</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>Hasta 5 cuentas</strong> — Google Ads, Meta, TikTok, LinkedIn</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Soporte para MCC (múltiples cuentas hijo)</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Perfil de cliente independiente por cuenta</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Perfil de cliente independiente</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Onboarding personalizado por cliente</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Soporte prioritario</li>
         </ul>
-        <a href="https://app.acuarius.app" class="plan-cta plan-cta-outline">Empezar — 7 días gratis</a>
-        <p style="text-align:center;font-size:11.5px;color:var(--muted2);margin-top:12px">Ej: 5 cuentas = $19 + (4 × $8) = <strong style="color:var(--text)">$51 USD/mes</strong></p>
+        <a href="https://go.hotmart.com/L105202723X" class="plan-cta plan-cta-outline">Empezar — 7 días gratis</a>
       </div>
+
+      <!-- PERSONALIZADO -->
+      <div class="plan-card fade-up" style="transition-delay:.3s;background:linear-gradient(135deg,#0A0A0A 0%,#1E2BCC 100%);border-color:transparent">
+        <div class="plan-name" style="color:white">Personalizado</div>
+        <p class="plan-desc" style="color:rgba(255,255,255,0.6)">Para agencias grandes con más de 5 cuentas o necesidades específicas</p>
+        <div class="plan-price">
+          <span class="plan-price-amount" style="font-size:36px;color:white">A medida</span>
+        </div>
+        <p class="plan-note" style="color:rgba(255,255,255,0.5)">Precio según volumen y requerimientos</p>
+        <div class="plan-divider" style="background:rgba(255,255,255,0.15)"></div>
+        <ul class="plan-features">
+          <li style="color:rgba(255,255,255,0.8)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Todo lo del plan Agencia</li>
+          <li style="color:rgba(255,255,255,0.8)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong style="color:white">Cuentas ilimitadas</strong></li>
+          <li style="color:rgba(255,255,255,0.8)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Integraciones personalizadas</li>
+          <li style="color:rgba(255,255,255,0.8)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Soporte dedicado con SLA</li>
+          <li style="color:rgba(255,255,255,0.8)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Onboarding y capacitación del equipo</li>
+        </ul>
+        <a href="mailto:ceo@acuarius.app?subject=Plan%20Personalizado%20Acuarius&body=Hola%2C%20me%20interesa%20el%20plan%20personalizado.%20Tengo%20más%20de%205%20cuentas%20y%20quisiera%20conocer%20las%20opciones." class="plan-cta" style="background:white;color:#1E2BCC;font-weight:700">Hablar con el equipo →</a>
+      </div>
+
     </div>
   </div>
 </section>
