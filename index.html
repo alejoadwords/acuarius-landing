@@ -133,26 +133,43 @@ section{padding:96px 40px}
 
 /* ── PLANES ── */
 .plans-section{background:linear-gradient(180deg,var(--bg) 0%,white 100%)}
-.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;align-items:start}
-.plan-card{padding:36px 32px;background:white;border:1.5px solid var(--border);border-radius:var(--rlg);position:relative;transition:all .25s}
+.plans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px;align-items:start}
+.plan-card{padding:32px 28px;background:white;border:1.5px solid var(--border);border-radius:var(--rlg);position:relative;transition:all .25s}
+.plan-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.08)}
 .plan-card.featured{border-color:var(--blue);box-shadow:0 20px 60px rgba(30,43,204,.15)}
+.plan-card.featured:hover{box-shadow:0 24px 64px rgba(30,43,204,.2)}
+.plan-card.custom{background:linear-gradient(135deg,#0A0A12 0%,#1E2BCC 100%);border-color:transparent}
+.plan-card.custom:hover{box-shadow:0 20px 60px rgba(30,43,204,.35)}
 .plan-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--blue);color:white;font-size:11px;font-weight:700;padding:5px 16px;border-radius:100px;white-space:nowrap;letter-spacing:.05em;text-transform:uppercase}
-.plan-name{font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--text);margin-bottom:6px}
-.plan-desc{font-size:13.5px;color:var(--muted);margin-bottom:24px;line-height:1.5}
+.plan-name{font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--text);margin-bottom:6px}
+.plan-card.custom .plan-name{color:white}
+.plan-desc{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.5}
+.plan-card.custom .plan-desc{color:rgba(255,255,255,.6)}
 .plan-price{margin-bottom:8px}
-.plan-price-amount{font-family:var(--font-display);font-size:48px;font-weight:800;color:var(--text);line-height:1}
-.plan-price-currency{font-size:22px;font-weight:600;vertical-align:super;color:var(--muted)}
-.plan-price-period{font-size:14px;color:var(--muted2);margin-left:4px}
-.plan-note{font-size:12px;color:var(--muted2);margin-bottom:28px}
-.plan-divider{height:1px;background:var(--border);margin:24px 0}
-.plan-features{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
-.plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--muted)}
+.plan-price-amount{font-family:var(--font-display);font-size:44px;font-weight:800;color:var(--text);line-height:1}
+.plan-card.custom .plan-price-amount{color:white;font-size:30px}
+.plan-price-currency{font-size:20px;font-weight:600;vertical-align:super;color:var(--muted)}
+.plan-card.custom .plan-price-currency{color:rgba(255,255,255,.7)}
+.plan-price-period{font-size:13px;color:var(--muted2);margin-left:4px}
+.plan-card.custom .plan-price-period{color:rgba(255,255,255,.5)}
+.plan-note{font-size:12px;color:var(--muted2);margin-bottom:24px}
+.plan-card.custom .plan-note{color:rgba(255,255,255,.45)}
+.plan-divider{height:1px;background:var(--border);margin:20px 0}
+.plan-card.custom .plan-divider{background:rgba(255,255,255,.15)}
+.plan-features{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px}
+.plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--muted)}
 .plan-features li svg{color:var(--success);flex-shrink:0;margin-top:2px}
+.plan-card.custom .plan-features li{color:rgba(255,255,255,.75)}
+.plan-card.custom .plan-features li svg{color:#34D399}
 .plan-cta{display:block;text-align:center;padding:12px;border-radius:var(--r);font-weight:600;font-size:14px;text-decoration:none;transition:all .2s;font-family:var(--font-body)}
 .plan-cta-primary{background:var(--blue);color:white}
 .plan-cta-primary:hover{background:var(--blue-h);box-shadow:0 6px 20px rgba(30,43,204,.3)}
 .plan-cta-outline{border:1.5px solid var(--border);color:var(--text)}
 .plan-cta-outline:hover{border-color:var(--blue);color:var(--blue)}
+.plan-cta-white{background:white;color:#1E2BCC;font-weight:700}
+.plan-cta-white:hover{background:rgba(255,255,255,.9);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+@media(max-width:960px){.plans-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.plans-grid{grid-template-columns:1fr}}
 
 /* ── TESTIMONIOS ── */
 .testimonials-section{background:var(--text);overflow:hidden}
@@ -214,7 +231,8 @@ footer{background:var(--text);padding:64px 40px 40px;color:rgba(255,255,255,.6)}
   nav{padding:0 20px}
   .nav-links{display:none}
   section{padding:72px 20px}
-  .steps-grid,.agents-grid,.plans-grid,.testimonials-grid{grid-template-columns:1fr}
+  .steps-grid,.agents-grid,.testimonials-grid{grid-template-columns:1fr}
+  .plans-grid{grid-template-columns:1fr !important}
   .footer-top{grid-template-columns:1fr 1fr}
   .compare-table{font-size:12px}
   .compare-table th,.compare-table td{padding:12px 14px}
@@ -551,12 +569,12 @@ footer{background:var(--text);padding:64px 40px 40px;color:rgba(255,255,255,.6)}
       <h2 class="section-title">Simple y transparente</h2>
       <p class="section-sub" style="margin:0 auto">Sin sorpresas. Sin letra pequeña. El plan que necesitas al precio justo para LatAm.</p>
     </div>
-    <div class="plans-grid" style="grid-template-columns:repeat(4,1fr);gap:20px">
+    <div class="plans-grid">
 
       <!-- FREE -->
       <div class="plan-card fade-up">
         <div class="plan-name">Prueba gratuita</div>
-        <p class="plan-desc">7 días para explorar todo sin restricciones</p>
+        <p class="plan-desc">7 días para explorar todo sin restricciones ni tarjeta</p>
         <div class="plan-price">
           <span class="plan-price-currency">$</span>
           <span class="plan-price-amount">0</span>
@@ -566,7 +584,7 @@ footer{background:var(--text);padding:64px 40px 40px;color:rgba(255,255,255,.6)}
         <div class="plan-divider"></div>
         <ul class="plan-features">
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Todos los agentes de IA</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Mensajes ilimitados</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Mensajes ilimitados durante la prueba</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>1 cuenta publicitaria conectada</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Generación de imágenes con IA</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Análisis en tiempo real</li>
@@ -611,31 +629,31 @@ footer{background:var(--text);padding:64px 40px 40px;color:rgba(255,255,255,.6)}
         <ul class="plan-features">
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Todo lo del plan Individual</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>Hasta 5 cuentas</strong> — Google Ads, Meta, TikTok, LinkedIn</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Soporte para MCC (múltiples cuentas hijo)</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Perfil de cliente independiente</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Onboarding personalizado por cliente</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Soporte para MCC (cuentas hijo)</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Perfil independiente por cliente</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Onboarding personalizado</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Soporte prioritario</li>
         </ul>
         <a href="https://go.hotmart.com/L105202723X" class="plan-cta plan-cta-outline">Empezar — 7 días gratis</a>
       </div>
 
       <!-- PERSONALIZADO -->
-      <div class="plan-card fade-up" style="transition-delay:.3s;background:linear-gradient(135deg,#0A0A0A 0%,#1E2BCC 100%);border-color:transparent">
-        <div class="plan-name" style="color:white">Personalizado</div>
-        <p class="plan-desc" style="color:rgba(255,255,255,0.6)">Para agencias grandes con más de 5 cuentas o necesidades específicas</p>
+      <div class="plan-card custom fade-up" style="transition-delay:.3s">
+        <div class="plan-name">Personalizado</div>
+        <p class="plan-desc">Para agencias grandes con más de 5 cuentas o necesidades específicas</p>
         <div class="plan-price">
-          <span class="plan-price-amount" style="font-size:36px;color:white">A medida</span>
+          <span class="plan-price-amount">A medida</span>
         </div>
-        <p class="plan-note" style="color:rgba(255,255,255,0.5)">Precio según volumen y requerimientos</p>
-        <div class="plan-divider" style="background:rgba(255,255,255,0.15)"></div>
+        <p class="plan-note">Precio según volumen y requerimientos</p>
+        <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li style="color:rgba(255,255,255,0.8)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Todo lo del plan Agencia</li>
-          <li style="color:rgba(255,255,255,0.8)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong style="color:white">Cuentas ilimitadas</strong></li>
-          <li style="color:rgba(255,255,255,0.8)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Integraciones personalizadas</li>
-          <li style="color:rgba(255,255,255,0.8)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Soporte dedicado con SLA</li>
-          <li style="color:rgba(255,255,255,0.8)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Onboarding y capacitación del equipo</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Todo lo del plan Agencia</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong style="color:white">Cuentas ilimitadas</strong></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Integraciones personalizadas</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Soporte dedicado con SLA</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Capacitación del equipo</li>
         </ul>
-        <a href="mailto:ceo@acuarius.app?subject=Plan%20Personalizado%20Acuarius&body=Hola%2C%20me%20interesa%20el%20plan%20personalizado.%20Tengo%20más%20de%205%20cuentas%20y%20quisiera%20conocer%20las%20opciones." class="plan-cta" style="background:white;color:#1E2BCC;font-weight:700">Hablar con el equipo →</a>
+        <a href="mailto:ceo@acuarius.app?subject=Plan%20Personalizado%20Acuarius&body=Hola%2C%20me%20interesa%20el%20plan%20personalizado.%20Tengo%20m%C3%A1s%20de%205%20cuentas%20y%20quisiera%20conocer%20las%20opciones." class="plan-cta plan-cta-white">Hablar con el equipo →</a>
       </div>
 
     </div>
@@ -751,7 +769,7 @@ footer{background:var(--text);padding:64px 40px 40px;color:rgba(255,255,255,.6)}
         Crear cuenta gratis
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="mailto:hola@acuarius.app" class="btn-outline-lg">Hablar con el equipo</a>
+      <a href="/cdn-cgi/l/email-protection#2a4245464b6a4b495f4b58435f59044b5a5a" class="btn-outline-lg">Hablar con el equipo</a>
     </div>
     <p class="cta-note">Sin tarjeta de crédito · 7 días gratis · Cancela cuando quieras</p>
   </div>
@@ -790,7 +808,7 @@ footer{background:var(--text);padding:64px 40px 40px;color:rgba(255,255,255,.6)}
         <div class="footer-col-title">Legal</div>
         <div class="footer-links">
           <a href="/privacy.html">Política de privacidad</a>
-          <a href="mailto:hola@acuarius.app">Contacto</a>
+          <a href="/cdn-cgi/l/email-protection#ff9790939ebf9e9c8a9e8d968a8cd19e8f8f">Contacto</a>
         </div>
       </div>
     </div>
@@ -801,7 +819,7 @@ footer{background:var(--text);padding:64px 40px 40px;color:rgba(255,255,255,.6)}
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // FAQ toggle
 function toggleFaq(el) {
   const item = el.parentElement;
@@ -820,13 +838,4 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('nav');
   if (window.scrollY > 60) {
-    nav.style.height = '56px';
-    nav.style.boxShadow = '0 1px 20px rgba(0,0,0,.08)';
-  } else {
-    nav.style.height = '68px';
-    nav.style.boxShadow = 'none';
-  }
-});
-</script>
-</body>
-</html>
+    nav.s
