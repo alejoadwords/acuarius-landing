@@ -128,6 +128,13 @@ section{padding:96px 40px}
 
 /* ── COMPARACIÓN ── */
 .compare-section{background:var(--white)}
+.proof-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.proof-card{background:linear-gradient(135deg,rgba(30,43,204,.05),rgba(52,211,153,.06));border:1.5px solid var(--border);border-radius:var(--rlg);padding:28px 26px;text-align:center}
+.proof-num{font-family:var(--font-display);font-size:clamp(30px,3.6vw,42px);font-weight:800;letter-spacing:-.03em;background:linear-gradient(135deg,var(--blue),#34D399);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1}
+.proof-label{font-size:14px;font-weight:700;color:var(--text);margin-top:8px}
+.proof-sub{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+.proof-foot{font-size:11.5px;color:var(--muted);margin-top:14px;text-align:center;opacity:.75}
+@media(max-width:720px){.proof-strip{grid-template-columns:1fr}}
 .compare-table{width:100%;border-collapse:collapse;margin-top:56px;border-radius:var(--rlg);overflow:hidden;border:1.5px solid var(--border)}
 .compare-table th{padding:20px 24px;font-family:var(--font-display);font-size:14px;font-weight:700;text-align:left;background:var(--bg);border-bottom:1.5px solid var(--border)}
 .compare-table th.acuarius-col{background:var(--blue);color:white}
@@ -508,8 +515,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="fade-up">
       <p class="section-label">Por qué Acuarius</p>
       <h2 class="section-title">Diseñado para LatAm,<br>no adaptado</h2>
-      <p class="section-sub">La diferencia entre una herramienta hecha en inglés y un agente que entiende tu mercado, tu idioma y tu presupuesto.</p>
+      <p class="section-sub">La diferencia entre una herramienta hecha en inglés y un agente que entiende tu mercado, tu idioma y tu presupuesto. Y lo medimos: pusimos a nuestros agentes contra una IA generalista, con juez ciego.</p>
     </div>
+    <div class="proof-strip fade-up">
+      <div class="proof-card">
+        <div class="proof-num">11/11</div>
+        <div class="proof-label">Pruebas ganadas</div>
+        <div class="proof-sub">Nuestros agentes superaron a una IA generalista en todas las preguntas evaluadas de conocimiento experto</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-num">8.4 vs 4.7</div>
+        <div class="proof-label">Puntuación del juez experto</div>
+        <div class="proof-sub">Calificación promedio (0-10) contra rúbricas de mejores prácticas 2026 y benchmarks de LatAm</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-num">Mensual</div>
+        <div class="proof-label">Conocimiento siempre al día</div>
+        <div class="proof-sub">Algoritmos de pauta, cambios de plataforma y benchmarks de la región se actualizan cada mes</div>
+      </div>
+    </div>
+    <p class="proof-foot fade-up">Evaluación interna (julio 2026): mismas preguntas para ambos, respuestas calificadas a ciegas por un juez experto contra rúbricas verificables de Google Ads, Meta Ads, TikTok Ads y estrategia. Metodología y resultados disponibles.</p>
     <div class="fade-up" style="overflow-x:auto;margin-top:56px">
       <table class="compare-table">
         <thead>
