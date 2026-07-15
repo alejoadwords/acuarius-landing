@@ -965,5 +965,16 @@ window.addEventListener('scroll', () => {
   }
 });
 </script>
+<script>
+// Conversión: clic en CTA hacia la app → dataLayer (cta_click con el texto del botón)
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href*="app.acuarius.app"]');
+  if (!a) return;
+  try {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'cta_click', cta_text: (a.textContent || '').trim().slice(0, 60) });
+  } catch (err) {}
+});
+</script>
 </body>
 </html>
