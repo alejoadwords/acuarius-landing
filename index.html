@@ -93,6 +93,47 @@ section{padding:96px 40px}
 .section-title{font-family:var(--font-display);font-size:clamp(28px,4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.1;color:var(--text);margin-bottom:16px}
 .section-sub{font-size:17px;color:var(--muted);line-height:1.65;max-width:560px}
 
+/* ── CALCULADORA DE PRECIO ── */
+.calc-section{background:var(--white)}
+.calc-card{display:grid;grid-template-columns:340px 1fr;gap:0;max-width:940px;margin:48px auto 0;border:1px solid var(--border);border-radius:var(--rlg);overflow:hidden;box-shadow:0 12px 40px rgba(10,10,18,.06)}
+.calc-result{background:linear-gradient(160deg,#0F1699 0%,var(--blue) 55%,#3A46D8 100%);color:white;padding:40px 32px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.calc-plan-tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.16);padding:6px 14px;border-radius:20px;margin-bottom:20px}
+.calc-price{display:flex;align-items:flex-start;justify-content:center;gap:3px;line-height:1}
+.calc-price-cur{font-size:24px;font-weight:700;margin-top:8px}
+.calc-price-amount{font-family:var(--font-display);font-size:62px;font-weight:800;letter-spacing:-.04em}
+.calc-price-per{font-size:13px;font-weight:600;opacity:.75;align-self:flex-end;margin-bottom:12px;margin-left:4px}
+.calc-price-note{font-size:12px;opacity:.8;margin:10px 0 24px;line-height:1.5}
+.calc-cta{display:block;width:100%;background:white;color:var(--blue);font-weight:700;font-size:15px;padding:14px 20px;border-radius:var(--r);text-decoration:none;transition:transform .15s,box-shadow .15s}
+.calc-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.calc-cta-note{font-size:11px;opacity:.7;margin-top:10px}
+.calc-controls{padding:36px 32px;background:white}
+.calc-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--border)}
+.calc-label span{display:block;font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px}
+.calc-label small{display:block;font-size:12px;color:var(--muted);line-height:1.4}
+.calc-stepper{display:flex;align-items:center;gap:6px;background:var(--bg);border:1px solid var(--border);border-radius:30px;padding:4px;flex-shrink:0}
+.calc-btn{width:32px;height:32px;border:none;border-radius:50%;background:var(--blue);color:white;font-size:18px;font-weight:700;line-height:1;cursor:pointer;transition:background .15s}
+.calc-btn:hover:not(:disabled){background:var(--blue-h)}
+.calc-btn:disabled{background:var(--muted2);cursor:not-allowed;opacity:.5}
+.calc-input{width:74px;border:none;background:transparent;text-align:center;font-family:var(--font-body);font-size:15px;font-weight:700;color:var(--text);-moz-appearance:textfield}
+.calc-input::-webkit-outer-spin-button,.calc-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.calc-input:focus{outline:2px solid var(--blue);outline-offset:2px;border-radius:6px}
+.calc-row-fijo{border-bottom:none}
+.calc-ilimitado{font-size:13px;font-weight:700;color:var(--success);background:#ECFDF5;padding:8px 16px;border-radius:20px;flex-shrink:0}
+.calc-desglose{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin-top:8px}
+.calc-linea{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted);padding:5px 0}
+.calc-linea strong{color:var(--text);font-weight:600}
+.calc-linea-total{border-top:1px solid var(--border);margin-top:6px;padding-top:10px;font-size:14px;color:var(--text);font-weight:700}
+.calc-aviso{font-size:12px;color:var(--amber);line-height:1.5;margin-top:10px}
+.calc-pie{text-align:center;font-size:12px;color:var(--muted2);margin-top:22px;line-height:1.6}
+@media(max-width:860px){
+  .calc-card{grid-template-columns:1fr}
+  .calc-result{padding:32px 24px}
+  .calc-controls{padding:24px 20px}
+  .calc-row{flex-direction:column;align-items:flex-start;gap:12px}
+  .calc-stepper{align-self:stretch;justify-content:space-between}
+  .calc-input{width:100%}
+}
+
 /* ── LOGOS ── */
 .logos-section{padding:56px 40px;background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .logos-label{text-align:center;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:32px}
@@ -280,6 +321,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#como-funciona">Cómo funciona</a>
       <a href="#agentes">Agentes</a>
       <a href="#planes">Precios</a>
+      <a href="#calculadora">Calculadora</a>
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-cta">
@@ -718,7 +760,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul class="plan-features">
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>50 mensajes IA por mes</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Todos los agentes de IA disponibles</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>CRM con hasta 50 leads</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>CRM con hasta 50 contactos · 1 usuario</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>3 imágenes IA incluidas</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>1 conexión API incluida (Google Ads o Meta)</li>
         </ul>
@@ -740,14 +782,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul class="plan-features">
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Todos los agentes IA (Google, Meta, TikTok, SEO…)</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Todas las conexiones API de plataformas</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>CRM con 1.000 leads</strong> incluidos</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>CRM con 1.000 contactos</strong> · <strong>3 usuarios</strong> incluidos</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Inbox (WhatsApp, Messenger, Instagram)</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>60 imágenes + 5 videos IA</strong>/mes · Social Media Studio</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>Proyecto SEO:</strong> posiciones en Google + reporte GEO en IAs</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>Automatizaciones de leads:</strong> flujos con email, WhatsApp y condiciones</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>Propuestas con IA</strong> (4 plantillas) + link de pago</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>Campañas de email masivas:</strong> 2.000/mes incluidos</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Leads adicionales: <strong>$4 por 1.000 contactos</strong></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>Campañas de email masivas:</strong> envíos ilimitados</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Contactos extra: <strong>$4 por 1.000</strong> · Usuario extra: <strong>$9/mes</strong></li>
         </ul>
         <a href="https://app.acuarius.app/login.html" class="plan-cta plan-cta-primary">Empezar — 7 días gratis</a>
       </div>
@@ -761,18 +803,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="plan-price-amount">99</span>
           <span class="plan-price-period">USD / mes</span>
         </div>
-        <p class="plan-note">10 perfiles de cliente · 3 asientos de equipo · Cancela cuando quieras</p>
+        <p class="plan-note">10 perfiles de cliente · 10 usuarios · Cancela cuando quieras</p>
         <div class="plan-divider"></div>
         <ul class="plan-features">
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Todo lo del plan Pro</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>10 perfiles de cliente/marca</strong> independientes</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>CRM con 5.000 leads</strong> incluidos</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>Equipo: 3 asientos</strong> con asignación de leads</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>Campañas masivas: 10.000 emails</strong>/mes</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>CRM con 5.000 contactos</strong> incluidos</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>Equipo: 10 usuarios</strong> con asignación de leads</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>Campañas masivas:</strong> envíos ilimitados</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Imágenes y videos IA <strong>ilimitados</strong> · Social Media Studio</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><strong>Proyectos SEO por cliente</strong> con posiciones y reporte GEO</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Dashboard de salud por cliente</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Leads adicionales: <strong>$3 por 1.000 contactos</strong></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Contactos extra: <strong>$3 por 1.000</strong> · Usuario extra: <strong>$9/mes</strong></li>
         </ul>
         <a href="https://app.acuarius.app/login.html" class="plan-cta plan-cta-outline">Empezar — 7 días gratis</a>
       </div>
@@ -797,6 +839,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- CALCULADORA DE PRECIO -->
+<section class="calc-section" id="calculadora">
+  <div class="section-inner">
+    <div class="fade-up" style="text-align:center">
+      <p class="section-label">Calcula tu precio</p>
+      <h2 class="section-title">¿Cuánto te cuesta Acuarius?</h2>
+      <p class="section-sub" style="margin:0 auto">Dinos cuántos usuarios y contactos necesitas. Te decimos el plan que te conviene y el precio exacto, sin hablar con nadie.</p>
+    </div>
+
+    <div class="calc-card fade-up">
+      <div class="calc-result">
+        <div class="calc-plan-tag" id="calc-plan">Plan Pro</div>
+        <div class="calc-price">
+          <span class="calc-price-cur">$</span><span class="calc-price-amount" id="calc-total">39</span><span class="calc-price-per">USD / mes</span>
+        </div>
+        <p class="calc-price-note" id="calc-note">Todo incluido · Cancela cuando quieras</p>
+        <a href="https://app.acuarius.app/login.html" class="calc-cta" id="calc-cta">Empieza gratis 7 días</a>
+        <p class="calc-cta-note">Sin tarjeta. Sin compromiso.</p>
+      </div>
+
+      <div class="calc-controls">
+        <div class="calc-row">
+          <div class="calc-label">
+            <span>Usuarios con acceso</span>
+            <small>Personas de tu equipo dentro de la plataforma</small>
+          </div>
+          <div class="calc-stepper">
+            <button type="button" class="calc-btn" id="calc-u-menos" aria-label="Menos usuarios">−</button>
+            <input type="number" class="calc-input" id="calc-usuarios" value="3" min="1" max="60" aria-label="Número de usuarios">
+            <button type="button" class="calc-btn" id="calc-u-mas" aria-label="Más usuarios">+</button>
+          </div>
+        </div>
+
+        <div class="calc-row">
+          <div class="calc-label">
+            <span>Contactos en el CRM</span>
+            <small>Leads que puedes almacenar y segmentar</small>
+          </div>
+          <div class="calc-stepper">
+            <button type="button" class="calc-btn" id="calc-c-menos" aria-label="Menos contactos">−</button>
+            <input type="text" class="calc-input" id="calc-contactos-vista" value="1.000" readonly aria-label="Número de contactos">
+            <button type="button" class="calc-btn" id="calc-c-mas" aria-label="Más contactos">+</button>
+          </div>
+        </div>
+
+        <div class="calc-row calc-row-fijo">
+          <div class="calc-label">
+            <span>Emails de campañas y automatizaciones</span>
+            <small>Sin cupo mensual en los planes de pago</small>
+          </div>
+          <div class="calc-ilimitado">Ilimitados</div>
+        </div>
+
+        <div class="calc-desglose" id="calc-desglose"></div>
+      </div>
+    </div>
+
+    <p class="calc-pie">Los precios son en USD y no incluyen impuestos según tu país. Los complementos se activan desde la app cuando los necesites.</p>
   </div>
 </section>
 
@@ -997,6 +1100,118 @@ document.addEventListener('click', function (e) {
     window.dataLayer.push({ event: 'cta_click', cta_text: (a.textContent || '').trim().slice(0, 60) });
   } catch (err) {}
 });
+</script>
+<script>
+/* ── CALCULADORA DE PRECIO ──────────────────────────────────────────────────
+   Fuente de verdad de los cupos (deben coincidir con la app):
+     api/team.js PLAN_SEATS · api/leads.js PLAN_LIMITS · api/campaigns.js EMAIL_QUOTAS
+   Si cambian allí, cambian aquí.                                            */
+(function () {
+  var PLANES = [
+    { id: 'pro',    nombre: 'Plan Pro',    base: 39, usuarios: 3,  contactos: 1000, precioContacto: 4, url: 'https://pay.hotmart.com/G105202218G' },
+    { id: 'agency', nombre: 'Plan Agency', base: 99, usuarios: 10, contactos: 5000, precioContacto: 3, url: 'https://pay.hotmart.com/L105202723X' },
+  ];
+  var PRECIO_USUARIO = 9;      // usuario adicional / mes
+  var PASO_CONTACTOS = 1000;   // los paquetes son de 1.000
+  var MAX_USUARIOS   = 60;     // por encima → plan personalizado
+  var MAX_CONTACTOS  = 100000;
+
+  var $ = function (id) { return document.getElementById(id); };
+  var elUsuarios = $('calc-usuarios');
+  var elContactosVista = $('calc-contactos-vista');
+  if (!elUsuarios || !elContactosVista) return;
+
+  var contactos = 1000;
+  var fmt = function (n) { return n.toLocaleString('es-CO'); };
+
+  // Escalones de contactos: finos al principio, gruesos después
+  function siguienteContactos(v, dir) {
+    var paso = v >= 20000 ? 10000 : v >= 5000 ? 5000 : PASO_CONTACTOS;
+    if (dir < 0) paso = v > 20000 ? 10000 : v > 5000 ? 5000 : PASO_CONTACTOS;
+    var n = v + dir * paso;
+    return Math.max(PASO_CONTACTOS, Math.min(MAX_CONTACTOS, n));
+  }
+
+  function costeDe(plan, usuarios, contactos) {
+    var extraUsuarios = Math.max(0, usuarios - plan.usuarios);
+    var packs = Math.max(0, Math.ceil((contactos - plan.contactos) / PASO_CONTACTOS));
+    return {
+      plan: plan,
+      extraUsuarios: extraUsuarios,
+      costeUsuarios: extraUsuarios * PRECIO_USUARIO,
+      packs: packs,
+      costeContactos: packs * plan.precioContacto,
+      total: plan.base + extraUsuarios * PRECIO_USUARIO + packs * plan.precioContacto,
+    };
+  }
+
+  function render() {
+    var usuarios = parseInt(elUsuarios.value, 10);
+    if (isNaN(usuarios) || usuarios < 1) usuarios = 1;
+    if (usuarios > MAX_USUARIOS) usuarios = MAX_USUARIOS;
+    elUsuarios.value = usuarios;
+    elContactosVista.value = fmt(contactos);
+
+    // Se recomienda el plan más barato para ese uso — no el más caro
+    var opciones = PLANES.map(function (p) { return costeDe(p, usuarios, contactos); });
+    opciones.sort(function (a, b) { return a.total - b.total; });
+    var mejor = opciones[0];
+
+    var personalizado = usuarios >= MAX_USUARIOS || contactos >= MAX_CONTACTOS;
+
+    $('calc-plan').textContent = personalizado ? 'Plan Personalizado' : mejor.plan.nombre;
+    $('calc-total').textContent = personalizado ? 'A medida' : fmt(mejor.total);
+    document.querySelector('.calc-price-cur').style.display = personalizado ? 'none' : '';
+    document.querySelector('.calc-price-per').style.display = personalizado ? 'none' : '';
+
+    var cta = $('calc-cta');
+    if (personalizado) {
+      $('calc-note').textContent = 'A tu volumen conviene un acuerdo a medida.';
+      cta.textContent = 'Hablar con el equipo →';
+      cta.href = 'mailto:ceo@acuarius.app?subject=Plan%20Personalizado%20Acuarius';
+    } else {
+      $('calc-note').textContent = 'Emails ilimitados · Todos los agentes IA · Cancela cuando quieras';
+      cta.textContent = 'Empieza gratis 7 días';
+      cta.href = 'https://app.acuarius.app/login.html';
+    }
+
+    // Desglose
+    var l = [];
+    l.push(linea(mejor.plan.nombre + ' — incluye ' + mejor.plan.usuarios + ' usuarios y ' + fmt(mejor.plan.contactos) + ' contactos', '$' + mejor.plan.base));
+    if (mejor.extraUsuarios > 0) {
+      l.push(linea(mejor.extraUsuarios + (mejor.extraUsuarios === 1 ? ' usuario adicional' : ' usuarios adicionales') + ' × $' + PRECIO_USUARIO, '$' + mejor.costeUsuarios));
+    }
+    if (mejor.packs > 0) {
+      l.push(linea(fmt(mejor.packs * PASO_CONTACTOS) + ' contactos adicionales × $' + mejor.plan.precioContacto + ' por 1.000', '$' + mejor.costeContactos));
+    }
+    l.push(linea('Emails de campañas y automatizaciones', 'Incluidos'));
+    if (!personalizado) l.push('<div class="calc-linea calc-linea-total"><span>Total mensual</span><strong>$' + fmt(mejor.total) + ' USD</strong></div>');
+
+    // Si el otro plan cuesta lo mismo o poco más, decirlo: da más por el mismo dinero
+    var otro = opciones[1];
+    if (!personalizado && otro && otro.total - mejor.total <= 10 && otro.plan.id === 'agency') {
+      l.push('<p class="calc-aviso">Por $' + fmt(otro.total - mejor.total) + ' más al mes, Agency te da ' + otro.plan.usuarios + ' usuarios, ' + fmt(otro.plan.contactos) + ' contactos y 10 perfiles de cliente.</p>');
+    }
+    $('calc-desglose').innerHTML = l.join('');
+
+    $('calc-u-menos').disabled = usuarios <= 1;
+    $('calc-u-mas').disabled = usuarios >= MAX_USUARIOS;
+    $('calc-c-menos').disabled = contactos <= PASO_CONTACTOS;
+    $('calc-c-mas').disabled = contactos >= MAX_CONTACTOS;
+  }
+
+  function linea(texto, valor) {
+    return '<div class="calc-linea"><span>' + texto + '</span><strong>' + valor + '</strong></div>';
+  }
+
+  $('calc-u-menos').addEventListener('click', function () { elUsuarios.value = Math.max(1, parseInt(elUsuarios.value, 10) - 1); render(); });
+  $('calc-u-mas').addEventListener('click', function () { elUsuarios.value = Math.min(MAX_USUARIOS, parseInt(elUsuarios.value, 10) + 1); render(); });
+  elUsuarios.addEventListener('input', render);
+  $('calc-c-menos').addEventListener('click', function () { contactos = siguienteContactos(contactos, -1); render(); });
+  $('calc-c-mas').addEventListener('click', function () { contactos = siguienteContactos(contactos, 1); render(); });
+
+  render();
+})();
 </script>
 </body>
 </html>
