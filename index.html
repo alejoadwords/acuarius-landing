@@ -97,6 +97,13 @@ section{padding:96px 40px}
 .calc-section{background:var(--white)}
 .calc-card{display:grid;grid-template-columns:340px 1fr;gap:0;max-width:940px;margin:48px auto 0;border:1px solid var(--border);border-radius:var(--rlg);overflow:hidden;box-shadow:0 12px 40px rgba(10,10,18,.06)}
 .calc-result{background:linear-gradient(160deg,#0F1699 0%,var(--blue) 55%,#3A46D8 100%);color:white;padding:40px 32px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.calc-toggle{display:flex;gap:4px;background:rgba(255,255,255,.14);border-radius:30px;padding:4px;margin-bottom:22px;width:100%}
+.calc-toggle-btn{flex:1;border:none;background:transparent;color:rgba(255,255,255,.75);font-family:var(--font-body);font-size:12px;font-weight:600;padding:9px 10px;border-radius:26px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.2}
+.calc-toggle-btn:hover{color:white}
+.calc-toggle-btn.active{background:white;color:var(--blue)}
+.calc-toggle-badge{font-size:9px;font-weight:700;letter-spacing:.02em;opacity:.85;text-transform:uppercase}
+.calc-toggle-btn.active .calc-toggle-badge{color:var(--success)}
+.calc-ahorro{font-size:12px;font-weight:700;background:rgba(255,255,255,.16);padding:6px 14px;border-radius:20px;margin-top:12px;display:inline-block}
 .calc-plan-tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.16);padding:6px 14px;border-radius:20px;margin-bottom:20px}
 .calc-price{display:flex;align-items:flex-start;justify-content:center;gap:3px;line-height:1}
 .calc-price-cur{font-size:24px;font-weight:700;margin-top:8px}
@@ -853,6 +860,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="calc-card fade-up">
       <div class="calc-result">
+        <div class="calc-toggle" role="group" aria-label="Periodicidad de pago">
+          <button type="button" class="calc-toggle-btn active" id="calc-mensual">Pago mensual</button>
+          <button type="button" class="calc-toggle-btn" id="calc-anual">Pago anual <span class="calc-toggle-badge">2 meses gratis</span></button>
+        </div>
         <div class="calc-plan-tag" id="calc-plan">Plan Pro</div>
         <div class="calc-price">
           <span class="calc-price-cur">$</span><span class="calc-price-amount" id="calc-total">39</span><span class="calc-price-per">USD / mes</span>
@@ -1111,6 +1122,8 @@ document.addEventListener('click', function (e) {
     { id: 'pro',    nombre: 'Plan Pro',    base: 39, usuarios: 3,  contactos: 1000, precioContacto: 4, url: 'https://pay.hotmart.com/G105202218G' },
     { id: 'agency', nombre: 'Plan Agency', base: 99, usuarios: 10, contactos: 5000, precioContacto: 4, url: 'https://pay.hotmart.com/L105202723X' },
   ];
+  var MESES_ANUAL    = 10;     // 2 meses gratis: se pagan 10 de 12
+  var anual          = false;  // periodicidad elegida en el toggle
   var PRECIO_USUARIO = 9;      // usuario adicional / mes
   var PASO_CONTACTOS = 1000;   // los paquetes son de 1.000
   var MAX_USUARIOS   = 60;     // por encima → plan personalizado
@@ -1159,8 +1172,15 @@ document.addEventListener('click', function (e) {
 
     var personalizado = usuarios >= MAX_USUARIOS || contactos >= MAX_CONTACTOS;
 
+    // En anual el descuento aplica SOLO al plan: los complementos se cobran
+    // mensuales en Hotmart, asi que mezclarlos en un unico precio anual seria
+    // prometer un descuento que no existe.
+    var planAnual   = mejor.plan.base * MESES_ANUAL;
+    var extrasMes   = mejor.costeUsuarios + mejor.costeContactos;
+    var mostrado    = anual ? Math.round(planAnual / 12) + extrasMes : mejor.total;
+
     $('calc-plan').textContent = personalizado ? 'Plan Personalizado' : mejor.plan.nombre;
-    $('calc-total').textContent = personalizado ? 'A medida' : fmt(mejor.total);
+    $('calc-total').textContent = personalizado ? 'A medida' : fmt(mostrado);
     document.querySelector('.calc-price-cur').style.display = personalizado ? 'none' : '';
     document.querySelector('.calc-price-per').style.display = personalizado ? 'none' : '';
 
@@ -1170,14 +1190,21 @@ document.addEventListener('click', function (e) {
       cta.textContent = 'Hablar con el equipo →';
       cta.href = 'mailto:ceo@acuarius.app?subject=Plan%20Personalizado%20Acuarius';
     } else {
-      $('calc-note').textContent = 'Emails ilimitados · Todos los agentes IA · Cancela cuando quieras';
+      $('calc-note').textContent = anual
+        ? 'Pago anual del plan: $' + fmt(planAnual) + ' USD' + (extrasMes ? ' + $' + fmt(extrasMes) + '/mes en complementos' : '')
+        : 'Emails ilimitados · Todos los agentes IA · Cancela cuando quieras';
       cta.textContent = 'Empieza gratis 7 días';
       cta.href = 'https://app.acuarius.app/login.html';
     }
 
     // Desglose
     var l = [];
-    l.push(linea(mejor.plan.nombre + ' — incluye ' + mejor.plan.usuarios + ' usuarios y ' + fmt(mejor.plan.contactos) + ' contactos', '$' + mejor.plan.base));
+    if (anual) {
+      l.push(linea(mejor.plan.nombre + ' anual — incluye ' + mejor.plan.usuarios + ' usuarios y ' + fmt(mejor.plan.contactos) + ' contactos', '$' + fmt(planAnual) + '/año'));
+      l.push(linea('<span style="color:var(--success)">2 meses gratis frente al pago mensual</span>', '<span style="color:var(--success)">−$' + fmt(mejor.plan.base * 2) + '</span>'));
+    } else {
+      l.push(linea(mejor.plan.nombre + ' — incluye ' + mejor.plan.usuarios + ' usuarios y ' + fmt(mejor.plan.contactos) + ' contactos', '$' + mejor.plan.base));
+    }
     if (mejor.extraUsuarios > 0) {
       l.push(linea(mejor.extraUsuarios + (mejor.extraUsuarios === 1 ? ' usuario adicional' : ' usuarios adicionales') + ' × $' + PRECIO_USUARIO, '$' + mejor.costeUsuarios));
     }
@@ -1185,7 +1212,14 @@ document.addEventListener('click', function (e) {
       l.push(linea(fmt(mejor.packs * PASO_CONTACTOS) + ' contactos adicionales × $' + mejor.plan.precioContacto + ' por 1.000', '$' + mejor.costeContactos));
     }
     l.push(linea('Emails de campañas y automatizaciones', 'Incluidos'));
-    if (!personalizado) l.push('<div class="calc-linea calc-linea-total"><span>Total mensual</span><strong>$' + fmt(mejor.total) + ' USD</strong></div>');
+    if (!personalizado) {
+      if (anual) {
+        l.push('<div class="calc-linea calc-linea-total"><span>Pago anual del plan</span><strong>$' + fmt(planAnual) + ' USD</strong></div>');
+        if (extrasMes) l.push(linea('Complementos (se cobran mensuales)', '$' + fmt(extrasMes) + '/mes'));
+      } else {
+        l.push('<div class="calc-linea calc-linea-total"><span>Total mensual</span><strong>$' + fmt(mejor.total) + ' USD</strong></div>');
+      }
+    }
 
     // Si el otro plan cuesta lo mismo o poco más, decirlo: da más por el mismo dinero
     var otro = opciones[1];
@@ -1203,6 +1237,15 @@ document.addEventListener('click', function (e) {
   function linea(texto, valor) {
     return '<div class="calc-linea"><span>' + texto + '</span><strong>' + valor + '</strong></div>';
   }
+
+  function setPeriodicidad(esAnual) {
+    anual = esAnual;
+    $('calc-mensual').classList.toggle('active', !esAnual);
+    $('calc-anual').classList.toggle('active', esAnual);
+    render();
+  }
+  $('calc-mensual').addEventListener('click', function () { setPeriodicidad(false); });
+  $('calc-anual').addEventListener('click', function () { setPeriodicidad(true); });
 
   $('calc-u-menos').addEventListener('click', function () { elUsuarios.value = Math.max(1, parseInt(elUsuarios.value, 10) - 1); render(); });
   $('calc-u-mas').addEventListener('click', function () { elUsuarios.value = Math.min(MAX_USUARIOS, parseInt(elUsuarios.value, 10) + 1); render(); });
