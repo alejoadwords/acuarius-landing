@@ -109,6 +109,12 @@ section{padding:96px 40px}
 .calc-price{display:flex;align-items:flex-start;justify-content:center;gap:3px;line-height:1;max-width:100%;flex-wrap:nowrap}
 .calc-price-cur{font-size:24px;font-weight:700;margin-top:8px}
 .calc-price-amount{font-family:var(--font-display);font-size:62px;font-weight:800;letter-spacing:-.04em}
+/* "A medida" no es un número: a 62px se sale de la tarjeta y se leía
+   «A medid», con la última letra cortada. A 36px entra de una sola línea
+   en los 276px útiles del panel — a 44px necesitaba 334 y se partía en dos.
+   A 36px medía 273 de 276: tres píxeles de margen no son margen, con otra
+   fuente o una pantalla algo más estrecha vuelve a cortarse. */
+.calc-price-amount.es-texto{font-size:32px;letter-spacing:-.02em;white-space:nowrap}
 .calc-price-per{font-size:13px;font-weight:600;opacity:.75;align-self:flex-end;margin-bottom:12px;margin-left:4px}
 .calc-price-note{font-size:12px;opacity:.8;margin:10px 0 24px;line-height:1.5}
 .calc-cta{display:block;width:100%;background:white;color:var(--blue);font-weight:700;font-size:15px;padding:14px 20px;border-radius:var(--r);text-decoration:none;transition:transform .15s,box-shadow .15s}
@@ -1449,11 +1455,21 @@ document.addEventListener('click', function (e) {
       : n.toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   };
 
-  // Escalones de contactos: finos al principio, gruesos después
+  // Escalones de contactos: de mil en mil hasta 10.000 y de cinco mil en cinco
+  // mil hasta el tope. Antes saltaba de 5.000 a 10.000 de golpe, y justo ahí
+  // está la mayoría de quien entra a la calculadora: no podía ver su precio.
+  //
+  // El umbral se mira distinto según la dirección, a propósito. Con `>=` en
+  // los dos sentidos, al bajar desde 10.000 se restaría 5.000 y nunca se
+  // podrían ver los escalones finos otra vez.
+  var CORTE_PASO_FINO = 10000;
   function siguienteContactos(v, dir) {
-    var paso = v >= 20000 ? 10000 : v >= 5000 ? 5000 : PASO_CONTACTOS;
-    if (dir < 0) paso = v > 20000 ? 10000 : v > 5000 ? 5000 : PASO_CONTACTOS;
+    var grueso = dir > 0 ? v >= CORTE_PASO_FINO : v > CORTE_PASO_FINO;
+    var paso = grueso ? 5000 : PASO_CONTACTOS;
     var n = v + dir * paso;
+    // Bajando nunca se salta por encima del corte: desde 12.000 el paso grueso
+    // aterrizaría en 7.000 y se perderían los escalones finos de en medio.
+    if (dir < 0 && v > CORTE_PASO_FINO && n < CORTE_PASO_FINO) n = CORTE_PASO_FINO;
     return Math.max(PASO_CONTACTOS, Math.min(MAX_CONTACTOS, n));
   }
 
@@ -1499,6 +1515,8 @@ document.addEventListener('click', function (e) {
 
     $('calc-plan').textContent = personalizado ? 'Plan Personalizado' : mejor.plan.nombre;
     $('calc-total').textContent = personalizado ? 'A medida' : fmt(mostrado);
+    $('calc-total').classList.toggle('es-texto', personalizado);
+    document.querySelector('.calc-price').classList.toggle('es-texto', personalizado);
     document.querySelector('.calc-price-cur').style.display = personalizado ? 'none' : '';
     var elPer = document.querySelector('.calc-price-per');
     elPer.style.display = personalizado ? 'none' : '';
