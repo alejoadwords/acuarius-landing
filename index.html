@@ -1198,12 +1198,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
 
-        <div class="calc-row calc-row-fijo">
+        <div class="calc-row">
           <div class="calc-label">
-            <span>SMS</span>
-            <small>Mensajes de texto a móviles, para recordatorios y confirmaciones</small>
+            <span>SMS al mes</span>
+            <small>Mensajes de texto a celulares de Colombia, para recordatorios, confirmaciones y campañas. Saldo prepago: pagas solo lo que envías</small>
           </div>
-          <div class="calc-pronto">Disponible pronto</div>
+          <div class="calc-stepper">
+            <button type="button" class="calc-btn" id="calc-s-menos" aria-label="Menos SMS">−</button>
+            <input type="text" class="calc-input" id="calc-sms-vista" value="0" readonly aria-label="SMS al mes">
+            <button type="button" class="calc-btn" id="calc-s-mas" aria-label="Más SMS">+</button>
+          </div>
         </div>
 
         <div class="calc-desglose" id="calc-desglose"></div>
@@ -1468,6 +1472,21 @@ document.addEventListener('click', function (e) {
     { msj: 10000, precio: 179 },
   ];
   var MAX_MENSAJES = 20000;
+  // Paquetes de SMS (saldo prepago, Colombia). Deben coincidir con los
+  // productos de Hotmart que acreditan el saldo en la app (api/_sms.js).
+  // No son suscripción: por eso el descuento anual no los toca.
+  var PAQUETES_SMS = [
+    { sms: 1000,  precio: 8 },
+    { sms: 3000,  precio: 22 },
+    { sms: 5000,  precio: 35 },
+    { sms: 7000,  precio: 47 },
+    { sms: 10000, precio: 65 },
+    { sms: 15000, precio: 90 },
+    { sms: 20000, precio: 110 },
+  ];
+  // Los escalones del selector son los paquetes, más volúmenes mayores que
+  // se arman con varios: así cada número que se ve tiene un precio exacto.
+  var ESCALONES_SMS = [0, 1000, 3000, 5000, 7000, 10000, 15000, 20000, 30000, 40000, 50000];
   var MESES_ANUAL    = 10;     // 2 meses gratis: se pagan 10 de 12
   var anual          = false;  // periodicidad elegida en el toggle
   var PRECIO_USUARIO = 9;      // usuario adicional / mes
@@ -1482,6 +1501,8 @@ document.addEventListener('click', function (e) {
 
   var contactos = 1000;
   var mensajes = 500;              // mensajes del agente al mes
+  var sms = 0;                     // SMS al mes (0 = no los usa)
+  var elSmsVista = $('calc-sms-vista');
   var elMensajesVista = $('calc-mensajes-vista');
   var fmt = function (n) { return n.toLocaleString('es-CO'); };
   // Los centavos solo aparecen si los hay: "$33" y "$58,50", nunca "$33,00".
@@ -1522,6 +1543,31 @@ document.addEventListener('click', function (e) {
     return { precio: mayor.precio * veces, cubre: mayor.msj * veces, veces: veces, paquete: mayor };
   }
 
+  // Lo que cuestan N SMS: el paquete más barato que los cubre y, por encima
+  // del mayor, el mayor repetido más el que cubra el resto.
+  function paquetesSMS(n) {
+    var out = { precio: 0, partes: [] };
+    var mayor = PAQUETES_SMS[PAQUETES_SMS.length - 1];
+    var resto = n;
+    while (resto > mayor.sms) { out.partes.push(mayor); out.precio += mayor.precio; resto -= mayor.sms; }
+    if (resto > 0) {
+      for (var i = 0; i < PAQUETES_SMS.length; i++) {
+        if (PAQUETES_SMS[i].sms >= resto) { out.partes.push(PAQUETES_SMS[i]); out.precio += PAQUETES_SMS[i].precio; break; }
+      }
+    }
+    return out;
+  }
+  function siguienteSMS(v, dir) {
+    var i = ESCALONES_SMS.indexOf(v);
+    if (i < 0) i = 0;
+    i = Math.max(0, Math.min(ESCALONES_SMS.length - 1, i + dir));
+    return ESCALONES_SMS[i];
+  }
+  function textoSMS(p) {
+    if (p.partes.length === 1) return 'SMS — paquete de ' + fmt(p.partes[0].sms) + ' al mes';
+    return 'SMS — ' + p.partes.map(function (x) { return fmt(x.sms); }).join(' + ') + ' al mes';
+  }
+
   // Escalones de mensajes: de 500 en 500 hasta 5.000 y de 2.500 en 2.500 por
   // encima. Mismo criterio que los contactos — el paso fino donde está la
   // mayoría, el grueso para que llegar al tope no cueste veinte clics.
@@ -1560,6 +1606,9 @@ document.addEventListener('click', function (e) {
     elUsuarios.value = usuarios;
     elContactosVista.value = fmt(contactos);
     if (elMensajesVista) elMensajesVista.value = fmt(mensajes);
+    if (elSmsVista) elSmsVista.value = fmt(sms);
+    var pSMS = paquetesSMS(sms);
+    var smsMes = pSMS.precio;
 
     // Se recomienda el plan más barato para ese uso — no el más caro
     var opciones = PLANES.map(function (p) { return costeDe(p, usuarios, contactos, mensajes); });
@@ -1579,7 +1628,8 @@ document.addEventListener('click', function (e) {
     var ahorroAnual = totalMes * (12 - MESES_ANUAL);
     var totalAnual  = totalMes * MESES_ANUAL;
     var equivMes    = totalAnual / 12;
-    var mostrado    = anual ? totalAnual : totalMes;
+    // Los SMS van aparte: son saldo prepago, se pagan los 12 meses.
+    var mostrado    = anual ? totalAnual + smsMes * 12 : totalMes + smsMes;
 
     $('calc-plan').textContent = personalizado ? 'Plan Personalizado' : mejor.plan.nombre;
     $('calc-total').textContent = personalizado ? 'A medida' : fmt(mostrado);
@@ -1598,7 +1648,8 @@ document.addEventListener('click', function (e) {
     } else {
       $('calc-note').textContent = anual
         ? 'Un solo pago al año · Equivale a $' + fmtDinero(equivMes) + ' al mes · Ahorras $' + fmt(ahorroAnual)
-        : 'Emails ilimitados · ' + fmt(Math.max(mensajes, mejor.plan.mensajes)) + ' mensajes del agente · Cancela cuando quieras';
+        : 'Emails ilimitados · ' + fmt(Math.max(mensajes, mejor.plan.mensajes)) + ' mensajes del agente' +
+          (sms ? ' · ' + fmt(sms) + ' SMS' : '') + ' · Cancela cuando quieras';
       cta.textContent = 'Empieza gratis 14 días';
       cta.href = 'https://app.acuarius.app/registro';
     }
@@ -1629,6 +1680,8 @@ document.addEventListener('click', function (e) {
       $('calc-c-mas').disabled = contactos >= MAX_CONTACTOS;
       $('calc-m-menos').disabled = mensajes <= 500;
       $('calc-m-mas').disabled = mensajes >= MAX_MENSAJES;
+      $('calc-s-menos').disabled = sms <= 0;
+      $('calc-s-mas').disabled = sms >= ESCALONES_SMS[ESCALONES_SMS.length - 1];
       return;
     }
     // Las mismas lineas en las dos vistas. Lo unico que cambia es la cola: en
@@ -1641,13 +1694,22 @@ document.addEventListener('click', function (e) {
     l.push(linea('Mensajes del agente IA — ' + fmt(mejor.plan.mensajes) + ' incluidos en el plan', 'Incluidos'));
     if (mejor.costeIA > 0) l.push(linea(textoMensajes(mejor), '$' + fmt(mejor.costeIA) + sufijo));
 
+    // Sin SMS se dice que existen y desde cuánto: es la forma de enterarse.
+    if (!sms) l.push(linea('SMS a celulares de Colombia — solo si los usas', 'Desde $8 / 1.000'));
+    else if (!anual) l.push(linea(textoSMS(pSMS), '$' + fmt(smsMes)));
+
     if (anual) {
-      l.push(total('Total por mes', '$' + fmt(totalMes)));
+      l.push(total(sms ? 'Suscripción por mes' : 'Total por mes', '$' + fmt(totalMes)));
       l.push(linea('× 12 meses', '$' + fmt(brutoAnual)));
       l.push(linea('<span style="color:var(--success)">2 meses gratis</span>', '<span style="color:var(--success)">−$' + fmt(ahorroAnual) + '</span>'));
-      l.push(total('Total al año', '$' + fmt(totalAnual) + ' USD'));
+      if (sms) {
+        l.push(linea('Suscripción al año', '$' + fmt(totalAnual)));
+        // El saldo de SMS es prepago: no entra en los 2 meses gratis.
+        l.push(linea(textoSMS(pSMS) + ' × 12 <small style="color:var(--muted)">(prepago, sin descuento)</small>', '$' + fmt(smsMes * 12)));
+      }
+      l.push(total('Total al año', '$' + fmt(totalAnual + smsMes * 12) + ' USD'));
     } else {
-      l.push(total('Total mensual', '$' + fmt(totalMes) + ' USD'));
+      l.push(total('Total mensual', '$' + fmt(totalMes + smsMes) + ' USD'));
     }
 
     // Si el otro plan cuesta lo mismo o poco más, decirlo: da más por el mismo dinero
@@ -1663,6 +1725,8 @@ document.addEventListener('click', function (e) {
     $('calc-c-mas').disabled = contactos >= MAX_CONTACTOS;
     $('calc-m-menos').disabled = mensajes <= 500;
     $('calc-m-mas').disabled = mensajes >= MAX_MENSAJES;
+    $('calc-s-menos').disabled = sms <= 0;
+    $('calc-s-mas').disabled = sms >= ESCALONES_SMS[ESCALONES_SMS.length - 1];
   }
 
   function linea(texto, valor) {
@@ -1706,6 +1770,8 @@ document.addEventListener('click', function (e) {
   $('calc-c-mas').addEventListener('click', function () { contactos = siguienteContactos(contactos, 1); render(); });
   $('calc-m-menos').addEventListener('click', function () { mensajes = siguienteMensajes(mensajes, -1); render(); });
   $('calc-m-mas').addEventListener('click', function () { mensajes = siguienteMensajes(mensajes, 1); render(); });
+  $('calc-s-menos').addEventListener('click', function () { sms = siguienteSMS(sms, -1); render(); });
+  $('calc-s-mas').addEventListener('click', function () { sms = siguienteSMS(sms, 1); render(); });
 
   render();
 })();
