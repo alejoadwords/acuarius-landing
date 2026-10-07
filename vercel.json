@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/partners", "destination": "/partners.html" }
+  ]
+}
