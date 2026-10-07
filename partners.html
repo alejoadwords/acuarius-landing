@@ -386,7 +386,7 @@ footer{background:var(--text);padding:64px 40px 40px;color:rgba(255,255,255,.6)}
 }
 
 /* ── PARTNERS ── */
-.p-hero{min-height:auto;padding:150px 40px 90px;position:relative;overflow:hidden;background:linear-gradient(135deg,#0A0A12 0%,#0F1699 60%,var(--blue) 100%);text-align:center}
+.p-hero{min-height:auto;padding:150px 40px 90px;position:relative;overflow:hidden;background:var(--text);text-align:center}
 .p-hero-inner{position:relative;z-index:3;max-width:820px;margin:0 auto;animation:fadeUp .8s ease both}
 .p-hero .hero-sub{max-width:600px}
 .p-cifras{max-width:1100px;margin:-44px auto 0;position:relative;z-index:4;display:grid;grid-template-columns:repeat(4,1fr);background:var(--white);border:1px solid var(--border);border-radius:var(--rlg);box-shadow:0 16px 48px rgba(10,10,18,.08)}
@@ -467,7 +467,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HERO -->
 <section class="p-hero">
-  <div class="hero-bg-grid"></div>
+  <video class="hero-video" autoplay muted loop playsinline poster="/hero-poster.jpg">
+    <source src="/hero-video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-bg"><div class="hero-bg-grid"></div></div>
   <div class="p-hero-inner">
     <div class="hero-badge"><span class="hero-badge-dot"></span>Programa de Partners de Acuarius</div>
     <h1>Gana el <span class="gradient-text">20 %</span> de cada licencia,<br>todos los meses.</h1>
