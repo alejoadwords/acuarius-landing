@@ -432,25 +432,29 @@ footer{background:var(--text);padding:64px 40px 40px;color:rgba(255,255,255,.6)}
 .p-mock-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .p-mock-kpis div{border:1px solid var(--border);border-radius:10px;padding:12px}
 .p-mock-kpis b{font-family:var(--font-display);font-size:18px;font-weight:800;color:var(--text)}
-.p-escenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:940px;margin:40px auto 0}
-.p-esc{font-family:var(--font-body);text-align:left;cursor:pointer;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:4px;transition:border-color .2s,box-shadow .2s}
-.p-esc:hover{border-color:var(--blue-mid)}
-.p-esc.activo{border-color:var(--blue);box-shadow:0 8px 24px rgba(30,43,204,.12)}
-.p-esc small{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2)}
-.p-esc b{font-size:14.5px;color:var(--text);font-weight:600}
-.p-esc em{font-style:normal;font-family:var(--font-display);font-weight:800;font-size:22px;color:var(--blue)}
-.p-esc em i{font-style:normal;font-family:var(--font-body);font-weight:600;font-size:13px;color:var(--muted)}
-.p-esc-top{position:relative}
-.p-esc-top::after{content:'+1.000 USD';position:absolute;top:-10px;right:14px;background:var(--success);color:white;font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:100px}
-.p-calc{margin-top:20px !important}
-.p-calc-desglose{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.p-calc-desglose div{background:var(--blue-lt);border-radius:10px;padding:12px 14px}
-.p-calc-desglose small{display:block;font-size:12px;color:var(--muted)}
-.p-calc-desglose b{font-size:15px;color:var(--blue)}
 .p-calc-meta{font-size:13px;background:rgba(255,255,255,.14);border-radius:10px;padding:10px 14px;margin:-8px 0 22px;line-height:1.5}
 .p-calc-meta:empty{display:none}
+.p-calc2{display:grid;grid-template-columns:1fr 340px;max-width:1000px;margin:48px auto 0;border:1px solid var(--border);border-radius:var(--rlg);overflow:hidden;box-shadow:0 12px 40px rgba(10,10,18,.06)}
+.p-calc2-izq{padding:28px 28px 24px;display:flex;flex-direction:column;gap:12px}
+.p-periodo{display:flex;gap:4px;background:var(--bg);border:1px solid var(--border);border-radius:30px;padding:4px;margin-bottom:6px}
+.p-periodo button{flex:1;border:none;background:transparent;font-family:var(--font-body);font-size:13.5px;font-weight:600;color:var(--muted);padding:9px 12px;border-radius:26px;cursor:pointer}
+.p-periodo button small{font-size:11px;color:var(--success);margin-left:4px}
+.p-periodo button.activo{background:var(--blue);color:white}
+.p-periodo button.activo small{color:#A7F3D0}
+.p-perfil{border:1.5px solid var(--border);border-radius:var(--r);padding:14px 16px;transition:border-color .2s,background .2s}
+.p-perfil.con{border-color:var(--blue);background:rgba(30,43,204,.03)}
+.p-perfil-top{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.p-perfil-top b{display:block;font-size:15px;color:var(--text)}
+.p-perfil-top small{font-size:12.5px;color:var(--muted)}
+.p-stepper{display:flex;align-items:center;gap:4px;background:var(--bg);border:1px solid var(--border);border-radius:30px;padding:3px;flex-shrink:0}
+.p-stepper button{width:30px;height:30px;border:none;border-radius:50%;background:var(--blue);color:white;font-size:17px;font-weight:700;line-height:1;cursor:pointer}
+.p-stepper button:disabled{background:var(--muted2);opacity:.5;cursor:not-allowed}
+.p-stepper span{min-width:30px;text-align:center;font-weight:700;font-size:15px}
+.p-perfil-pie{display:flex;justify-content:space-between;gap:10px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);font-size:12.5px;color:var(--muted)}
+.p-perfil-pie em{font-style:normal;font-weight:600;color:var(--text)}
+.p-perfil-pie b{color:var(--blue)}
 @media(max-width:960px){.p-pasos{grid-template-columns:repeat(2,1fr)}.p-cifras{grid-template-columns:repeat(2,1fr)}.p-cifra:nth-child(2){border-right:none}.p-cifra:nth-child(-n+2){border-bottom:1px solid var(--border)}.p-portal{grid-template-columns:1fr;gap:36px}}
-@media(max-width:768px){.p-hero{padding:120px 20px 80px}.p-cifras{margin:-40px 16px 0}.p-grid3,.p-pasos{grid-template-columns:1fr}.p-calc{grid-template-columns:1fr}.p-escenarios{grid-template-columns:1fr}.p-calc-desglose{grid-template-columns:1fr}.p-calc-controles{padding:28px 22px}.p-mock-kpis{grid-template-columns:repeat(2,1fr)}.p-cifra{padding:20px 18px}.p-cifra b{font-size:22px}}
+@media(max-width:768px){.p-hero{padding:120px 20px 80px}.p-cifras{margin:-40px 16px 0}.p-grid3,.p-pasos{grid-template-columns:1fr}.p-calc{grid-template-columns:1fr}.p-calc2{grid-template-columns:1fr}.p-calc2-izq{padding:20px 16px}.p-perfil-pie{flex-direction:column;gap:2px}.p-periodo button small{display:block;margin:0}.p-calc-controles{padding:28px 22px}.p-mock-kpis{grid-template-columns:repeat(2,1fr)}.p-cifra{padding:20px 18px}.p-cifra b{font-size:22px}}
 </style>
 </head>
 <body>
@@ -561,28 +565,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="calculadora">
   <div class="section-inner">
     <div class="section-label">Calcula tus ingresos</div>
-    <h2 class="section-title">Tu cartera de clientes, convertida en un ingreso mensual.</h2>
-    <p class="section-sub">La comisión se suma cliente a cliente y se repite cada mes. Elige un perfil o mueve los controles con las cuentas que puedes traer.</p>
-    <div class="p-escenarios fade-up">
-      <button type="button" class="p-esc" data-pro="8" data-ag="2"><small>Freelance</small><b>8 Pro + 2 Agency</b><em>102 <i>USD/mes</i></em></button>
-      <button type="button" class="p-esc" data-pro="25" data-ag="10"><small>Agencia en crecimiento</small><b>25 Pro + 10 Agency</b><em>393 <i>USD/mes</i></em></button>
-      <button type="button" class="p-esc p-esc-top" data-pro="60" data-ag="30"><small>Agencia con cartera</small><b>60 Pro + 30 Agency</b><em>1.062 <i>USD/mes</i></em></button>
-    </div>
-    <div class="p-calc fade-up">
-      <div class="p-calc-controles">
-        <label class="p-calc-fila"><span>Clientes en plan <b>Pro</b> · 39 USD/mes <em id="v-pro">60</em></span><input type="range" min="0" max="150" value="60" id="r-pro"></label>
-        <label class="p-calc-fila"><span>Clientes en plan <b>Agency</b> · 99 USD/mes <em id="v-ag">30</em></span><input type="range" min="0" max="80" value="30" id="r-ag"></label>
-        <div class="p-calc-desglose">
-          <div><small>Por cada cliente Pro</small><b>7,80 USD/mes</b></div>
-          <div><small>Por cada cliente Agency</small><b>19,80 USD/mes</b></div>
+    <h2 class="section-title">No cuentes clientes: cuenta el tamaño de cada uno.</h2>
+    <p class="section-sub">Una empresa con su equipo de ventas y su base de contactos paga mucho más que una licencia básica. Y tu 20 % es sobre su factura completa: el plan, sus usuarios y sus contactos adicionales.</p>
+    <div class="p-calc2 fade-up">
+      <div class="p-calc2-izq">
+        <div class="p-periodo" role="group" aria-label="Forma de pago de tus clientes">
+          <button type="button" data-anual="0">Pagan mensual</button>
+          <button type="button" data-anual="1" class="activo">Pagan anual <small>2 meses gratis</small></button>
         </div>
-        <p class="p-calc-nota">Estimado con el 20 % sobre el precio de lista mensual, mientras tus clientes sigan pagando. Lo que cobras de verdad es el 20 % de lo que pague cada uno; si paga en pesos, se convierte a USD con la tasa del día. Lo que les cobres por implementar va aparte y es todo tuyo.</p>
+        <div class="p-perfil" data-id="peq">
+          <div class="p-perfil-top"><div><b>Negocio pequeño</b><small>Plan Pro · 3 usuarios · 1.000 contactos</small></div>
+            <div class="p-stepper"><button type="button" data-paso="-1" aria-label="Quitar">−</button><span id="n-peq">0</span><button type="button" data-paso="1" aria-label="Agregar">+</button></div></div>
+          <div class="p-perfil-pie"><span>Factura <em id="f-peq"></em></span><span>Tu comisión <b id="cm-peq"></b></span></div>
+        </div>
+        <div class="p-perfil" data-id="med">
+          <div class="p-perfil-top"><div><b>Empresa mediana</b><small>10 usuarios · 10.000 contactos</small></div>
+            <div class="p-stepper"><button type="button" data-paso="-1" aria-label="Quitar">−</button><span id="n-med">1</span><button type="button" data-paso="1" aria-label="Agregar">+</button></div></div>
+          <div class="p-perfil-pie"><span>Factura <em id="f-med"></em></span><span>Tu comisión <b id="cm-med"></b></span></div>
+        </div>
+        <div class="p-perfil" data-id="gra">
+          <div class="p-perfil-top"><div><b>Empresa grande</b><small>15 usuarios · 20.000 contactos</small></div>
+            <div class="p-stepper"><button type="button" data-paso="-1" aria-label="Quitar">−</button><span id="n-gra">1</span><button type="button" data-paso="1" aria-label="Agregar">+</button></div></div>
+          <div class="p-perfil-pie"><span>Factura <em id="f-gra"></em></span><span>Tu comisión <b id="cm-gra"></b></span></div>
+        </div>
+        <div class="p-perfil" data-id="cor">
+          <div class="p-perfil-top"><div><b>Corporativo</b><small>30 usuarios · 50.000 contactos</small></div>
+            <div class="p-stepper"><button type="button" data-paso="-1" aria-label="Quitar">−</button><span id="n-cor">0</span><button type="button" data-paso="1" aria-label="Agregar">+</button></div></div>
+          <div class="p-perfil-pie"><span>Factura <em id="f-cor"></em></span><span>Tu comisión <b id="cm-cor"></b></span></div>
+        </div>
+        <p class="p-calc-nota">Precios de lista de Acuarius: Pro 39 USD y Agency 99 USD al mes, 9 USD por usuario adicional y 4 USD por cada 1.000 contactos adicionales; para cada perfil se usa el plan que le sale más barato. El pago anual cobra 10 meses de 12. Tu comisión es el 20 % de lo que pague de verdad cada cliente, mientras siga pagando. SMS y paquetes de mensajes del agente no generan comisión.</p>
       </div>
       <div class="p-calc-resultado">
-        <div class="p-calc-tag">Tu comisión estimada</div>
-        <div class="p-calc-mes"><span id="c-mes">1.062</span><small>USD cada mes</small></div>
-        <div class="p-calc-anio"><b id="c-anio">12.744</b> USD al año</div>
-        <div class="p-calc-meta" id="c-meta">Con esta cartera superas los <b>1.000 USD al mes</b>.</div>
+        <div class="p-calc-tag" id="c-tag">Tu comisión al cobrarse el año</div>
+        <div class="p-calc-mes"><span id="c-mes">646</span><small id="c-unidad">USD</small></div>
+        <div class="p-calc-anio" id="c-anio">sobre una factura de 3.230 USD</div>
+        <div class="p-calc-meta" id="c-meta"></div>
         <a href="https://app.acuarius.app/?ir=partners" class="p-calc-cta">Quiero ser Partner</a>
       </div>
     </div>
@@ -652,7 +669,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           ¿Sobre qué se calcula la comisión?
           <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div>
         </div>
-        <div class="faq-a"><p>Sobre lo que de verdad paga tu cliente por su licencia, Pro o Agency, mensual o anual. Si paga en otra moneda, se convierte a USD con la tasa del día del cobro. Los complementos que se cobran aparte no generan comisión.</p></div>
+        <div class="faq-a"><p>Sobre la factura completa de su licencia: el plan Pro o Agency más los usuarios y contactos adicionales que tenga, mensual o anual. Si paga en otra moneda, se convierte a USD con la tasa del día del cobro. Los SMS y los paquetes de mensajes del agente no generan comisión.</p></div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ¿Y si mi cliente paga el año completo?
+          <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div>
+        </div>
+        <div class="faq-a"><p>Recibes tu 20 % de ese pago anual completo, apenas se cobra. Una empresa con 15 usuarios y 20.000 contactos paga 2.040 USD al año: tu comisión es de 408 USD en una sola liquidación.</p></div>
       </div>
       <div class="faq-item fade-up">
         <div class="faq-q" onclick="toggleFaq(this)">
@@ -804,24 +828,55 @@ document.addEventListener('click', function (e) {
 });
 </script>
 <script>
-// Calculadora de comisión: 20 % del precio de lista mensual (Pro 39 → 7,80; Agency 99 → 19,80).
+// Calculadora de comisión por TAMAÑO de cliente. Mismos precios que la
+// calculadora del home (index.html, CALCULADORA DE PRECIO): si cambian allí,
+// cambian aquí. La comisión es sobre la factura completa (plan + usuarios +
+// contactos adicionales), como cobra api/_partners.js (CONCEPTOS_COMISIONABLES).
 (function () {
-  var pro = document.getElementById('r-pro'), ag = document.getElementById('r-ag');
-  var escs = document.querySelectorAll('.p-esc');
-  var fmt = function (n) { return n.toLocaleString('es-CO', { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 }); };
-  function calcular() {
-    var mes = Math.round((pro.value * 39 + ag.value * 99) * 0.20 * 100) / 100;
-    document.getElementById('v-pro').textContent = pro.value;
-    document.getElementById('v-ag').textContent = ag.value;
-    document.getElementById('c-mes').textContent = fmt(mes);
-    document.getElementById('c-anio').textContent = fmt(Math.round(mes * 12 * 100) / 100);
-    var meta = document.getElementById('c-meta');
-    if (mes >= 1000) meta.innerHTML = 'Con esta cartera superas los <b>1.000 USD al mes</b>.';
-    else { var faltan = Math.ceil((1000 - mes) / 19.8); meta.innerHTML = 'Te faltan <b>' + faltan + ' clientes Agency</b> para llegar a 1.000 USD al mes.'; }
-    escs.forEach(function (b) { b.classList.toggle('activo', b.dataset.pro == pro.value && b.dataset.ag == ag.value); });
+  var PLANES = [{ base: 39, usuarios: 3, contactos: 1000 }, { base: 99, usuarios: 10, contactos: 5000 }];
+  var PRECIO_USUARIO = 9, PRECIO_MIL = 4, MESES_ANUAL = 10, PCT = 0.20;
+  var PERFILES = { peq: [3, 1000], med: [10, 10000], gra: [15, 20000], cor: [30, 50000] };
+  var n = { peq: 0, med: 1, gra: 1, cor: 0 }, anual = true;
+  var $ = function (id) { return document.getElementById(id); };
+  var fmt = function (v) { return v.toLocaleString('es-CO', { minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 }); };
+  function mensual(u, c) {
+    return Math.min.apply(null, PLANES.map(function (p) {
+      return p.base + Math.max(0, u - p.usuarios) * PRECIO_USUARIO + Math.ceil(Math.max(0, c - p.contactos) / 1000) * PRECIO_MIL;
+    }));
   }
-  escs.forEach(function (b) { b.addEventListener('click', function () { pro.value = b.dataset.pro; ag.value = b.dataset.ag; calcular(); }); });
-  pro.addEventListener('input', calcular); ag.addEventListener('input', calcular); calcular();
+  function factura(k) { var m = mensual(PERFILES[k][0], PERFILES[k][1]); return anual ? m * MESES_ANUAL : m; }
+  function pintar() {
+    var total = 0, clientes = 0;
+    Object.keys(PERFILES).forEach(function (k) {
+      var f = factura(k);
+      $('n-' + k).textContent = n[k];
+      $('f-' + k).textContent = fmt(f) + ' USD' + (anual ? '/año' : '/mes');
+      $('cm-' + k).textContent = fmt(Math.round(f * PCT * 100) / 100) + ' USD';
+      var card = document.querySelector('.p-perfil[data-id="' + k + '"]');
+      card.classList.toggle('con', n[k] > 0);
+      card.querySelector('[data-paso="-1"]').disabled = n[k] === 0;
+      total += f * n[k]; clientes += n[k];
+    });
+    var com = Math.round(total * PCT * 100) / 100;
+    $('c-mes').textContent = fmt(com);
+    $('c-unidad').textContent = anual ? 'USD' : 'USD cada mes';
+    $('c-tag').textContent = anual ? 'Tu comisión al cobrarse el año' : 'Tu comisión estimada';
+    $('c-anio').textContent = 'sobre una factura de ' + fmt(total) + ' USD' + (anual ? ' al año' : ' al mes') + (anual ? '' : ' · ' + fmt(Math.round(com * 12 * 100) / 100) + ' USD al año');
+    $('c-meta').innerHTML = clientes ? 'Con <b>' + clientes + (clientes === 1 ? ' cliente' : ' clientes') + '</b>' + (anual ? ', y se repite cada año que renueven.' : ', y se repite cada mes que paguen.') : '';
+  }
+  document.querySelectorAll('.p-perfil').forEach(function (card) {
+    card.querySelectorAll('[data-paso]').forEach(function (b) {
+      b.addEventListener('click', function () { var k = card.dataset.id; n[k] = Math.max(0, Math.min(50, n[k] + Number(b.dataset.paso))); pintar(); });
+    });
+  });
+  document.querySelectorAll('.p-periodo button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      anual = b.dataset.anual === '1';
+      document.querySelectorAll('.p-periodo button').forEach(function (x) { x.classList.toggle('activo', x === b); });
+      pintar();
+    });
+  });
+  pintar();
 })();
 </script>
 </body>
