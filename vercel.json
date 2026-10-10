@@ -1,5 +1,3 @@
 {
-  "rewrites": [
-    { "source": "/partners", "destination": "/partners.html" }
-  ]
+  "cleanUrls": true
 }
