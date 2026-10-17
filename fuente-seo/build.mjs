@@ -216,6 +216,7 @@ ${ICONO}
 ${ESTILO_BASE}
 ${ESTILO_SEO}
 <script type="application/ld+json">${jsonLD(p, c)}</script>
+<script src="https://app.acuarius.app/origen.js" defer></script>
 </head>
 <body>
 ${GTM_BODY}
