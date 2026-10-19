@@ -19,11 +19,12 @@ import { fileURLToPath } from 'node:url';
 import { MAPA, CLUSTERS } from './mapa.mjs';
 import { CONTENIDO as C1 } from './contenido/c1-crm.mjs';
 import { CONTENIDO as C2 } from './contenido/c2-comparativas.mjs';
+import { CONTENIDO as C3 } from './contenido/c3-benchmarks.mjs';
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DOMINIO = 'https://acuarius.app';
 const REGISTRO = 'https://app.acuarius.app/registro';
-const CONTENIDO = { ...C1, ...C2 };
+const CONTENIDO = { ...C1, ...C2, ...C3 };
 
 // Nombres cortos para las migas de pan. Lo que no esté aquí se deriva del
 // último tramo de la URL.
@@ -34,6 +35,9 @@ const MIGAS = {
   '/mejores-crm-con-whatsapp/': 'Mejores CRM con WhatsApp', '/alternativas/hubspot/': 'HubSpot',
   '/alternativas/kommo/': 'Kommo', '/alternativas/agencyanalytics/': 'AgencyAnalytics',
   '/comparativas/acuarius-vs-kommo/': 'Acuarius vs Kommo', '/comparativas/acuarius-vs-hubspot/': 'Acuarius vs HubSpot',
+  '/benchmarks/': 'Benchmarks', '/benchmarks/cpc-google-ads-colombia/': 'CPC Google Ads Colombia',
+  '/benchmarks/cpc-google-ads-mexico/': 'CPC Google Ads México', '/benchmarks/costo-meta-ads-colombia/': 'Costo de Meta Ads en Colombia',
+  '/benchmarks/costo-por-lead-inmobiliario/': 'Costo por lead inmobiliario', '/calculadora-presupuesto-google-ads/': 'Calculadora de presupuesto',
 };
 
 // ── Validación ──────────────────────────────────────────────────────────────
@@ -158,6 +162,7 @@ function seccionHTML(s) {
   if (s.tipo === 'texto') {
     return `<section class="s-sec"><div class="s-in s-angosto s-texto">${cab}${s.parrafos.map((t) => `<p>${t}</p>`).join('')}</div></section>`;
   }
+  if (s.tipo === 'html') cuerpo = s.html;
   if (s.tipo === 'tarjetas') cuerpo = `<div class="s-grid">${s.items.map((i) => `<div class="s-card"><h3>${i.t}</h3><p>${i.d}</p></div>`).join('')}</div>`;
   if (s.tipo === 'pasos') cuerpo = `<div class="s-pasos">${s.items.map((i) => `<div class="s-paso"><h3>${i.t}</h3><p>${i.d}</p></div>`).join('')}</div>`;
   if (s.tipo === 'tabla') {
@@ -181,6 +186,7 @@ function jsonLD(p, c) {
       '@type': 'Question', name: sinEtiquetas(f.q), acceptedAnswer: { '@type': 'Answer', text: sinEtiquetas(f.a) },
     })) });
   }
+  if (c.jsonld) grafo.push(...c.jsonld);
   if (p.nivel === 'Pilar' && p.cluster === 1) {
     grafo.push({ '@type': 'SoftwareApplication', name: 'Acuarius', applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web', url: DOMINIO + '/', inLanguage: 'es',

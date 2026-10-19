@@ -1,0 +1,1165 @@
+{
+ "fecha": "2026-10-19",
+ "moneda": "COP",
+ "fuente": "Google Ads API · KeywordPlanIdeaService.GenerateKeywordHistoricalMetrics · red de búsqueda de Google · idioma español",
+ "datos": {
+  "inmobiliario.co": [
+   {
+    "kw": "apartamentos en venta bogota",
+    "busquedas": 12100,
+    "competencia": "MEDIUM",
+    "bajo": 101.372303,
+    "alto": 885.321082
+   },
+   {
+    "kw": "casas en venta medellin",
+    "busquedas": 4400,
+    "competencia": "MEDIUM",
+    "bajo": 124.249408,
+    "alto": 571.899037
+   },
+   {
+    "kw": "apartamentos en arriendo bogota",
+    "busquedas": 40500,
+    "competencia": "MEDIUM",
+    "bajo": 72.171137,
+    "alto": 298.904004
+   },
+   {
+    "kw": "proyectos de vivienda bogota",
+    "busquedas": 6600,
+    "competencia": "HIGH",
+    "bajo": 299.491329,
+    "alto": 1114.085776
+   },
+   {
+    "kw": "inmobiliaria bogota",
+    "busquedas": 14800,
+    "competencia": "MEDIUM",
+    "bajo": 274.372865,
+    "alto": 1804.246681
+   },
+   {
+    "kw": "apartamentos sobre planos",
+    "busquedas": 480,
+    "competencia": "HIGH",
+    "bajo": 364.198676,
+    "alto": 1545.626825
+   },
+   {
+    "kw": "comprar apartamento en bogota",
+    "busquedas": 1000,
+    "competencia": "HIGH",
+    "bajo": 130.33219,
+    "alto": 1510.006355
+   },
+   {
+    "kw": "vivienda de interes social bogota",
+    "busquedas": 140,
+    "competencia": "HIGH",
+    "bajo": 268.607556,
+    "alto": 1082.348
+   }
+  ],
+  "inmobiliario.mx": [
+   {
+    "kw": "departamentos en venta cdmx",
+    "busquedas": 14800,
+    "competencia": "HIGH",
+    "bajo": 257.216624,
+    "alto": 1713.385908
+   },
+   {
+    "kw": "casas en venta monterrey",
+    "busquedas": 8100,
+    "competencia": "MEDIUM",
+    "bajo": 147.301122,
+    "alto": 1807.380139
+   },
+   {
+    "kw": "departamentos en renta cdmx",
+    "busquedas": 40500,
+    "competencia": "MEDIUM",
+    "bajo": 97.883275,
+    "alto": 1715.239951
+   },
+   {
+    "kw": "desarrollos inmobiliarios cdmx",
+    "busquedas": 590,
+    "competencia": "HIGH",
+    "bajo": 844.690887,
+    "alto": 3645.847236
+   },
+   {
+    "kw": "inmobiliaria cdmx",
+    "busquedas": 4400,
+    "competencia": "HIGH",
+    "bajo": 625.561498,
+    "alto": 4566.931651
+   },
+   {
+    "kw": "departamentos en preventa",
+    "busquedas": 720,
+    "competencia": "MEDIUM",
+    "bajo": 917.001712,
+    "alto": 4288.672916
+   },
+   {
+    "kw": "comprar departamento en cdmx",
+    "busquedas": 70,
+    "competencia": "HIGH",
+    "bajo": 457.907181,
+    "alto": 2723.959613
+   },
+   {
+    "kw": "casas en venta guadalajara",
+    "busquedas": 6600,
+    "competencia": "MEDIUM",
+    "bajo": 58.25947,
+    "alto": 704.631324
+   }
+  ],
+  "salud.co": [
+   {
+    "kw": "diseño de sonrisa precio",
+    "busquedas": 2400,
+    "competencia": "MEDIUM",
+    "bajo": 557.717518,
+    "alto": 1570.926249
+   },
+   {
+    "kw": "ortodoncia precio",
+    "busquedas": 210,
+    "competencia": "MEDIUM",
+    "bajo": 594.912655,
+    "alto": 2572.944056
+   },
+   {
+    "kw": "clinica estetica bogota",
+    "busquedas": 170,
+    "competencia": "HIGH",
+    "bajo": 1502.450497,
+    "alto": 4225.594205
+   },
+   {
+    "kw": "odontologo bogota",
+    "busquedas": 0,
+    "bajo": 0,
+    "alto": 0
+   },
+   {
+    "kw": "implantes dentales bogota",
+    "busquedas": 0,
+    "bajo": 0,
+    "alto": 0
+   },
+   {
+    "kw": "cirugia plastica bogota",
+    "busquedas": 0,
+    "bajo": 0,
+    "alto": 0
+   },
+   {
+    "kw": "dermatologo bogota",
+    "busquedas": 0,
+    "bajo": 0,
+    "alto": 0
+   },
+   {
+    "kw": "psicologo bogota",
+    "busquedas": 0,
+    "bajo": 0,
+    "alto": 0
+   }
+  ],
+  "salud.mx": [
+   {
+    "kw": "dentista cdmx",
+    "busquedas": 4400,
+    "competencia": "HIGH",
+    "bajo": 2172.756641,
+    "alto": 7235.619215
+   },
+   {
+    "kw": "diseño de sonrisa precio",
+    "busquedas": 1300,
+    "competencia": "LOW",
+    "bajo": 753.785668,
+    "alto": 3364.435993
+   },
+   {
+    "kw": "ortodoncia precio",
+    "busquedas": 720,
+    "competencia": "LOW",
+    "bajo": 909.220449,
+    "alto": 2149.181096
+   },
+   {
+    "kw": "clinica estetica cdmx",
+    "busquedas": 70,
+    "competencia": "HIGH",
+    "bajo": 1525.800637,
+    "alto": 4881.258494
+   },
+   {
+    "kw": "implantes dentales cdmx",
+    "busquedas": 0,
+    "bajo": 0,
+    "alto": 0
+   },
+   {
+    "kw": "cirujano plastico cdmx",
+    "busquedas": 0,
+    "bajo": 0,
+    "alto": 0
+   },
+   {
+    "kw": "dermatologo cdmx",
+    "busquedas": 0,
+    "bajo": 0,
+    "alto": 0
+   },
+   {
+    "kw": "psicologo cdmx",
+    "busquedas": 0,
+    "bajo": 0,
+    "alto": 0
+   }
+  ],
+  "legal.co": [
+   {
+    "kw": "abogado laboral",
+    "busquedas": 1600,
+    "competencia": "MEDIUM",
+    "bajo": 899.248622,
+    "alto": 5971.317914
+   },
+   {
+    "kw": "abogados en bogota",
+    "busquedas": 320,
+    "competencia": "MEDIUM",
+    "bajo": 1122.054348,
+    "alto": 6576.472248
+   },
+   {
+    "kw": "abogado de familia",
+    "busquedas": 1900,
+    "competencia": "HIGH",
+    "bajo": 1852.467655,
+    "alto": 11013.538394
+   },
+   {
+    "kw": "abogado penalista",
+    "busquedas": 1600,
+    "competencia": "MEDIUM",
+    "bajo": 1901.015626,
+    "alto": 8533.074222
+   },
+   {
+    "kw": "divorcio rapido",
+    "busquedas": 10,
+    "competencia": "HIGH",
+    "bajo": 0,
+    "alto": 0
+   },
+   {
+    "kw": "abogado de transito",
+    "busquedas": 320,
+    "competencia": "MEDIUM",
+    "bajo": 1110.498331,
+    "alto": 2510.954278
+   },
+   {
+    "kw": "abogado pensiones",
+    "busquedas": 140,
+    "competencia": "MEDIUM",
+    "bajo": 502.19784,
+    "alto": 1963.126044
+   },
+   {
+    "kw": "demanda laboral",
+    "busquedas": 480,
+    "competencia": "LOW",
+    "bajo": 605.484506,
+    "alto": 1815.088384
+   }
+  ],
+  "legal.mx": [
+   {
+    "kw": "abogado laboral",
+    "busquedas": 3600,
+    "competencia": "LOW",
+    "bajo": 1032.825387,
+    "alto": 3468.24014
+   },
+   {
+    "kw": "abogados en cdmx",
+    "busquedas": 1000,
+    "competencia": "HIGH",
+    "bajo": 1060.807457,
+    "alto": 4986.230942
+   },
+   {
+    "kw": "abogado familiar",
+    "busquedas": 2400,
+    "competencia": "LOW",
+    "bajo": 977.159671,
+    "alto": 3667.30841
+   },
+   {
+    "kw": "abogado penalista",
+    "busquedas": 5400,
+    "competencia": "LOW",
+    "bajo": 1531.753255,
+    "alto": 5053.059008
+   },
+   {
+    "kw": "divorcio rapido",
+    "busquedas": 40,
+    "competencia": "LOW",
+    "bajo": 660.483528,
+    "alto": 3270.260803
+   },
+   {
+    "kw": "abogado de transito",
+    "busquedas": 20,
+    "competencia": "MEDIUM",
+    "bajo": 3645.79009,
+    "alto": 74076.152934
+   },
+   {
+    "kw": "abogado imss",
+    "busquedas": 50,
+    "competencia": "LOW",
+    "bajo": 0,
+    "alto": 0
+   },
+   {
+    "kw": "demanda laboral",
+    "busquedas": 2400,
+    "competencia": "LOW",
+    "bajo": 761.87488,
+    "alto": 2076.317867
+   }
+  ],
+  "educacion.co": [
+   {
+    "kw": "maestria virtual",
+    "busquedas": 1300,
+    "competencia": "HIGH",
+    "bajo": 3989.222858,
+    "alto": 35589.034452
+   },
+   {
+    "kw": "universidad virtual",
+    "busquedas": 2400,
+    "competencia": "HIGH",
+    "bajo": 2723.575471,
+    "alto": 9970.284019
+   },
+   {
+    "kw": "cursos de ingles",
+    "busquedas": 9900,
+    "competencia": "HIGH",
+    "bajo": 1740.510801,
+    "alto": 6744.831355
+   },
+   {
+    "kw": "especializacion virtual",
+    "busquedas": 2900,
+    "competencia": "HIGH",
+    "bajo": 3485.558292,
+    "alto": 16535.365336
+   },
+   {
+    "kw": "carreras tecnicas",
+    "busquedas": 480,
+    "competencia": "MEDIUM",
+    "bajo": 741.889955,
+    "alto": 2772.110743
+   },
+   {
+    "kw": "curso de marketing digital",
+    "busquedas": 1000,
+    "competencia": "HIGH",
+    "bajo": 1206.981551,
+    "alto": 4028.008534
+   },
+   {
+    "kw": "bachillerato virtual",
+    "busquedas": 1600,
+    "competencia": "MEDIUM",
+    "bajo": 688.73545,
+    "alto": 2128.475507
+   },
+   {
+    "kw": "carreras a distancia",
+    "busquedas": 170,
+    "competencia": "HIGH",
+    "bajo": 1309.131663,
+    "alto": 4894.173296
+   }
+  ],
+  "educacion.mx": [
+   {
+    "kw": "maestria en linea",
+    "busquedas": 9900,
+    "competencia": "HIGH",
+    "bajo": 6836.454063,
+    "alto": 36597.56363
+   },
+   {
+    "kw": "universidad en linea",
+    "busquedas": 14800,
+    "competencia": "HIGH",
+    "bajo": 5743.143719,
+    "alto": 19558.873424
+   },
+   {
+    "kw": "cursos de ingles",
+    "busquedas": 22200,
+    "competencia": "HIGH",
+    "bajo": 1978.599678,
+    "alto": 7624.387127
+   },
+   {
+    "kw": "licenciatura en linea",
+    "busquedas": 5400,
+    "competencia": "HIGH",
+    "bajo": 4204.136205,
+    "alto": 13900.142601
+   },
+   {
+    "kw": "carreras tecnicas",
+    "busquedas": 2900,
+    "competencia": "MEDIUM",
+    "bajo": 1119.514564,
+    "alto": 3662.320909
+   },
+   {
+    "kw": "curso de marketing digital",
+    "busquedas": 1000,
+    "competencia": "HIGH",
+    "bajo": 1669.780992,
+    "alto": 6795.207971
+   },
+   {
+    "kw": "prepa abierta",
+    "busquedas": 27100,
+    "competencia": "LOW",
+    "bajo": 979.848667,
+    "alto": 3523.251862
+   },
+   {
+    "kw": "carreras a distancia",
+    "busquedas": 90,
+    "competencia": "MEDIUM",
+    "bajo": 2894.671195,
+    "alto": 8066.719084
+   }
+  ],
+  "seguros.co": [
+   {
+    "kw": "seguro de vida",
+    "busquedas": 8100,
+    "competencia": "HIGH",
+    "bajo": 749.004525,
+    "alto": 2200.132337
+   },
+   {
+    "kw": "seguro de carro",
+    "busquedas": 1300,
+    "competencia": "HIGH",
+    "bajo": 1004.957607,
+    "alto": 7741.153697
+   },
+   {
+    "kw": "soat",
+    "busquedas": 165000,
+    "competencia": "MEDIUM",
+    "bajo": 294.935591,
+    "alto": 1198.34311
+   },
+   {
+    "kw": "seguro de salud",
+    "busquedas": 480,
+    "competencia": "MEDIUM",
+    "bajo": 961.393962,
+    "alto": 3790.903824
+   },
+   {
+    "kw": "medicina prepagada",
+    "busquedas": 9900,
+    "competencia": "HIGH",
+    "bajo": 1039.358981,
+    "alto": 3889.025204
+   },
+   {
+    "kw": "seguro de hogar",
+    "busquedas": 170,
+    "competencia": "MEDIUM",
+    "bajo": 459.519944,
+    "alto": 1840.362409
+   },
+   {
+    "kw": "seguro de viaje",
+    "busquedas": 6600,
+    "competencia": "HIGH",
+    "bajo": 4674.688337,
+    "alto": 16796.388462
+   },
+   {
+    "kw": "poliza de vehiculo",
+    "busquedas": 90,
+    "competencia": "HIGH",
+    "bajo": 3792.970573,
+    "alto": 15764.055158
+   }
+  ],
+  "seguros.mx": [
+   {
+    "kw": "seguro de vida",
+    "busquedas": 18100,
+    "competencia": "MEDIUM",
+    "bajo": 937.446974,
+    "alto": 3853.09996
+   },
+   {
+    "kw": "seguro de auto",
+    "busquedas": 33100,
+    "competencia": "HIGH",
+    "bajo": 7186.23629,
+    "alto": 18332.94191
+   },
+   {
+    "kw": "seguro de gastos medicos mayores",
+    "busquedas": 33100,
+    "competencia": "HIGH",
+    "bajo": 1514.993856,
+    "alto": 6280.222318
+   },
+   {
+    "kw": "seguro de salud",
+    "busquedas": 720,
+    "competencia": "MEDIUM",
+    "bajo": 1726.507067,
+    "alto": 7508.607899
+   },
+   {
+    "kw": "seguro medico",
+    "busquedas": 3600,
+    "competencia": "MEDIUM",
+    "bajo": 1454.480327,
+    "alto": 5904.064434
+   },
+   {
+    "kw": "seguro de casa",
+    "busquedas": 720,
+    "competencia": "MEDIUM",
+    "bajo": 1279.235231,
+    "alto": 10993.121706
+   },
+   {
+    "kw": "seguro de viaje",
+    "busquedas": 5400,
+    "competencia": "HIGH",
+    "bajo": 7754.582805,
+    "alto": 29273.483738
+   },
+   {
+    "kw": "cotizar seguro de auto",
+    "busquedas": 14800,
+    "competencia": "HIGH",
+    "bajo": 7411.575451,
+    "alto": 16413.135056
+   }
+  ],
+  "finanzas.co": [
+   {
+    "kw": "credito de libre inversion",
+    "busquedas": 8100,
+    "competencia": "HIGH",
+    "bajo": 1186.910908,
+    "alto": 6000.239704
+   },
+   {
+    "kw": "prestamos personales",
+    "busquedas": 1600,
+    "competencia": "HIGH",
+    "bajo": 1269.892001,
+    "alto": 5351.309018
+   },
+   {
+    "kw": "credito de vivienda",
+    "busquedas": 2400,
+    "competencia": "MEDIUM",
+    "bajo": 503.458207,
+    "alto": 2799.219763
+   },
+   {
+    "kw": "tarjeta de credito",
+    "busquedas": 33100,
+    "competencia": "HIGH",
+    "bajo": 1487.395928,
+    "alto": 5996.150652
+   },
+   {
+    "kw": "credito de libranza",
+    "busquedas": 2400,
+    "competencia": "MEDIUM",
+    "bajo": 979.839143,
+    "alto": 4476.369303
+   },
+   {
+    "kw": "prestamo rapido",
+    "busquedas": 14800,
+    "competencia": "HIGH",
+    "bajo": 1351.974645,
+    "alto": 6251.281479
+   },
+   {
+    "kw": "cdt tasas",
+    "busquedas": 880,
+    "competencia": "MEDIUM",
+    "bajo": 447.671852,
+    "alto": 1857.528175
+   },
+   {
+    "kw": "credito para negocio",
+    "busquedas": 260,
+    "competencia": "HIGH",
+    "bajo": 1494.523197,
+    "alto": 6657.126264
+   }
+  ],
+  "finanzas.mx": [
+   {
+    "kw": "prestamos personales",
+    "busquedas": 49500,
+    "competencia": "HIGH",
+    "bajo": 3436.9627,
+    "alto": 15619.671612
+   },
+   {
+    "kw": "credito personal",
+    "busquedas": 3600,
+    "competencia": "HIGH",
+    "bajo": 4620.476647,
+    "alto": 22254.857317
+   },
+   {
+    "kw": "credito hipotecario",
+    "busquedas": 18100,
+    "competencia": "MEDIUM",
+    "bajo": 678.785847,
+    "alto": 3317.402368
+   },
+   {
+    "kw": "tarjeta de credito",
+    "busquedas": 135000,
+    "competencia": "HIGH",
+    "bajo": 6885.919531,
+    "alto": 32082.053081
+   },
+   {
+    "kw": "prestamo de nomina",
+    "busquedas": 720,
+    "competencia": "HIGH",
+    "bajo": 1900.390204,
+    "alto": 9167.397976
+   },
+   {
+    "kw": "prestamo rapido",
+    "busquedas": 12100,
+    "competencia": "HIGH",
+    "bajo": 2539.784002,
+    "alto": 11692.467104
+   },
+   {
+    "kw": "inversiones a plazo",
+    "busquedas": 140,
+    "competencia": "MEDIUM",
+    "bajo": 680.462104,
+    "alto": 3956.03423
+   },
+   {
+    "kw": "credito para negocio",
+    "busquedas": 720,
+    "competencia": "HIGH",
+    "bajo": 3080.018282,
+    "alto": 14488.461342
+   }
+  ],
+  "software.co": [
+   {
+    "kw": "software contable",
+    "busquedas": 2900,
+    "competencia": "MEDIUM",
+    "bajo": 2273.525746,
+    "alto": 17742.105608
+   },
+   {
+    "kw": "software de facturacion electronica",
+    "busquedas": 170,
+    "competencia": "MEDIUM",
+    "bajo": 2517.69423,
+    "alto": 13979.968012
+   },
+   {
+    "kw": "crm",
+    "busquedas": 22200,
+    "competencia": "MEDIUM",
+    "bajo": 2184.646005,
+    "alto": 10482.466385
+   },
+   {
+    "kw": "software de nomina",
+    "busquedas": 1000,
+    "competencia": "MEDIUM",
+    "bajo": 4706.92772,
+    "alto": 81837.789989
+   },
+   {
+    "kw": "erp para pymes",
+    "busquedas": 50,
+    "competencia": "MEDIUM",
+    "bajo": 2513.922651,
+    "alto": 26544.917591
+   },
+   {
+    "kw": "software inventarios",
+    "busquedas": 90,
+    "competencia": "MEDIUM",
+    "bajo": 2618.914147,
+    "alto": 22338.190805
+   },
+   {
+    "kw": "software para restaurantes",
+    "busquedas": 260,
+    "competencia": "HIGH",
+    "bajo": 3253.164881,
+    "alto": 16441.326659
+   },
+   {
+    "kw": "programa de facturacion",
+    "busquedas": 50,
+    "competencia": "MEDIUM",
+    "bajo": 1902.196626,
+    "alto": 7881.657723
+   }
+  ],
+  "software.mx": [
+   {
+    "kw": "software contable",
+    "busquedas": 1300,
+    "competencia": "MEDIUM",
+    "bajo": 2102.277635,
+    "alto": 15206.956712
+   },
+   {
+    "kw": "software de facturacion",
+    "busquedas": 140,
+    "competencia": "MEDIUM",
+    "bajo": 2398.098976,
+    "alto": 24145.732856
+   },
+   {
+    "kw": "crm",
+    "busquedas": 40500,
+    "competencia": "MEDIUM",
+    "bajo": 4713.699419,
+    "alto": 22685.398327
+   },
+   {
+    "kw": "software de nomina",
+    "busquedas": 390,
+    "competencia": "MEDIUM",
+    "bajo": 4292.91753,
+    "alto": 55006.762555
+   },
+   {
+    "kw": "erp para pymes",
+    "busquedas": 170,
+    "competencia": "MEDIUM",
+    "bajo": 5118.515591,
+    "alto": 38443.177044
+   },
+   {
+    "kw": "software de inventarios",
+    "busquedas": 320,
+    "competencia": "MEDIUM",
+    "bajo": 3774.033309,
+    "alto": 26938.444423
+   },
+   {
+    "kw": "software para restaurantes",
+    "busquedas": 720,
+    "competencia": "MEDIUM",
+    "bajo": 3384.036776,
+    "alto": 16645.823717
+   },
+   {
+    "kw": "sistema punto de venta",
+    "busquedas": 1600,
+    "competencia": "HIGH",
+    "bajo": 3521.769263,
+    "alto": 16635.604261
+   }
+  ],
+  "turismo.co": [
+   {
+    "kw": "hoteles en cartagena",
+    "busquedas": 12100,
+    "competencia": "HIGH",
+    "bajo": 993.274601,
+    "alto": 5130.439877
+   },
+   {
+    "kw": "planes a san andres",
+    "busquedas": 590,
+    "competencia": "HIGH",
+    "bajo": 408.025824,
+    "alto": 1759.295679
+   },
+   {
+    "kw": "hoteles en santa marta",
+    "busquedas": 9900,
+    "competencia": "HIGH",
+    "bajo": 712.044318,
+    "alto": 3534.182457
+   },
+   {
+    "kw": "paquetes turisticos",
+    "busquedas": 1300,
+    "competencia": "HIGH",
+    "bajo": 513.118911,
+    "alto": 2957.114959
+   },
+   {
+    "kw": "tiquetes baratos",
+    "busquedas": 823000,
+    "competencia": "HIGH",
+    "bajo": 284.271673,
+    "alto": 1612.442193
+   },
+   {
+    "kw": "hoteles en medellin",
+    "busquedas": 12100,
+    "competencia": "HIGH",
+    "bajo": 928.675195,
+    "alto": 4358.694761
+   },
+   {
+    "kw": "planes todo incluido",
+    "busquedas": 720,
+    "competencia": "HIGH",
+    "bajo": 605.100363,
+    "alto": 2646.740655
+   },
+   {
+    "kw": "agencia de viajes",
+    "busquedas": 14800,
+    "competencia": "MEDIUM",
+    "bajo": 497.908779,
+    "alto": 2140.171212
+   }
+  ],
+  "turismo.mx": [
+   {
+    "kw": "hoteles en cancun",
+    "busquedas": 14800,
+    "competencia": "HIGH",
+    "bajo": 1081.598764,
+    "alto": 6048.409883
+   },
+   {
+    "kw": "paquetes a cancun",
+    "busquedas": 2900,
+    "competencia": "HIGH",
+    "bajo": 990.937999,
+    "alto": 5603.192097
+   },
+   {
+    "kw": "hoteles en playa del carmen",
+    "busquedas": 6600,
+    "competencia": "HIGH",
+    "bajo": 1111.1555,
+    "alto": 7693.812123
+   },
+   {
+    "kw": "paquetes turisticos",
+    "busquedas": 590,
+    "competencia": "MEDIUM",
+    "bajo": 693.09118,
+    "alto": 3148.170211
+   },
+   {
+    "kw": "vuelos baratos",
+    "busquedas": 135000,
+    "competencia": "HIGH",
+    "bajo": 354.464954,
+    "alto": 1818.796468
+   },
+   {
+    "kw": "hoteles en cdmx",
+    "busquedas": 5400,
+    "competencia": "HIGH",
+    "bajo": 1208.28954,
+    "alto": 5420.118116
+   },
+   {
+    "kw": "todo incluido",
+    "busquedas": 2400,
+    "competencia": "MEDIUM",
+    "bajo": 877.749351,
+    "alto": 3406.386876
+   },
+   {
+    "kw": "agencia de viajes",
+    "busquedas": 49500,
+    "competencia": "MEDIUM",
+    "bajo": 697.297697,
+    "alto": 4131.625372
+   }
+  ],
+  "automotriz.co": [
+   {
+    "kw": "carros nuevos",
+    "busquedas": 2900,
+    "competencia": "MEDIUM",
+    "bajo": 321.073144,
+    "alto": 1012.675376
+   },
+   {
+    "kw": "carros usados",
+    "busquedas": 18100,
+    "competencia": "MEDIUM",
+    "bajo": 34.033105,
+    "alto": 469.628285
+   },
+   {
+    "kw": "concesionario",
+    "busquedas": 22200,
+    "competencia": "LOW",
+    "bajo": 582.194686,
+    "alto": 3549.424336
+   },
+   {
+    "kw": "precio carro nuevo",
+    "busquedas": 210,
+    "competencia": "MEDIUM",
+    "bajo": 315.676103,
+    "alto": 805.219469
+   },
+   {
+    "kw": "camionetas nuevas",
+    "busquedas": 590,
+    "competencia": "LOW",
+    "bajo": 346.591623,
+    "alto": 805.854415
+   },
+   {
+    "kw": "motos nuevas",
+    "busquedas": 3600,
+    "competencia": "LOW",
+    "bajo": 86.279637,
+    "alto": 528.903668
+   },
+   {
+    "kw": "taller mecanico",
+    "busquedas": 4400,
+    "competencia": "LOW",
+    "bajo": 659.702545,
+    "alto": 3614.388836
+   },
+   {
+    "kw": "credito de vehiculo",
+    "busquedas": 1900,
+    "competencia": "HIGH",
+    "bajo": 758.490618,
+    "alto": 4783.77206
+   }
+  ],
+  "automotriz.mx": [
+   {
+    "kw": "autos nuevos",
+    "busquedas": 2900,
+    "competencia": "MEDIUM",
+    "bajo": 541.478774,
+    "alto": 1917.590891
+   },
+   {
+    "kw": "autos seminuevos",
+    "busquedas": 33100,
+    "competencia": "MEDIUM",
+    "bajo": 326.368593,
+    "alto": 1829.882626
+   },
+   {
+    "kw": "agencia de autos",
+    "busquedas": 6600,
+    "competencia": "MEDIUM",
+    "bajo": 851.18321,
+    "alto": 3610.328356
+   },
+   {
+    "kw": "precio auto nuevo",
+    "busquedas": 260,
+    "competencia": "MEDIUM",
+    "bajo": 490.117992,
+    "alto": 1583.641042
+   },
+   {
+    "kw": "camionetas nuevas",
+    "busquedas": 1300,
+    "competencia": "LOW",
+    "bajo": 611.148224,
+    "alto": 1827.774605
+   },
+   {
+    "kw": "motos nuevas",
+    "busquedas": 2400,
+    "competencia": "LOW",
+    "bajo": 84.412896,
+    "alto": 462.151795
+   },
+   {
+    "kw": "taller mecanico",
+    "busquedas": 110000,
+    "competencia": "LOW",
+    "bajo": 850.614933,
+    "alto": 4000.159803
+   },
+   {
+    "kw": "credito automotriz",
+    "busquedas": 5400,
+    "competencia": "MEDIUM",
+    "bajo": 1909.095314,
+    "alto": 7982.833193
+   }
+  ],
+  "hogar.co": [
+   {
+    "kw": "plomero",
+    "busquedas": 2900,
+    "competencia": "MEDIUM",
+    "bajo": 2646.404134,
+    "alto": 7908.534987
+   },
+   {
+    "kw": "cerrajero",
+    "busquedas": 5400,
+    "competencia": "MEDIUM",
+    "bajo": 1702.906124,
+    "alto": 9835.256402
+   },
+   {
+    "kw": "electricista",
+    "busquedas": 4400,
+    "competencia": "LOW",
+    "bajo": 1761.679901,
+    "alto": 5040.125158
+   },
+   {
+    "kw": "mudanzas",
+    "busquedas": 3600,
+    "competencia": "MEDIUM",
+    "bajo": 1788.68098,
+    "alto": 6095.754631
+   },
+   {
+    "kw": "fumigacion",
+    "busquedas": 2400,
+    "competencia": "MEDIUM",
+    "bajo": 2255.18533,
+    "alto": 7409.76903
+   },
+   {
+    "kw": "lavado de muebles",
+    "busquedas": 2400,
+    "competencia": "HIGH",
+    "bajo": 761.087547,
+    "alto": 5715.348958
+   },
+   {
+    "kw": "aire acondicionado instalacion",
+    "busquedas": 720,
+    "competencia": "MEDIUM",
+    "bajo": 997.023957,
+    "alto": 5087.466732
+   },
+   {
+    "kw": "remodelacion de cocinas",
+    "busquedas": 320,
+    "competencia": "MEDIUM",
+    "bajo": 574.619781,
+    "alto": 3085.542312
+   }
+  ],
+  "hogar.mx": [
+   {
+    "kw": "plomero",
+    "busquedas": 27100,
+    "competencia": "LOW",
+    "bajo": 1993.517734,
+    "alto": 6925.371901
+   },
+   {
+    "kw": "cerrajero",
+    "busquedas": 49500,
+    "competencia": "LOW",
+    "bajo": 626.174221,
+    "alto": 4116.580327
+   },
+   {
+    "kw": "electricista",
+    "busquedas": 27100,
+    "competencia": "LOW",
+    "bajo": 1073.668289,
+    "alto": 4166.960117
+   },
+   {
+    "kw": "mudanzas",
+    "busquedas": 18100,
+    "competencia": "LOW",
+    "bajo": 1936.153538,
+    "alto": 7788.933383
+   },
+   {
+    "kw": "fumigacion",
+    "busquedas": 14800,
+    "competencia": "LOW",
+    "bajo": 2908.640007,
+    "alto": 10797.199593
+   },
+   {
+    "kw": "limpieza de salas",
+    "busquedas": 880,
+    "competencia": "MEDIUM",
+    "bajo": 1997.956007,
+    "alto": 8004.091185
+   },
+   {
+    "kw": "instalacion de minisplit",
+    "busquedas": 2900,
+    "competencia": "LOW",
+    "bajo": 1396.687542,
+    "alto": 5385.262756
+   },
+   {
+    "kw": "remodelacion de cocinas",
+    "busquedas": 590,
+    "competencia": "MEDIUM",
+    "bajo": 802.20665,
+    "alto": 3243.148608
+   }
+  ]
+ },
+ "cambio": {
+  "fecha": "2026-10-19",
+  "fuente": "open.er-api.com",
+  "COP_por_USD": 3174.489272,
+  "MXN_por_USD": 18.457069
+ },
+ "nota": "Puja por la parte superior de la página: bajo = percentil 20, alto = percentil 80 de lo que pagaron los anunciantes por aparecer arriba. Valores en COP porque es la moneda de la cuenta que consulta."
+}
