@@ -18,11 +18,12 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { MAPA, CLUSTERS } from './mapa.mjs';
 import { CONTENIDO as C1 } from './contenido/c1-crm.mjs';
+import { CONTENIDO as C2 } from './contenido/c2-comparativas.mjs';
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DOMINIO = 'https://acuarius.app';
 const REGISTRO = 'https://app.acuarius.app/registro';
-const CONTENIDO = { ...C1 };
+const CONTENIDO = { ...C1, ...C2 };
 
 // Nombres cortos para las migas de pan. Lo que no esté aquí se deriva del
 // último tramo de la URL.
@@ -30,6 +31,9 @@ const MIGAS = {
   '/crm/': 'CRM', '/crm/whatsapp/': 'WhatsApp', '/crm/gratis/': 'Gratis',
   '/crm/inmobiliarias/': 'Inmobiliarias', '/crm/clinicas/': 'Clínicas',
   '/crm/restaurantes/': 'Restaurantes', '/crm/pipeline-de-ventas/': 'Pipeline de ventas',
+  '/mejores-crm-con-whatsapp/': 'Mejores CRM con WhatsApp', '/alternativas/hubspot/': 'HubSpot',
+  '/alternativas/kommo/': 'Kommo', '/alternativas/agencyanalytics/': 'AgencyAnalytics',
+  '/comparativas/acuarius-vs-kommo/': 'Acuarius vs Kommo', '/comparativas/acuarius-vs-hubspot/': 'Acuarius vs HubSpot',
 };
 
 // ── Validación ──────────────────────────────────────────────────────────────
