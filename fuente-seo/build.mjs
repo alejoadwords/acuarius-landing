@@ -82,7 +82,10 @@ const ESTILO_BASE = extraer(/<style>[\s\S]*?<\/style>/, 'el bloque <style>');
 const LOGO = extraer(/<a href="\/" class="nav-logo">[\s\S]*?<\/a>/, 'el logo del menú');
 const GTM_HEAD = extraer(/<!-- Google Tag Manager -->[\s\S]*?<!-- End Google Tag Manager -->/, 'GTM del head');
 const GTM_BODY = extraer(/<!-- Google Tag Manager \(noscript\) -->[\s\S]*?<!-- End Google Tag Manager \(noscript\) -->/, 'GTM del body');
-const ICONO = extraer(/<link rel="icon"[^>]*>/, 'el favicon');
+// Favicon en fichero (/favicon.svg, .ico y apple-touch). Antes iba como data
+// URI con un SVG dentro, y este [^>]* se paraba en el primer «>» del SVG: las
+// páginas generadas salían con el favicon cortado.
+const ICONO = extraer(/<link rel="icon"[^>]*>\n<link rel="icon"[^>]*>\n<link rel="apple-touch-icon"[^>]*>/, 'el favicon');
 const PIE = extraer(/<footer>[\s\S]*?<\/footer>/, 'el pie');
 
 const ESTILO_SEO = `<style>
