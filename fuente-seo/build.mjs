@@ -193,7 +193,7 @@ function jsonLD(p, c) {
   if (p.nivel === 'Pilar' && p.cluster === 1) {
     grafo.push({ '@type': 'SoftwareApplication', name: 'Acuarius', applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web', url: DOMINIO + '/', inLanguage: 'es',
-      offers: [['Free', '0'], ['Pro', '39'], ['Agency', '99']].map(([name, price]) => ({ '@type': 'Offer', name, price, priceCurrency: 'USD' })) });
+      offers: [['Free', '0'], ['Pro', '39']].map(([name, price]) => ({ '@type': 'Offer', name, price, priceCurrency: 'USD' })) });
   }
   // </script> dentro del JSON cerraría la etiqueta antes de tiempo.
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': grafo }).replace(/</g, '\\u003c');

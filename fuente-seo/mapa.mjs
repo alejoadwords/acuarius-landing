@@ -181,7 +181,7 @@ export const MAPA = [
   { url: '/agencias/', cluster: 5, nivel: 'Pilar', intencion: 'Comercial', estado: 'pendiente',
     kw: 'software para agencias de marketing',
     title: 'Software para agencias de marketing | Acuarius',
-    description: 'Software para agencias de marketing: el CRM de cada cliente, sus reportes, su agente de WhatsApp y su SEO en un solo panel. Plan Agency con 10 clientes.',
+    description: 'Software para agencias de marketing: el CRM de cada cliente, sus reportes, su agente de WhatsApp y su SEO en un solo panel. Cada cliente desde 9 USD al mes.',
     h1: 'Software para agencias de marketing: todos tus clientes en un panel' },
   { url: '/agencias/reportes-automaticos/', cluster: 5, nivel: 'Spoke', intencion: 'Comercial', estado: 'pendiente',
     kw: 'reportes de marketing para clientes',

@@ -11,7 +11,7 @@
 const PLANES = {
   free: '50 contactos con pipeline, tareas y agenda, sin tarjeta',
   pro: '39 USD al mes: 1.000 contactos, 3 usuarios, bandeja de WhatsApp, Instagram y Messenger, automatizaciones y campañas',
-  agency: '99 USD al mes: 10 clientes, 10 usuarios y 5.000 contactos',
+  clientes: '9 USD al mes por cada cliente o marca adicional, cada uno con su pipeline, sus leads y sus reportes',
   extras: 'usuario extra a 9 USD al mes y 1.000 contactos más por 4 USD',
 };
 
@@ -49,7 +49,7 @@ export const CONTENIDO = {
         filas: [
           ['Free', '0 USD', 'Para probar: ' + PLANES.free + '.'],
           ['Pro', '39 USD/mes', 'Pymes y equipos comerciales: ' + PLANES.pro.replace('39 USD al mes: ', '') + '.'],
-          ['Agency', '99 USD/mes', 'Agencias que manejan varias marcas: ' + PLANES.agency.replace('99 USD al mes: ', '') + '.'],
+          ['Clientes o marcas', '9 USD/mes cada uno', 'Agencias o negocios con varias marcas: ' + PLANES.clientes.replace('9 USD al mes por cada cliente o marca adicional, ', '') + '.'],
         ],
         nota: 'Pagando al año te ahorras dos meses. Si creces: ' + PLANES.extras + '. <a href="/#planes">Calcula tu precio exacto</a>.' },
       { tipo: 'texto', label: 'Cómo elegir', h2: 'Qué debe tener un buen CRM para pymes',
