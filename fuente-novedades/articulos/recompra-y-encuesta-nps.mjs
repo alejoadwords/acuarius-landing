@@ -9,7 +9,18 @@ export const ARTICULO = {
   edicion: 1,
   resumen: 'Envía la encuesta NPS sola después de cada venta o cita, reacciona a un detractor en 24 horas y registra cada recompra como una venta nueva.',
   respuesta: 'Una encuesta NPS pregunta al cliente, del 0 al 10, qué tan probable es que te recomiende. En Acuarius sale sola por correo con el paso «Encuesta NPS» de una automatización, etiqueta a cada cliente como promotor, neutro o detractor, crea una tarea para llamar en 24 horas a quien califica de 0 a 6 y con «Nueva compra» registra la recompra como una oportunidad nueva.',
-  video: { id: 'Edw6fql549A', titulo: 'Encuestas NPS automáticas: mide la satisfacción y reacciona sin intervenir', subido: '2026-08-09', segundos: 139, propio: false },
+  video: {
+    id: 'XiCqCL77JLo', titulo: 'Recompra y alertas de satisfacción (NPS) en Acuarius', subido: '2026-11-02', segundos: 63, propio: true,
+    capitulos: [
+      { s: 0, t: 'Introducción' },
+      { s: 6, t: 'Recompra y satisfacción' },
+      { s: 16, t: 'Nueva compra' },
+      { s: 29, t: 'Aviso de 0 a 6' },
+      { s: 36, t: 'La tarea para llamarlo' },
+      { s: 46, t: 'NPS mes a mes y por asesor' },
+      { s: 57, t: 'Ya disponible' },
+    ],
+  },
   ilustracion: 'satisfaccion',
   secciones: [
     {

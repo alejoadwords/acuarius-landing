@@ -155,6 +155,27 @@ const VIDEOS = [
  },
  {
   "cat": "novedades",
+  "t": "Productos en el CRM de Acuarius: tu catálogo en oportunidades, inbox y propuestas",
+  "d": "Tu catálogo dentro del CRM: crea productos, agrégalos a la oportunidad, envíalos desde el inbox y úsalos en propuestas.",
+  "dur": "1:22",
+  "id": "nRNwbMqukqY"
+ },
+ {
+  "cat": "novedades",
+  "t": "Tu agente de IA de WhatsApp pide los datos antes de pasarte el chat · Acuarius",
+  "d": "Activa la opción y el agente pide los datos que faltan antes de pasarle la conversación a tu equipo.",
+  "dur": "1:06",
+  "id": "biA_Gsq3D0A"
+ },
+ {
+  "cat": "novedades",
+  "t": "Recompra y alertas de satisfacción (NPS) en Acuarius",
+  "d": "Registra la segunda compra con «Nueva compra», recibe el aviso de 0 a 6 y mira el NPS por asesor.",
+  "dur": "1:03",
+  "id": "XiCqCL77JLo"
+ },
+ {
+  "cat": "novedades",
   "t": "Campos personalizados en Acuarius: datos que deciden, segmentan y se llenan solos",
   "d": "Crea tus campos, deja que el agente los llene y úsalos en automatizaciones y campañas.",
   "dur": "1:14",

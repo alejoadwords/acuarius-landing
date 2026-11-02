@@ -13,7 +13,18 @@ export const ARTICULO = {
   edicion: 1,
   resumen: 'Tu agente de IA para WhatsApp ahora pide los datos que faltan antes de pasarle la conversación a tu equipo, y la pasa en el mensaje siguiente.',
   respuesta: 'Un agente de IA para WhatsApp es un asistente que contesta los chats de tu negocio con la información que tú le das: contexto, preguntas frecuentes y catálogo. En Acuarius califica a cada persona, la manda al proceso de venta correcto y, si activas la opción, pide nombre y correo antes de pasar la conversación a un asesor. Así nadie llega a tu equipo sin datos de contacto.',
-  video: { id: 'ntRgbc6J2Nk', titulo: 'Agentes IA: atiende tus chats y califica prospectos', subido: '2026-10-08', segundos: 158, propio: false },
+  video: {
+    id: 'biA_Gsq3D0A', titulo: 'Tu agente de IA de WhatsApp pide los datos antes de pasarte el chat · Acuarius', subido: '2026-11-02', segundos: 66, propio: true,
+    capitulos: [
+      { s: 0, t: 'Introducción' },
+      { s: 6, t: 'Tu agente pide los datos' },
+      { s: 15, t: 'Activar la opción' },
+      { s: 25, t: 'Pide los datos que faltan' },
+      { s: 37, t: 'Pasa la conversación al asesor' },
+      { s: 48, t: 'Fechas correctas' },
+      { s: 60, t: 'Ya disponible' },
+    ],
+  },
   ilustracion: 'agente',
   secciones: [
     {

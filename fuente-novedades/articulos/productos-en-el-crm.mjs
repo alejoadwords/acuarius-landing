@@ -13,7 +13,19 @@ export const ARTICULO = {
   edicion: 1,
   resumen: 'Sube lo que vendes a CRM → Productos y úsalo en oportunidades, propuestas, chats, campañas y formularios. El valor del negocio se calcula solo.',
   respuesta: 'Tener el catálogo de productos en el CRM significa que lo que vendes, con su precio, IVA, foto y enlace de pago, vive en el mismo lugar que tus clientes. En Acuarius lo armas en CRM → Productos, a mano o desde un archivo CSV. Al agregar productos a una oportunidad, su valor se calcula solo, y luego ves en Análisis qué se vende más.',
-  video: { id: 'j7YStHfsR7o', titulo: 'Propuestas comerciales con IA: créalas, envíalas y cóbralas', subido: '2026-10-21', segundos: 111, propio: false },
+  video: {
+    id: 'nRNwbMqukqY', titulo: 'Productos en el CRM de Acuarius: tu catálogo en oportunidades, inbox y propuestas', subido: '2026-11-02', segundos: 82, propio: true,
+    capitulos: [
+      { s: 0, t: 'Introducción' },
+      { s: 7, t: 'Productos en el CRM' },
+      { s: 18, t: 'Crear un producto' },
+      { s: 33, t: 'Importar desde Excel o Google Sheets (CSV)' },
+      { s: 42, t: 'Productos en la oportunidad' },
+      { s: 57, t: 'Enviar un producto desde el inbox' },
+      { s: 69, t: 'Propuestas con tabla de productos' },
+      { s: 77, t: 'Ya disponible' },
+    ],
+  },
   ilustracion: 'productos',
   secciones: [
     {
