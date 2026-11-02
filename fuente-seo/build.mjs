@@ -20,6 +20,7 @@ import { MAPA, CLUSTERS } from './mapa.mjs';
 import { CONTENIDO as C1 } from './contenido/c1-crm.mjs';
 import { CONTENIDO as C2 } from './contenido/c2-comparativas.mjs';
 import { CONTENIDO as C3 } from './contenido/c3-benchmarks.mjs';
+import { URLS as NOVEDADES } from '../fuente-novedades/build.mjs';
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DOMINIO = 'https://acuarius.app';
@@ -304,7 +305,7 @@ document.addEventListener('click', function (e) {
 
 // ── Sitemap, robots y mapa legible ──────────────────────────────────────────
 function sitemap() {
-  const urls = ['/', '/partners', ...publicadas().map((p) => p.url)];
+  const urls = ['/', '/partners', ...publicadas().map((p) => p.url), ...NOVEDADES];
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${DOMINIO}${u}</loc></url>`).join('\n')}

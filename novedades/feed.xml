@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Novedades de Acuarius</title>
+  <link>https://acuarius.app/novedades/</link>
+  <atom:link href="https://acuarius.app/novedades/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Lo nuevo en Acuarius cada quincena.</description>
+  <language>es</language>
+  <item>
+    <title>Productos en el CRM, WhatsApp en vivo y enlaces para agendar</title>
+    <link>https://acuarius.app/novedades/productos-en-el-crm-y-whatsapp-en-vivo/</link>
+    <guid>https://acuarius.app/novedades/productos-en-el-crm-y-whatsapp-en-vivo/</guid>
+    <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
+    <description>Catálogo de productos dentro del CRM, campos a tu medida, WhatsApp en tiempo real y reuniones que se agendan solas.</description>
+  </item>
+</channel>
+</rss>
