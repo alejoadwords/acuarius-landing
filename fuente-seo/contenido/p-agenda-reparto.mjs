@@ -138,7 +138,7 @@ export const CONTENIDO = {
           { t: 'El sistema decide', d: 'Con todas las respuestas, una regla fija marca el lead como calificado o no calificado. Mientras falte alguna, sigue pendiente.' },
           { t: 'Elige el tablero', d: 'Si lo configuraste, manda el lead al proceso de venta que corresponde a lo que busca.' },
           { t: 'Asigna un asesor', d: 'Uno fijo, por turnos entre quienes atienden ese tablero o según la regla de la fuente.' },
-          { t: 'Avisa y deja tarea', d: 'El asesor recibe el correo «Nuevo lead para ti» y la tarea de primer contacto con su plazo.' },
+          { t: 'Avisa y deja tarea', d: 'El asesor recibe un aviso en el celular, el correo «Nuevo lead para ti» y la tarea de primer contacto con su plazo.' },
         ] },
       { tipo: 'texto', label: 'Calificación', h2: '¿Cómo califica el agente sin que la IA decida?',
         parrafos: [
@@ -177,7 +177,7 @@ export const CONTENIDO = {
         ] },
       { tipo: 'texto', label: 'Avisos', h2: '¿Cómo se entera el asesor de que tiene un lead nuevo?',
         parrafos: [
-          'Al asignarse un lead, el asesor recibe un correo «Nuevo lead para ti» con el nombre, los datos de contacto y el botón para abrir el CRM. Al dueño de la cuenta no se le manda ese correo, porque lo ve todo: le queda la tarea.',
+          'Al asignarse un lead, el asesor recibe un aviso en el celular (si activó los avisos en Configuración → Notificaciones) y un correo «Nuevo lead para ti» con el nombre, los datos de contacto y el botón para abrir el CRM. Al dueño de la cuenta no se le manda el correo, porque lo ve todo: le quedan el aviso y la tarea.',
           'Antes del correo se crea la <b>tarea de primer contacto</b>, con el plazo que elijas, para que aparezca en su lista de pendientes y en el resumen diario por correo. Y si el contacto vuelve a escribir después de que el agente pasó la conversación, a quien lo tiene a su nombre le llega el aviso en la campana y en el celular, si activó los avisos en Configuración → Notificaciones. Con el <a href="/novedades/whatsapp-en-tiempo-real/">inbox de WhatsApp en tiempo real</a>, el mensaje aparece sin recargar.',
         ] },
       { tipo: 'texto', label: 'Historial', h2: '¿Queda registro de quién tenía cada lead?',

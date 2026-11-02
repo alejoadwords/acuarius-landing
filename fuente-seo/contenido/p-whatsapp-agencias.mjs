@@ -99,7 +99,7 @@ export const CONTENIDO = {
         parrafos: [
           'Meta limita cuántas personas distintas puede contactar primero un número cada día. Un número nuevo empieza con 250 y el tope sube con buena calidad y con tu negocio verificado. Pasarse cuesta caro: la calidad cae, las plantillas se pausan y el número puede quedar restringido.',
           'Acuarius lleva esa cuenta por número, y campañas, automatizaciones y API comparten el mismo tope. Lo que no cabe sale al día siguiente. Las campañas salen por tandas cada 10 minutos, en horario comercial: de lunes a viernes de 7 a. m. a 7 p. m. y los sábados de 8 a. m. a 3 p. m., hora de Colombia, nunca domingos ni festivos.',
-          'En cada campaña puedes excluir listas o etiquetas, por ejemplo una lista «No contactar». Y si alguien responde <b>PARAR</b> o «No me avises más», queda anotado como baja y los envíos por API ya no le llegan.',
+          'En cada campaña puedes excluir listas o etiquetas, por ejemplo una lista «No contactar». Y si alguien responde <b>PARAR</b> o «No me avises más», queda anotado como baja: ni las campañas, ni las automatizaciones, ni los envíos por API le vuelven a escribir.',
         ] },
       { tipo: 'texto', label: 'Avisos de Meta', h2: 'Te avisamos si Meta cambia una plantilla',
         parrafos: [
@@ -130,7 +130,7 @@ export const CONTENIDO = {
       { q: '¿Por qué me rechazaron la plantilla?', a: 'Los motivos más comunes son una categoría que no corresponde al texto, huecos sin ejemplo, un mensaje que empieza o termina con un hueco y textos que parecen engañosos. En Marketing → Plantillas → WhatsApp ves el motivo traducido. Para rehacerla con el mismo nombre, bórrala primero.' },
       { q: '¿Las plantillas pueden llevar imagen?', a: 'Sí. Al crearla eliges si la cabecera es texto o imagen y subes un JPG o un PNG. Desde la conversación del inbox, por ahora, se envían las de cabecera de texto.' },
       { q: '¿Necesito conectar mi número de una forma especial?', a: 'Tu número debe estar conectado a la API oficial de WhatsApp con la app de Meta de tu negocio, con su WhatsApp Business Account ID. Si falta, Acuarius te pide reconectar en Conversaciones → Canales.' },
-      { q: '¿Qué pasa si alguien no quiere recibir más mensajes?', a: 'Si responde PARAR o toca «No me avises más», queda anotado como baja y la API ya no le envía plantillas. En campañas, además, puedes excluir listas o etiquetas, como una lista «No contactar».' },
+      { q: '¿Qué pasa si alguien no quiere recibir más mensajes?', a: 'Si responde PARAR o toca «No me avises más», queda anotado como baja: ni las campañas, ni las automatizaciones, ni la API le vuelven a enviar plantillas. En campañas, además, puedes excluir listas o etiquetas, como una lista «No contactar».' },
     ],
     cta: { h2: 'Escríbele primero a quien ya te conoce', sub: 'Crea tu cuenta, conecta tu número de WhatsApp y envía tu primera plantilla a revisión desde Acuarius.' },
   },

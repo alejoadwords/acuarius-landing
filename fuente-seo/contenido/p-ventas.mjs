@@ -14,7 +14,7 @@
 // propuestas (oculto), Tiendanube (oculta), Messenger, el deck interno
 // /propuesta.html (es la presentación comercial de Acuarius, no una función
 // para clientes) y cualquier promesa de que un pago por enlace propio marque
-// sola la propuesta como pagada: no lo hace.
+// sola la propuesta como pagada: no lo hace (sí avisa que el cliente fue a pagar, 02-11).
 //
 // Keywords elegidas para no competir con el artículo
 // /novedades/productos-en-el-crm/ («catálogo de productos en el CRM»).
@@ -81,7 +81,7 @@ export const CONTENIDO = {
         parrafos: [
           'Cada propuesta pasa por cuatro estados que ves sin preguntarle a nadie: <b>Enviada</b>, <b>Vista</b> (cuando tu cliente la abre por primera vez), <b>Aceptada</b> (cuando firma) y <b>Pagada</b>. Los ves en la caja «Propuestas» de la ficha del lead y, todas juntas, en <b>Marketing → Propuestas</b>.',
           'La firma guarda el nombre, el correo, el documento si lo escribe, la fecha, la dirección IP y una huella del contenido exacto que aceptó. Si la propuesta se edita después, se nota.',
-          'Cuando te pagan, pulsa el botón de pagada en la propuesta. El lead pasa a Ganado y, si la propuesta tiene productos, el valor de la oportunidad sale de ellos. Desde ese momento la venta cuenta en «Ventas por producto», en <b>Análisis → Ventas</b>.',
+          'Si tu cliente abre tu enlace de pago, te llega un aviso por correo y al celular, y la propuesta se marca «Fue a pagar». Tu pasarela no le avisa a Acuarius si el pago se completó: cuando confirmes que te llegó, pulsa «Confirmar pago». El lead pasa a Ganado y, si la propuesta tiene productos, el valor de la oportunidad sale de ellos. Desde ese momento la venta cuenta en «Ventas por producto», en <b>Análisis → Ventas</b>.',
         ] },
       { tipo: 'tarjetas', label: 'Tu catálogo en todo el CRM', h2: 'Los mismos productos, en cada canal de venta',
         items: [
@@ -113,7 +113,7 @@ export const CONTENIDO = {
       { tipo: 'texto', label: 'Errores comunes', h2: 'Errores que conviene evitar al cotizar',
         parrafos: [
           '<b>Dejar vacío el perfil del negocio.</b> La IA redacta con lo que sabe de ti. Sin perfil, la propuesta sale genérica.',
-          '<b>Esperar que el pago se marque solo.</b> El enlace de pago es de tu pasarela, no de Acuarius. Cuando el dinero llegue, márcala como pagada para que el lead pase a Ganado.',
+          '<b>Esperar que el pago se marque solo.</b> El enlace de pago es de tu pasarela, no de Acuarius. Acuarius te avisa cuando el cliente fue a pagar, pero eres tú quien confirma que el dinero llegó y pulsa «Confirmar pago» para que el lead pase a Ganado.',
           '<b>Cambiar el precio en la propuesta y creer que cambió el catálogo.</b> Ese cambio solo vale para esa propuesta. El precio de lista se cambia en CRM → Productos.',
           '<b>Borrar una propuesta ya enviada.</b> Al eliminarla, el enlace deja de funcionar para tu cliente. Si cambió algo, crea una nueva.',
         ] },
