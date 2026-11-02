@@ -4,14 +4,63 @@
   <title>Novedades de Acuarius</title>
   <link>https://acuarius.app/novedades/</link>
   <atom:link href="https://acuarius.app/novedades/feed.xml" rel="self" type="application/rss+xml"/>
-  <description>Lo nuevo en Acuarius cada quincena.</description>
+  <description>Lo nuevo en Acuarius cada quincena, función por función.</description>
   <language>es</language>
   <item>
-    <title>Productos en el CRM, WhatsApp en vivo y enlaces para agendar</title>
-    <link>https://acuarius.app/novedades/productos-en-el-crm-y-whatsapp-en-vivo/</link>
-    <guid>https://acuarius.app/novedades/productos-en-el-crm-y-whatsapp-en-vivo/</guid>
+    <title>Catálogo de productos en el CRM: de la cotización a la venta</title>
+    <link>https://acuarius.app/novedades/productos-en-el-crm/</link>
+    <guid>https://acuarius.app/novedades/productos-en-el-crm/</guid>
     <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
-    <description>Catálogo de productos dentro del CRM, campos a tu medida, WhatsApp en tiempo real y reuniones que se agendan solas.</description>
+    <category>CRM</category>
+    <description>Tener el catálogo de productos en el CRM significa que lo que vendes, con su precio, IVA, foto y enlace de pago, vive en el mismo lugar que tus clientes. En Acuarius lo armas en CRM → Productos, a mano o desde un archivo CSV. Al agregar productos a una oportunidad, su valor se calcula solo, y luego ves en Análisis qué se vende más.</description>
+  </item>
+  <item>
+    <title>Campos personalizados en el CRM: los datos de tu negocio, en la ficha de cada contacto</title>
+    <link>https://acuarius.app/novedades/campos-personalizados-crm/</link>
+    <guid>https://acuarius.app/novedades/campos-personalizados-crm/</guid>
+    <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
+    <category>CRM</category>
+    <description>Los campos personalizados en el CRM de Acuarius son los datos de tus contactos que no vienen de serie: presupuesto, tipo de inmueble, EPS o fecha del evento. Los creas en CRM → Campos personalizados con su tipo, se llenan en la ficha, en formularios, al importar o por tu agente de WhatsApp, y sirven para filtrar, automatizar, segmentar campañas y personalizar mensajes.</description>
+  </item>
+  <item>
+    <title>WhatsApp para equipos de ventas: un número, toda la bandeja en vivo</title>
+    <link>https://acuarius.app/novedades/whatsapp-en-tiempo-real/</link>
+    <guid>https://acuarius.app/novedades/whatsapp-en-tiempo-real/</guid>
+    <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
+    <category>Conversaciones</category>
+    <description>En Acuarius, WhatsApp para equipos de ventas es una bandeja compartida: tu número de WhatsApp Business se conecta a Conversaciones y todo tu equipo atiende desde ahí. Los mensajes aparecen en vivo, sin recargar, con ✓ enviado, ✓✓ entregado y ✓✓ azul leído. Buscas chats por nombre o teléfono, descartas el spam, respondes con plantillas tras 24 horas y pasas cada conversación al pipeline a tu nombre.</description>
+  </item>
+  <item>
+    <title>Agente de IA para WhatsApp: nadie llega a tu asesor sin datos de contacto</title>
+    <link>https://acuarius.app/novedades/agente-ia-whatsapp-datos-de-contacto/</link>
+    <guid>https://acuarius.app/novedades/agente-ia-whatsapp-datos-de-contacto/</guid>
+    <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
+    <category>Agente de IA</category>
+    <description>Un agente de IA para WhatsApp es un asistente que contesta los chats de tu negocio con la información que tú le das: contexto, preguntas frecuentes y catálogo. En Acuarius califica a cada persona, la manda al proceso de venta correcto y, si activas la opción, pide nombre y correo antes de pasar la conversación a un asesor. Así nadie llega a tu equipo sin datos de contacto.</description>
+  </item>
+  <item>
+    <title>Enlace para agendar reuniones: que tu cliente elija la hora sin ir y venir por chat</title>
+    <link>https://acuarius.app/novedades/enlace-para-agendar-reuniones/</link>
+    <guid>https://acuarius.app/novedades/enlace-para-agendar-reuniones/</guid>
+    <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
+    <category>Agenda</category>
+    <description>Un enlace para agendar reuniones es una página propia, como app.acuarius.app/reunion/tu-nombre-demo, que muestra solo las horas en que estás libre según tu horario y tu Google Calendar. La persona elige día y hora y deja sus datos. La reunión se crea en tu Google con enlace de Meet, le llega la invitación por correo y entra a tu CRM como lead asignado a ti.</description>
+  </item>
+  <item>
+    <title>Encuesta NPS automática y recompra: escucha a tu cliente y haz que vuelva</title>
+    <link>https://acuarius.app/novedades/recompra-y-encuesta-nps/</link>
+    <guid>https://acuarius.app/novedades/recompra-y-encuesta-nps/</guid>
+    <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
+    <category>Ventas</category>
+    <description>Una encuesta NPS pregunta al cliente, del 0 al 10, qué tan probable es que te recomiende. En Acuarius sale sola por correo con el paso «Encuesta NPS» de una automatización, etiqueta a cada cliente como promotor, neutro o detractor, crea una tarea para llamar en 24 horas a quien califica de 0 a 6 y con «Nueva compra» registra la recompra como una oportunidad nueva.</description>
+  </item>
+  <item>
+    <title>Anuncios de clic a WhatsApp: de la conversación a la venta, campaña por campaña</title>
+    <link>https://acuarius.app/novedades/anuncios-clic-a-whatsapp-meta-ads/</link>
+    <guid>https://acuarius.app/novedades/anuncios-clic-a-whatsapp-meta-ads/</guid>
+    <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
+    <category>Pauta</category>
+    <description>Los anuncios de clic a WhatsApp son anuncios de Meta (Facebook e Instagram) que abren un chat con tu negocio en vez de una página web. Acuarius une cada uno de esos chats con su campaña, su conjunto y su anuncio, los lleva al tablero de ventas que elijas y te muestra, campaña por campaña, cuántas conversaciones terminaron en venta. Además puede reportarle esas ventas a Meta.</description>
   </item>
 </channel>
 </rss>

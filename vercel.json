@@ -1,3 +1,7 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/novedades/productos-en-el-crm-y-whatsapp-en-vivo", "destination": "/novedades/edicion-01/", "permanent": true },
+    { "source": "/novedades/productos-en-el-crm-y-whatsapp-en-vivo/", "destination": "/novedades/edicion-01/", "permanent": true }
+  ]
 }
