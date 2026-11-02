@@ -23,6 +23,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { EDICIONES } from './ediciones.mjs';
 import { ESTILO_NOV } from './estilo.mjs';
 import { ILUSTRACIONES } from './ilustraciones.mjs';
+import { menuHTML, MENU_CSS, MENU_JS } from '../fuente-menu/menu.mjs';
 
 const AQUI = dirname(fileURLToPath(import.meta.url));
 const RAIZ = join(AQUI, '..');
@@ -111,7 +112,6 @@ function extraer(re, nombre) {
   return m[0];
 }
 const ESTILO_BASE = extraer(/<style>[\s\S]*?<\/style>/, 'el bloque <style>');
-const LOGO = extraer(/<a href="\/" class="nav-logo">[\s\S]*?<\/a>/, 'el logo del menú');
 const GTM_HEAD = extraer(/<!-- Google Tag Manager -->[\s\S]*?<!-- End Google Tag Manager -->/, 'GTM del head');
 const GTM_BODY = extraer(/<!-- Google Tag Manager \(noscript\) -->[\s\S]*?<!-- End Google Tag Manager \(noscript\) -->/, 'GTM del body');
 const ICONO = extraer(/<link rel="icon"[^>]*>\n<link rel="icon"[^>]*>\n<link rel="apple-touch-icon"[^>]*>/, 'el favicon');
@@ -208,28 +208,14 @@ ${ICONO}
 ${ESTILO_BASE}
 ${ESTILO_NOV}
 ${ESTILO_ART}
+${MENU_CSS}
 <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': jsonld }).replace(/</g, '\\u003c')}</script>
 <script src="https://app.acuarius.app/origen.js" defer></script>
 </head>
 <body>
 ${GTM_BODY}
 
-<nav>
-  <div class="nav-inner">
-    ${LOGO}
-    <div class="nav-links">
-      <a href="/">Inicio</a>
-      <a href="/crm/">CRM</a>
-      <a href="/crm/whatsapp/">WhatsApp</a>
-      <a href="${BASE}" style="color:var(--text)">Novedades</a>
-      <a href="/#planes">Precios</a>
-    </div>
-    <div class="nav-cta">
-      <a href="https://app.acuarius.app/login.html" class="btn-ghost">Iniciar sesión</a>
-      <a href="${REGISTRO}" class="btn-primary">Crear cuenta gratis ${FLECHA}</a>
-    </div>
-  </div>
-</nav>
+${menuHTML(url.replace(DOMINIO, ''))}
 `;
 }
 
@@ -413,6 +399,7 @@ ${CTA()}
 
 ${PIE}
 ${SCRIPTS}
+${MENU_JS}
 </body>
 </html>
 `;
@@ -464,6 +451,7 @@ ${CTA('Todo esto ya está en tu cuenta')}
 
 ${PIE}
 ${SCRIPTS}
+${MENU_JS}
 </body>
 </html>
 `;
@@ -524,6 +512,7 @@ ${CTA('Todo esto ya está en tu cuenta')}
 
 ${PIE}
 ${SCRIPTS}
+${MENU_JS}
 </body>
 </html>
 `;

@@ -2,7 +2,7 @@
 // description, H1) viven en mapa.mjs; aquí solo el cuerpo.
 //
 // Todo lo que se afirma aquí tiene que existir en el producto y coincidir con
-// la sección de planes del home (index.html, #planes). Si cambia un precio o
+// la página de precios (precios/index.html, #planes). Si cambia un precio o
 // un límite allí, cambia aquí: PLANES abajo es el único sitio con cifras.
 //
 // El texto admite HTML en línea (<a>, <b>); los enlaces internos llevan la
@@ -51,7 +51,7 @@ export const CONTENIDO = {
           ['Pro', '39 USD/mes', 'Pymes y equipos comerciales: ' + PLANES.pro.replace('39 USD al mes: ', '') + '.'],
           ['Clientes o marcas', '9 USD/mes cada uno', 'Agencias o negocios con varias marcas: ' + PLANES.clientes.replace('9 USD al mes por cada cliente o marca adicional, ', '') + '.'],
         ],
-        nota: 'Pagando al año te ahorras dos meses. Si creces: ' + PLANES.extras + '. <a href="/#planes">Calcula tu precio exacto</a>.' },
+        nota: 'Pagando al año te ahorras dos meses. Si creces: ' + PLANES.extras + '. <a href="/precios/">Calcula tu precio exacto</a>.' },
       { tipo: 'texto', label: 'Cómo elegir', h2: 'Qué debe tener un buen CRM para pymes',
         parrafos: [
           '<b>Que tu equipo lo use.</b> Un CRM que nadie actualiza no sirve. Por eso Acuarius registra solo lo que pasa en los chats y los formularios: el asesor no tiene que copiar datos a mano.',
@@ -150,7 +150,7 @@ export const CONTENIDO = {
           ['Automatizaciones y campañas', 'No', 'Sí', 'Sí'],
           ['Tarjeta de crédito', 'No', 'No', 'Al contratar'],
         ],
-        nota: 'Al terminar la prueba, si no contratas, tu cuenta pasa sola al plan Free: no se te cobra nada. <a href="/#planes">Ver todos los planes</a>.' },
+        nota: 'Al terminar la prueba, si no contratas, tu cuenta pasa sola al plan Free: no se te cobra nada. <a href="/precios/">Ver todos los planes</a>.' },
       { tipo: 'pasos', label: 'Cómo empezar', h2: 'Tu CRM gratis funcionando en diez minutos',
         items: [
           { t: 'Crea tu cuenta', d: 'Solo con tu correo. No pedimos tarjeta.' },

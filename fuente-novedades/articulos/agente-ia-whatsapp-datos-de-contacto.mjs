@@ -119,6 +119,7 @@ export const ARTICULO = {
   ],
   relacionados: ['whatsapp-en-tiempo-real', 'campos-personalizados-crm', 'anuncios-clic-a-whatsapp-meta-ads'],
   enlaces: [
+    { url: '/agente-ia/', texto: 'Agente de IA para WhatsApp: la guía completa' },
     { url: '/crm/whatsapp/', texto: 'CRM con WhatsApp' },
     { url: '/crm/', texto: 'CRM para pymes de LatAm' },
     { url: '/crm/pipeline-de-ventas/', texto: 'Pipeline de ventas' },

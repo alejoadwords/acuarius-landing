@@ -20,12 +20,14 @@ import { MAPA, CLUSTERS } from './mapa.mjs';
 import { CONTENIDO as C1 } from './contenido/c1-crm.mjs';
 import { CONTENIDO as C2 } from './contenido/c2-comparativas.mjs';
 import { CONTENIDO as C3 } from './contenido/c3-benchmarks.mjs';
+import { CONTENIDO as C8 } from './contenido/c8-producto.mjs';
 import { URLS as NOVEDADES } from '../fuente-novedades/build.mjs';
+import { menuHTML, MENU_CSS, MENU_JS } from '../fuente-menu/menu.mjs';
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DOMINIO = 'https://acuarius.app';
 const REGISTRO = 'https://app.acuarius.app/registro';
-const CONTENIDO = { ...C1, ...C2, ...C3 };
+const CONTENIDO = { ...C1, ...C2, ...C3, ...C8 };
 
 // Nombres cortos para las migas de pan. Lo que no esté aquí se deriva del
 // último tramo de la URL.
@@ -39,6 +41,7 @@ const MIGAS = {
   '/benchmarks/': 'Benchmarks', '/benchmarks/cpc-google-ads-colombia/': 'CPC Google Ads Colombia',
   '/benchmarks/cpc-google-ads-mexico/': 'CPC Google Ads México', '/benchmarks/costo-meta-ads-colombia/': 'Costo de Meta Ads en Colombia',
   '/benchmarks/costo-por-lead-inmobiliario/': 'Costo por lead inmobiliario', '/calculadora-presupuesto-google-ads/': 'Calculadora de presupuesto',
+  '/agente-ia/': 'Agente de IA', '/herramientas/': 'Herramientas', '/herramientas/enlace-de-whatsapp/': 'Enlace de WhatsApp',
 };
 
 // ── Validación ──────────────────────────────────────────────────────────────
@@ -80,7 +83,6 @@ function extraer(re, nombre) {
   return m[0];
 }
 const ESTILO_BASE = extraer(/<style>[\s\S]*?<\/style>/, 'el bloque <style>');
-const LOGO = extraer(/<a href="\/" class="nav-logo">[\s\S]*?<\/a>/, 'el logo del menú');
 const GTM_HEAD = extraer(/<!-- Google Tag Manager -->[\s\S]*?<!-- End Google Tag Manager -->/, 'GTM del head');
 const GTM_BODY = extraer(/<!-- Google Tag Manager \(noscript\) -->[\s\S]*?<!-- End Google Tag Manager \(noscript\) -->/, 'GTM del body');
 // Favicon en fichero (/favicon.svg, .ico y apple-touch). Antes iba como data
@@ -229,28 +231,14 @@ ${ICONO}
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 ${ESTILO_BASE}
 ${ESTILO_SEO}
+${MENU_CSS}
 <script type="application/ld+json">${jsonLD(p, c)}</script>
 <script src="https://app.acuarius.app/origen.js" defer></script>
 </head>
 <body>
 ${GTM_BODY}
 
-<nav>
-  <div class="nav-inner">
-    ${LOGO}
-    <div class="nav-links">
-      <a href="/">Inicio</a>
-      <a href="/crm/">CRM</a>
-      <a href="/crm/whatsapp/">WhatsApp</a>
-      <a href="/#planes">Precios</a>
-      <a href="/partners">Partners</a>
-    </div>
-    <div class="nav-cta">
-      <a href="https://app.acuarius.app/login.html" class="btn-ghost">Iniciar sesión</a>
-      <a href="${REGISTRO}" class="btn-primary">Crear cuenta gratis ${flecha}</a>
-    </div>
-  </div>
-</nav>
+${menuHTML(p.url)}
 
 <section class="p-hero s-hero">
   <div class="hero-overlay"></div>
@@ -262,7 +250,7 @@ ${GTM_BODY}
     <p class="hero-sub">${c.sub}</p>
     <div class="hero-actions">
       <a href="${REGISTRO}" class="btn-primary btn-primary-lg">Empieza gratis ${flecha}</a>
-      <a href="/#planes" class="btn-outline-lg">Ver precios</a>
+      <a href="/precios/" class="btn-outline-lg">Ver precios</a>
     </div>
     <div class="hero-note"><span>Sin tarjeta de crédito</span><span>·</span><span>Pro gratis 14 días</span><span>·</span><span>En español</span></div>
   </div>
@@ -298,6 +286,7 @@ document.addEventListener('click', function (e) {
   } catch (err) {}
 });
 </script>
+${MENU_JS}
 </body>
 </html>
 `;
@@ -305,7 +294,7 @@ document.addEventListener('click', function (e) {
 
 // ── Sitemap, robots y mapa legible ──────────────────────────────────────────
 function sitemap() {
-  const urls = ['/', '/partners', ...publicadas().map((p) => p.url), ...NOVEDADES];
+  const urls = ['/', '/precios/', '/partners', ...publicadas().map((p) => p.url), ...NOVEDADES];
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${DOMINIO}${u}</loc></url>`).join('\n')}

@@ -2,7 +2,7 @@
 
 Generado por `node fuente-seo/build.mjs` desde `mapa.mjs`. No editar a mano.
 
-43 URLs: 19 publicadas, 17 pendientes de contenido, 7 bloqueadas.
+45 URLs: 21 publicadas, 17 pendientes de contenido, 7 bloqueadas.
 
 | C | Nivel | URL | Estado | Keyword | Meta title (car.) | Meta description (car.) | H1 | Nota |
 |---|---|---|---|---|---|---|---|---|
@@ -49,3 +49,5 @@ Generado por `node fuente-seo/build.mjs` desde `mapa.mjs`. No editar a mano.
 | 7 | Spoke | `/guias/mensajes-masivos-whatsapp/` | pendiente | mensajes masivos whatsapp | Mensajes masivos de WhatsApp: cómo enviarlos legal (50) | Cómo enviar mensajes masivos de WhatsApp sin que bloqueen tu número: plantillas aprobadas, listas con permiso, costo por conversación y campañas que convierten. (160) | Mensajes masivos de WhatsApp sin que te bloqueen el número | |
 | 7 | Spoke | `/guias/whatsapp-api-empresas/` | pendiente | whatsapp api para empresas | WhatsApp API para empresas: qué es y cuánto cuesta (50) | WhatsApp API para empresas: en qué se diferencia de WhatsApp Business, cuánto cuesta en Colombia por conversación y qué necesitas para empezar a usarla. (152) | WhatsApp API para empresas: qué es y cuánto cuesta | |
 | 7 | Spoke | `/guias/seguimiento-de-leads/` | pendiente | seguimiento de leads | Seguimiento de leads: cómo no perder ninguno (44) | Seguimiento de leads paso a paso: cuándo escribirle a un cliente potencial, cuántas veces insistir y cómo saber en qué momento dejarlo ir sin perder la venta. (158) | Seguimiento de leads: el método para no dejar ninguno frío | |
+| 8 | Pilar | `/agente-ia/` | publicada | agente de IA para WhatsApp | Agente de IA para WhatsApp que califica leads | Acuarius (56) | Agente de IA para WhatsApp e Instagram: responde con la información de tu negocio, califica a cada cliente y lo pasa al asesor indicado. Pruébalo antes. (152) | Agente de IA para WhatsApp que responde, califica y reparte tus leads | |
+| 8 | Herramienta | `/herramientas/enlace-de-whatsapp/` | publicada | generador de enlace de WhatsApp | Generador de enlace de WhatsApp gratis | Acuarius (49) | Generador de enlace de WhatsApp gratis: crea tu link wa.me con un mensaje listo para tu Instagram, tu web o un QR. Sin registro y sin guardar tus datos. (152) | Generador de enlace de WhatsApp: crea tu link wa.me gratis | |

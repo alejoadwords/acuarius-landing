@@ -35,12 +35,121 @@ a:hover{text-decoration:underline}
 .footer{font-size:13px;color:#9CA3AF;text-align:center;margin-top:48px}
 </style>
 <script src="https://app.acuarius.app/origen.js" defer></script>
+<style id="am-base">
+:root{--blue:#1E2BCC;--blue-h:#1520AA;--blue-lt:#EEF0FD;--text:#0A0A12;--muted:#5A5A72;--muted2:#9090A8;--border:#E4E4EE;--bg:#FAFAFA;--white:#FFFFFF;--font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;--r:12px}
+body{padding-top:68px}
+</style>
+<link id="am-fuentes" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style id="am-css">
+/* Menú del sitio (fuente-menu/menu.mjs). Tokens de partners.html. */
+.am-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);font-family:var(--font-body)}
+.am-in{max-width:1200px;height:100%;margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:24px}
+.am-logo{display:flex;align-items:center;flex:none}
+.am-logo img{height:24px;width:auto;display:block}
+.am-items{display:flex;align-items:center;gap:2px;margin-right:auto}
+.am-item{display:inline-flex;align-items:center;gap:5px;padding:9px 13px;border-radius:10px;font:500 14px/1 var(--font-body);color:var(--muted);background:none;border:0;cursor:pointer;text-decoration:none;transition:background .15s,color .15s}
+.am-item:hover,.am-item[aria-expanded="true"],.am-item[aria-current="page"]{background:var(--blue-lt);color:var(--blue)}
+.am-item svg{transition:transform .2s}
+.am-item[aria-expanded="true"] svg{transform:rotate(180deg)}
+.am-ctas{display:flex;align-items:center;gap:8px}
+.am-txt{font-size:13.5px;font-weight:600;color:var(--muted);padding:9px 10px;text-decoration:none;white-space:nowrap}
+.am-txt:hover{color:var(--text)}
+.am-borde{font-size:13.5px;font-weight:600;color:var(--text);padding:9px 16px;border:1.5px solid var(--border);border-radius:var(--r);text-decoration:none;white-space:nowrap;transition:border-color .15s,color .15s}
+.am-borde:hover{border-color:var(--blue);color:var(--blue)}
+.am-pri{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;padding:10px 18px;background:var(--blue);color:var(--white);border-radius:var(--r);text-decoration:none;white-space:nowrap;transition:background .15s}
+.am-pri:hover{background:var(--blue-h)}
+.am-hamb{display:none;width:40px;height:40px;border-radius:10px;align-items:center;justify-content:center;background:none;border:0;color:var(--text);cursor:pointer}
+.am-panel{position:absolute;left:0;right:0;top:68px;background:var(--white);border-bottom:1px solid var(--border);box-shadow:0 24px 60px -24px rgba(10,10,18,.28),0 6px 18px rgba(10,10,18,.06);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s}
+.am-panel.am-abierto{opacity:1;visibility:visible;transform:none}
+.am-panel-in{max-width:1200px;margin:0 auto;padding:26px 32px 24px}
+.am-cols{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:8px 22px}
+.am-h{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin:0 0 10px 10px}
+.am-h i{width:22px;height:22px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;background:var(--blue-lt);color:var(--blue);font-style:normal;font-size:12px}
+.am-ia .am-h{color:var(--blue)}
+.am-ia .am-h i{background:var(--blue);color:var(--white)}
+.am-lk{display:block;padding:10px;border-radius:12px;text-decoration:none;transition:background .15s}
+.am-lk:hover{background:var(--bg)}
+.am-lk b{display:block;font-size:14.5px;font-weight:600;color:var(--text);line-height:1.3}
+.am-lk small{display:block;font-size:13px;line-height:1.45;color:var(--muted);margin-top:3px}
+.am-lk:hover b{color:var(--blue)}
+.am-ia .am-lk{background:var(--blue-lt)}
+.am-ia .am-lk+.am-lk{margin-top:8px}
+.am-franja{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:12px;margin-top:18px;padding-top:18px;border-top:1px solid var(--border)}
+.am-fr{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;transition:border-color .15s}
+.am-fr:hover{border-color:var(--blue)}
+.am-fr-ico{width:40px;height:40px;border-radius:11px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--bg);color:var(--blue)}
+.am-fr b{display:block;font-size:14px;color:var(--text)}
+.am-fr small{font-size:12.5px;color:var(--muted)}
+.am-fr-dest{background:var(--blue-lt);border-color:transparent}
+.am-fr-dest .am-fr-ico{background:var(--white)}
+.am-dest{border-radius:16px;padding:20px;background:var(--text);color:var(--white);display:flex;flex-direction:column;justify-content:space-between;min-height:210px;text-decoration:none;position:relative;overflow:hidden}
+.am-dest::after{content:'';position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:var(--blue);opacity:.55;filter:blur(10px)}
+.am-dest>span{position:relative}
+.am-dest small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+.am-dest b{display:block;font-family:var(--font-display);font-size:20px;line-height:1.25;margin:10px 0 8px;color:var(--white)}
+.am-dest em{display:block;font-style:normal;font-size:13.5px;line-height:1.5;opacity:.75}
+.am-dest-cta{font-size:13.5px;font-weight:700;margin-top:16px}
+.am-cajon{display:none}
+@media(max-width:1080px){.am-in{padding:0 20px;gap:14px}.am-borde{display:none}}
+@media(max-width:960px){
+  .am-items,.am-txt,.am-panel{display:none}
+  .am-in{padding:0 16px}.am-logo{margin-right:auto}
+  .am-ctas .am-pri{padding:9px 14px;font-size:13px}
+  .am-hamb{display:flex}
+  .am-cajon{display:block;position:fixed;top:68px;left:0;right:0;bottom:0;z-index:199;background:var(--white);overflow-y:auto;padding:6px 16px 40px;visibility:hidden;opacity:0;transition:opacity .2s,visibility .2s;font-family:var(--font-body)}
+  .am-cajon.am-abierto{visibility:visible;opacity:1}
+  .am-acc{border-bottom:1px solid var(--border)}
+  .am-acc>button{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 4px;font:600 17px var(--font-body);color:var(--text);background:none;border:0;cursor:pointer}
+  .am-acc>button svg{transition:transform .2s}
+  .am-acc.am-abierto>button svg{transform:rotate(180deg)}
+  .am-acc-c{display:none;padding:0 0 12px}
+  .am-acc.am-abierto .am-acc-c{display:block}
+  .am-acc-c .am-h{margin:14px 4px 4px}
+  .am-acc-c .am-lk{padding:9px 4px;background:none}
+  .am-solo{display:block;padding:18px 4px;font-size:17px;font-weight:600;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border)}
+  .am-cajon-ctas{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+  .am-cajon-ctas a{justify-content:center;text-align:center;padding:13px;display:flex}
+  .am-cajon-ctas .am-borde{display:flex}
+  body.am-bloqueo{overflow:hidden}
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PX26PNPJ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<!-- MENU:INICIO (generado por fuente-menu/menu.mjs; no editar a mano) -->
+<header class="am-nav" id="am-nav">
+  <div class="am-in">
+    <a href="/" class="am-logo" aria-label="Acuarius, inicio"><img src="/logo.svg" alt="Acuarius" width="135" height="24"></a>
+    <div class="am-items" role="navigation" aria-label="Principal"><button class="am-item" type="button" aria-expanded="false" aria-controls="am-p-producto" data-am="producto">Producto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><button class="am-item" type="button" aria-expanded="false" aria-controls="am-p-soluciones" data-am="soluciones">Soluciones <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><button class="am-item" type="button" aria-expanded="false" aria-controls="am-p-recursos" data-am="recursos">Recursos <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><a class="am-item" href="/precios/">Precios</a></div>
+    <div class="am-ctas">
+      <a class="am-txt" href="https://app.acuarius.app/login.html">Iniciar sesión</a>
+      <a class="am-borde" href="https://app.acuarius.app/reunion/alejandro-reunion">Agendar demo</a>
+      <a class="am-pri" href="https://app.acuarius.app/registro">Crear cuenta gratis <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <button class="am-hamb" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="am-cajon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <div class="am-panel" id="am-p-producto" role="region" aria-label="Producto"><div class="am-panel-in">
+    <div class="am-cols" style="--n:4"><div class="am-col am-ia"><div class="am-h"><i>✦</i>Agente de IA</div><a class="am-lk" href="/agente-ia/"><b>Agente de IA para WhatsApp</b><small>Responde, califica y te pasa el cliente con sus datos, las 24 horas.</small></a><a class="am-lk" href="/agente-ia/#califica-y-reparte"><b>Calificación y reparto</b><small>Cada lead al tablero y al asesor que le toca.</small></a></div><div class="am-col"><div class="am-h"><i>◍</i>Conversaciones</div><a class="am-lk" href="/crm/whatsapp/"><b>Inbox de WhatsApp</b><small>Todo tu equipo en un mismo número, en tiempo real.</small></a><a class="am-lk" href="/novedades/whatsapp-en-tiempo-real/"><b>Plantillas y difusión</b><small>Escríbele primero y envía campañas aprobadas por Meta.</small></a></div><div class="am-col"><div class="am-h"><i>▦</i>CRM</div><a class="am-lk" href="/crm/"><b>CRM y pipeline</b><small>Tus etapas, tus asesores y cada venta a la vista.</small></a><a class="am-lk" href="/novedades/productos-en-el-crm/"><b>Productos y propuestas</b><small>Catálogo, cotizaciones con IVA y enlaces de pago.</small></a><a class="am-lk" href="/novedades/enlace-para-agendar-reuniones/"><b>Agenda y reuniones</b><small>Que tus clientes te agenden sin ida y vuelta.</small></a></div><div class="am-col"><div class="am-h"><i>◔</i>Análisis y pauta</div><a class="am-lk" href="/novedades/anuncios-clic-a-whatsapp-meta-ads/"><b>Google y Meta Ads</b><small>Qué campaña vende de verdad, no solo cuál trae clics.</small></a><a class="am-lk" href="/novedades/recompra-y-encuesta-nps/"><b>Encuestas NPS</b><small>Mide la satisfacción y reacciona a tiempo.</small></a></div></div>
+    <div class="am-franja" style="--n:1"><a class="am-fr am-fr-dest" href="/novedades/"><span class="am-fr-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4z"/></svg></span><span><b>Novedades</b><small>Lo nuevo de cada quincena, con guías en video</small></span></a></div>
+  </div></div>
+  <div class="am-panel" id="am-p-soluciones" role="region" aria-label="Soluciones"><div class="am-panel-in">
+    <div class="am-cols" style="--n:4"><div class="am-col"><div class="am-h">Por industria</div><a class="am-lk" href="/crm/inmobiliarias/"><b>Inmobiliarias</b><small>Arriendo y venta, cada uno con su proceso.</small></a><a class="am-lk" href="/crm/clinicas/"><b>Clínicas y salud</b><small>Citas, recordatorios y seguimiento del paciente.</small></a><a class="am-lk" href="/crm/restaurantes/"><b>Restaurantes</b><small>Reservas y pedidos que llegan por WhatsApp.</small></a></div><div class="am-col"><div class="am-h">Por tipo de empresa</div><a class="am-lk" href="/crm/"><b>Pymes</b><small>Todo tu proceso comercial en un solo lugar.</small></a><a class="am-lk" href="/crm/gratis/"><b>CRM gratis</b><small>Empieza sin pagar y crece cuando lo necesites.</small></a></div><div class="am-col"><div class="am-h">Comparar</div><a class="am-lk" href="/mejores-crm-con-whatsapp/"><b>Mejores CRM con WhatsApp</b><small>La comparativa completa para LatAm.</small></a><a class="am-lk" href="/comparativas/acuarius-vs-hubspot/"><b>Acuarius vs HubSpot</b></a><a class="am-lk" href="/comparativas/acuarius-vs-kommo/"><b>Acuarius vs Kommo</b></a></div><a class="am-dest" href="/mejores-crm-con-whatsapp/"><span><small>Guía</small><b>¿Qué CRM con WhatsApp te conviene?</b><em>Lo que de verdad incluye cada uno, comparado para LatAm.</em></span><span class="am-dest-cta">Leer la comparativa →</span></a></div>
+    
+  </div></div>
+  <div class="am-panel" id="am-p-recursos" role="region" aria-label="Recursos"><div class="am-panel-in">
+    <div class="am-cols" style="--n:4"><div class="am-col"><div class="am-h">Aprender</div><a class="am-lk" href="/novedades/"><b>Novedades</b><small>Cada función nueva, explicada con video.</small></a><a class="am-lk" href="https://www.youtube.com/@Acuarius-ai" target="_blank" rel="noopener"><b>Academia en video</b><small>Aprende a usar Acuarius paso a paso.</small></a><a class="am-lk" href="/benchmarks/"><b>Benchmarks LatAm</b><small>Costos de pauta y de leads por país y sector.</small></a></div><div class="am-col"><div class="am-h">Herramientas gratis</div><a class="am-lk" href="/herramientas/enlace-de-whatsapp/"><b>Generador de enlace de WhatsApp</b><small>Tu enlace wa.me con el mensaje listo.</small></a><a class="am-lk" href="/calculadora-presupuesto-google-ads/"><b>Calculadora de presupuesto de Google Ads</b></a></div><div class="am-col"><div class="am-h">Empresa</div><a class="am-lk" href="/partners"><b>Programa de Partners</b><small>Comisión recurrente por recomendar Acuarius.</small></a><a class="am-lk" href="https://wa.me/573219972333?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20de%20Acuarius" target="_blank" rel="noopener"><b>Hablar con nosotros</b><small>Por WhatsApp, en horario de oficina.</small></a></div><a class="am-dest" href="/novedades/campos-personalizados-crm/"><span><small>Guía en video</small><b>Campos personalizados que se llenan solos</b><em>Créalos, deja que el agente los llene y úsalos en automatizaciones.</em></span><span class="am-dest-cta">Ver la guía →</span></a></div>
+    
+  </div></div>
+</header>
+<div class="am-cajon" id="am-cajon">
+  <div class="am-acc"><button type="button" aria-expanded="false">Producto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="am-acc-c"><div class="am-h">Agente de IA</div><a class="am-lk" href="/agente-ia/"><b>Agente de IA para WhatsApp</b></a><a class="am-lk" href="/agente-ia/#califica-y-reparte"><b>Calificación y reparto</b></a><div class="am-h">Conversaciones</div><a class="am-lk" href="/crm/whatsapp/"><b>Inbox de WhatsApp</b></a><a class="am-lk" href="/novedades/whatsapp-en-tiempo-real/"><b>Plantillas y difusión</b></a><div class="am-h">CRM</div><a class="am-lk" href="/crm/"><b>CRM y pipeline</b></a><a class="am-lk" href="/novedades/productos-en-el-crm/"><b>Productos y propuestas</b></a><a class="am-lk" href="/novedades/enlace-para-agendar-reuniones/"><b>Agenda y reuniones</b></a><div class="am-h">Análisis y pauta</div><a class="am-lk" href="/novedades/anuncios-clic-a-whatsapp-meta-ads/"><b>Google y Meta Ads</b></a><a class="am-lk" href="/novedades/recompra-y-encuesta-nps/"><b>Encuestas NPS</b></a><a class="am-lk" href="/novedades/"><b>Novedades</b></a></div></div><div class="am-acc"><button type="button" aria-expanded="false">Soluciones <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="am-acc-c"><div class="am-h">Por industria</div><a class="am-lk" href="/crm/inmobiliarias/"><b>Inmobiliarias</b></a><a class="am-lk" href="/crm/clinicas/"><b>Clínicas y salud</b></a><a class="am-lk" href="/crm/restaurantes/"><b>Restaurantes</b></a><div class="am-h">Por tipo de empresa</div><a class="am-lk" href="/crm/"><b>Pymes</b></a><a class="am-lk" href="/crm/gratis/"><b>CRM gratis</b></a><div class="am-h">Comparar</div><a class="am-lk" href="/mejores-crm-con-whatsapp/"><b>Mejores CRM con WhatsApp</b></a><a class="am-lk" href="/comparativas/acuarius-vs-hubspot/"><b>Acuarius vs HubSpot</b></a><a class="am-lk" href="/comparativas/acuarius-vs-kommo/"><b>Acuarius vs Kommo</b></a></div></div><div class="am-acc"><button type="button" aria-expanded="false">Recursos <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="am-acc-c"><div class="am-h">Aprender</div><a class="am-lk" href="/novedades/"><b>Novedades</b></a><a class="am-lk" href="https://www.youtube.com/@Acuarius-ai" target="_blank" rel="noopener"><b>Academia en video</b></a><a class="am-lk" href="/benchmarks/"><b>Benchmarks LatAm</b></a><div class="am-h">Herramientas gratis</div><a class="am-lk" href="/herramientas/enlace-de-whatsapp/"><b>Generador de enlace de WhatsApp</b></a><a class="am-lk" href="/calculadora-presupuesto-google-ads/"><b>Calculadora de presupuesto de Google Ads</b></a><div class="am-h">Empresa</div><a class="am-lk" href="/partners"><b>Programa de Partners</b></a><a class="am-lk" href="https://wa.me/573219972333?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20de%20Acuarius" target="_blank" rel="noopener"><b>Hablar con nosotros</b></a></div></div>
+  <a class="am-solo" href="/precios/">Precios</a>
+  <div class="am-cajon-ctas"><a class="am-pri" href="https://app.acuarius.app/registro">Crear cuenta gratis</a><a class="am-borde" href="https://app.acuarius.app/reunion/alejandro-reunion">Agendar demo</a><a class="am-txt" href="https://app.acuarius.app/login.html">Iniciar sesión</a></div>
+</div>
+<!-- MENU:FIN -->
 
 <div class="wrap">
 
@@ -163,5 +272,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p class="footer">© 2026 Acuarius · Bogotá, Colombia</p>
 
 </div>
+<script id="am-js">
+// Menú: desplegables por hover (con pausa para no abrirse al cruzar la barra),
+// clic o teclado; Esc y clic fuera cierran. En el celular, cajón con acordeón.
+(function () {
+  var nav = document.getElementById('am-nav'); if (!nav) return;
+  var abierto = null, t = null;
+  function panelDe(b) { return document.getElementById(b.getAttribute('aria-controls')); }
+  function cerrar() { if (!abierto) return; abierto.setAttribute('aria-expanded', 'false'); panelDe(abierto).classList.remove('am-abierto'); abierto = null; }
+  function abrir(b) { if (abierto === b) return; cerrar(); abierto = b; b.setAttribute('aria-expanded', 'true'); panelDe(b).classList.add('am-abierto'); }
+  var fino = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  nav.querySelectorAll('[data-am]').forEach(function (b) {
+    b.addEventListener('click', function () { abierto === b ? cerrar() : abrir(b); });
+    if (fino) b.addEventListener('mouseenter', function () { clearTimeout(t); t = setTimeout(function () { abrir(b); }, 90); });
+  });
+  if (fino) {
+    nav.addEventListener('mouseleave', function () { clearTimeout(t); t = setTimeout(cerrar, 180); });
+    nav.addEventListener('mouseenter', function () { clearTimeout(t); });
+    nav.querySelectorAll('a.am-item').forEach(function (a) { a.addEventListener('mouseenter', function () { clearTimeout(t); cerrar(); }); });
+  }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { cerrar(); cerrarCajon(); } });
+  document.addEventListener('click', function (e) { if (!e.target.closest('#am-nav')) cerrar(); });
+  var hamb = nav.querySelector('.am-hamb'), cajon = document.getElementById('am-cajon');
+  function cerrarCajon() { if (!cajon) return; cajon.classList.remove('am-abierto'); hamb.setAttribute('aria-expanded', 'false'); document.body.classList.remove('am-bloqueo'); }
+  hamb && hamb.addEventListener('click', function () { var a = cajon.classList.toggle('am-abierto'); hamb.setAttribute('aria-expanded', a); document.body.classList.toggle('am-bloqueo', a); });
+  cajon && cajon.querySelectorAll('.am-acc>button').forEach(function (b) { b.addEventListener('click', function () { var a = b.parentElement.classList.toggle('am-abierto'); b.setAttribute('aria-expanded', a); }); });
+  cajon && cajon.addEventListener('click', function (e) { if (e.target.closest('a')) cerrarCajon(); });
+})();
+</script>
 </body>
 </html>

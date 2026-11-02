@@ -20,6 +20,7 @@ export const CLUSTERS = {
   5: 'Software para agencias',
   6: 'GEO / visibilidad en IA',
   7: 'Automatización comercial',
+  8: 'Producto y herramientas',
 };
 
 export const MAPA = [
@@ -264,4 +265,16 @@ export const MAPA = [
     title: 'Seguimiento de leads: cómo no perder ninguno',
     description: 'Seguimiento de leads paso a paso: cuándo escribirle a un cliente potencial, cuántas veces insistir y cómo saber en qué momento dejarlo ir sin perder la venta.',
     h1: 'Seguimiento de leads: el método para no dejar ninguno frío' },
+
+  // ── Cluster 8 · Producto y herramientas (menú del sitio, 02-11-2026) ──
+  { url: '/agente-ia/', cluster: 8, nivel: 'Pilar', intencion: 'Comercial', estado: 'publicada',
+    kw: 'agente de IA para WhatsApp',
+    title: 'Agente de IA para WhatsApp que califica leads | Acuarius',
+    description: 'Agente de IA para WhatsApp e Instagram: responde con la información de tu negocio, califica a cada cliente y lo pasa al asesor indicado. Pruébalo antes.',
+    h1: 'Agente de IA para WhatsApp que responde, califica y reparte tus leads' },
+  { url: '/herramientas/enlace-de-whatsapp/', cluster: 8, nivel: 'Herramienta', intencion: 'Informativa', estado: 'publicada',
+    kw: 'generador de enlace de WhatsApp',
+    title: 'Generador de enlace de WhatsApp gratis | Acuarius',
+    description: 'Generador de enlace de WhatsApp gratis: crea tu link wa.me con un mensaje listo para tu Instagram, tu web o un QR. Sin registro y sin guardar tus datos.',
+    h1: 'Generador de enlace de WhatsApp: crea tu link wa.me gratis' },
 ];
