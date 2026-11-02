@@ -124,6 +124,10 @@ const ESTILO_ART = `<style>
 .a-meta b{color:var(--text);font-weight:600}
 .a-video-wrap{max-width:1000px;margin:0 auto;padding:0 40px}
 .a-video-cap{font-size:13.5px;color:var(--muted);margin-top:12px;text-align:center}
+.a-caps{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px}
+.a-caps button{font:inherit;font-size:13px;color:var(--text);background:var(--white);border:1px solid var(--border);border-radius:999px;padding:6px 12px;cursor:pointer}
+.a-caps button:hover{border-color:var(--blue);color:var(--blue)}
+.a-caps b{color:var(--blue);font-weight:700;margin-right:4px}
 .a-cuerpo{max-width:1160px;margin:0 auto;padding:56px 40px 24px;display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:64px;align-items:start}
 .a-art{min-width:0;max-width:740px}
 .a-corta{border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:var(--r);padding:20px 22px;background:var(--n-tinte-azul);margin-bottom:40px}
@@ -257,6 +261,23 @@ document.addEventListener('click', function (e) {
   b.removeAttribute('data-video');
   try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'video_play', pagina: location.pathname }); } catch (err) {}
 });
+// Capítulos: montan (o reinician) el reproductor en ese segundo.
+document.addEventListener('click', function (e) {
+  var c = e.target.closest && e.target.closest('[data-ir-a]');
+  if (!c) return;
+  var w = c.closest('.a-video-wrap'), v = w && w.querySelector('.n-video');
+  if (!v) return;
+  var id = v.getAttribute('data-video') || v.getAttribute('data-id');
+  v.setAttribute('data-id', id);
+  var f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1&playsinline=1&start=' + c.getAttribute('data-ir-a');
+  f.title = v.getAttribute('aria-label') || 'Video';
+  f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+  f.allowFullscreen = true;
+  v.replaceChildren(f);
+  v.removeAttribute('data-video');
+  v.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
 // Índices (barra de la edición y tabla de contenido del artículo): marcan la
 // sección que se está leyendo.
 (function () {
@@ -296,7 +317,7 @@ const ORG = { '@type': 'Organization', '@id': DOMINIO + '/#org', name: 'Acuarius
 const panel = (a) => `<div class="n-panel" style="background:${tinteDe(a)}">${ILUSTRACIONES[a.ilustracion]()}</div>`;
 const miniatura = (id) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 function reproductor(a) {
-  return `<button class="n-video" type="button" data-video="${esc(a.video.id)}" aria-label="Reproducir el video: ${esc(a.video.titulo)}"><img src="${miniatura(a.video.id)}" alt="${esc(a.video.titulo)}" width="480" height="360"><span>${PLAY().replace('<svg', '<svg style="color:var(--blue);margin-left:3px"')}</span></button>`;
+  return `<button class="n-video" type="button" data-video="${esc(a.video.id)}" data-id="${esc(a.video.id)}" aria-label="Reproducir el video: ${esc(a.video.titulo)}"><img src="${miniatura(a.video.id)}" alt="${esc(a.video.titulo)}" width="480" height="360"><span>${PLAY().replace('<svg', '<svg style="color:var(--blue);margin-left:3px"')}</span></button>`;
 }
 const tarjeta = (a) => `<a class="n-card" href="${BASE}${a.slug}/">
         ${panel(a)}
@@ -327,7 +348,8 @@ function articulo(a) {
     { '@type': 'VideoObject', '@id': url + '#video', name: a.video.titulo, description: a.resumen,
       thumbnailUrl: [miniatura(a.video.id), imagen], uploadDate: a.video.subido + 'T12:00:00-05:00', duration: isoDur(a.video.segundos),
       embedUrl: `https://www.youtube-nocookie.com/embed/${a.video.id}`, contentUrl: `https://www.youtube.com/watch?v=${a.video.id}`,
-      inLanguage: 'es', publisher: { '@id': ORG['@id'] } },
+      inLanguage: 'es', publisher: { '@id': ORG['@id'] },
+      ...(a.video.capitulos?.length ? { hasPart: a.video.capitulos.map((c, i, l) => ({ '@type': 'Clip', name: c.t, startOffset: c.s, endOffset: (l[i + 1]?.s ?? a.video.segundos), url: `https://www.youtube.com/watch?v=${a.video.id}&t=${c.s}s` })) } : {}) },
     migasLD(lista),
     { '@type': 'FAQPage', mainEntity: a.faq.map((f) => ({ '@type': 'Question', name: sinEtiquetas(f.q), acceptedAnswer: { '@type': 'Answer', text: sinEtiquetas(f.a) } })) },
   ];
@@ -358,6 +380,7 @@ function articulo(a) {
 <div class="a-video-wrap">
   ${reproductor(a)}
   <p class="a-video-cap">${a.video.propio ? 'Video guía' : 'Video de la Academia de Acuarius'}: ${esc(a.video.titulo)} · ${minSeg(a.video.segundos)}</p>
+  ${a.video.capitulos?.length ? `<div class="a-caps" aria-label="Capítulos del video">${a.video.capitulos.map((c) => `<button type="button" data-ir-a="${c.s}"><b>${minSeg(c.s)}</b> ${esc(c.t)}</button>`).join('')}</div>` : ''}
 </div>
 
 <div class="a-cuerpo">

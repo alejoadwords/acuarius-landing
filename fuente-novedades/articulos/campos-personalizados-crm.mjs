@@ -9,7 +9,17 @@ export const ARTICULO = {
   edicion: 1,
   resumen: 'Crea los datos que tu negocio necesita (presupuesto, EPS, fecha del evento) y úsalos para filtrar, automatizar, segmentar campañas y personalizar mensajes.',
   respuesta: 'Los campos personalizados en el CRM de Acuarius son los datos de tus contactos que no vienen de serie: presupuesto, tipo de inmueble, EPS o fecha del evento. Los creas en CRM → Campos personalizados con su tipo, se llenan en la ficha, en formularios, al importar o por tu agente de WhatsApp, y sirven para filtrar, automatizar, segmentar campañas y personalizar mensajes.',
-  video: { id: '7vltri_n8S4', titulo: 'Etiquetas en el CRM: el sistema que conecta filtros, campañas y automatizaciones', subido: '2026-08-07', segundos: 140, propio: false },
+  video: {
+    id: 'Nz5Xlou3WG8', titulo: 'Campos personalizados en Acuarius: datos que deciden, segmentan y se llenan solos', subido: '2026-11-02', segundos: 74, propio: true,
+    capitulos: [
+      { s: 6, t: 'Qué son los campos personalizados' },
+      { s: 17, t: 'Crear el campo' },
+      { s: 33, t: 'Lo llena el agente de WhatsApp' },
+      { s: 44, t: 'El campo en la ficha' },
+      { s: 51, t: 'Condición en una automatización' },
+      { s: 61, t: 'Campaña por segmento' },
+    ],
+  },
   ilustracion: 'campos',
   secciones: [
     {

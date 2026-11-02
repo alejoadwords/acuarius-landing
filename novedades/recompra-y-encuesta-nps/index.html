@@ -643,6 +643,10 @@ footer{background:var(--text);padding:64px 40px 40px;color:rgba(255,255,255,.6)}
 .a-meta b{color:var(--text);font-weight:600}
 .a-video-wrap{max-width:1000px;margin:0 auto;padding:0 40px}
 .a-video-cap{font-size:13.5px;color:var(--muted);margin-top:12px;text-align:center}
+.a-caps{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px}
+.a-caps button{font:inherit;font-size:13px;color:var(--text);background:var(--white);border:1px solid var(--border);border-radius:999px;padding:6px 12px;cursor:pointer}
+.a-caps button:hover{border-color:var(--blue);color:var(--blue)}
+.a-caps b{color:var(--blue);font-weight:700;margin-right:4px}
 .a-cuerpo{max-width:1160px;margin:0 auto;padding:56px 40px 24px;display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:64px;align-items:start}
 .a-art{min-width:0;max-width:740px}
 .a-corta{border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:var(--r);padding:20px 22px;background:var(--n-tinte-azul);margin-bottom:40px}
@@ -734,8 +738,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </header>
 
 <div class="a-video-wrap">
-  <button class="n-video" type="button" data-video="Edw6fql549A" aria-label="Reproducir el video: Encuestas NPS automáticas: mide la satisfacción y reacciona sin intervenir"><img src="https://i.ytimg.com/vi/Edw6fql549A/hqdefault.jpg" alt="Encuestas NPS automáticas: mide la satisfacción y reacciona sin intervenir" width="480" height="360"><span><svg style="color:var(--blue);margin-left:3px" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button>
+  <button class="n-video" type="button" data-video="Edw6fql549A" data-id="Edw6fql549A" aria-label="Reproducir el video: Encuestas NPS automáticas: mide la satisfacción y reacciona sin intervenir"><img src="https://i.ytimg.com/vi/Edw6fql549A/hqdefault.jpg" alt="Encuestas NPS automáticas: mide la satisfacción y reacciona sin intervenir" width="480" height="360"><span><svg style="color:var(--blue);margin-left:3px" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button>
   <p class="a-video-cap">Video de la Academia de Acuarius: Encuestas NPS automáticas: mide la satisfacción y reacciona sin intervenir · 2:19</p>
+  
 </div>
 
 <div class="a-cuerpo">
@@ -915,6 +920,23 @@ document.addEventListener('click', function (e) {
   b.replaceChildren(f);
   b.removeAttribute('data-video');
   try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'video_play', pagina: location.pathname }); } catch (err) {}
+});
+// Capítulos: montan (o reinician) el reproductor en ese segundo.
+document.addEventListener('click', function (e) {
+  var c = e.target.closest && e.target.closest('[data-ir-a]');
+  if (!c) return;
+  var w = c.closest('.a-video-wrap'), v = w && w.querySelector('.n-video');
+  if (!v) return;
+  var id = v.getAttribute('data-video') || v.getAttribute('data-id');
+  v.setAttribute('data-id', id);
+  var f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1&playsinline=1&start=' + c.getAttribute('data-ir-a');
+  f.title = v.getAttribute('aria-label') || 'Video';
+  f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+  f.allowFullscreen = true;
+  v.replaceChildren(f);
+  v.removeAttribute('data-video');
+  v.scrollIntoView({ behavior: 'smooth', block: 'center' });
 });
 // Índices (barra de la edición y tabla de contenido del artículo): marcan la
 // sección que se está leyendo.
