@@ -10,7 +10,7 @@
 
 const PLANES = {
   free: '50 contactos con pipeline, tareas y agenda, sin tarjeta',
-  pro: '39 USD al mes: 1.000 contactos, 3 usuarios, bandeja de WhatsApp, Instagram y Messenger, automatizaciones y campañas',
+  pro: '39 USD al mes: 1.000 contactos, 3 usuarios, bandeja de WhatsApp e Instagram, automatizaciones y campañas',
   clientes: '9 USD al mes por cada cliente o marca adicional, cada uno con su pipeline, sus leads y sus reportes',
   extras: 'usuario extra a 9 USD al mes y 1.000 contactos más por 4 USD',
 };
@@ -28,7 +28,7 @@ export const CONTENIDO = {
       { tipo: 'tarjetas', label: 'Qué incluye', h2: 'Todo lo que tu equipo comercial necesita, en una sola herramienta',
         items: [
           { t: 'Pipeline visual', d: 'Arrastra cada oportunidad entre etapas que tú defines. Hasta 10 pipelines por cuenta, con vista de tablero o de lista. <a href="/crm/pipeline-de-ventas/">Cómo armar tu pipeline de ventas</a>.' },
-          { t: 'Bandeja multicanal', d: 'WhatsApp, Instagram, Messenger y el chat de tu web en una sola bandeja. Cada conversación nueva crea o actualiza el lead. <a href="/crm/whatsapp/">Ver CRM con WhatsApp</a>.' },
+          { t: 'Bandeja multicanal', d: 'WhatsApp e Instagram en una sola bandeja. Cada conversación nueva crea o actualiza el lead. <a href="/crm/whatsapp/">Ver CRM con WhatsApp</a>.' },
           { t: 'Agente de IA 24/7', d: 'Responde preguntas con la información de tu negocio, califica al cliente y le pasa la conversación a un asesor cuando ya está listo para comprar.' },
           { t: 'Reparto automático', d: 'Los leads se asignan por turnos entre tu equipo, por fuente. Cada asesor ve lo suyo y tú lo ves todo.' },
           { t: 'Automatizaciones', d: 'Flujos con correo, WhatsApp, esperas y condiciones: bienvenida, seguimiento a los tres días, aviso al asesor si un lead se enfría.' },
@@ -41,7 +41,7 @@ export const CONTENIDO = {
         items: [
           { t: 'Crea tu cuenta', d: 'Gratis y sin tarjeta. Si quieres el plan Pro, tienes 14 días de prueba sin pagar.' },
           { t: 'Importa tus contactos', d: 'Sube tu Excel o CSV. El importador reconoce las columnas y reparte los contactos entre tu equipo.' },
-          { t: 'Conecta tus canales', d: 'WhatsApp, Instagram, Messenger, formularios de tu web o un webhook: cada lead entra solo al pipeline.' },
+          { t: 'Conecta tus canales', d: 'WhatsApp, Instagram, formularios de tu web o un webhook: cada lead entra solo al pipeline.' },
           { t: 'Define tus etapas', d: 'Ajusta el pipeline a tu proceso real y deja que el agente de IA atienda las primeras preguntas.' },
         ] },
       { tipo: 'tabla', label: 'Precios', h2: 'Un CRM con precio pensado para pymes latinoamericanas',
@@ -64,7 +64,7 @@ export const CONTENIDO = {
       { q: '¿Qué es un CRM para pymes?', a: 'Es un sistema para registrar a cada cliente potencial, en qué etapa de la venta está y quién lo atiende. En una pyme reemplaza la mezcla de chats, libretas y hojas de cálculo por un solo lugar que todo el equipo consulta.' },
       { q: '¿Acuarius tiene un plan gratis?', a: 'Sí. El plan Free es para siempre e incluye ' + PLANES.free + '. Cuando necesites más, el plan Pro tiene 14 días de prueba gratis. <a href="/crm/gratis/">Ver CRM gratis</a>.' },
       { q: '¿Necesito saber de tecnología para usarlo?', a: 'No. Se configura desde el navegador, sin instalar nada, y todo está en español. La mayoría de las cuentas tiene su pipeline funcionando el mismo día.' },
-      { q: '¿Puedo conectar mi WhatsApp?', a: 'Sí. En los planes de pago, WhatsApp, Instagram, Messenger y el chat web llegan a una bandeja compartida, y cada conversación queda asociada al lead.' },
+      { q: '¿Puedo conectar mi WhatsApp?', a: 'Sí. En los planes de pago, WhatsApp e Instagram llegan a una bandeja compartida, y cada conversación queda asociada al lead.' },
       { q: '¿Sirve para mi industria?', a: 'El pipeline y los campos se adaptan a cualquier proceso de venta. Tenemos configuraciones pensadas para <a href="/crm/inmobiliarias/">inmobiliarias</a>, <a href="/crm/clinicas/">clínicas</a> y <a href="/crm/restaurantes/">restaurantes</a>.' },
       { q: '¿Puedo cancelar cuando quiera?', a: 'Sí. Los planes son mensuales y se cancelan desde la cuenta, sin permanencia mínima.' },
     ],
@@ -72,7 +72,7 @@ export const CONTENIDO = {
   },
 
   '/crm/whatsapp/': {
-    badge: 'WhatsApp, Instagram y Messenger',
+    badge: 'WhatsApp e Instagram en una bandeja',
     sub: 'Todas las conversaciones de tu negocio en una bandeja que comparte tu equipo. Cada chat crea el lead, lo asigna a un asesor y deja el historial a la vista. Un agente de IA atiende cuando nadie puede.',
     secciones: [
       { tipo: 'texto', label: 'El problema', h2: 'WhatsApp Business se queda corto cuando vendes en equipo',
@@ -82,7 +82,7 @@ export const CONTENIDO = {
         ] },
       { tipo: 'tarjetas', label: 'Cómo funciona', h2: 'Lo que cambia cuando WhatsApp vive dentro de tu CRM',
         items: [
-          { t: 'Una bandeja para todo', d: 'WhatsApp, Instagram, Messenger y el chat de tu web en la misma pantalla, con filtros por canal, por asesor y por estado.' },
+          { t: 'Una bandeja para todo', d: 'WhatsApp e Instagram en la misma pantalla, con filtros por canal, por asesor y por estado.' },
           { t: 'Cada chat es un lead', d: 'Cuando alguien escribe por primera vez se crea el lead con su número y su canal de origen. Si ya existía, la conversación se suma a su historial.' },
           { t: 'Asignación por turnos', d: 'Las conversaciones nuevas se reparten entre tus asesores de forma automática, sin que nadie tenga que repartirlas a mano.' },
           { t: 'Agente de IA que responde', d: 'Contesta en segundos con la información de tu negocio: precios, horarios, catálogo. Califica al cliente y le pasa la conversación a una persona cuando hace falta.' },
@@ -99,14 +99,14 @@ export const CONTENIDO = {
         filas: [
           ['Personas atendiendo el mismo número', 'Limitado a los dispositivos vinculados', 'Todo tu equipo, desde el navegador'],
           ['Historial del cliente', 'Dentro del chat del teléfono', 'En la ficha del lead, con etapa, tareas y notas'],
-          ['Instagram y Messenger', 'En otra aplicación', 'En la misma bandeja'],
+          ['Instagram', 'En otra aplicación', 'En la misma bandeja'],
           ['Respuestas fuera de horario', 'Mensaje de ausencia fijo', 'Agente de IA que entiende y responde'],
           ['Saber qué chats se convirtieron en venta', 'No', 'Sí, con reportes por fuente y por asesor'],
         ] },
       { tipo: 'pasos', label: 'Cómo empezar', h2: 'Conecta tu WhatsApp en cuatro pasos',
         items: [
           { t: 'Crea tu cuenta', d: 'Prueba el plan Pro 14 días gratis, sin tarjeta.' },
-          { t: 'Conecta tus canales', d: 'Vincula WhatsApp, Instagram y Messenger desde la sección de canales.' },
+          { t: 'Conecta tus canales', d: 'Vincula WhatsApp e Instagram desde Conversaciones → Canales.' },
           { t: 'Configura el agente', d: 'Cuéntale de tu negocio y define cuándo debe pasarle la conversación a una persona.' },
           { t: 'Invita a tu equipo', d: 'El plan Pro incluye tres usuarios; cada usuario adicional cuesta 9 USD al mes.' },
         ] },
@@ -116,9 +116,9 @@ export const CONTENIDO = {
       { q: '¿Varias personas pueden responder el mismo WhatsApp?', a: 'Sí. Todo tu equipo atiende el mismo número desde el navegador, y cada conversación tiene un responsable para que nadie responda dos veces ni deje a un cliente esperando.' },
       { q: '¿Puedo enviar mensajes masivos por WhatsApp?', a: 'Sí, con campañas a tu base de contactos segmentada por etiquetas. WhatsApp exige plantillas aprobadas para escribir a quien no te ha escrito en las últimas 24 horas.' },
       { q: '¿El agente de IA responde solo?', a: 'Responde lo que sabe con la información que tú le das y pasa la conversación a un asesor cuando el cliente pide algo que no puede resolver o está listo para comprar. Tú defines esas reglas.' },
-      { q: '¿También funciona con Instagram y Messenger?', a: 'Sí. Los mensajes directos de Instagram y de Messenger llegan a la misma bandeja que WhatsApp.' },
+      { q: '¿También funciona con Instagram?', a: 'Sí. Los mensajes directos de Instagram llegan a la misma bandeja que WhatsApp.' },
     ],
-    cta: { h2: 'Ordena tus chats y vende más', sub: 'Prueba Acuarius 14 días gratis y atiende WhatsApp, Instagram y Messenger con tu equipo.' },
+    cta: { h2: 'Ordena tus chats y vende más', sub: 'Prueba Acuarius 14 días gratis y atiende WhatsApp e Instagram con tu equipo.' },
   },
 
   '/crm/gratis/': {
@@ -146,7 +146,7 @@ export const CONTENIDO = {
           ['Contactos', '50', '1.000', '1.000 (+4 USD por cada 1.000 más)'],
           ['Usuarios', '1', '3', '3 (+9 USD por usuario)'],
           ['Pipeline, tareas y agenda', 'Sí', 'Sí', 'Sí'],
-          ['Bandeja de WhatsApp, Instagram y Messenger', 'No', 'Sí', 'Sí'],
+          ['Bandeja de WhatsApp e Instagram', 'No', 'Sí', 'Sí'],
           ['Automatizaciones y campañas', 'No', 'Sí', 'Sí'],
           ['Tarjeta de crédito', 'No', 'No', 'Al contratar'],
         ],
@@ -163,7 +163,7 @@ export const CONTENIDO = {
       { q: '¿El CRM gratis de Acuarius tiene límite de tiempo?', a: 'No. El plan Free es permanente. Lo que tiene es un límite de 50 contactos y algunas funciones reservadas para los planes de pago.' },
       { q: '¿Me piden tarjeta de crédito?', a: 'No, ni para el plan Free ni para los 14 días de prueba del plan Pro.' },
       { q: '¿Qué pasa si paso de 50 contactos?', a: 'Puedes pasar al plan Pro, que incluye 1.000 contactos y tres usuarios por 39 USD al mes, o probarlo antes 14 días gratis.' },
-      { q: '¿Puedo usar WhatsApp en el plan gratis?', a: 'La bandeja de WhatsApp, Instagram y Messenger es parte de los planes de pago. Puedes probarla gratis durante los 14 días de prueba del plan Pro. <a href="/crm/whatsapp/">Ver CRM con WhatsApp</a>.' },
+      { q: '¿Puedo usar WhatsApp en el plan gratis?', a: 'La bandeja de WhatsApp e Instagram es parte de los planes de pago. Puedes probarla gratis durante los 14 días de prueba del plan Pro. <a href="/crm/whatsapp/">Ver CRM con WhatsApp</a>.' },
       { q: '¿Es seguro guardar mis clientes en un CRM gratis?', a: 'Tus datos se guardan igual en todos los planes: con acceso por usuario y contraseña, y solo las personas que tú invitas pueden verlos.' },
     ],
     cta: { h2: 'Crea tu CRM gratis ahora', sub: 'Sin tarjeta, sin vencimiento y en español.' },
@@ -221,7 +221,7 @@ export const CONTENIDO = {
         ] },
       { tipo: 'tarjetas', label: 'Qué resuelve', h2: 'Lo que hace Acuarius por tu clínica o consultorio',
         items: [
-          { t: 'Respuesta inmediata', d: 'Un agente de IA responde por WhatsApp, Instagram y Messenger con la información de tus servicios, precios de referencia y horarios.' },
+          { t: 'Respuesta inmediata', d: 'Un agente de IA responde por WhatsApp e Instagram con la información de tus servicios, precios de referencia y horarios.' },
           { t: 'Citas en la agenda', d: 'El agente propone horarios disponibles y la cita queda en la agenda del profesional, sincronizada con Google Calendar.' },
           { t: 'Recordatorios automáticos', d: 'Mensajes antes de la cita para confirmarla y reducir las inasistencias.' },
           { t: 'Reseñas en Google', d: 'Después de la consulta, un mensaje automático invita al paciente a dejar su reseña en tu perfil de Google.' },

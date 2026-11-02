@@ -23,30 +23,30 @@ export const MENU = {
     columnas: [
       { titulo: 'Agente de IA', ia: true, enlaces: [
         { t: 'Agente de IA para WhatsApp', d: 'Responde, califica y te pasa el cliente con sus datos, las 24 horas.', url: '/agente-ia/' },
-        { t: 'Calificación y reparto', d: 'Cada lead al tablero y al asesor que le toca.', url: '/agente-ia/calificacion-y-reparto/', pendiente: true, alterna: '/agente-ia/#califica-y-reparte' },
+        { t: 'Calificación y reparto', d: 'Cada lead al tablero y al asesor que le toca.', url: '/agente-ia/calificacion-y-reparto/' },
       ] },
       { titulo: 'Conversaciones', icono: '◍', enlaces: [
         { t: 'Inbox de WhatsApp', d: 'Todo tu equipo en un mismo número, en tiempo real.', url: '/crm/whatsapp/' },
-        { t: 'Plantillas y difusión', d: 'Escríbele primero y envía campañas aprobadas por Meta.', url: '/whatsapp/plantillas-y-difusion/', pendiente: true, alterna: '/novedades/whatsapp-en-tiempo-real/' },
+        { t: 'Plantillas y difusión', d: 'Escríbele primero y envía campañas aprobadas por Meta.', url: '/whatsapp/plantillas-y-difusion/' },
       ] },
       { titulo: 'CRM', icono: '▦', enlaces: [
         { t: 'CRM y pipeline', d: 'Tus etapas, tus asesores y cada venta a la vista.', url: '/crm/' },
-        { t: 'Productos y propuestas', d: 'Catálogo, cotizaciones con IVA y enlaces de pago.', url: '/productos/', pendiente: true, alterna: '/novedades/productos-en-el-crm/' },
-        { t: 'Agenda y reuniones', d: 'Que tus clientes te agenden sin ida y vuelta.', url: '/agenda/', pendiente: true, alterna: '/novedades/enlace-para-agendar-reuniones/' },
+        { t: 'Productos y propuestas', d: 'Catálogo, cotizaciones con IVA y enlaces de pago.', url: '/productos/' },
+        { t: 'Agenda y reuniones', d: 'Que tus clientes te agenden sin ida y vuelta.', url: '/agenda/' },
       ] },
       { titulo: 'Marketing', icono: '↻', enlaces: [
-        { t: 'Automatizaciones', d: 'El seguimiento sale solo, por correo o WhatsApp.', url: '/automatizaciones/', pendiente: true },
-        { t: 'Campañas de correo y WhatsApp', d: 'A cada segmento, el mensaje que le sirve.', url: '/campanas/', pendiente: true },
-        { t: 'Formularios y páginas', d: 'Cada lead de tu web y tus anuncios, directo al CRM.', url: '/formularios/', pendiente: true },
+        { t: 'Automatizaciones', d: 'El seguimiento sale solo, por correo o WhatsApp.', url: '/automatizaciones/' },
+        { t: 'Campañas de correo y WhatsApp', d: 'A cada segmento, el mensaje que le sirve.', url: '/campanas/' },
+        { t: 'Formularios y páginas', d: 'Cada lead de tu web y tus anuncios, directo al CRM.', url: '/formularios/' },
       ] },
       { titulo: 'Análisis y pauta', icono: '◔', enlaces: [
-        { t: 'Reportes', d: 'Ventas, equipo y marketing, en PDF o enlace vivo.', url: '/reportes/', pendiente: true },
-        { t: 'Google y Meta Ads', d: 'Qué campaña vende de verdad, no solo cuál trae clics.', url: '/pauta/', pendiente: true, alterna: '/novedades/anuncios-clic-a-whatsapp-meta-ads/' },
+        { t: 'Reportes', d: 'Ventas, equipo y marketing, en PDF o enlace vivo.', url: '/reportes/' },
+        { t: 'Google y Meta Ads', d: 'Qué campaña vende de verdad, no solo cuál trae clics.', url: '/pauta/' },
         { t: 'Encuestas NPS', d: 'Mide la satisfacción y reacciona a tiempo.', url: '/novedades/recompra-y-encuesta-nps/' },
       ] },
     ],
     franja: [
-      { t: 'Integraciones', d: 'Shopify, WooCommerce, VTEX, Google Calendar, Meta, Google Ads y API', url: '/integraciones/', pendiente: true, icono: 'enchufe' },
+      { t: 'Integraciones', d: 'Shopify, WooCommerce, VTEX, Google Calendar, Meta, Google Ads y API', url: '/integraciones/', icono: 'enchufe' },
       { t: 'Novedades', d: 'Lo nuevo de cada quincena, con guías en video', url: '/novedades/', destacada: true, icono: 'brillo' },
     ],
   },
@@ -57,11 +57,11 @@ export const MENU = {
         { t: 'Inmobiliarias', d: 'Arriendo y venta, cada uno con su proceso.', url: '/crm/inmobiliarias/' },
         { t: 'Clínicas y salud', d: 'Citas, recordatorios y seguimiento del paciente.', url: '/crm/clinicas/' },
         { t: 'Restaurantes', d: 'Reservas y pedidos que llegan por WhatsApp.', url: '/crm/restaurantes/' },
-        { t: 'Tiendas en línea', d: 'Shopify, WooCommerce y VTEX conectados al CRM.', url: '/crm/tiendas-en-linea/', pendiente: true },
+        { t: 'Tiendas en línea', d: 'Shopify, WooCommerce y VTEX conectados al CRM.', url: '/crm/tiendas-en-linea/' },
       ] },
       { titulo: 'Por tipo de empresa', enlaces: [
         { t: 'Pymes', d: 'Todo tu proceso comercial en un solo lugar.', url: '/crm/' },
-        { t: 'Agencias de marketing', d: 'Varios clientes, cada uno con sus datos y reportes.', url: '/agencias/', pendiente: true },
+        { t: 'Agencias de marketing', d: 'Varios clientes, cada uno con sus datos y reportes.', url: '/agencias/' },
         { t: 'CRM gratis', d: 'Empieza sin pagar y crece cuando lo necesites.', url: '/crm/gratis/' },
       ] },
       { titulo: 'Comparar', enlaces: [
@@ -77,12 +77,12 @@ export const MENU = {
     columnas: [
       { titulo: 'Aprender', enlaces: [
         { t: 'Novedades', d: 'Cada función nueva, explicada con video.', url: '/novedades/' },
-        { t: 'Academia en video', d: 'Aprende a usar Acuarius paso a paso.', url: '/academia/', pendiente: true, alterna: 'https://www.youtube.com/@Acuarius-ai' },
+        { t: 'Academia en video', d: 'Aprende a usar Acuarius paso a paso.', url: '/academia/' },
         { t: 'Benchmarks LatAm', d: 'Costos de pauta y de leads por país y sector.', url: '/benchmarks/' },
       ] },
       { titulo: 'Herramientas gratis', enlaces: [
         { t: 'Generador de enlace de WhatsApp', d: 'Tu enlace wa.me con el mensaje listo.', url: '/herramientas/enlace-de-whatsapp/' },
-        { t: 'Calculadora de costos de WhatsApp', d: 'Cuánto cobra Meta por mensaje en tu país.', url: '/herramientas/costos-de-whatsapp/', pendiente: true },
+        { t: 'Calculadora de costos de WhatsApp', d: 'Cuánto cobra Meta por mensaje en tu país.', url: '/herramientas/costos-de-whatsapp/' },
         { t: 'Calculadora de presupuesto de Google Ads', url: '/calculadora-presupuesto-google-ads/' },
       ] },
       { titulo: 'Empresa', enlaces: [

@@ -13,7 +13,7 @@
 // Si un title, una description o un H1 incumple las reglas SEO, el build se
 // detiene y no escribe nada: preferible a publicar una página a medias.
 
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { MAPA, CLUSTERS } from './mapa.mjs';
@@ -27,7 +27,21 @@ import { menuHTML, MENU_CSS, MENU_JS } from '../fuente-menu/menu.mjs';
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DOMINIO = 'https://acuarius.app';
 const REGISTRO = 'https://app.acuarius.app/registro';
-const CONTENIDO = { ...C1, ...C2, ...C3, ...C8 };
+const MIGAS_EXTRA = {};
+// Páginas de producto de la fase 2 del menú: un fichero por página o par de
+// páginas (contenido/p-*.mjs) con su fila del mapa (FILAS) y su cuerpo
+// (CONTENIDO). Una fila con la misma URL que una de mapa.mjs la reemplaza.
+const EXTRA = {};
+for (const f of readdirSync(join(dirname(fileURLToPath(import.meta.url)), 'contenido')).filter((f) => /^p-.*\.mjs$/.test(f)).sort()) {
+  const m = await import('./contenido/' + f);
+  Object.assign(EXTRA, m.CONTENIDO);
+  for (const fila of m.FILAS || []) {
+    const i = MAPA.findIndex((x) => x.url === fila.url);
+    if (i >= 0) MAPA[i] = fila; else MAPA.push(fila);
+    if (fila.miga) MIGAS_EXTRA[fila.url] = fila.miga;
+  }
+}
+const CONTENIDO = { ...C1, ...C2, ...C3, ...C8, ...EXTRA };
 
 // Nombres cortos para las migas de pan. Lo que no esté aquí se deriva del
 // último tramo de la URL.
@@ -133,6 +147,10 @@ const ESTILO_SEO = `<style>
 .s-rel a:hover{border-color:var(--blue);color:var(--blue)}
 .s-rel small{display:block;font-weight:500;color:var(--muted2);font-size:12px;margin-bottom:4px}
 @media(max-width:960px){.s-grid,.s-rel{grid-template-columns:repeat(2,1fr)}.s-pasos{grid-template-columns:repeat(2,1fr)}}
+/* Syne es ancha: en el celular «Automatizaciones» no cabe en una línea y
+   ensanchaba la página. Se parte con guion antes que desbordar. */
+.s-hero h1,.s-sec .section-title,.s-card h3{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+@media(max-width:480px){.s-sec .section-title{font-size:26px}}
 @media(max-width:768px){.s-sec{padding:60px 20px}.s-grid,.s-rel,.s-pasos{grid-template-columns:1fr}.nav-links{display:none}}
 </style>`;
 
@@ -150,7 +168,7 @@ function migas(url) {
     ruta += t + '/';
     const enMapa = MAPA.find((p) => p.url === ruta);
     // Un tramo intermedio sin página propia (p. ej. /alternativas/) no se enlaza.
-    const nombre = MIGAS[ruta] || t.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase());
+    const nombre = MIGAS[ruta] || MIGAS_EXTRA[ruta] || t.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase());
     lista.push({ nombre, url: enMapa && enMapa.estado === 'publicada' ? ruta : null });
   }
   return lista;

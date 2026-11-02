@@ -47,7 +47,7 @@ export const CONTENIDO = {
         nota: fuentes('kommo', 'hubspot', 'clientify', 'leadsales', 'callbell') + ' ' + META },
       { tipo: 'tarjetas', label: 'Uno por uno', h2: 'Lo bueno y lo no tan bueno de cada uno',
         items: [
-          { t: 'Acuarius', d: '<b>A favor:</b> CRM, bandeja de WhatsApp, Instagram y Messenger, agente de IA, automatizaciones y campañas en el mismo plan de 39 USD con tres usuarios. En español y pensado para LatAm. <b>En contra:</b> es más joven que los demás y su catálogo de integraciones es más corto. <a href="/crm/whatsapp/">Ver CRM con WhatsApp</a>.' },
+          { t: 'Acuarius', d: '<b>A favor:</b> CRM, bandeja de WhatsApp e Instagram, agente de IA, automatizaciones y campañas en el mismo plan de 39 USD con tres usuarios. En español y pensado para LatAm. <b>En contra:</b> es más joven que los demás y su catálogo de integraciones es más corto. <a href="/crm/whatsapp/">Ver CRM con WhatsApp</a>.' },
           { t: 'Kommo', d: '<b>A favor:</b> nació para vender por chat, tiene Salesbot, mucha experiencia en WhatsApp y un marketplace amplio. <b>En contra:</b> cobra por usuario, no permite pago mensual (mínimo seis meses) y el agente de IA no está en el plan básico. <a href="/comparativas/acuarius-vs-kommo/">Kommo vs Acuarius</a>.' },
           { t: 'HubSpot', d: '<b>A favor:</b> el ecosistema más completo del mercado, con marketing, servicio, contenidos e integraciones para todo. <b>En contra:</b> WhatsApp nativo solo llega con Marketing Hub o Service Hub Professional, con incorporación obligatoria de 1.500 USD. <a href="/alternativas/hubspot/">Alternativas a HubSpot</a>.' },
           { t: 'Clientify', d: '<b>A favor:</b> en español, combina CRM y marketing, con prueba sin tarjeta. <b>En contra:</b> el precio mensual sube bastante si no pagas el año completo.' },
@@ -92,7 +92,7 @@ export const CONTENIDO = {
         nota: fuentes('hubspot', 'hubspotWA', 'kommo', 'clientify') + ' ' + META },
       { tipo: 'tarjetas', label: 'Las alternativas', h2: 'Las mejores alternativas a HubSpot en español',
         items: [
-          { t: 'Acuarius', d: 'CRM en español con WhatsApp, Instagram y Messenger en una bandeja, agente de IA, automatizaciones, campañas, propuestas y reportes. 39 USD al mes con tres usuarios. <a href="/comparativas/acuarius-vs-hubspot/">HubSpot vs Acuarius en detalle</a>.' },
+          { t: 'Acuarius', d: 'CRM en español con WhatsApp e Instagram en una bandeja, agente de IA, automatizaciones, campañas, propuestas y reportes. 39 USD al mes con tres usuarios. <a href="/comparativas/acuarius-vs-hubspot/">HubSpot vs Acuarius en detalle</a>.' },
           { t: 'Kommo', d: 'CRM pensado para mensajería, con WhatsApp desde el plan básico. Cobra por usuario y exige pagar al menos seis meses. <a href="/alternativas/kommo/">Ver alternativas a Kommo</a>.' },
           { t: 'Clientify', d: 'CRM y marketing en español, con precio más bajo si pagas el año completo.' },
           { t: 'Zoho CRM', d: 'Muy configurable y con buena relación precio-funciones, aunque su curva de aprendizaje es más alta y WhatsApp va por integraciones.' },
@@ -132,7 +132,7 @@ export const CONTENIDO = {
           '<b>El agente de IA no está en el plan Base.</b> Los agentes de IA aparecen desde el plan Advanced.',
         ] },
       { tipo: 'tabla', label: 'Comparación', h2: 'Kommo frente a sus principales alternativas',
-        cab: ['', 'Precio con 3 usuarios', 'Pago mínimo', 'Agente de IA', 'Instagram y Messenger'],
+        cab: ['', 'Precio con 3 usuarios', 'Pago mínimo', 'Agente de IA', 'Instagram'],
         filas: [
           ['Kommo Base', '75 USD/mes', '6 meses (450 USD)', 'No', 'Sí'],
           ['Kommo Advanced', '105 USD/mes', '6 meses (630 USD)', 'Hasta 3 agentes', 'Sí'],
@@ -143,7 +143,7 @@ export const CONTENIDO = {
         nota: fuentes('kommo', 'leadsales', 'clientify') + ' ' + META },
       { tipo: 'tarjetas', label: 'Las alternativas', h2: 'Alternativas a Kommo para vender por WhatsApp',
         items: [
-          { t: 'Acuarius', d: 'WhatsApp, Instagram, Messenger y chat web en una bandeja, agente de IA incluido, pipeline, automatizaciones, campañas y reportes. 39 USD al mes con tres usuarios y pago mensual. <a href="/comparativas/acuarius-vs-kommo/">Kommo vs Acuarius</a>.' },
+          { t: 'Acuarius', d: 'WhatsApp e Instagram en una bandeja, agente de IA incluido, pipeline, automatizaciones, campañas y reportes. 39 USD al mes con tres usuarios y pago mensual. <a href="/comparativas/acuarius-vs-kommo/">Kommo vs Acuarius</a>.' },
           { t: 'Leadsales', d: 'CRM mexicano centrado en WhatsApp. La API oficial empieza en el plan Profesional, y el agente de IA se paga aparte.' },
           { t: 'Clientify', d: 'CRM y marketing en español. Más completo en email marketing; el precio baja si pagas anual.' },
           { t: 'HubSpot', d: 'Mucho más grande, pero WhatsApp nativo exige el nivel Professional y una incorporación de 1.500 USD. <a href="/alternativas/hubspot/">Alternativas a HubSpot</a>.' },
@@ -176,7 +176,7 @@ export const CONTENIDO = {
           ['Con 5 usuarios', '125 a 225 USD al mes', '57 USD al mes'],
           ['Pago mínimo', '6 meses por adelantado', 'Mensual; anual con 2 meses gratis'],
           ['Plan gratis', 'No (prueba gratuita)', 'Sí, para 50 contactos'],
-          ['WhatsApp, Instagram y Messenger', 'Sí', 'Sí, más chat web'],
+          ['WhatsApp e Instagram', 'Sí', 'Sí'],
           ['Agente de IA', 'Desde el plan Advanced', 'Incluido en Pro: 500 respuestas al mes'],
           ['Pipeline de ventas', 'Sí', 'Sí, hasta 10 pipelines'],
           ['Automatizaciones', 'Salesbot y automatización del pipeline', 'Flujos con correo, WhatsApp, esperas y condiciones'],
@@ -204,7 +204,7 @@ export const CONTENIDO = {
           { t: 'Exporta desde Kommo', d: 'Tus leads y contactos en CSV o Excel.' },
           { t: 'Importa en Acuarius', d: 'El importador reconoce las columnas y reparte entre tu equipo.' },
           { t: 'Recrea tus etapas', d: 'Copia los nombres de tu pipeline; las etapas son libres.' },
-          { t: 'Conecta tus canales', d: 'WhatsApp, Instagram y Messenger, y configura el agente.' },
+          { t: 'Conecta tus canales', d: 'WhatsApp e Instagram, y configura el agente.' },
         ] },
     ],
     faq: [
@@ -237,7 +237,7 @@ export const CONTENIDO = {
       { tipo: 'texto', label: 'El punto clave', h2: 'WhatsApp: donde más se separan',
         parrafos: [
           'En Latinoamérica la venta pasa por WhatsApp, y ahí está la diferencia más grande. Según la documentación de HubSpot, su conexión nativa con WhatsApp requiere Marketing Hub o Service Hub en nivel Professional o Enterprise. Professional cuesta desde 90 a 100 USD por usuario al mes, más una incorporación obligatoria de 1.500 USD.',
-          'En Acuarius, WhatsApp, Instagram y Messenger están en el plan Pro de 39 USD al mes, junto con el agente de IA que responde por ti.',
+          'En Acuarius, WhatsApp e Instagram están en el plan Pro de 39 USD al mes, junto con el agente de IA que responde por ti.',
         ] },
       { tipo: 'tarjetas', label: 'Quién gana en qué', h2: 'En qué gana cada uno',
         items: [

@@ -33,7 +33,7 @@ export const MAPA = [
   { url: '/crm/whatsapp/', cluster: 1, nivel: 'Sub-pilar', intencion: 'Comercial', estado: 'publicada',
     kw: 'crm con whatsapp',
     title: 'CRM con WhatsApp e Instagram en una bandeja | Acuarius',
-    description: 'CRM con WhatsApp: las conversaciones de WhatsApp, Instagram y Messenger en una sola bandeja, cada chat convertido en lead y un agente de IA que responde 24/7.',
+    description: 'CRM con WhatsApp: tus conversaciones de WhatsApp e Instagram en una sola bandeja, cada chat convertido en lead y un agente de IA que responde a cualquier hora.',
     h1: 'CRM con WhatsApp: cada chat se convierte en un lead' },
   { url: '/crm/gratis/', cluster: 1, nivel: 'Sub-pilar', intencion: 'Comercial', estado: 'publicada',
     kw: 'crm gratis',
