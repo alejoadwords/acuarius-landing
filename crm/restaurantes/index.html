@@ -532,6 +532,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-display);letter-spacing:0}
 button,input,select,textarea{font-family:var(--font-body)}
 /* Menú del sitio (fuente-menu/menu.mjs). Tokens de partners.html. */
 .am-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);font-family:var(--font-body)}
+/* padding:0 porque /terms estiliza la etiqueta header y le sumaba 20 px al menú. */
+.am-nav{padding:0}
 .am-in{max-width:1200px;height:100%;margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:24px}
 .am-logo{display:flex;align-items:center;flex:none}
 .am-logo img{height:24px;width:auto;display:block}
@@ -601,6 +603,12 @@ button,input,select,textarea{font-family:var(--font-body)}
   .am-cajon-ctas .am-borde{display:flex}
   body.am-bloqueo{overflow:hidden}
 }
+/* Logo, «Crear cuenta gratis» y hamburguesa suman 377 px: más angosto, la hamburguesa se salía de la pantalla y no se podía abrir el menú. */
+@media(max-width:400px){
+  .am-in{padding:0 12px;gap:8px}.am-logo img{height:20px}.am-ctas{gap:4px}
+  .am-ctas .am-pri{padding:8px 12px}.am-pri svg{display:none}
+}
+@media(max-width:340px){.am-ctas .am-pri{padding:8px 10px;font-size:12px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://acuarius.app/crm/restaurantes/","url":"https://acuarius.app/crm/restaurantes/","name":"CRM para restaurantes: pedidos por WhatsApp | Acuarius","description":"CRM para restaurantes: un agente de IA responde el menú por WhatsApp, toma pedidos y reservas, y tu base de clientes recibe campañas para que vuelva a pedir.","inLanguage":"es-419","isPartOf":{"@type":"WebSite","name":"Acuarius","url":"https://acuarius.app/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://acuarius.app/"},{"@type":"ListItem","position":2,"name":"CRM","item":"https://acuarius.app/crm/"},{"@type":"ListItem","position":3,"name":"Restaurantes","item":"https://acuarius.app/crm/restaurantes/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué es un CRM para restaurantes?","acceptedAnswer":{"@type":"Answer","text":"Es una herramienta para atender a tus clientes por chat, organizar pedidos y reservas, y guardar el historial de cada cliente para volver a venderle con campañas."}},{"@type":"Question","name":"¿El agente de IA toma pedidos solo?","acceptedAnswer":{"@type":"Answer","text":"Toma los datos del pedido con la información de tu menú y se lo pasa a tu equipo para confirmarlo. Tú defines si confirma de inmediato o si siempre revisa una persona."}},{"@type":"Question","name":"¿Reemplaza a mi sistema de punto de venta?","acceptedAnswer":{"@type":"Answer","text":"No. Acuarius se ocupa de la atención por chat, los pedidos que llegan por esa vía y el contacto con tus clientes. La facturación sigue en tu punto de venta."}},{"@type":"Question","name":"¿Puedo enviar promociones por WhatsApp?","acceptedAnswer":{"@type":"Answer","text":"Sí, con campañas a tu base de clientes segmentada por etiquetas. Quien no quiera recibir más, se da de baja y no le vuelve a llegar."}},{"@type":"Question","name":"¿Cuánto cuesta?","acceptedAnswer":{"@type":"Answer","text":"El plan Pro cuesta 39 USD al mes con tres usuarios incluidos, y puedes probarlo 14 días gratis."}}]}]}</script>
 <script src="https://app.acuarius.app/origen.js" defer></script>

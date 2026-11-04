@@ -532,6 +532,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-display);letter-spacing:0}
 button,input,select,textarea{font-family:var(--font-body)}
 /* Menú del sitio (fuente-menu/menu.mjs). Tokens de partners.html. */
 .am-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);font-family:var(--font-body)}
+/* padding:0 porque /terms estiliza la etiqueta header y le sumaba 20 px al menú. */
+.am-nav{padding:0}
 .am-in{max-width:1200px;height:100%;margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:24px}
 .am-logo{display:flex;align-items:center;flex:none}
 .am-logo img{height:24px;width:auto;display:block}
@@ -601,6 +603,12 @@ button,input,select,textarea{font-family:var(--font-body)}
   .am-cajon-ctas .am-borde{display:flex}
   body.am-bloqueo{overflow:hidden}
 }
+/* Logo, «Crear cuenta gratis» y hamburguesa suman 377 px: más angosto, la hamburguesa se salía de la pantalla y no se podía abrir el menú. */
+@media(max-width:400px){
+  .am-in{padding:0 12px;gap:8px}.am-logo img{height:20px}.am-ctas{gap:4px}
+  .am-ctas .am-pri{padding:8px 12px}.am-pri svg{display:none}
+}
+@media(max-width:340px){.am-ctas .am-pri{padding:8px 10px;font-size:12px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://acuarius.app/crm/pipeline-de-ventas/","url":"https://acuarius.app/crm/pipeline-de-ventas/","name":"Pipeline de ventas: qué es, etapas y ejemplos | Acuarius","description":"Qué es un pipeline de ventas, qué etapas debe tener y cómo medirlo, con ejemplos para pymes de Latinoamérica y un tablero listo para usar en un CRM gratis.","inLanguage":"es-419","isPartOf":{"@type":"WebSite","name":"Acuarius","url":"https://acuarius.app/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://acuarius.app/"},{"@type":"ListItem","position":2,"name":"CRM","item":"https://acuarius.app/crm/"},{"@type":"ListItem","position":3,"name":"Pipeline de ventas","item":"https://acuarius.app/crm/pipeline-de-ventas/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué es un pipeline de ventas?","acceptedAnswer":{"@type":"Answer","text":"Es la representación visual de las etapas por las que pasa una oportunidad de venta, desde el primer contacto hasta el cierre. Permite ver qué negocios están abiertos, en qué punto está cada uno y qué hay que hacer para avanzar."}},{"@type":"Question","name":"¿Cuántas etapas debe tener un pipeline de ventas?","acceptedAnswer":{"@type":"Answer","text":"Entre cinco y siete es lo habitual. Cada etapa debe corresponder a un hecho verificable, como \"propuesta enviada\" o \"visita hecha\", no a una sensación del asesor."}},{"@type":"Question","name":"¿Cuál es la diferencia entre pipeline y embudo de ventas?","acceptedAnswer":{"@type":"Answer","text":"El embudo mide cuántas personas avanzan de una fase a otra, en porcentajes. El pipeline muestra los negocios concretos abiertos, su valor y la próxima acción de cada uno."}},{"@type":"Question","name":"¿Puedo tener varios pipelines?","acceptedAnswer":{"@type":"Answer","text":"Sí. En Acuarius puedes tener hasta 10 pipelines por cuenta, por ejemplo uno por línea de negocio o por proyecto."}},{"@type":"Question","name":"¿Necesito un CRM para tener un pipeline?","acceptedAnswer":{"@type":"Answer","text":"Puedes empezar en una hoja de cálculo, pero pronto se desactualiza. Un CRM mueve las oportunidades solo, guarda el historial y calcula las métricas por ti."}}]}]}</script>
 <script src="https://app.acuarius.app/origen.js" defer></script>

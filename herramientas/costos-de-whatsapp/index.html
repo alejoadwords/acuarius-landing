@@ -532,6 +532,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-display);letter-spacing:0}
 button,input,select,textarea{font-family:var(--font-body)}
 /* Menú del sitio (fuente-menu/menu.mjs). Tokens de partners.html. */
 .am-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);font-family:var(--font-body)}
+/* padding:0 porque /terms estiliza la etiqueta header y le sumaba 20 px al menú. */
+.am-nav{padding:0}
 .am-in{max-width:1200px;height:100%;margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:24px}
 .am-logo{display:flex;align-items:center;flex:none}
 .am-logo img{height:24px;width:auto;display:block}
@@ -601,6 +603,12 @@ button,input,select,textarea{font-family:var(--font-body)}
   .am-cajon-ctas .am-borde{display:flex}
   body.am-bloqueo{overflow:hidden}
 }
+/* Logo, «Crear cuenta gratis» y hamburguesa suman 377 px: más angosto, la hamburguesa se salía de la pantalla y no se podía abrir el menú. */
+@media(max-width:400px){
+  .am-in{padding:0 12px;gap:8px}.am-logo img{height:20px}.am-ctas{gap:4px}
+  .am-ctas .am-pri{padding:8px 12px}.am-pri svg{display:none}
+}
+@media(max-width:340px){.am-ctas .am-pri{padding:8px 10px;font-size:12px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://acuarius.app/herramientas/costos-de-whatsapp/","url":"https://acuarius.app/herramientas/costos-de-whatsapp/","name":"Precio de WhatsApp Business API 2026: calculadora | Acuarius","description":"Precio de WhatsApp Business API por país: calcula lo que cobra Meta por tus mensajes de marketing, utilidad y autenticación, con la tarifa oficial vigente.","inLanguage":"es-419","isPartOf":{"@type":"WebSite","name":"Acuarius","url":"https://acuarius.app/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://acuarius.app/"},{"@type":"ListItem","position":2,"name":"Herramientas"},{"@type":"ListItem","position":3,"name":"Costos de WhatsApp","item":"https://acuarius.app/herramientas/costos-de-whatsapp/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuánto cuesta un mensaje de WhatsApp Business API en Colombia?","acceptedAnswer":{"@type":"Answer","text":"Con la tarifa vigente desde el 1 de octubre de 2026: 0,0125 USD por mensaje de marketing, 0,0008 USD por mensaje de utilidad, 0,0008 USD por autenticación y 0,0008 USD por respuesta de servicio después de las 1.000 gratis del mes."}},{"@type":"Question","name":"¿Y en México?","acceptedAnswer":{"@type":"Answer","text":"0,0397 USD por marketing, 0,0085 USD por utilidad, 0,0085 USD por autenticación y 0,0085 USD por respuesta de servicio después de las 1.000 gratis. La tarifa de marketing en México subió el 1 de octubre de 2026."}},{"@type":"Question","name":"¿La app de WhatsApp Business normal también cobra?","acceptedAnswer":{"@type":"Answer","text":"No. La app de WhatsApp Business que instalas en el celular es gratis. Lo que se cobra por mensaje es la API, que es la versión para conectar WhatsApp a un CRM, a un agente de IA o a varios asesores con un mismo número."}},{"@type":"Question","name":"¿Responder a un cliente es gratis?","acceptedAnswer":{"@type":"Answer","text":"Lo que te escribe el cliente nunca se cobra. Tus respuestas libres dentro de la ventana de 24 horas son gratis hasta 1.000 al mes por número; desde la 1.001 se cobran con la tarifa de servicio. Si el chat vino de un anuncio de clic a WhatsApp, no pagas nada durante la ventana gratuita de hasta 7 días."}},{"@type":"Question","name":"¿Quién me cobra: Meta o Acuarius?","acceptedAnswer":{"@type":"Answer","text":"Meta. La tarifa por mensaje se paga en tu cuenta de WhatsApp Business con el método de pago que registres en Meta. Acuarius no cobra por mensaje de WhatsApp; lo que cuesta usar Acuarius está en la página de precios."}},{"@type":"Question","name":"¿Los precios incluyen impuestos?","acceptedAnswer":{"@type":"Answer","text":"No. Son las tarifas de lista de Meta en USD. Meta también publica tarifas en monedas locales (COP, MXN, ARS, CLP, PEN, BRL, entre otras), y los impuestos dependen de tu país y tu facturación."}}]}]}</script>
 <script src="https://app.acuarius.app/origen.js" defer></script>

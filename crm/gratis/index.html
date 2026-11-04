@@ -532,6 +532,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-display);letter-spacing:0}
 button,input,select,textarea{font-family:var(--font-body)}
 /* Menú del sitio (fuente-menu/menu.mjs). Tokens de partners.html. */
 .am-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);font-family:var(--font-body)}
+/* padding:0 porque /terms estiliza la etiqueta header y le sumaba 20 px al menú. */
+.am-nav{padding:0}
 .am-in{max-width:1200px;height:100%;margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:24px}
 .am-logo{display:flex;align-items:center;flex:none}
 .am-logo img{height:24px;width:auto;display:block}
@@ -601,6 +603,12 @@ button,input,select,textarea{font-family:var(--font-body)}
   .am-cajon-ctas .am-borde{display:flex}
   body.am-bloqueo{overflow:hidden}
 }
+/* Logo, «Crear cuenta gratis» y hamburguesa suman 377 px: más angosto, la hamburguesa se salía de la pantalla y no se podía abrir el menú. */
+@media(max-width:400px){
+  .am-in{padding:0 12px;gap:8px}.am-logo img{height:20px}.am-ctas{gap:4px}
+  .am-ctas .am-pri{padding:8px 12px}.am-pri svg{display:none}
+}
+@media(max-width:340px){.am-ctas .am-pri{padding:8px 10px;font-size:12px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://acuarius.app/crm/gratis/","url":"https://acuarius.app/crm/gratis/","name":"CRM gratis en español, sin tarjeta de crédito | Acuarius","description":"CRM gratis para siempre: pipeline, tareas y agenda para tus primeros 50 contactos, sin tarjeta de crédito. Cuando crezcas, prueba el plan Pro 14 días sin pagar.","inLanguage":"es-419","isPartOf":{"@type":"WebSite","name":"Acuarius","url":"https://acuarius.app/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://acuarius.app/"},{"@type":"ListItem","position":2,"name":"CRM","item":"https://acuarius.app/crm/"},{"@type":"ListItem","position":3,"name":"Gratis","item":"https://acuarius.app/crm/gratis/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿El CRM gratis de Acuarius tiene límite de tiempo?","acceptedAnswer":{"@type":"Answer","text":"No. El plan Free es permanente. Lo que tiene es un límite de 50 contactos y algunas funciones reservadas para los planes de pago."}},{"@type":"Question","name":"¿Me piden tarjeta de crédito?","acceptedAnswer":{"@type":"Answer","text":"No, ni para el plan Free ni para los 14 días de prueba del plan Pro."}},{"@type":"Question","name":"¿Qué pasa si paso de 50 contactos?","acceptedAnswer":{"@type":"Answer","text":"Puedes pasar al plan Pro, que incluye 1.000 contactos y tres usuarios por 39 USD al mes, o probarlo antes 14 días gratis."}},{"@type":"Question","name":"¿Puedo usar WhatsApp en el plan gratis?","acceptedAnswer":{"@type":"Answer","text":"La bandeja de WhatsApp e Instagram es parte de los planes de pago. Puedes probarla gratis durante los 14 días de prueba del plan Pro. Ver CRM con WhatsApp."}},{"@type":"Question","name":"¿Es seguro guardar mis clientes en un CRM gratis?","acceptedAnswer":{"@type":"Answer","text":"Tus datos se guardan igual en todos los planes: con acceso por usuario y contraseña, y solo las personas que tú invitas pueden verlos."}}]}]}</script>
 <script src="https://app.acuarius.app/origen.js" defer></script>

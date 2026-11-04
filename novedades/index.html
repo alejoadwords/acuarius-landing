@@ -711,6 +711,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-display);letter-spacing:0}
 button,input,select,textarea{font-family:var(--font-body)}
 /* Menú del sitio (fuente-menu/menu.mjs). Tokens de partners.html. */
 .am-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);font-family:var(--font-body)}
+/* padding:0 porque /terms estiliza la etiqueta header y le sumaba 20 px al menú. */
+.am-nav{padding:0}
 .am-in{max-width:1200px;height:100%;margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:24px}
 .am-logo{display:flex;align-items:center;flex:none}
 .am-logo img{height:24px;width:auto;display:block}
@@ -780,6 +782,12 @@ button,input,select,textarea{font-family:var(--font-body)}
   .am-cajon-ctas .am-borde{display:flex}
   body.am-bloqueo{overflow:hidden}
 }
+/* Logo, «Crear cuenta gratis» y hamburguesa suman 377 px: más angosto, la hamburguesa se salía de la pantalla y no se podía abrir el menú. */
+@media(max-width:400px){
+  .am-in{padding:0 12px;gap:8px}.am-logo img{height:20px}.am-ctas{gap:4px}
+  .am-ctas .am-pri{padding:8px 12px}.am-pri svg{display:none}
+}
+@media(max-width:340px){.am-ctas .am-pri{padding:8px 10px;font-size:12px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://acuarius.app/#org","name":"Acuarius","url":"https://acuarius.app/","logo":{"@type":"ImageObject","url":"https://acuarius.app/logo.svg"}},{"@type":"Blog","@id":"https://acuarius.app/novedades/","url":"https://acuarius.app/novedades/","name":"Novedades de Acuarius","description":"Lo nuevo en Acuarius cada quincena: funciones del CRM, WhatsApp, agentes de IA, campañas y reportes, explicadas en guías con video.","inLanguage":"es-419","publisher":{"@id":"https://acuarius.app/#org"},"blogPost":[{"@type":"BlogPosting","headline":"Catálogo de productos en el CRM: de la cotización a la venta","url":"https://acuarius.app/novedades/productos-en-el-crm/","datePublished":"2026-11-02"},{"@type":"BlogPosting","headline":"Campos personalizados en el CRM: los datos de tu negocio, en la ficha de cada contacto","url":"https://acuarius.app/novedades/campos-personalizados-crm/","datePublished":"2026-11-02"},{"@type":"BlogPosting","headline":"WhatsApp para equipos de ventas: un número, toda la bandeja en vivo","url":"https://acuarius.app/novedades/whatsapp-en-tiempo-real/","datePublished":"2026-11-02"},{"@type":"BlogPosting","headline":"Agente de IA para WhatsApp: nadie llega a tu asesor sin datos de contacto","url":"https://acuarius.app/novedades/agente-ia-whatsapp-datos-de-contacto/","datePublished":"2026-11-02"},{"@type":"BlogPosting","headline":"Enlace para agendar reuniones: que tu cliente elija la hora sin ir y venir por chat","url":"https://acuarius.app/novedades/enlace-para-agendar-reuniones/","datePublished":"2026-11-02"},{"@type":"BlogPosting","headline":"Encuesta NPS automática y recompra: escucha a tu cliente y haz que vuelva","url":"https://acuarius.app/novedades/recompra-y-encuesta-nps/","datePublished":"2026-11-02"},{"@type":"BlogPosting","headline":"Anuncios de clic a WhatsApp: de la conversación a la venta, campaña por campaña","url":"https://acuarius.app/novedades/anuncios-clic-a-whatsapp-meta-ads/","datePublished":"2026-11-02"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://acuarius.app/"},{"@type":"ListItem","position":2,"name":"Novedades","item":"https://acuarius.app/novedades/"}]}]}</script>
 <script src="https://app.acuarius.app/origen.js" defer></script>
