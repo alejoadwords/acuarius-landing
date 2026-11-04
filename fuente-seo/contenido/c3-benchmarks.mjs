@@ -335,7 +335,7 @@ function calculadoraHTML() {
 .calc-seo-in select:focus,.calc-seo-in input:focus{outline:none;border-color:var(--blue)}
 .calc-seo-out{background:linear-gradient(160deg,#0F1699 0%,var(--blue) 55%,#3A46D8 100%);color:white;padding:32px;display:flex;flex-direction:column}
 .calc-seo-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
-.calc-seo-total{font-family:var(--font-display);font-size:30px;font-weight:800;line-height:1.15;margin-top:10px}
+.calc-seo-total{font-family:var(--font-body);font-size:30px;font-weight:800;line-height:1.15;margin-top:10px}
 .calc-seo-usd{font-size:14px;opacity:.75;margin-top:6px}
 .calc-seo-det{list-style:none;margin-top:22px;border-top:1px solid rgba(255,255,255,.2)}
 .calc-seo-det li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:14px}

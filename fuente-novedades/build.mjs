@@ -133,7 +133,7 @@ const ESTILO_ART = `<style>
 .a-corta{border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:var(--r);padding:20px 22px;background:var(--n-tinte-azul);margin-bottom:40px}
 .a-corta b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
 .a-corta p{font-size:17px;line-height:1.7;color:var(--text);margin:0}
-.a-art h2{font-family:var(--font-display);font-size:clamp(21px,2.1vw,26px);font-weight:800;letter-spacing:-.025em;line-height:1.2;color:var(--text);margin:48px 0 14px;scroll-margin-top:96px}
+.a-art h2{font-family:var(--font-display);font-size:clamp(21px,2.1vw,26px);font-weight:800;letter-spacing:0;line-height:1.2;color:var(--text);margin:48px 0 14px;scroll-margin-top:96px}
 .a-art h3{font-size:18px;font-weight:700;color:var(--text);margin:26px 0 8px}
 .a-art p{font-size:17px;line-height:1.8;color:var(--muted);margin:0 0 16px}
 .a-art p b,.a-art li b{color:var(--text)}
@@ -147,7 +147,7 @@ const ESTILO_ART = `<style>
 .a-ilu .n-panel{min-height:380px}
 .a-pasos{list-style:none;padding:0!important;margin:20px 0 0;counter-reset:p}
 .a-pasos li{counter-increment:p;position:relative;padding:0 0 22px 58px;margin:0}
-.a-pasos li::before{content:counter(p);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--blue);color:var(--white);font-family:var(--font-display);font-weight:800;display:flex;align-items:center;justify-content:center}
+.a-pasos li::before{content:counter(p);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--blue);color:var(--white);font-family:var(--font-body);font-weight:800;display:flex;align-items:center;justify-content:center}
 .a-pasos li:not(:last-child)::after{content:'';position:absolute;left:18px;top:42px;bottom:4px;width:2px;background:var(--border)}
 .a-pasos b{display:block;font-size:17px;color:var(--text);margin-bottom:4px}
 .a-faq{display:flex;flex-direction:column;gap:10px;margin-top:18px}
@@ -202,9 +202,8 @@ ${GTM_HEAD}
 ${extra}
 <link rel="alternate" type="application/rss+xml" title="Novedades de Acuarius" href="${DOMINIO}${BASE}feed.xml">
 ${ICONO}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/Velocity.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/Outfit-Regular.woff2" as="font" type="font/woff2" crossorigin>
 ${ESTILO_BASE}
 ${ESTILO_NOV}
 ${ESTILO_ART}

@@ -16,7 +16,7 @@ export const ESTILO_NOV = `<style>
 .n-migas span{margin:0 6px}
 .n-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
 .n-eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--blue)}
-.n-h1{font-family:var(--font-display);font-weight:800;letter-spacing:-.035em;line-height:1.04;color:var(--text);font-size:clamp(38px,6vw,72px);margin:18px 0 0;max-width:900px}
+.n-h1{font-family:var(--font-display);font-weight:800;letter-spacing:0;line-height:1.04;color:var(--text);font-size:clamp(38px,6vw,72px);margin:18px 0 0;max-width:900px}
 .n-h1 i{font-style:normal;color:var(--blue)}
 .n-h1.n-h1-ed{font-size:clamp(32px,4.6vw,56px)}
 .n-sub{font-size:18px;line-height:1.7;color:var(--muted);max-width:680px;margin-top:20px}
@@ -31,7 +31,7 @@ export const ESTILO_NOV = `<style>
 .n-sec{padding:72px 40px}
 .n-sec-gris{background:var(--bg)}
 .n-cab{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:34px}
-.n-cab h2{font-family:var(--font-display);font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1.1;color:var(--text)}
+.n-cab h2{font-family:var(--font-display);font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:0;line-height:1.1;color:var(--text)}
 .n-cab p{font-size:15.5px;color:var(--muted);max-width:520px;line-height:1.6}
 
 /* Tarjetas del índice: panel de color con la ilustración + texto debajo. */
@@ -42,7 +42,7 @@ export const ESTILO_NOV = `<style>
 .n-panel{border-radius:var(--rlg);padding:64px 34px 72px;min-height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
 .n-card-txt{padding:20px 4px 0}
 .n-mod{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.02em}
-.n-card h3{font-family:var(--font-display);font-size:21px;font-weight:700;letter-spacing:-.015em;line-height:1.25;color:var(--text);margin:8px 0 10px}
+.n-card h3{font-family:var(--font-display);font-size:21px;font-weight:700;letter-spacing:0;line-height:1.25;color:var(--text);margin:8px 0 10px}
 .n-card p{font-size:15px;line-height:1.65;color:var(--muted)}
 .n-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:14px;font-weight:700;color:var(--blue);transition:gap .2s;border-bottom:2px solid var(--blue);padding-bottom:2px}
 
@@ -69,7 +69,7 @@ export const ESTILO_NOV = `<style>
 .n-func:nth-of-type(even){background:var(--bg)}
 .n-func-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:56px;align-items:center}
 .n-func.n-alt .n-func-media{order:-1}
-.n-func h2{font-family:var(--font-display);font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.12;color:var(--text);margin:14px 0 16px}
+.n-func h2{font-family:var(--font-display);font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:0;line-height:1.12;color:var(--text);margin:14px 0 16px}
 .n-func p{font-size:16.5px;line-height:1.75;color:var(--muted)}
 .n-func p b{color:var(--text)}
 .n-checks{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
@@ -106,7 +106,7 @@ export const ESTILO_NOV = `<style>
 .m-row .m-der{margin-left:auto;text-align:right}
 .m-precio{font-size:13.5px;font-weight:700}
 .m-total{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding:12px 14px;border-radius:12px;background:var(--blue-lt);font-size:13px;color:var(--blue);font-weight:700}
-.m-total b{font-size:17px;font-family:var(--font-display)}
+.m-total b{font-size:17px;font-family:var(--font-body)}
 .m-flota{position:absolute;background:var(--white);border-radius:14px;box-shadow:var(--n-sombra);padding:10px 14px;font-size:12.5px;display:flex;align-items:center;gap:10px;color:var(--text);text-align:left}
 .m-flota b{display:block;font-size:12.5px}
 .m-flota small{color:var(--muted);font-size:11.5px}
@@ -140,7 +140,7 @@ export const ESTILO_NOV = `<style>
 .m-kpi{display:flex;gap:10px}
 .m-kpi div{flex:1;border:1px solid var(--border);border-radius:12px;padding:10px 12px}
 .m-kpi small{display:block;font-size:11px;color:var(--muted)}
-.m-kpi b{font-family:var(--font-display);font-size:22px}
+.m-kpi b{font-family:var(--font-body);font-size:22px}
 .m-kpi .m-ok{color:var(--success);font-size:12px;font-weight:700}
 .m-tabla{width:100%;border-collapse:collapse;font-size:12.5px}
 .m-tabla th{text-align:left;color:var(--muted);font-weight:600;padding:8px 6px;border-bottom:1px solid var(--border)}

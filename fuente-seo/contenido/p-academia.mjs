@@ -185,7 +185,7 @@ const VIDEOS = [
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 function academiaHTML() {
-  const css = '<style>.ac-cat{margin-top:44px}.ac-cat:first-child{margin-top:8px}.ac-cat h3{font-family:var(--font-display);font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--text);margin-bottom:16px;text-align:left}'
+  const css = '<style>.ac-cat{margin-top:44px}.ac-cat:first-child{margin-top:8px}.ac-cat h3{font-family:var(--font-display);font-size:22px;font-weight:800;letter-spacing:0;color:var(--text);margin-bottom:16px;text-align:left}'
     + '.ac-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;text-align:left}'
     + '.ac-v{display:flex;flex-direction:column}'
     + '.ac-p{position:relative;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:14px;overflow:hidden;background:var(--text);cursor:pointer;display:block}'

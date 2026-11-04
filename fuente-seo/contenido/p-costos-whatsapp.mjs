@@ -114,7 +114,7 @@ function calculadoraHTML() {
 .cw-in select:focus,.cw-in input:focus{outline:none;border-color:var(--blue)}
 .cw-out{background:var(--blue);color:var(--white);padding:32px;display:flex;flex-direction:column}
 .cw-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
-.cw-total{font-family:var(--font-display);font-size:34px;font-weight:800;line-height:1.15;margin-top:10px}
+.cw-total{font-family:var(--font-body);font-size:34px;font-weight:800;line-height:1.15;margin-top:10px}
 .cw-sub{font-size:14px;opacity:.8;margin-top:6px}
 .cw-det{list-style:none;margin-top:22px;border-top:1px solid rgba(255,255,255,.2)}
 .cw-det li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:14px}

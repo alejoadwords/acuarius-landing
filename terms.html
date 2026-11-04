@@ -14,7 +14,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>Términos de Servicio — Acuarius</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" href="/favicon.ico" sizes="any">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -102,7 +101,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .hero h1 {
     font-size: 32px;
     font-weight: 700;
-    letter-spacing: -.5px;
     color: var(--text);
     margin-bottom: 10px;
   }
@@ -170,7 +168,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   h2 {
     font-size: 18px;
     font-weight: 700;
-    letter-spacing: -.2px;
     color: var(--text);
     margin-bottom: 14px;
     padding-bottom: 10px;
@@ -297,11 +294,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </style>
 <script src="https://app.acuarius.app/origen.js" defer></script>
 <style id="am-base">
-:root{--blue:#1E2BCC;--blue-h:#1520AA;--blue-lt:#EEF0FD;--text:#0A0A12;--muted:#5A5A72;--muted2:#9090A8;--border:#E4E4EE;--bg:#FAFAFA;--white:#FFFFFF;--font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;--r:12px}
+:root{--blue:#1E2BCC;--blue-h:#1520AA;--blue-lt:#EEF0FD;--text:#0A0A12;--muted:#5A5A72;--muted2:#9090A8;--border:#E4E4EE;--bg:#FAFAFA;--white:#FFFFFF;--font-display:'Velocity',sans-serif;--font-body:'Outfit',sans-serif;--r:12px}
 body{padding-top:68px}
 </style>
-<link id="am-fuentes" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link id="am-fuentes" rel="preload" href="/fonts/Velocity.woff2" as="font" type="font/woff2" crossorigin>
 <style id="am-css">
+/* Tipografía de todo el sitio: Velocity en títulos, Outfit en lo demás. Va aquí porque este CSS entra en todas las URL. Velocity tiene un solo peso: el rango evita que el navegador le simule negrita. */
+@font-face{font-family:'Velocity';src:url('/fonts/Velocity.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-Thin.woff2') format('woff2');font-weight:100;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-ExtraLight.woff2') format('woff2');font-weight:200;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-Light.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-SemiBold.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-ExtraBold.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-Black.woff2') format('woff2');font-weight:900;font-style:normal;font-display:swap}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-display);letter-spacing:0}
+/* Los controles no heredan la fuente del body: sin esto salen en Arial. */
+button,input,select,textarea{font-family:var(--font-body)}
 /* Menú del sitio (fuente-menu/menu.mjs). Tokens de partners.html. */
 .am-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);font-family:var(--font-body)}
 .am-in{max-width:1200px;height:100%;margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:24px}

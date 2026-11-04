@@ -25,10 +25,10 @@ const PAGINAS = [
 // Las páginas legales no cargan los tokens ni las fuentes del sitio: se les
 // dan los mínimos para que el menú se vea igual y el texto no quede debajo.
 const BASE_SIMPLE = `<style id="am-base">
-:root{--blue:#1E2BCC;--blue-h:#1520AA;--blue-lt:#EEF0FD;--text:#0A0A12;--muted:#5A5A72;--muted2:#9090A8;--border:#E4E4EE;--bg:#FAFAFA;--white:#FFFFFF;--font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;--r:12px}
+:root{--blue:#1E2BCC;--blue-h:#1520AA;--blue-lt:#EEF0FD;--text:#0A0A12;--muted:#5A5A72;--muted2:#9090A8;--border:#E4E4EE;--bg:#FAFAFA;--white:#FFFFFF;--font-display:'Velocity',sans-serif;--font-body:'Outfit',sans-serif;--r:12px}
 body{padding-top:68px}
 </style>
-<link id="am-fuentes" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">`;
+<link id="am-fuentes" rel="preload" href="/fonts/Velocity.woff2" as="font" type="font/woff2" crossorigin>`;
 
 function reemplazar(html, re, nuevo, nombre, fichero) {
   if (!re.test(html)) throw new Error(`${fichero}: no encontré ${nombre}`);

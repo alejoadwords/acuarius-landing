@@ -121,11 +121,11 @@ const ESTILO_SEO = `<style>
 .s-sec a{color:var(--blue)}
 .s-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
 .s-card{background:var(--white);border:1px solid var(--border);border-radius:var(--rlg);padding:26px 24px}
-.s-card h3{font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-.01em;margin-bottom:10px;color:var(--text)}
+.s-card h3{font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:0;margin-bottom:10px;color:var(--text)}
 .s-card p{font-size:14.5px;line-height:1.65;color:var(--muted)}
 .s-pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px;counter-reset:paso}
 .s-paso{counter-increment:paso;padding-top:4px}
-.s-paso::before{content:counter(paso);display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--blue);color:white;font-family:var(--font-display);font-weight:800;margin-bottom:16px}
+.s-paso::before{content:counter(paso);display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--blue);color:white;font-family:var(--font-body);font-weight:800;margin-bottom:16px}
 .s-paso h3{font-size:16px;font-weight:700;margin-bottom:8px;color:var(--text)}
 .s-paso p{font-size:14.5px;line-height:1.6;color:var(--muted)}
 .s-tabla-wrap{margin-top:36px;overflow-x:auto;border:1px solid var(--border);border-radius:var(--rlg);background:var(--white)}
@@ -147,9 +147,10 @@ const ESTILO_SEO = `<style>
 .s-rel a:hover{border-color:var(--blue);color:var(--blue)}
 .s-rel small{display:block;font-weight:500;color:var(--muted2);font-size:12px;margin-bottom:4px}
 @media(max-width:960px){.s-grid,.s-rel{grid-template-columns:repeat(2,1fr)}.s-pasos{grid-template-columns:repeat(2,1fr)}}
-/* Syne es ancha: en el celular «Automatizaciones» no cabe en una línea y
+/* La fuente de títulos es ancha: en el celular «Automatizaciones» no cabe en una línea y
    ensanchaba la página. Se parte con guion antes que desbordar. */
-.s-hero h1,.s-sec .section-title,.s-card h3{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+.s-hero h1,.s-sec .section-title,.s-card h3{overflow-wrap:break-word}
+@media(max-width:480px){.s-hero h1,.s-sec .section-title,.s-card h3{-webkit-hyphens:auto;hyphens:auto}}
 @media(max-width:480px){.s-sec .section-title{font-size:26px}}
 @media(max-width:768px){.s-sec{padding:60px 20px}.s-grid,.s-rel,.s-pasos{grid-template-columns:1fr}.nav-links{display:none}}
 </style>`;
@@ -244,9 +245,8 @@ ${GTM_HEAD}
 <meta property="og:url" content="${url}">
 <meta name="twitter:card" content="summary">
 ${ICONO}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/Velocity.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/Outfit-Regular.woff2" as="font" type="font/woff2" crossorigin>
 ${ESTILO_BASE}
 ${ESTILO_SEO}
 ${MENU_CSS}
