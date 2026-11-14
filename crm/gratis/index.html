@@ -528,6 +528,8 @@ footer{background:var(--text);padding:64px 40px 40px;color:rgba(255,255,255,.6)}
 @font-face{font-family:'Outfit';src:url('/fonts/Outfit-ExtraBold.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}
 @font-face{font-family:'Outfit';src:url('/fonts/Outfit-Black.woff2') format('woff2');font-weight:900;font-style:normal;font-display:swap}
 h1,h2,h3,h4,h5,h6{font-family:var(--font-display);letter-spacing:0}
+/* Velocity trae ligaduras por defecto: «hi» se ve como «hj» («hjstoria») y la «gu» sale unida. Se apagan en todo el sitio; se hereda a cualquier elemento que use Velocity. */
+html{font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0,"dlig" 0}
 /* Los controles no heredan la fuente del body: sin esto salen en Arial. */
 button,input,select,textarea{font-family:var(--font-body)}
 /* Menú del sitio (fuente-menu/menu.mjs). Tokens de partners.html. */
