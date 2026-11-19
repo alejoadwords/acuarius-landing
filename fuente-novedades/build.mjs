@@ -17,33 +17,89 @@
 // Estilo base, logo, GTM y pie salen de partners.html en cada build, como las
 // páginas SEO. Si algo incumple las reglas, el build se detiene sin escribir.
 
-import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { EDICIONES } from './ediciones.mjs';
+import { EDICIONES as EDICIONES_ES } from './ediciones.mjs';
+import { EDICIONES as EDICIONES_EN } from './ediciones-en.mjs';
 import { ESTILO_NOV } from './estilo.mjs';
-import { ILUSTRACIONES } from './ilustraciones.mjs';
+import { ILUSTRACIONES as ILU_ES } from './ilustraciones.mjs';
+import { ILUSTRACIONES as ILU_EN } from './ilustraciones-en.mjs';
 import { menuHTML, MENU_CSS, MENU_JS } from '../fuente-menu/menu.mjs';
+import { enDe, esDe, aIngles, hreflang } from '../fuente-en/urls.mjs';
+import { PARES_PIE, aplicarPares } from '../fuente-en/pie.mjs';
 
 const AQUI = dirname(fileURLToPath(import.meta.url));
 const RAIZ = join(AQUI, '..');
 const DOMINIO = 'https://acuarius.app';
 const REGISTRO = 'https://app.acuarius.app/registro';
 const APP = 'https://app.acuarius.app/';
-const BASE = '/novedades/';
+const BASE_ES = '/novedades/';
+let BASE = BASE_ES;
 
 // ── Artículos ───────────────────────────────────────────────────────────────
-const ARTICULOS = [];
-for (const f of readdirSync(join(AQUI, 'articulos')).filter((f) => f.endsWith('.mjs')).sort()) {
-  const { ARTICULO } = await import(pathToFileURL(join(AQUI, 'articulos', f)).href);
-  ARTICULOS.push({ ...ARTICULO, _fichero: f });
+// Cada artículo en inglés vive en articulos-en/ con el MISMO nombre de fichero
+// (el slug español) y su propio slug en inglés. `_es` es siempre el slug
+// español: las ediciones y los relacionados apuntan a ese.
+async function cargar(carpeta) {
+  const lista = [];
+  if (!existsSync(join(AQUI, carpeta))) return lista;
+  for (const f of readdirSync(join(AQUI, carpeta)).filter((f) => f.endsWith('.mjs')).sort()) {
+    const { ARTICULO } = await import(pathToFileURL(join(AQUI, carpeta, f)).href);
+    lista.push({ ...ARTICULO, _fichero: f, _es: f.replace(/\.mjs$/, '') });
+  }
+  // Más nuevo primero; dentro de la misma fecha, en el orden de su edición.
+  const ordenEd = (a) => { const e = EDICIONES_ES.find((x) => x.numero === a.edicion); return e ? e.articulos.indexOf(a._es) : 99; };
+  return lista.sort((a, b) => (b.publicado.localeCompare(a.publicado)) || (ordenEd(a) - ordenEd(b)));
 }
-// Más nuevo primero; dentro de la misma fecha, en el orden de su edición.
-const ordenEd = (a) => { const e = EDICIONES.find((x) => x.numero === a.edicion); return e ? e.articulos.indexOf(a.slug) : 99; };
-ARTICULOS.sort((a, b) => (b.publicado.localeCompare(a.publicado)) || (ordenEd(a) - ordenEd(b)));
-const porSlug = Object.fromEntries(ARTICULOS.map((a) => [a.slug, a]));
+const ARTICULOS_ES = await cargar('articulos');
+const ARTICULOS_EN = await cargar('articulos-en');
 
-export const URLS = [BASE, ...ARTICULOS.map((a) => `${BASE}${a.slug}/`), ...EDICIONES.map((e) => `${BASE}${e.slug}/`)];
+// El idioma que se está generando. Las funciones de abajo leen estas variables.
+let ILUSTRACIONES = ILU_ES;
+let IDI = 'es', ARTICULOS = ARTICULOS_ES, EDICIONES = EDICIONES_ES, porSlug = {}, X = null, PIE_IDI = null;
+function usar(idioma) {
+  IDI = idioma;
+  ARTICULOS = idioma === 'en' ? ARTICULOS_EN : ARTICULOS_ES;
+  EDICIONES = idioma === 'en' ? EDICIONES_EN : EDICIONES_ES;
+  BASE = idioma === 'en' ? enDe(BASE_ES) : BASE_ES;
+  porSlug = Object.fromEntries(ARTICULOS.map((a) => [a._es, a]));
+  X = TX[idioma];
+  ILUSTRACIONES = idioma === 'en' ? ILU_EN : ILU_ES;
+  PIE_IDI = idioma === 'en' ? PIE_EN : PIE;
+}
+
+export const URLS = [BASE_ES, ...ARTICULOS_ES.map((a) => `${BASE_ES}${a.slug}/`), ...EDICIONES_ES.map((e) => `${BASE_ES}${e.slug}/`)];
+
+// Textos fijos de las plantillas en cada idioma.
+const TX = {
+  es: { lang: 'es', locale: 'es_419', inLanguage: 'es-419', inicio: 'Inicio', novedades: 'Novedades', blog: 'Novedades de Acuarius', migas: 'Migas de pan',
+    reproducir: 'Reproducir el video: ', leerGuia: 'Leer la guía', faq: 'Preguntas frecuentes', idFaq: 'preguntas-frecuentes', edicionDe: (n) => ` · Novedades, edición ${n}`,
+    publicado: 'Publicado el', lectura: 'min de lectura', videoDe: 'Video de', videoGuia: 'Video guía', videoAcademia: 'Video de la Academia de Acuarius', capitulos: 'Capítulos del video',
+    corta: 'En pocas palabras', despues: 'Para leer después', comparte: 'Comparte esta guía:', copiar: 'Copiar enlace', copiado: 'Enlace copiado ✓', copiaLo: 'Copia el enlace:', enArticulo: 'En este artículo',
+    cajaT: 'Pruébalo en tu cuenta', cajaP: '14 días de Pro gratis, sin tarjeta. Si ya tienes cuenta, ya está activo.', crear: 'Crear cuenta gratis', entrar: 'Entrar a Acuarius',
+    sigue: 'Sigue leyendo', otras: (n) => `Otras novedades${n ? ` de la edición ${n}` : ''}.`, verTodas: 'Ver todas',
+    ctaH2: 'Pruébalo en tu cuenta', ctaSub: 'Si ya usas Acuarius, entra y pruébalo. Si todavía no, crea tu cuenta: tienes 14 días de Pro gratis, sin tarjeta.', ctaTodo: 'Todo esto ya está en tu cuenta',
+    idxTitle: 'Novedades de Acuarius: lo nuevo en tu CRM con IA', idxDesc: 'Lo nuevo en Acuarius cada quincena: funciones del CRM, WhatsApp, agentes de IA, campañas y reportes, explicadas en guías con video.',
+    idxH1: 'Lo nuevo en Acuarius', idxSub: 'Cada función nueva de tu CRM, tu WhatsApp y tus agentes de IA, explicada en una guía con video: qué hace, dónde está y cómo sacarle provecho.',
+    edicion: 'Edición', verEdicion: 'Ver la edición', reciente: 'Lo más reciente', recienteP: (p) => `Las guías de la última quincena, del ${p}.`, ediciones: 'Ediciones', edicionesP: 'El resumen de cada quincena, con las mejoras menores y los arreglos.',
+    pruebaGratis: 'Pruébalo gratis 14 días', porFuncion: 'Lo nuevo, función por función', porFuncionP: 'Cada una tiene su guía completa con video.', mas: 'Más mejoras', masP: 'Cambios más pequeños que también llegaron en esta edición.',
+    arreglos: 'Arreglos', arreglosP: 'Lo que no funcionaba como debía y ya quedó bien.', otrasEd: 'Otras ediciones', feedDesc: 'Lo nuevo en Acuarius cada quincena, función por función.',
+    fecha: (iso) => { const [a, m, d] = iso.split('-').map(Number); return `${d} de ${MESES[m - 1]} de ${a}`; } },
+  en: { lang: 'en', locale: 'en_US', inLanguage: 'en', inicio: 'Home', novedades: 'What’s new', blog: 'What’s new in Acuarius', migas: 'Breadcrumbs',
+    reproducir: 'Play the video: ', leerGuia: 'Read the guide', faq: 'Frequently asked questions', idFaq: 'faq', edicionDe: (n) => ` · What’s new, edition ${n}`,
+    publicado: 'Published on', lectura: 'min read', videoDe: 'Video:', videoGuia: 'Video guide (in Spanish)', videoAcademia: 'Acuarius Academy video (in Spanish)', capitulos: 'Video chapters',
+    corta: 'In short', despues: 'Read next', comparte: 'Share this guide:', copiar: 'Copy link', copiado: 'Link copied ✓', copiaLo: 'Copy the link:', enArticulo: 'In this article',
+    cajaT: 'Try it in your account', cajaP: '14 days of Pro, free, no credit card. If you already have an account, it’s already on.', crear: 'Create free account', entrar: 'Sign in to Acuarius',
+    sigue: 'Keep reading', otras: (n) => `More updates${n ? ` from edition ${n}` : ''}.`, verTodas: 'See all',
+    ctaH2: 'Try it in your account', ctaSub: 'If you already use Acuarius, sign in and try it. If not yet, create your account: you get 14 days of Pro free, no credit card.', ctaTodo: 'All of this is already in your account',
+    idxTitle: 'What’s new in Acuarius: updates to your AI-powered CRM', idxDesc: 'What’s new in Acuarius every two weeks: CRM, WhatsApp, AI agent, campaign and report features, explained in video guides.',
+    idxH1: 'What’s new in Acuarius', idxSub: 'Every new feature in your CRM, your WhatsApp and your AI agents, explained in a video guide: what it does, where it is and how to get the most out of it.',
+    edicion: 'Edition', verEdicion: 'See the edition', reciente: 'Latest', recienteP: (p) => `The guides from the last two weeks, ${p}.`, ediciones: 'Editions', edicionesP: 'The summary of each two-week period, with smaller improvements and fixes.',
+    pruebaGratis: 'Try it free for 14 days', porFuncion: 'What’s new, feature by feature', porFuncionP: 'Each one has its full video guide.', mas: 'More improvements', masP: 'Smaller changes that also shipped in this edition.',
+    arreglos: 'Fixes', arreglosP: 'What wasn’t working as it should and is now fixed.', otrasEd: 'Other editions', feedDesc: 'What’s new in Acuarius every two weeks, feature by feature.',
+    fecha: (iso) => { const [a, m, d] = iso.split('-').map(Number); return `${['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][m - 1]} ${d}, ${a}`; } },
+};
 
 // ── Utilidades ──────────────────────────────────────────────────────────────
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -55,7 +111,7 @@ const idDe = (s) => norm(sinEtiquetas(s)).replace(/[^a-z0-9]+/g, '-').replace(/^
 const FLECHA = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
 const PLAY = (t = 26) => `<svg width="${t}" height="${t}" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>`;
 const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
-const fechaLarga = (iso) => { const [a, m, d] = iso.split('-').map(Number); return `${d} de ${MESES[m - 1]} de ${a}`; };
+const fechaLarga = (iso) => X.fecha(iso);
 const dos = (n) => String(n).padStart(2, '0');
 const TINTE_ILU = { productos: 'azul', campos: 'menta', whatsapp: 'lila', agente: 'arena', agenda: 'cielo', satisfaccion: 'rosa', pauta: 'gris' };
 const tinteDe = (a) => `var(--n-tinte-${TINTE_ILU[a.ilustracion] || 'azul'})`;
@@ -74,7 +130,8 @@ function validar() {
   const vistos = new Map();
   for (const a of ARTICULOS) {
     const e = (m) => errores.push(`${a._fichero}: ${m}`);
-    if (`${a.slug}.mjs` !== a._fichero) e('el slug no coincide con el nombre del fichero');
+    if (IDI === 'es' && `${a.slug}.mjs` !== a._fichero) e('el slug no coincide con el nombre del fichero');
+    if (IDI === 'en' && enDe(`${BASE_ES}${a._es}/`) !== `${BASE}${a.slug}/`) e(`el slug en inglés no coincide con fuente-en/urls.mjs (${enDe(`${BASE_ES}${a._es}/`)})`);
     if (!/^[a-z0-9-]+$/.test(a.slug)) e('slug con caracteres no permitidos');
     for (const c of ['kw', 'title', 'description', 'h1', 'modulo', 'publicado', 'resumen', 'respuesta']) if (!a[c]) e(`falta ${c}`);
     if (a.title.length > 60) e(`title de ${a.title.length} caracteres (máx. 60)`);
@@ -116,6 +173,9 @@ const GTM_HEAD = extraer(/<!-- Google Tag Manager -->[\s\S]*?<!-- End Google Tag
 const GTM_BODY = extraer(/<!-- Google Tag Manager \(noscript\) -->[\s\S]*?<!-- End Google Tag Manager \(noscript\) -->/, 'GTM del body');
 const ICONO = extraer(/<link rel="icon"[^>]*>\n<link rel="icon"[^>]*>\n<link rel="apple-touch-icon"[^>]*>/, 'el favicon');
 const PIE = extraer(/<footer>[\s\S]*?<\/footer>/, 'el pie');
+const pieEn = aplicarPares(PIE, PARES_PIE);
+if (pieEn.faltan.length) throw new Error(`El pie de partners.html cambió; actualiza fuente-en/pie.mjs: «${pieEn.faltan[0].slice(0, 80)}»`);
+const PIE_EN = pieEn.texto;
 
 // Lo que solo usan los artículos.
 const ESTILO_ART = `<style>
@@ -184,7 +244,7 @@ const ESTILO_ART = `<style>
 // ── Piezas comunes ──────────────────────────────────────────────────────────
 function head({ title, description, url, tipo, jsonld, extra = '' }) {
   return `<!DOCTYPE html>
-<html lang="es">
+<html lang="${X.lang}">
 <head>
 ${GTM_HEAD}
 <meta charset="UTF-8">
@@ -192,15 +252,16 @@ ${GTM_HEAD}
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${url}">
+${hreflang(IDI === 'en' ? esDe(url.replace(DOMINIO, '')) : url.replace(DOMINIO, ''))}
 <meta name="robots" content="index, follow, max-image-preview:large, max-video-preview:-1">
 <meta property="og:type" content="${tipo}">
-<meta property="og:locale" content="es_419">
+<meta property="og:locale" content="${X.locale}">
 <meta property="og:site_name" content="Acuarius">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${url}">
 ${extra}
-<link rel="alternate" type="application/rss+xml" title="Novedades de Acuarius" href="${DOMINIO}${BASE}feed.xml">
+<link rel="alternate" type="application/rss+xml" title="${X.blog}" href="${DOMINIO}${BASE}feed.xml">
 ${ICONO}
 <link rel="preload" href="/fonts/Velocity.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/Outfit-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -214,23 +275,23 @@ ${MENU_CSS}
 <body>
 ${GTM_BODY}
 
-${menuHTML(url.replace(DOMINIO, ''))}
+${menuHTML(url.replace(DOMINIO, ''), IDI)}
 `;
 }
 
-const CTA = (h2 = 'Pruébalo en tu cuenta') => `
+const CTA = (h2 = X.ctaH2) => `
 <section class="cta-section">
   <div class="cta-inner">
     <h2 class="cta-title">${esc(h2)}</h2>
-    <p class="cta-sub">Si ya usas Acuarius, entra y pruébalo. Si todavía no, crea tu cuenta: tienes 14 días de Pro gratis, sin tarjeta.</p>
+    <p class="cta-sub">${X.ctaSub}</p>
     <div class="cta-actions">
-      <a href="${APP}" class="btn-primary btn-primary-lg" style="background:white;color:var(--blue)">Entrar a Acuarius</a>
-      <a href="${REGISTRO}" class="btn-outline-lg">Crear cuenta gratis</a>
+      <a href="${APP}" class="btn-primary btn-primary-lg" style="background:white;color:var(--blue)">${X.entrar}</a>
+      <a href="${REGISTRO}" class="btn-outline-lg">${X.crear}</a>
     </div>
   </div>
 </section>`;
 
-const SCRIPTS = `
+const SCRIPTS = () => `
 <script>
 // Video bajo demanda: hasta el clic solo se carga la miniatura; al pulsar, el
 // reproductor de YouTube se monta aquí mismo y el video corre en la página.
@@ -280,9 +341,9 @@ document.addEventListener('click', function (e) {
 document.addEventListener('click', function (e) {
   var b = e.target.closest && e.target.closest('[data-copiar]');
   if (!b) return;
-  var listo = function () { b.textContent = 'Enlace copiado ✓'; setTimeout(function () { b.textContent = 'Copiar enlace'; }, 2000); };
-  if (navigator.clipboard) navigator.clipboard.writeText(b.getAttribute('data-copiar')).then(listo, function () { prompt('Copia el enlace:', b.getAttribute('data-copiar')); });
-  else prompt('Copia el enlace:', b.getAttribute('data-copiar'));
+  var listo = function () { b.textContent = '${X.copiado}'; setTimeout(function () { b.textContent = '${X.copiar}'; }, 2000); };
+  if (navigator.clipboard) navigator.clipboard.writeText(b.getAttribute('data-copiar')).then(listo, function () { prompt('${X.copiaLo}', b.getAttribute('data-copiar')); });
+  else prompt('${X.copiaLo}', b.getAttribute('data-copiar'));
 });
 // Conversión: clic hacia la app → dataLayer, igual que el resto del sitio.
 document.addEventListener('click', function (e) {
@@ -295,18 +356,18 @@ document.addEventListener('click', function (e) {
 });
 </script>`;
 
-const migasHTML = (lista) => `<div class="n-migas" role="navigation" aria-label="Migas de pan">${lista.map((x, i) => i === lista.length - 1 ? `<span aria-current="page" style="margin:0">${esc(x.nombre)}</span>` : `<a href="${x.url}">${esc(x.nombre)}</a><span>›</span>`).join('')}</div>`;
+const migasHTML = (lista) => `<div class="n-migas" role="navigation" aria-label="${X.migas}">${lista.map((x, i) => i === lista.length - 1 ? `<span aria-current="page" style="margin:0">${esc(x.nombre)}</span>` : `<a href="${x.url}">${esc(x.nombre)}</a><span>›</span>`).join('')}</div>`;
 const migasLD = (lista) => ({ '@type': 'BreadcrumbList', itemListElement: lista.map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.nombre, item: DOMINIO + m.url })) });
 const ORG = { '@type': 'Organization', '@id': DOMINIO + '/#org', name: 'Acuarius', url: DOMINIO + '/', logo: { '@type': 'ImageObject', url: DOMINIO + '/logo.svg' } };
 
 const panel = (a) => `<div class="n-panel" style="background:${tinteDe(a)}">${ILUSTRACIONES[a.ilustracion]()}</div>`;
 const miniatura = (id) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 function reproductor(a) {
-  return `<button class="n-video" type="button" data-video="${esc(a.video.id)}" data-id="${esc(a.video.id)}" aria-label="Reproducir el video: ${esc(a.video.titulo)}"><img src="${miniatura(a.video.id)}" alt="${esc(a.video.titulo)}" width="480" height="360"><span>${PLAY().replace('<svg', '<svg style="color:var(--blue);margin-left:3px"')}</span></button>`;
+  return `<button class="n-video" type="button" data-video="${esc(a.video.id)}" data-id="${esc(a.video.id)}" aria-label="${X.reproducir}${esc(a.video.titulo)}"><img src="${miniatura(a.video.id)}" alt="${esc(a.video.titulo)}" width="480" height="360"><span>${PLAY().replace('<svg', '<svg style="color:var(--blue);margin-left:3px"')}</span></button>`;
 }
 const tarjeta = (a) => `<a class="n-card" href="${BASE}${a.slug}/">
         ${panel(a)}
-        <div class="n-card-txt"><div class="n-mod">${esc(a.modulo)}</div><h3>${esc(a.h1)}</h3><p>${esc(a.resumen)}</p><span class="n-card-link">Leer la guía ${FLECHA}</span></div>
+        <div class="n-card-txt"><div class="n-mod">${esc(a.modulo)}</div><h3>${esc(a.h1)}</h3><p>${esc(a.resumen)}</p><span class="n-card-link">${X.leerGuia} ${FLECHA}</span></div>
       </a>`;
 
 // ── Artículo: /novedades/<slug>/ ────────────────────────────────────────────
@@ -314,10 +375,10 @@ function articulo(a) {
   const url = `${DOMINIO}${BASE}${a.slug}/`;
   const ed = EDICIONES.find((e) => e.numero === a.edicion);
   const corto = a.h1.split(':')[0];
-  const lista = [{ nombre: 'Inicio', url: '/' }, { nombre: 'Novedades', url: BASE }, { nombre: corto, url: `${BASE}${a.slug}/` }];
+  const lista = [{ nombre: X.inicio, url: IDI === 'en' ? '/en/' : '/' }, { nombre: X.novedades, url: BASE }, { nombre: corto, url: `${BASE}${a.slug}/` }];
   const secciones = a.secciones.map((s) => ({ ...s, id: idDe(s.h2) }));
   const idPasos = a.pasos ? idDe(a.pasos.h2) : null;
-  const toc = [...secciones.map((s) => ({ id: s.id, t: s.h2 })), ...(a.pasos ? [{ id: idPasos, t: a.pasos.h2 }] : []), { id: 'preguntas-frecuentes', t: 'Preguntas frecuentes' }];
+  const toc = [...secciones.map((s) => ({ id: s.id, t: s.h2 })), ...(a.pasos ? [{ id: idPasos, t: a.pasos.h2 }] : []), { id: X.idFaq, t: X.faq }];
   const n = palabras(a);
   const minutos = Math.max(3, Math.round(n / 200));
   const rel = (a.relacionados || []).map((s) => porSlug[s]).filter(Boolean);
@@ -325,10 +386,10 @@ function articulo(a) {
   const jsonld = [
     ORG,
     { '@type': 'BlogPosting', '@id': url + '#articulo', url, mainEntityOfPage: url, headline: a.h1, description: a.description,
-      abstract: a.respuesta, inLanguage: 'es-419', datePublished: a.publicado, dateModified: a.actualizado || a.publicado,
+      abstract: a.respuesta, inLanguage: X.inLanguage, datePublished: a.publicado, dateModified: a.actualizado || a.publicado,
       author: { '@id': ORG['@id'] }, publisher: { '@id': ORG['@id'] }, image: imagen,
       articleSection: a.modulo, keywords: a.kw, wordCount: n, video: { '@id': url + '#video' },
-      isPartOf: { '@type': 'Blog', name: 'Novedades de Acuarius', url: DOMINIO + BASE },
+      isPartOf: { '@type': 'Blog', name: X.blog, url: DOMINIO + BASE },
       speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.a-corta p'] } },
     { '@type': 'VideoObject', '@id': url + '#video', name: a.video.titulo, description: a.resumen,
       thumbnailUrl: [miniatura(a.video.id), imagen], uploadDate: a.video.subido + 'T12:00:00-05:00', duration: isoDur(a.video.segundos),
@@ -355,49 +416,49 @@ function articulo(a) {
 <header class="n-hero a-hero">
   <div class="n-in">
     ${migasHTML(lista)}
-    <span class="n-eyebrow">${esc(a.modulo)}${ed ? ` · Novedades, edición ${dos(ed.numero)}` : ''}</span>
+    <span class="n-eyebrow">${esc(a.modulo)}${ed ? X.edicionDe(dos(ed.numero)) : ''}</span>
     <h1 class="n-h1 n-h1-ed">${esc(a.h1)}</h1>
     <p class="n-sub">${esc(a.resumen)}</p>
-    <div class="a-meta"><span>Publicado el <b>${esc(fechaLarga(a.publicado))}</b></span><span>${minutos} min de lectura</span><span>Video de ${minSeg(a.video.segundos)}</span></div>
+    <div class="a-meta"><span>${X.publicado} <b>${esc(fechaLarga(a.publicado))}</b></span><span>${minutos} ${X.lectura}</span><span>${X.videoDe} ${minSeg(a.video.segundos)}</span></div>
   </div>
 </header>
 
 <div class="a-video-wrap">
   ${reproductor(a)}
-  <p class="a-video-cap">${a.video.propio ? 'Video guía' : 'Video de la Academia de Acuarius'}: ${esc(a.video.titulo)} · ${minSeg(a.video.segundos)}</p>
-  ${a.video.capitulos?.length ? `<div class="a-caps" aria-label="Capítulos del video">${a.video.capitulos.map((c) => `<button type="button" data-ir-a="${c.s}"><b>${minSeg(c.s)}</b> ${esc(c.t)}</button>`).join('')}</div>` : ''}
+  <p class="a-video-cap">${a.video.propio ? X.videoGuia : X.videoAcademia}: ${esc(a.video.titulo)} · ${minSeg(a.video.segundos)}</p>
+  ${a.video.capitulos?.length ? `<div class="a-caps" aria-label="${X.capitulos}">${a.video.capitulos.map((c) => `<button type="button" data-ir-a="${c.s}"><b>${minSeg(c.s)}</b> ${esc(c.t)}</button>`).join('')}</div>` : ''}
 </div>
 
 <div class="a-cuerpo">
   <article class="a-art">
-    <div class="a-corta"><b>En pocas palabras</b><p>${esc(a.respuesta)}</p></div>
+    <div class="a-corta"><b>${X.corta}</b><p>${esc(a.respuesta)}</p></div>
 ${cuerpo}
 ${a.pasos ? `<h2 id="${idPasos}">${esc(a.pasos.h2)}</h2>\n${a.pasos.intro ? `<p>${a.pasos.intro}</p>` : ''}\n<ol class="a-pasos">${a.pasos.items.map((p) => `<li><b>${esc(p.t)}</b><p>${p.d}</p></li>`).join('')}</ol>` : ''}
-<h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+<h2 id="${X.idFaq}">${X.faq}</h2>
 <div class="a-faq">${a.faq.map((f) => `<details><summary>${esc(f.q)}</summary><p>${f.a}</p></details>`).join('')}</div>
-${a.enlaces?.length ? `<h3>Para leer después</h3><div class="a-enlaces">${a.enlaces.map((l) => `<a href="${esc(l.url)}">${esc(l.texto)}</a>`).join('')}</div>` : ''}
-    <div class="a-compartir">Comparte esta guía:
-      <button type="button" data-copiar="${url}">Copiar enlace</button>
+${a.enlaces?.length ? `<h3>${X.despues}</h3><div class="a-enlaces">${a.enlaces.map((l) => `<a href="${esc(l.url)}">${esc(l.texto)}</a>`).join('')}</div>` : ''}
+    <div class="a-compartir">${X.comparte}
+      <button type="button" data-copiar="${url}">${X.copiar}</button>
       <a href="https://wa.me/?text=${compartirTxt}" target="_blank" rel="noopener">WhatsApp</a>
       <a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </article>
   <aside class="a-lado">
-    <div class="a-toc" role="navigation" aria-label="En este artículo"><b>En este artículo</b>${toc.map((t) => `<a href="#${t.id}">${esc(t.t)}</a>`).join('')}</div>
-    <div class="a-caja"><b>Pruébalo en tu cuenta</b><p>14 días de Pro gratis, sin tarjeta. Si ya tienes cuenta, ya está activo.</p><a href="${REGISTRO}">Crear cuenta gratis</a><a href="${APP}">Entrar a Acuarius</a></div>
+    <div class="a-toc" role="navigation" aria-label="${X.enArticulo}"><b>${X.enArticulo}</b>${toc.map((t) => `<a href="#${t.id}">${esc(t.t)}</a>`).join('')}</div>
+    <div class="a-caja"><b>${X.cajaT}</b><p>${X.cajaP}</p><a href="${REGISTRO}">${X.crear}</a><a href="${APP}">${X.entrar}</a></div>
   </aside>
 </div>
 
 ${rel.length ? `<section class="n-sec n-sec-gris">
   <div class="n-in">
-    <div class="n-cab"><h2>Sigue leyendo</h2><p>Otras novedades${ed ? ` de la edición ${dos(ed.numero)}` : ''}. <a href="${BASE}" style="color:var(--blue);font-weight:600">Ver todas</a></p></div>
+    <div class="n-cab"><h2>${X.sigue}</h2><p>${X.otras(ed ? dos(ed.numero) : '')} <a href="${BASE}" style="color:var(--blue);font-weight:600">${X.verTodas}</a></p></div>
     <div class="a-rel">${rel.map(tarjeta).join('')}</div>
   </div>
 </section>` : ''}
 ${CTA()}
 
-${PIE}
-${SCRIPTS}
+${PIE_IDI}
+${SCRIPTS()}
 ${MENU_JS}
 </body>
 </html>
@@ -407,12 +468,12 @@ ${MENU_JS}
 // ── Índice: /novedades/ ─────────────────────────────────────────────────────
 function indice() {
   const ult = EDICIONES[0];
-  const title = 'Novedades de Acuarius: lo nuevo en tu CRM con IA';
-  const description = 'Lo nuevo en Acuarius cada quincena: funciones del CRM, WhatsApp, agentes de IA, campañas y reportes, explicadas en guías con video.';
-  const lista = [{ nombre: 'Inicio', url: '/' }, { nombre: 'Novedades', url: BASE }];
+  const title = X.idxTitle;
+  const description = X.idxDesc;
+  const lista = [{ nombre: X.inicio, url: IDI === 'en' ? '/en/' : '/' }, { nombre: X.novedades, url: BASE }];
   const jsonld = [
     ORG,
-    { '@type': 'Blog', '@id': DOMINIO + BASE, url: DOMINIO + BASE, name: 'Novedades de Acuarius', description, inLanguage: 'es-419', publisher: { '@id': ORG['@id'] },
+    { '@type': 'Blog', '@id': DOMINIO + BASE, url: DOMINIO + BASE, name: X.blog, description, inLanguage: X.inLanguage, publisher: { '@id': ORG['@id'] },
       blogPost: ARTICULOS.map((a) => ({ '@type': 'BlogPosting', headline: a.h1, url: `${DOMINIO}${BASE}${a.slug}/`, datePublished: a.publicado })) },
     migasLD(lista),
   ];
@@ -420,20 +481,20 @@ function indice() {
 <section class="n-hero">
   <div class="n-in">
     ${migasHTML(lista)}
-    <span class="n-eyebrow">Novedades</span>
-    <h1 class="n-h1">Lo nuevo en Acuarius<i>.</i></h1>
-    <p class="n-sub">Cada función nueva de tu CRM, tu WhatsApp y tus agentes de IA, explicada en una guía con video: qué hace, dónde está y cómo sacarle provecho.</p>
+    <span class="n-eyebrow">${X.novedades}</span>
+    <h1 class="n-h1">${X.idxH1}<i>.</i></h1>
+    <p class="n-sub">${X.idxSub}</p>
     <div class="n-edicion">
-      <span class="n-pill">Edición ${dos(ult.numero)}</span>
+      <span class="n-pill">${X.edicion} ${dos(ult.numero)}</span>
       <span>${esc(ult.resumen)}</span>
-      <a href="${BASE}${ult.slug}/">Ver la edición ${FLECHA}</a>
+      <a href="${BASE}${ult.slug}/">${X.verEdicion} ${FLECHA}</a>
     </div>
   </div>
 </section>
 
 <section class="n-sec">
   <div class="n-in">
-    <div class="n-cab"><h2>Lo más reciente</h2><p>Las guías de la última quincena, del ${esc(ult.periodo)}.</p></div>
+    <div class="n-cab"><h2>${X.reciente}</h2><p>${X.recienteP(esc(ult.periodo))}</p></div>
     <div class="n-grid">
 ${ARTICULOS.map(tarjeta).join('\n')}
     </div>
@@ -442,14 +503,14 @@ ${ARTICULOS.map(tarjeta).join('\n')}
 
 <section class="n-sec n-sec-gris">
   <div class="n-in">
-    <div class="n-cab"><h2>Ediciones</h2><p>El resumen de cada quincena, con las mejoras menores y los arreglos.</p></div>
-    <div class="n-lista-ed">${EDICIONES.map((e) => `<a href="${BASE}${e.slug}/"><span class="n-pill">Edición ${dos(e.numero)}</span><span><b>${esc(e.h1)}</b><br>${esc(e.resumen)}</span><em>${esc(fechaLarga(e.publicada))}</em></a>`).join('')}</div>
+    <div class="n-cab"><h2>${X.ediciones}</h2><p>${X.edicionesP}</p></div>
+    <div class="n-lista-ed">${EDICIONES.map((e) => `<a href="${BASE}${e.slug}/"><span class="n-pill">${X.edicion} ${dos(e.numero)}</span><span><b>${esc(e.h1)}</b><br>${esc(e.resumen)}</span><em>${esc(fechaLarga(e.publicada))}</em></a>`).join('')}</div>
   </div>
 </section>
-${CTA('Todo esto ya está en tu cuenta')}
+${CTA(X.ctaTodo)}
 
-${PIE}
-${SCRIPTS}
+${PIE_IDI}
+${SCRIPTS()}
 ${MENU_JS}
 </body>
 </html>
@@ -459,13 +520,13 @@ ${MENU_JS}
 // ── Edición: /novedades/<edicion>/ ──────────────────────────────────────────
 function edicion(e) {
   const url = `${DOMINIO}${BASE}${e.slug}/`;
-  const lista = [{ nombre: 'Inicio', url: '/' }, { nombre: 'Novedades', url: BASE }, { nombre: `Edición ${dos(e.numero)}`, url: `${BASE}${e.slug}/` }];
+  const lista = [{ nombre: X.inicio, url: IDI === 'en' ? '/en/' : '/' }, { nombre: X.novedades, url: BASE }, { nombre: `${X.edicion} ${dos(e.numero)}`, url: `${BASE}${e.slug}/` }];
   const arts = e.articulos.map((s) => porSlug[s]);
   const otras = EDICIONES.filter((o) => o.slug !== e.slug);
   const jsonld = [
     ORG,
-    { '@type': 'CollectionPage', '@id': url, url, name: e.h1, description: e.description, inLanguage: 'es-419', datePublished: e.publicada,
-      isPartOf: { '@type': 'Blog', name: 'Novedades de Acuarius', url: DOMINIO + BASE },
+    { '@type': 'CollectionPage', '@id': url, url, name: e.h1, description: e.description, inLanguage: X.inLanguage, datePublished: e.publicada,
+      isPartOf: { '@type': 'Blog', name: X.blog, url: DOMINIO + BASE },
       hasPart: arts.map((a) => ({ '@type': 'BlogPosting', headline: a.h1, url: `${DOMINIO}${BASE}${a.slug}/` })) },
     migasLD(lista),
   ];
@@ -473,19 +534,19 @@ function edicion(e) {
 <section class="n-hero">
   <div class="n-in">
     ${migasHTML(lista)}
-    <span class="n-eyebrow">Edición ${dos(e.numero)} · ${esc(e.periodo)}</span>
+    <span class="n-eyebrow">${X.edicion} ${dos(e.numero)} · ${esc(e.periodo)}</span>
     <h1 class="n-h1 n-h1-ed">${esc(e.h1)}</h1>
     <p class="n-sub">${esc(e.sub)}</p>
     <div class="n-acciones">
-      <a href="${APP}" class="btn-primary btn-primary-lg">Entrar a Acuarius ${FLECHA}</a>
-      <a href="${REGISTRO}" class="n-btn-borde">Pruébalo gratis 14 días</a>
+      <a href="${APP}" class="btn-primary btn-primary-lg">${X.entrar} ${FLECHA}</a>
+      <a href="${REGISTRO}" class="n-btn-borde">${X.pruebaGratis}</a>
     </div>
   </div>
 </section>
 
 <section class="n-sec">
   <div class="n-in">
-    <div class="n-cab"><h2>Lo nuevo, función por función</h2><p>Cada una tiene su guía completa con video.</p></div>
+    <div class="n-cab"><h2>${X.porFuncion}</h2><p>${X.porFuncionP}</p></div>
     <div class="n-grid">
 ${arts.map(tarjeta).join('\n')}
     </div>
@@ -494,23 +555,23 @@ ${arts.map(tarjeta).join('\n')}
 
 <section class="n-sec n-sec-gris" id="mas">
   <div class="n-in">
-    <div class="n-cab"><h2>Más mejoras</h2><p>Cambios más pequeños que también llegaron en esta edición.</p></div>
+    <div class="n-cab"><h2>${X.mas}</h2><p>${X.masP}</p></div>
     <div class="n-mini">${e.mas.map((m) => `<div><small>${esc(m.modulo)}</small><h3>${esc(m.titulo)}</h3><p>${esc(m.texto)}</p></div>`).join('')}</div>
   </div>
 </section>
 
 <section class="n-sec" id="arreglos">
   <div class="n-in">
-    <div class="n-cab"><h2>Arreglos</h2><p>Lo que no funcionaba como debía y ya quedó bien.</p></div>
+    <div class="n-cab"><h2>${X.arreglos}</h2><p>${X.arreglosP}</p></div>
     <ul class="n-arreglos">${e.arreglos.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
   </div>
 </section>
 
-${otras.length ? `<section class="n-sec n-sec-gris"><div class="n-in"><div class="n-cab"><h2>Otras ediciones</h2></div><div class="n-lista-ed">${otras.map((o) => `<a href="${BASE}${o.slug}/"><span class="n-pill">Edición ${dos(o.numero)}</span><span><b>${esc(o.h1)}</b><br>${esc(o.resumen)}</span><em>${esc(fechaLarga(o.publicada))}</em></a>`).join('')}</div></div></section>` : ''}
-${CTA('Todo esto ya está en tu cuenta')}
+${otras.length ? `<section class="n-sec n-sec-gris"><div class="n-in"><div class="n-cab"><h2>${X.otrasEd}</h2></div><div class="n-lista-ed">${otras.map((o) => `<a href="${BASE}${o.slug}/"><span class="n-pill">Edición ${dos(o.numero)}</span><span><b>${esc(o.h1)}</b><br>${esc(o.resumen)}</span><em>${esc(fechaLarga(o.publicada))}</em></a>`).join('')}</div></div></section>` : ''}
+${CTA(X.ctaTodo)}
 
-${PIE}
-${SCRIPTS}
+${PIE_IDI}
+${SCRIPTS()}
 ${MENU_JS}
 </body>
 </html>
@@ -523,11 +584,11 @@ function feed() {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>Novedades de Acuarius</title>
+  <title>${X.blog}</title>
   <link>${DOMINIO}${BASE}</link>
   <atom:link href="${DOMINIO}${BASE}feed.xml" rel="self" type="application/rss+xml"/>
-  <description>Lo nuevo en Acuarius cada quincena, función por función.</description>
-  <language>es</language>
+  <description>${X.feedDesc}</description>
+  <language>${X.lang}</language>
 ${ARTICULOS.map((a) => `  <item>
     <title>${x(a.h1)}</title>
     <link>${DOMINIO}${BASE}${a.slug}/</link>
@@ -543,15 +604,33 @@ ${ARTICULOS.map((a) => `  <item>
 
 // ── Main (solo si se ejecuta directo; fuente-seo lo importa por URLS) ──────
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
-  const errores = validar();
+  // Se valida y se arma todo (español e inglés) antes de escribir: si algo
+  // falla en cualquiera de los dos, no se escribe nada.
+  const salida = [];
+  const errores = [];
+  for (const idioma of ['es', 'en']) {
+    usar(idioma);
+    const errs = validar().map((m) => `[${idioma}] ${m}`);
+    if (idioma === 'en') {
+      for (const a of ARTICULOS_ES) if (!porSlug[a._es]) errs.push(`[en] falta la traducción articulos-en/${a._fichero}`);
+      if (EDICIONES_EN.length !== EDICIONES_ES.length) errs.push('[en] ediciones-en.mjs no tiene las mismas ediciones que ediciones.mjs');
+    }
+    errores.push(...errs);
+    if (errs.length) continue;
+    const dir = BASE.slice(1);
+    const pon = (ruta, html) => {
+      if (idioma === 'en' && ruta.endsWith('.html')) { const r = aIngles(html); for (const u of r.sinPar) errores.push(`[en] ${ruta}: enlace sin URL en inglés ${u}`); html = r.html; }
+      salida.push([ruta, html]);
+    };
+    pon(`${dir}index.html`, indice());
+    for (const a of ARTICULOS) pon(`${dir}${a.slug}/index.html`, articulo(a));
+    for (const e of EDICIONES) pon(`${dir}${e.slug}/index.html`, edicion(e));
+    pon(`${dir}feed.xml`, feed());
+  }
   if (errores.length) {
     console.error(`✗ ${errores.length} problema(s); no se escribió nada:\n  ` + errores.join('\n  '));
     process.exit(1);
   }
-  const escribir = (ruta, html) => { const d = join(RAIZ, ruta); mkdirSync(dirname(d), { recursive: true }); writeFileSync(d, html); };
-  escribir('novedades/index.html', indice());
-  for (const a of ARTICULOS) escribir(`novedades/${a.slug}/index.html`, articulo(a));
-  for (const e of EDICIONES) escribir(`novedades/${e.slug}/index.html`, edicion(e));
-  escribir('novedades/feed.xml', feed());
-  console.log(`✓ /novedades/: ${ARTICULOS.length} artículos (${ARTICULOS.map((a) => `${a.slug} ${palabras(a)}`).join(', ')}), ${EDICIONES.length} edición(es) y feed.xml`);
+  for (const [ruta, html] of salida) { const d = join(RAIZ, ruta); mkdirSync(dirname(d), { recursive: true }); writeFileSync(d, html); }
+  console.log(`✓ /novedades/ y /en/whats-new/: ${ARTICULOS_ES.length} artículos por idioma (${ARTICULOS_ES.map((a) => `${a.slug} ${palabras(a)}`).join(', ')}), ${EDICIONES_ES.length} edición(es) y feed.xml`);
 }

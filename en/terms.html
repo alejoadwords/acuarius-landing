@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PX26PNPJ');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Acuarius</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #1E2BCC;
+    --blue-lt: #EEF0FD;
+    --blue-md: #C7CBFB;
+    --text: #0A0A0A;
+    --muted: #6B7280;
+    --muted2: #9CA3AF;
+    --border: #E5E7EB;
+    --bg: #FFFFFF;
+    --sidebar: #F4F5F7;
+    --font: 'Outfit', sans-serif;
+  }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--blue);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -.3px;
+  }
+  .header-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .header-links a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .15s;
+  }
+  .header-links a:hover { color: var(--blue); }
+  .header-links a.active { color: var(--blue); font-weight: 500; }
+
+  /* HERO */
+  .hero {
+    background: var(--blue-lt);
+    border-bottom: 1px solid var(--blue-md);
+    padding: 56px 40px 48px;
+    text-align: center;
+  }
+  .hero-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .hero-date {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--muted2);
+    background: white;
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* CONTENT */
+  .content-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 40px 80px;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--sidebar);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 48px;
+  }
+  .toc-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted2);
+    margin-bottom: 12px;
+  }
+  .toc ol {
+    list-style: decimal;
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 20px;
+  }
+  @media (max-width: 540px) { .toc ol { grid-template-columns: 1fr; } }
+  .toc a {
+    font-size: 13px;
+    color: var(--blue);
+    text-decoration: none;
+    transition: opacity .15s;
+  }
+  .toc a:hover { opacity: .7; }
+
+  /* SECTIONS */
+  section {
+    margin-bottom: 44px;
+    scroll-margin-top: 80px;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2 .sec-num {
+    width: 26px;
+    height: 26px;
+    background: var(--blue-lt);
+    border: 1px solid var(--blue-md);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--blue);
+    flex-shrink: 0;
+  }
+  p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    line-height: 1.75;
+  }
+  p:last-child { margin-bottom: 0; }
+  ul, ol {
+    padding-left: 20px;
+    margin-bottom: 12px;
+  }
+  li {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    line-height: 1.65;
+  }
+  strong { color: var(--text); font-weight: 600; }
+  section h3 { font-size: 15px; font-weight: 700; color: var(--text); margin: 22px 0 8px; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: var(--blue-lt);
+    border: 1px solid var(--blue-md);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.65;
+  }
+  .highlight-box strong { color: var(--blue); }
+
+  /* WARNING BOX */
+  .warning-box {
+    background: #FEF3C7;
+    border: 1px solid #F59E0B;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    font-size: 13.5px;
+    color: #92400E;
+  }
+
+  /* CONTACT CARD */
+  .contact-card {
+    background: var(--sidebar);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 48px;
+    text-align: center;
+  }
+  .contact-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .contact-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .contact-card a.btn {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    padding: 9px 22px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity .15s;
+  }
+  .contact-card a.btn:hover { opacity: .88; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-copy { font-size: 12px; color: var(--muted2); }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+  .footer-links a { font-size: 12px; color: var(--muted2); text-decoration: none; transition: color .15s; }
+  .footer-links a:hover { color: var(--blue); }
+
+  @media (max-width: 600px) {
+    /* El logo ya está en el menú fijo: repetido aquí, con los enlaces, no cabía a 375 px y ensanchaba la página. */
+    header:not(.am-nav) .logo { display: none; }
+    header:not(.am-nav) { justify-content: center; }
+    header { padding: 0 20px; }
+    .hero { padding: 40px 20px 36px; }
+    .hero h1 { font-size: 26px; }
+    .content-wrap { padding: 40px 20px 60px; }
+    footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+<script src="https://app.acuarius.app/origen.js" defer></script>
+<style id="am-base">
+:root{--blue:#1E2BCC;--blue-h:#1520AA;--blue-lt:#EEF0FD;--text:#0A0A12;--muted:#5A5A72;--muted2:#9090A8;--border:#E4E4EE;--bg:#FAFAFA;--white:#FFFFFF;--font-display:'Velocity',sans-serif;--font-body:'Outfit',sans-serif;--r:12px}
+body{padding-top:68px}
+</style>
+<link id="am-fuentes" rel="preload" href="/fonts/Velocity.woff2" as="font" type="font/woff2" crossorigin>
+<style id="am-css">
+/* Tipografía de todo el sitio: Velocity en títulos, Outfit en lo demás. Va aquí porque este CSS entra en todas las URL. Velocity tiene un solo peso: el rango evita que el navegador le simule negrita. */
+@font-face{font-family:'Velocity';src:url('/fonts/Velocity.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-Thin.woff2') format('woff2');font-weight:100;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-ExtraLight.woff2') format('woff2');font-weight:200;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-Light.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-SemiBold.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-ExtraBold.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit-Black.woff2') format('woff2');font-weight:900;font-style:normal;font-display:swap}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-display);letter-spacing:0}
+/* Velocity trae ligaduras por defecto: «hi» se ve como «hj» («hjstoria») y la «gu» sale unida. Se apagan en todo el sitio; se hereda a cualquier elemento que use Velocity. */
+html{font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0,"dlig" 0}
+/* Los controles no heredan la fuente del body: sin esto salen en Arial. */
+button,input,select,textarea{font-family:var(--font-body)}
+/* Menú del sitio (fuente-menu/menu.mjs). Tokens de partners.html. */
+.am-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);font-family:var(--font-body)}
+/* padding:0 porque /terms estiliza la etiqueta header y le sumaba 20 px al menú. */
+.am-nav{padding:0}
+.am-in{max-width:1200px;height:100%;margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:24px}
+.am-logo{display:flex;align-items:center;flex:none}
+.am-logo img{height:24px;width:auto;display:block}
+.am-items{display:flex;align-items:center;gap:2px;margin-right:auto}
+.am-item{display:inline-flex;align-items:center;gap:5px;padding:9px 13px;border-radius:10px;font:500 14px/1 var(--font-body);color:var(--muted);background:none;border:0;cursor:pointer;text-decoration:none;transition:background .15s,color .15s}
+.am-item:hover,.am-item[aria-expanded="true"],.am-item[aria-current="page"]{background:var(--blue-lt);color:var(--blue)}
+.am-item svg{transition:transform .2s}
+.am-item[aria-expanded="true"] svg{transform:rotate(180deg)}
+.am-ctas{display:flex;align-items:center;gap:8px}
+.am-txt{font-size:13.5px;font-weight:600;color:var(--muted);padding:9px 10px;text-decoration:none;white-space:nowrap}
+.am-txt:hover{color:var(--text)}
+.am-borde{font-size:13.5px;font-weight:600;color:var(--text);padding:9px 16px;border:1.5px solid var(--border);border-radius:var(--r);text-decoration:none;white-space:nowrap;transition:border-color .15s,color .15s}
+.am-borde:hover{border-color:var(--blue);color:var(--blue)}
+.am-pri{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;padding:10px 18px;background:var(--blue);color:var(--white);border-radius:var(--r);text-decoration:none;white-space:nowrap;transition:background .15s}
+.am-pri:hover{background:var(--blue-h)}
+.am-hamb{display:none;width:40px;height:40px;border-radius:10px;align-items:center;justify-content:center;background:none;border:0;color:var(--text);cursor:pointer}
+.am-panel{position:absolute;left:0;right:0;top:68px;background:var(--white);border-bottom:1px solid var(--border);box-shadow:0 24px 60px -24px rgba(10,10,18,.28),0 6px 18px rgba(10,10,18,.06);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s}
+.am-panel.am-abierto{opacity:1;visibility:visible;transform:none}
+.am-panel-in{max-width:1200px;margin:0 auto;padding:26px 32px 24px}
+.am-cols{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:8px 22px}
+.am-h{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin:0 0 10px 10px}
+.am-h i{width:22px;height:22px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;background:var(--blue-lt);color:var(--blue);font-style:normal;font-size:12px}
+.am-ia .am-h{color:var(--blue)}
+.am-ia .am-h i{background:var(--blue);color:var(--white)}
+.am-lk{display:block;padding:10px;border-radius:12px;text-decoration:none;transition:background .15s}
+.am-lk:hover{background:var(--bg)}
+.am-lk b{display:block;font-size:14.5px;font-weight:600;color:var(--text);line-height:1.3}
+.am-lk small{display:block;font-size:13px;line-height:1.45;color:var(--muted);margin-top:3px}
+.am-lk:hover b{color:var(--blue)}
+.am-ia .am-lk{background:var(--blue-lt)}
+.am-ia .am-lk+.am-lk{margin-top:8px}
+.am-franja{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:12px;margin-top:18px;padding-top:18px;border-top:1px solid var(--border)}
+.am-fr{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;transition:border-color .15s}
+.am-fr:hover{border-color:var(--blue)}
+.am-fr-ico{width:40px;height:40px;border-radius:11px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--bg);color:var(--blue)}
+.am-fr b{display:block;font-size:14px;color:var(--text)}
+.am-fr small{font-size:12.5px;color:var(--muted)}
+.am-fr-dest{background:var(--blue-lt);border-color:transparent}
+.am-fr-dest .am-fr-ico{background:var(--white)}
+.am-dest{border-radius:16px;padding:20px;background:var(--text);color:var(--white);display:flex;flex-direction:column;justify-content:space-between;min-height:210px;text-decoration:none;position:relative;overflow:hidden}
+.am-dest::after{content:'';position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:var(--blue);opacity:.55;filter:blur(10px)}
+.am-dest>span{position:relative}
+.am-dest small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+.am-dest b{display:block;font-family:var(--font-display);font-size:20px;line-height:1.25;margin:10px 0 8px;color:var(--white)}
+.am-dest em{display:block;font-style:normal;font-size:13.5px;line-height:1.5;opacity:.75}
+.am-dest-cta{font-size:13.5px;font-weight:700;margin-top:16px}
+.am-cajon{display:none}
+@media(max-width:1080px){.am-in{padding:0 20px;gap:14px}.am-borde{display:none}}
+@media(max-width:960px){
+  .am-items,.am-txt,.am-panel{display:none}
+  .am-in{padding:0 16px}.am-logo{margin-right:auto}
+  .am-ctas .am-pri{padding:9px 14px;font-size:13px}
+  .am-hamb{display:flex}
+  .am-cajon{display:block;position:fixed;top:68px;left:0;right:0;bottom:0;z-index:199;background:var(--white);overflow-y:auto;padding:6px 16px 40px;visibility:hidden;opacity:0;transition:opacity .2s,visibility .2s;font-family:var(--font-body)}
+  .am-cajon.am-abierto{visibility:visible;opacity:1}
+  .am-acc{border-bottom:1px solid var(--border)}
+  .am-acc>button{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 4px;font:600 17px var(--font-body);color:var(--text);background:none;border:0;cursor:pointer}
+  .am-acc>button svg{transition:transform .2s}
+  .am-acc.am-abierto>button svg{transform:rotate(180deg)}
+  .am-acc-c{display:none;padding:0 0 12px}
+  .am-acc.am-abierto .am-acc-c{display:block}
+  .am-acc-c .am-h{margin:14px 4px 4px}
+  .am-acc-c .am-lk{padding:9px 4px;background:none}
+  .am-solo{display:block;padding:18px 4px;font-size:17px;font-weight:600;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border)}
+  .am-cajon-ctas{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+  .am-cajon-ctas a{justify-content:center;text-align:center;padding:13px;display:flex}
+  .am-cajon-ctas .am-borde{display:flex}
+  body.am-bloqueo{overflow:hidden}
+}
+/* Logo, «Crear cuenta gratis» y hamburguesa suman 377 px: más angosto, la hamburguesa se salía de la pantalla y no se podía abrir el menú. */
+@media(max-width:400px){
+  .am-in{padding:0 12px;gap:8px}.am-logo img{height:20px}.am-ctas{gap:4px}
+  .am-ctas .am-pri{padding:8px 12px}.am-pri svg{display:none}
+}
+@media(max-width:340px){.am-ctas .am-pri{padding:8px 10px;font-size:12px}}
+</style>
+<!-- HREFLANG:INICIO (fuente-en) -->
+<link rel="alternate" hreflang="es" href="https://acuarius.app/en/terms">
+<link rel="alternate" hreflang="en" href="https://acuarius.app/en/terms">
+<link rel="alternate" hreflang="x-default" href="https://acuarius.app/en/terms">
+<!-- HREFLANG:FIN -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PX26PNPJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- MENU:INICIO (generado por fuente-menu/menu.mjs; no editar a mano) -->
+<header class="am-nav" id="am-nav">
+  <div class="am-in">
+    <a href="/en/" class="am-logo" aria-label="Acuarius, home"><img src="/logo.svg" alt="Acuarius" width="135" height="24"></a>
+    <div class="am-items" role="navigation" aria-label="Main"><button class="am-item" type="button" aria-expanded="false" aria-controls="am-p-producto" data-am="producto">Product <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><button class="am-item" type="button" aria-expanded="false" aria-controls="am-p-soluciones" data-am="soluciones">Solutions <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><button class="am-item" type="button" aria-expanded="false" aria-controls="am-p-recursos" data-am="recursos">Resources <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><a class="am-item" href="/en/pricing/">Pricing</a></div>
+    <div class="am-ctas">
+      <a class="am-txt" href="/terms" hreflang="es" lang="es" title="Ver en español">ES</a>
+      <a class="am-txt" href="https://app.acuarius.app/login.html">Sign in</a>
+      <a class="am-borde" href="https://app.acuarius.app/reunion/alejandro-reunion">Book a demo</a>
+      <a class="am-pri" href="https://app.acuarius.app/registro">Create free account <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <button class="am-hamb" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="am-cajon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <div class="am-panel" id="am-p-producto" role="region" aria-label="Product"><div class="am-panel-in">
+    <div class="am-cols" style="--n:5"><div class="am-col am-ia"><div class="am-h"><i>✦</i>AI agent</div><a class="am-lk" href="/en/ai-agent/"><b>AI agent for WhatsApp</b><small>Answers, qualifies and hands you the customer with their details, 24/7.</small></a><a class="am-lk" href="/en/ai-agent/lead-qualification-and-routing/"><b>Lead qualification and routing</b><small>Every lead to the right board and the right rep.</small></a></div><div class="am-col"><div class="am-h"><i>◍</i>Conversations</div><a class="am-lk" href="/en/crm/whatsapp/"><b>WhatsApp inbox</b><small>Your whole team on one number, in real time.</small></a><a class="am-lk" href="/en/whatsapp/templates-and-broadcasts/"><b>Templates and broadcasts</b><small>Message first and send campaigns approved by Meta.</small></a></div><div class="am-col"><div class="am-h"><i>▦</i>CRM</div><a class="am-lk" href="/en/crm/"><b>CRM and pipeline</b><small>Your stages, your reps and every deal in sight.</small></a><a class="am-lk" href="/en/quotes-and-proposals/"><b>Products and proposals</b><small>Catalog, quotes with tax and payment links.</small></a><a class="am-lk" href="/en/scheduling/"><b>Scheduling and meetings</b><small>Let customers book you without the back-and-forth.</small></a></div><div class="am-col"><div class="am-h"><i>↻</i>Marketing</div><a class="am-lk" href="/en/automations/"><b>Automations</b><small>Follow-up goes out on its own, by email or WhatsApp.</small></a><a class="am-lk" href="/en/campaigns/"><b>Email and WhatsApp campaigns</b><small>The right message for each segment.</small></a><a class="am-lk" href="/en/forms/"><b>Forms and pages</b><small>Every lead from your site and your ads, straight to the CRM.</small></a></div><div class="am-col"><div class="am-h"><i>◔</i>Analytics and ads</div><a class="am-lk" href="/en/reports/"><b>Reports</b><small>Sales, team and marketing, as a PDF or a live link.</small></a><a class="am-lk" href="/en/ad-attribution/"><b>Google and Meta Ads</b><small>Which campaign really sells, not just which one gets clicks.</small></a><a class="am-lk" href="/en/whats-new/repeat-purchase-and-nps-survey/"><b>NPS surveys</b><small>Measure satisfaction and act in time.</small></a></div></div>
+    <div class="am-franja" style="--n:2"><a class="am-fr" href="/en/integrations/"><span class="am-fr-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 7V3M15 7V3M7 7h10v4a5 5 0 01-10 0V7zM12 16v5"/></svg></span><span><b>Integrations</b><small>Shopify, WooCommerce, VTEX, Google Calendar, Meta, Google Ads and API</small></span></a><a class="am-fr am-fr-dest" href="/en/whats-new/"><span class="am-fr-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4z"/></svg></span><span><b>What’s new</b><small>What’s new every two weeks, with video guides</small></span></a></div>
+  </div></div>
+  <div class="am-panel" id="am-p-soluciones" role="region" aria-label="Solutions"><div class="am-panel-in">
+    <div class="am-cols" style="--n:4"><div class="am-col"><div class="am-h">By industry</div><a class="am-lk" href="/en/crm/real-estate/"><b>Real estate</b><small>Rentals and sales, each with its own process.</small></a><a class="am-lk" href="/en/crm/clinics/"><b>Clinics and healthcare</b><small>Appointments, reminders and patient follow-up.</small></a><a class="am-lk" href="/en/crm/restaurants/"><b>Restaurants</b><small>Reservations and orders that come in on WhatsApp.</small></a><a class="am-lk" href="/en/crm/ecommerce/"><b>Online stores</b><small>Shopify, WooCommerce and VTEX connected to the CRM.</small></a></div><div class="am-col"><div class="am-h">By company type</div><a class="am-lk" href="/en/crm/"><b>Small businesses</b><small>Your whole sales process in one place.</small></a><a class="am-lk" href="/en/agencies/"><b>Marketing agencies</b><small>Many clients, each with their own data and reports.</small></a><a class="am-lk" href="/en/crm/free/"><b>Free CRM</b><small>Start without paying and grow when you need to.</small></a></div><div class="am-col"><div class="am-h">Compare</div><a class="am-lk" href="/en/best-whatsapp-crm/"><b>Best WhatsApp CRMs</b><small>The full comparison for Latin America.</small></a><a class="am-lk" href="/en/compare/acuarius-vs-hubspot/"><b>Acuarius vs HubSpot</b></a><a class="am-lk" href="/en/compare/acuarius-vs-kommo/"><b>Acuarius vs Kommo</b></a></div><a class="am-dest" href="/en/best-whatsapp-crm/"><span><small>Guide</small><b>Which WhatsApp CRM is right for you?</b><em>What each one really includes, compared for Latin America.</em></span><span class="am-dest-cta">Read the comparison →</span></a></div>
+    
+  </div></div>
+  <div class="am-panel" id="am-p-recursos" role="region" aria-label="Resources"><div class="am-panel-in">
+    <div class="am-cols" style="--n:4"><div class="am-col"><div class="am-h">Learn</div><a class="am-lk" href="/en/whats-new/"><b>What’s new</b><small>Every new feature, explained on video.</small></a><a class="am-lk" href="/en/academy/"><b>Video academy</b><small>Learn to use Acuarius step by step.</small></a><a class="am-lk" href="/en/benchmarks/"><b>Latin America benchmarks</b><small>Ad and lead costs by country and industry.</small></a></div><div class="am-col"><div class="am-h">Free tools</div><a class="am-lk" href="/en/tools/whatsapp-link-generator/"><b>WhatsApp link generator</b><small>Your wa.me link with the message ready.</small></a><a class="am-lk" href="/en/tools/whatsapp-api-pricing/"><b>WhatsApp pricing calculator</b><small>What Meta charges per message in your country.</small></a><a class="am-lk" href="/en/google-ads-budget-calculator/"><b>Google Ads budget calculator</b></a></div><div class="am-col"><div class="am-h">Company</div><a class="am-lk" href="/en/partners"><b>Partner program</b><small>Recurring commission for recommending Acuarius.</small></a><a class="am-lk" href="https://wa.me/573219972333?text=Hi%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20Acuarius" target="_blank" rel="noopener"><b>Talk to us</b><small>On WhatsApp, during business hours.</small></a></div><a class="am-dest" href="/en/whats-new/crm-custom-fields/"><span><small>Video guide</small><b>Custom fields that fill themselves</b><em>Create them, let the agent fill them and use them in automations.</em></span><span class="am-dest-cta">See the guide →</span></a></div>
+    
+  </div></div>
+</header>
+<div class="am-cajon" id="am-cajon">
+  <div class="am-acc"><button type="button" aria-expanded="false">Product <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="am-acc-c"><div class="am-h">AI agent</div><a class="am-lk" href="/en/ai-agent/"><b>AI agent for WhatsApp</b></a><a class="am-lk" href="/en/ai-agent/lead-qualification-and-routing/"><b>Lead qualification and routing</b></a><div class="am-h">Conversations</div><a class="am-lk" href="/en/crm/whatsapp/"><b>WhatsApp inbox</b></a><a class="am-lk" href="/en/whatsapp/templates-and-broadcasts/"><b>Templates and broadcasts</b></a><div class="am-h">CRM</div><a class="am-lk" href="/en/crm/"><b>CRM and pipeline</b></a><a class="am-lk" href="/en/quotes-and-proposals/"><b>Products and proposals</b></a><a class="am-lk" href="/en/scheduling/"><b>Scheduling and meetings</b></a><div class="am-h">Marketing</div><a class="am-lk" href="/en/automations/"><b>Automations</b></a><a class="am-lk" href="/en/campaigns/"><b>Email and WhatsApp campaigns</b></a><a class="am-lk" href="/en/forms/"><b>Forms and pages</b></a><div class="am-h">Analytics and ads</div><a class="am-lk" href="/en/reports/"><b>Reports</b></a><a class="am-lk" href="/en/ad-attribution/"><b>Google and Meta Ads</b></a><a class="am-lk" href="/en/whats-new/repeat-purchase-and-nps-survey/"><b>NPS surveys</b></a><a class="am-lk" href="/en/integrations/"><b>Integrations</b></a><a class="am-lk" href="/en/whats-new/"><b>What’s new</b></a></div></div><div class="am-acc"><button type="button" aria-expanded="false">Solutions <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="am-acc-c"><div class="am-h">By industry</div><a class="am-lk" href="/en/crm/real-estate/"><b>Real estate</b></a><a class="am-lk" href="/en/crm/clinics/"><b>Clinics and healthcare</b></a><a class="am-lk" href="/en/crm/restaurants/"><b>Restaurants</b></a><a class="am-lk" href="/en/crm/ecommerce/"><b>Online stores</b></a><div class="am-h">By company type</div><a class="am-lk" href="/en/crm/"><b>Small businesses</b></a><a class="am-lk" href="/en/agencies/"><b>Marketing agencies</b></a><a class="am-lk" href="/en/crm/free/"><b>Free CRM</b></a><div class="am-h">Compare</div><a class="am-lk" href="/en/best-whatsapp-crm/"><b>Best WhatsApp CRMs</b></a><a class="am-lk" href="/en/compare/acuarius-vs-hubspot/"><b>Acuarius vs HubSpot</b></a><a class="am-lk" href="/en/compare/acuarius-vs-kommo/"><b>Acuarius vs Kommo</b></a></div></div><div class="am-acc"><button type="button" aria-expanded="false">Resources <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="am-acc-c"><div class="am-h">Learn</div><a class="am-lk" href="/en/whats-new/"><b>What’s new</b></a><a class="am-lk" href="/en/academy/"><b>Video academy</b></a><a class="am-lk" href="/en/benchmarks/"><b>Latin America benchmarks</b></a><div class="am-h">Free tools</div><a class="am-lk" href="/en/tools/whatsapp-link-generator/"><b>WhatsApp link generator</b></a><a class="am-lk" href="/en/tools/whatsapp-api-pricing/"><b>WhatsApp pricing calculator</b></a><a class="am-lk" href="/en/google-ads-budget-calculator/"><b>Google Ads budget calculator</b></a><div class="am-h">Company</div><a class="am-lk" href="/en/partners"><b>Partner program</b></a><a class="am-lk" href="https://wa.me/573219972333?text=Hi%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20Acuarius" target="_blank" rel="noopener"><b>Talk to us</b></a></div></div>
+  <a class="am-solo" href="/en/pricing/">Pricing</a>
+  <div class="am-cajon-ctas"><a class="am-pri" href="https://app.acuarius.app/registro">Create free account</a><a class="am-borde" href="https://app.acuarius.app/reunion/alejandro-reunion">Book a demo</a><a class="am-txt" href="https://app.acuarius.app/login.html">Sign in</a><a class="am-txt" href="/terms" hreflang="es" lang="es">Ver en español</a></div>
+</div>
+<!-- MENU:FIN -->
+
+
+<!-- HEADER -->
+<header>
+  <a href="https://acuarius.app" class="logo">
+    <img src="/logo.svg" alt="Acuarius" height="26" style="height:26px;width:auto;display:block">
+  </a>
+  <div class="header-links">
+    <a href="https://acuarius.app">Home</a>
+    <a href="https://acuarius.app/en/privacy">Privacy</a>
+    <a href="https://acuarius.app/en/terms" class="active">Terms</a>
+    <a href="https://app.acuarius.app">Log in</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Legal</div>
+  <h1>Terms of Service</h1>
+  <p>By using Acuarius, you agree to the following terms. Please read them carefully before you begin.</p>
+  <span class="hero-date">Last updated: November 4, 2026</span>
+</div>
+
+<!-- CONTENT -->
+<div class="content-wrap">
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#aceptacion">Who provides the service and acceptance</a></li>
+      <li><a href="#descripcion">What Acuarius is</a></li>
+      <li><a href="#cuentas">Accounts, team and access</a></li>
+      <li><a href="#pagos">Plans, free trial and payments</a></li>
+      <li><a href="#cupos">Quotas and usage</a></li>
+      <li><a href="#uso-aceptable">Acceptable use</a></li>
+      <li><a href="#contactos">Your contacts' data</a></li>
+      <li><a href="#mensajes">Email and WhatsApp</a></li>
+      <li><a href="#sms">Text messages (SMS)</a></li>
+      <li><a href="#ia">Artificial intelligence</a></li>
+      <li><a href="#integraciones">Third-party integrations</a></li>
+      <li><a href="#propiedad-intelectual">Intellectual property</a></li>
+      <li><a href="#disponibilidad">Availability and support</a></li>
+      <li><a href="#limitacion">Limitation of liability</a></li>
+      <li><a href="#terminacion">Suspension, cancellation and your data</a></li>
+      <li><a href="#cambios">Changes to these terms</a></li>
+      <li><a href="#contacto">Governing law and contact</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. ACEPTACIÓN -->
+  <section id="aceptacion">
+    <h2><span class="sec-num">1</span>Who provides the service and acceptance</h2>
+    <p>This English version is a courtesy translation. If it differs from the Spanish version, the Spanish version prevails.</p>
+    <div class="highlight-box">
+      By creating an account or using Acuarius (<strong>app.acuarius.app</strong>) you accept these Terms of Service and the <a href="https://acuarius.app/en/privacy">Personal Data Processing Policy</a>. If you do not agree, do not use the service.
+    </div>
+    <p>Acuarius is a brand operated and billed by <strong>Aixion Labs Solutions LLC</strong>, a limited liability company registered in the State of Texas, United States (File Number 805940283), with its address at <strong>15723 Chapel Lake Dr, Cypress, TX 77429</strong> (“Acuarius,” “we”). These terms are an agreement between that company and the person or business that creates the account (“you”).</p>
+    <p>Text message (SMS) delivery to Colombia is provided by <strong>Check In Col SAS</strong>, a Colombian company affiliated with Acuarius (NIT 900.825.601-2, Carrera 53 #106-280, Centro Empresarial, Barranquilla), as explained in section 9.</p>
+    <p>Acuarius is intended for businesses, agencies and professionals. If you use the service on behalf of a business, you confirm that you have the authority to accept these terms on its behalf.</p>
+  </section>
+
+  <!-- 2. DESCRIPCIÓN -->
+  <section id="descripcion">
+    <h2><span class="sec-num">2</span>What Acuarius is</h2>
+    <p>Acuarius is a cloud-based marketing and sales platform with artificial intelligence. Depending on your plan, it includes, among other things:</p>
+    <ul>
+      <li>A CRM with sales pipelines, contacts, tasks, calendar, bookings and reports</li>
+      <li>An inbox that brings together conversations from WhatsApp, Instagram, Messenger, TikTok and your website chat</li>
+      <li>Artificial intelligence agents that reply to and qualify your contacts on those channels</li>
+      <li>Automations and email, WhatsApp and text message (SMS) campaigns</li>
+      <li>Sales proposals, landing pages and forms to capture contacts</li>
+      <li>Connection to your advertising accounts (Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads) and AI assistants to plan and analyze them</li>
+    </ul>
+    <p>The details of what each plan includes are published at <a href="https://acuarius.app">acuarius.app</a>. We may improve, change or remove features; if we remove something essential from your paid plan, we will notify you with reasonable advance notice.</p>
+  </section>
+
+  <!-- 3. CUENTAS -->
+  <section id="cuentas">
+    <h2><span class="sec-num">3</span>Accounts, team and access</h2>
+    <ul>
+      <li>You must provide truthful information and keep it up to date.</li>
+      <li>You are responsible for the security of your access and for all activity in your account, including that of the people you invite to your team and that of the systems you connect with an API key.</li>
+      <li>As the account owner, you decide who has access and with which profile (administration, sales or marketing). Team seats depend on your plan.</li>
+      <li>If an agency manages several brands from Acuarius, the agency is responsible for its use of each brand's data.</li>
+      <li>Notify us immediately at <a href="mailto:support@acuarius.app">support@acuarius.app</a> if you suspect unauthorized access.</li>
+    </ul>
+    <p>To address a problem you report to us, or a failure we detect, our support team may access your account. Each access is logged with who accessed it and why, and we use it only to resolve that matter.</p>
+  </section>
+
+  <!-- 4. PAGOS -->
+  <section id="pagos">
+    <h2><span class="sec-num">4</span>Plans, free trial and payments</h2>
+    <div class="highlight-box">
+      Charges are billed by <strong>Aixion Labs Solutions LLC</strong>. Payments are processed through <strong>Stripe</strong> and charged in US dollars (USD). By subscribing, you authorize recurring charges for the plan you choose until you cancel it. We never see or store your card details. Subscriptions previously purchased through Hotmart will continue to be charged through Hotmart until we move them to Stripe, and we will notify you beforehand.
+    </div>
+    <ul>
+      <li><strong>Free trial:</strong> new accounts may get a 14-day trial of the Pro plan, with no credit card. When it ends, if you do not subscribe, the account moves to the free plan with its limits; you are not charged anything automatically. One trial per business.</li>
+      <li><strong>Plans:</strong> Free, Pro and Agency, with the prices and limits published at <a href="https://acuarius.app">acuarius.app</a>.</li>
+      <li><strong>Annual payment (“2 months free”):</strong> if you pay for one year in advance, you pay for 10 months and receive 12. The discount applies to the plan and its subscription add-ons (users, contacts and AI agent messages), not to SMS credits. If you cancel, the plan remains active until the end of the paid year; the unused portion is not refunded, except as provided in the refund item.</li>
+      <li><strong>Add-ons:</strong> you can expand your plan with users, contacts, AI agent messages, emails and SMS credits, at the published prices. SMS credits are prepaid.</li>
+      <li><strong>Cancellation:</strong> you can cancel at any time from your account or by writing to us at <a href="mailto:support@acuarius.app">support@acuarius.app</a>. Cancellation takes effect at the end of the period already paid and you are not charged again; there are no refunds for periods already billed.</li>
+      <li><strong>Refund:</strong> if the service does not perform as described, you may request a full refund within the first 7 days of your first subscription. The details are in the <a href="https://acuarius.app/en/refunds">Refund, Cancellation and Dispute Policy</a>.</li>
+      <li><strong>Unrecognized charges:</strong> if you see a charge from Acuarius that you do not recognize, write to us before opening a dispute with your bank; we will review it and respond within 3 business days at most.</li>
+      <li><strong>Taxes:</strong> published prices do not include taxes; if the law of your country requires them, they are added to the charge.</li>
+      <li><strong>Prices:</strong> if we change the price of your plan, we will notify you at least 30 days before it takes effect.</li>
+    </ul>
+  </section>
+
+  <!-- 5. CUPOS -->
+  <section id="cupos">
+    <h2><span class="sec-num">5</span>Quotas and usage</h2>
+    <p>Some features have a quota based on your plan and on what you have purchased separately: AI agent replies, contacts, users, emails and SMS. You can see how much you have used in the platform.</p>
+    <ul>
+      <li>When a quota runs out, the corresponding feature stops until the next cycle or until you expand the quota. For the AI agent, we also notify you by email when you are close to the limit.</li>
+      <li>To protect the platform and other customers, we apply anti-fraud limits, for example a cap on sends per campaign during an account's first days. These are not limits of your plan: they go away on their own, or we lift them if you write to us.</li>
+    </ul>
+  </section>
+
+  <!-- 6. USO ACEPTABLE -->
+  <section id="uso-aceptable">
+    <h2><span class="sec-num">6</span>Acceptable use</h2>
+    <p>Acuarius is for legitimate marketing and sales. <strong>The following is prohibited:</strong></p>
+    <ul>
+      <li>Sending spam, or messages to purchased lists or to people who did not agree to receive communications from your business</li>
+      <li>Phishing, impersonation of brands, people or organizations, and any misleading, fraudulent or illegal content</li>
+      <li>Contacting consumers outside the channels and hours permitted by law, or persisting with anyone who asked not to be contacted</li>
+      <li>Using the service for abusive debt collection, gambling or content not permitted by the policies of WhatsApp, Meta, Google or TikTok</li>
+      <li>Attempting to access other people's data or accounts, overloading the platform or using unauthorized bots against it</li>
+      <li>Reselling the service without a written agreement with us</li>
+    </ul>
+    <p>If we detect a prohibited use, we may stop sending or suspend the account immediately, without a refund, to protect recipients and other customers.</p>
+  </section>
+
+  <!-- 7. CONTACTOS -->
+  <section id="contactos">
+    <h2><span class="sec-num">7</span>Your contacts' data</h2>
+    <div class="highlight-box">
+      The data of the people you upload or who come into your account (your contacts, leads and customers) is yours. With respect to that data, <strong>you are the data controller</strong> and Acuarius acts as the <strong>data processor</strong>: we process it only to provide you with the service and according to your instructions.
+    </div>
+    <ul>
+      <li>You warrant that you have authorization from those people to process their data and to write to them on each channel you use, in accordance with Law 1581 of 2012 and other applicable regulations.</li>
+      <li>You handle their requests for access, correction, unsubscription and deletion. For email and SMS, the platform records unsubscriptions and stops writing to them on that channel; on the other channels, you manage this yourself.</li>
+      <li>We do not sell or use your contacts' data for our own purposes, nor do we share it with other customers.</li>
+      <li>You can export your contacts to CSV and delete them whenever you want. What you delete goes to a trash bin for 30 days and is then erased.</li>
+    </ul>
+  </section>
+
+  <!-- 8. CORREO Y WHATSAPP -->
+  <section id="mensajes">
+    <h2><span class="sec-num">8</span>Email and WhatsApp</h2>
+    <ul>
+      <li><strong>Email:</strong> campaigns are sent from our verified domain and every email includes an unsubscribe link. Anyone who unsubscribes, or whose email bounces or who marks it as spam, stops receiving your emails. We apply daily caps to protect deliverability for everyone.</li>
+      <li><strong>WhatsApp:</strong> messages are sent from your own connected number and you must comply with WhatsApp Business policies. To write to someone who has not written to you in the last 24 hours, Meta requires approved templates. Meta may limit or block your number on its own; Acuarius does not control those decisions.</li>
+    </ul>
+  </section>
+
+  <!-- 9. SMS -->
+  <section id="sms">
+    <h2><span class="sec-num">9</span>Text messages (SMS)</h2>
+    <p>Acuarius lets you send SMS to your contacts in Colombia from campaigns and automations. This service is provided by <strong>Check In Col SAS</strong> (see section 1), and it only reaches Colombian mobile phones. Messages are sent through a telecommunications provider, currently <strong>LabsMobile (001TECH SL, Spain)</strong>, and therefore the conditions that provider requires of senders also apply to you.</p>
+    <div class="highlight-box">
+      <strong>Consent:</strong> you may only send SMS to people who gave you their prior, express and informed consent to receive messages from your business. You confirm this in the platform before each send, and you agree to keep the proof and provide it if Acuarius or the provider asks you for it.
+    </div>
+    <p>In addition, when you use SMS:</p>
+    <ul>
+      <li>You comply with applicable Colombian law, including, among others, Law 1581 of 2012 on data protection, Law 2300 of 2023 and the regulations of the Communications Regulation Commission (Comisión de Regulación de Comunicaciones, CRC), including the Excluded Numbers Registry (Registro de Números Excluidos).</li>
+      <li>You handle unsubscribe requests. Every SMS ends with an unsubscribe link: anyone who uses it stops receiving your SMS without you having to do anything. If someone asks you through another channel, mark them with the “no-sms” tag and they will no longer receive SMS from the platform. SMS are sent from a short code that does not receive replies, so replying to the message does not unsubscribe.</li>
+      <li>You do not send misleading, fraudulent or illegal content: impersonation of brands or organizations, malicious links (<em>smishing</em>), abusive debt collection or messages the recipient does not expect from your business.</li>
+      <li>You accept that the platform only sends during permitted hours (Monday to Friday from 7:00 to 19:00 and Saturdays from 8:00 to 15:00, never on Sundays or public holidays) and that new accounts have a limit on messages per campaign during their first days.</li>
+    </ul>
+    <p><strong>Credits:</strong> SMS are paid in advance with credit packages. One credit equals one SMS of up to 160 characters; a longer message, or one with emojis or special symbols, uses more than one credit, and the platform shows you how many before sending. Credits add up across packages and do not expire while your account is active. If the provider does not accept a message, its credit is returned automatically; an accepted message that the carrier then does not deliver does consume its credit. Credits are not refundable for cash.</p>
+    <p><strong>Delivery:</strong> delivery depends on mobile carriers. Acuarius does not guarantee that each message will arrive or how long it will take, and it shows you, in each campaign, the messages the carrier did not deliver.</p>
+    <div class="warning-box">
+      ⚠️ <strong>Suspension:</strong> we may immediately suspend an account's SMS sending if we detect use that breaches this section, or if the provider or an authority requires it. Credits of an account suspended for abuse are not refunded.
+    </div>
+  </section>
+
+  <!-- 10. IA -->
+  <section id="ia">
+    <h2><span class="sec-num">10</span>Artificial intelligence</h2>
+    <ul>
+      <li>Responses from AI agents and assistants may contain errors. Review them before using them in important decisions, in campaigns or in offers to your customers.</li>
+      <li>When you activate an agent to reply to your contacts, it replies on behalf of your business using the information you give it (catalog, hours, frequently asked questions). You are responsible for that information being correct and for supervising its conversations; you can take over any conversation at any time.</li>
+      <li>To generate responses, text or images, we send AI providers only the information needed for that task. Which providers they are and what they receive is described in the Data Processing Policy.</li>
+      <li>What the AI generates from your instructions is yours to use in your business, but we do not guarantee that it is exclusive or free of third-party rights.</li>
+    </ul>
+  </section>
+
+  <!-- 11. INTEGRACIONES -->
+  <section id="integraciones">
+    <h2><span class="sec-num">11</span>Third-party integrations</h2>
+    <p>Acuarius connects with third-party services that you choose to activate: Google (Ads, Calendar, Drive and Sheets), Meta (WhatsApp, Instagram, Messenger and Ads), TikTok, LinkedIn, Mercado Pago, your website and others. By connecting them:</p>
+    <ul>
+      <li>You also accept the terms of each service and you are responsible for keeping your accounts in good standing</li>
+      <li>You authorize us to access only what is necessary for the feature you activated; you can disconnect them whenever you want</li>
+      <li>Acuarius is not responsible for changes, outages or decisions of those services (for example, the suspension of an advertising account or of a WhatsApp number)</li>
+    </ul>
+    <h3>The API, your keys and the systems you connect</h3>
+    <p>Acuarius has an API, an MCP server and notifications to your system (webhooks) so you can connect external systems to your account: your company's artificial intelligence agent, your application, your ERP or others. By creating an API key or a webhook:</p>
+    <ul>
+      <li>Anything a system does with your key is considered done by your account, just like what a person on your team does. You choose the permissions of each key and you are responsible for supervising what those systems do and the decisions they make, including those of an artificial intelligence agent that acts without human intervention.</li>
+      <li>By connecting a system or a webhook, you decide to send data from your account and about your contacts to that third party (your artificial intelligence provider, your server or another). You make that transfer as the data controller: you must have your contacts' authorization, disclose it in your own data processing policy and have an agreement with whoever receives the data. What that third party does with the data is outside our control.</li>
+      <li>Keep your keys and your webhook secrets like a password: do not publish them or put them in a web page or in an app installed on a phone. If one is leaked, revoke it immediately from Settings → API and agents and let us know.</li>
+      <li>To reduce risk, we ask whoever creates a key or a webhook to confirm with a code sent to their email, we notify the account owner each time one is created or changed, and we revoke the keys and deactivate the webhooks of anyone who stops being an administrator of your team. These measures do not replace your supervision.</li>
+      <li>Each key has usage limits. We may limit, suspend or revoke a key or a webhook that puts at risk the security of your account, that of other customers or the stability of the platform; we will notify you when possible.</li>
+    </ul>
+    <div class="warning-box">
+      ⚠️ <strong>Important:</strong> decisions about your advertising campaigns and your budgets are yours. Acuarius does not guarantee sales or advertising results.
+    </div>
+  </section>
+
+  <!-- 12. PROPIEDAD INTELECTUAL -->
+  <section id="propiedad-intelectual">
+    <h2><span class="sec-num">12</span>Intellectual property</h2>
+    <p>The platform, its code, its design, its agents, its instructions and its brand belong to Acuarius. We grant you a limited, non-exclusive and non-transferable license to use it while your account is active.</p>
+    <p>Your content (your data, contacts, text, images and templates) remains yours. You give us permission to process it only to provide you with the service.</p>
+  </section>
+
+  <!-- 13. DISPONIBILIDAD -->
+  <section id="disponibilidad">
+    <h2><span class="sec-num">13</span>Availability and support</h2>
+    <p>We work to keep Acuarius available at all times, but there may be interruptions due to maintenance, failures of our providers or causes beyond our control. We do not offer a service level agreement (SLA) unless we sign one in writing. Support is provided through the platform chat and at <a href="mailto:support@acuarius.app">support@acuarius.app</a>.</p>
+    <p>Some tasks, such as sending campaigns or automations, are processed in periodic cycles and are not instantaneous.</p>
+  </section>
+
+  <!-- 14. LIMITACIÓN -->
+  <section id="limitacion">
+    <h2><span class="sec-num">14</span>Limitation of liability</h2>
+    <p>To the extent permitted by law, Acuarius is not liable for:</p>
+    <ul>
+      <li>Lost profits, lost sales or indirect damages arising from the use of the service</li>
+      <li>The content that you or your team send, or the lack of authorization from your contacts</li>
+      <li>Campaign results or AI responses that you have not reviewed</li>
+      <li>Decisions or failures of connected third-party services</li>
+      <li>What the systems and agents you connect with your API keys do, or the use that third parties make of the data you send them through the API or webhooks</li>
+    </ul>
+    <p>In any case, our total liability will not exceed what you paid for the service in the 3 months prior to the event giving rise to the claim. Nothing in this section limits rights that the law does not allow to be limited.</p>
+  </section>
+
+  <!-- 15. TERMINACIÓN -->
+  <section id="terminacion">
+    <h2><span class="sec-num">15</span>Suspension, cancellation and your data</h2>
+    <p>You can stop using Acuarius and request that your account be closed at any time. We may suspend or close it if you breach these terms, if a payment is not resolved within 7 days, if your use puts other customers or the platform at risk, or if the law requires it.</p>
+    <p>Before closing your account, you can export your data. When it is deleted, we permanently erase the account's data and your contacts' data; backups are overwritten in the following days. We retain what the law requires us to keep, such as billing records.</p>
+  </section>
+
+  <!-- 16. CAMBIOS -->
+  <section id="cambios">
+    <h2><span class="sec-num">16</span>Changes to these terms</h2>
+    <p>We may update these terms. We will change the date on this page and, if the change is significant, we will notify you by email or within the platform before it takes effect. If you continue using the service afterward, you accept the new version.</p>
+  </section>
+
+  <!-- 17. CONTACTO -->
+  <section id="contacto">
+    <h2><span class="sec-num">17</span>Governing law and contact</h2>
+    <p>These terms are governed by the laws of the State of Texas, United States. Matters relating to the SMS service and to the processing of data of people in Colombia are also governed by Colombian law. Disputes will first be attempted to be resolved directly; if that is not possible, the courts of Harris County, Texas, will have jurisdiction, without prejudice to the rights granted to you by the consumer protection law of your country.</p>
+    <p>For any questions about these terms:</p>
+  </section>
+
+  <!-- CONTACT CARD -->
+  <div class="contact-card">
+    <h3>Have questions?</h3>
+    <p>Acuarius · Aixion Labs Solutions LLC · 15723 Chapel Lake Dr, Cypress, TX 77429, United States<br>Email: support@acuarius.app · Phone and WhatsApp: +57 321 997 2333</p>
+    <a href="mailto:support@acuarius.app" class="btn">Email support@acuarius.app</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-copy">© 2026 Acuarius · Operated and billed by Aixion Labs Solutions LLC · 15723 Chapel Lake Dr, Cypress, TX 77429, USA</span>
+  <div class="footer-links">
+    <a href="https://acuarius.app">Home</a>
+    <a href="https://acuarius.app/en/privacy">Privacy policy</a>
+    <a href="https://acuarius.app/en/terms">Terms of service</a>
+    <a href="https://acuarius.app/en/refunds">Refunds and cancellation</a>
+    <a href="mailto:support@acuarius.app">support@acuarius.app</a>
+  </div>
+</footer>
+
+<script id="am-js">
+// Menú: desplegables por hover (con pausa para no abrirse al cruzar la barra),
+// clic o teclado; Esc y clic fuera cierran. En el celular, cajón con acordeón.
+(function () {
+  var nav = document.getElementById('am-nav'); if (!nav) return;
+  var abierto = null, t = null;
+  function panelDe(b) { return document.getElementById(b.getAttribute('aria-controls')); }
+  function cerrar() { if (!abierto) return; abierto.setAttribute('aria-expanded', 'false'); panelDe(abierto).classList.remove('am-abierto'); abierto = null; }
+  function abrir(b) { if (abierto === b) return; cerrar(); abierto = b; b.setAttribute('aria-expanded', 'true'); panelDe(b).classList.add('am-abierto'); }
+  var fino = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  nav.querySelectorAll('[data-am]').forEach(function (b) {
+    b.addEventListener('click', function () { abierto === b ? cerrar() : abrir(b); });
+    if (fino) b.addEventListener('mouseenter', function () { clearTimeout(t); t = setTimeout(function () { abrir(b); }, 90); });
+  });
+  if (fino) {
+    nav.addEventListener('mouseleave', function () { clearTimeout(t); t = setTimeout(cerrar, 180); });
+    nav.addEventListener('mouseenter', function () { clearTimeout(t); });
+    nav.querySelectorAll('a.am-item').forEach(function (a) { a.addEventListener('mouseenter', function () { clearTimeout(t); cerrar(); }); });
+  }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { cerrar(); cerrarCajon(); } });
+  document.addEventListener('click', function (e) { if (!e.target.closest('#am-nav')) cerrar(); });
+  var hamb = nav.querySelector('.am-hamb'), cajon = document.getElementById('am-cajon');
+  function cerrarCajon() { if (!cajon) return; cajon.classList.remove('am-abierto'); hamb.setAttribute('aria-expanded', 'false'); document.body.classList.remove('am-bloqueo'); }
+  hamb && hamb.addEventListener('click', function () { var a = cajon.classList.toggle('am-abierto'); hamb.setAttribute('aria-expanded', a); document.body.classList.toggle('am-bloqueo', a); });
+  cajon && cajon.querySelectorAll('.am-acc>button').forEach(function (b) { b.addEventListener('click', function () { var a = b.parentElement.classList.toggle('am-abierto'); b.setAttribute('aria-expanded', a); }); });
+  cajon && cajon.addEventListener('click', function (e) { if (e.target.closest('a')) cerrarCajon(); });
+})();
+</script>
+</body>
+</html>

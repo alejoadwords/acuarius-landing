@@ -23,6 +23,8 @@ import { CONTENIDO as C3 } from './contenido/c3-benchmarks.mjs';
 import { CONTENIDO as C8 } from './contenido/c8-producto.mjs';
 import { URLS as NOVEDADES } from '../fuente-novedades/build.mjs';
 import { menuHTML, MENU_CSS, MENU_JS } from '../fuente-menu/menu.mjs';
+import { enDe, esDe, aIngles, hreflang } from '../fuente-en/urls.mjs';
+import { PARES_PIE, aplicarPares } from '../fuente-en/pie.mjs';
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DOMINIO = 'https://acuarius.app';
@@ -42,6 +44,25 @@ for (const f of readdirSync(join(dirname(fileURLToPath(import.meta.url)), 'conte
   }
 }
 const CONTENIDO = { ...C1, ...C2, ...C3, ...C8, ...EXTRA };
+
+// Versión en inglés: contenido-en/<mismo fichero>.mjs exporta PAGINAS, con la
+// URL española como clave y la meta (kw, title, description, h1, miga) junto
+// al cuerpo. Cada página publicada tiene que tener la suya (ver fuente-en/).
+const PARCIAL = process.argv.includes('--parcial');
+const EN = {};
+for (const f of readdirSync(join(dirname(fileURLToPath(import.meta.url)), 'contenido-en')).filter((f) => f.endsWith('.mjs')).sort()) {
+  Object.assign(EN, (await import('./contenido-en/' + f)).PAGINAS);
+}
+const CLUSTERS_EN = { 1: 'CRM for small businesses', 2: 'Comparisons and alternatives', 3: 'Latin America benchmarks', 4: 'AI agents for ads', 5: 'Software for agencies', 6: 'GEO / AI visibility', 7: 'Sales automation', 8: 'Product and tools' };
+const NIVEL_EN = { Pilar: 'Pillar', 'Sub-pilar': 'Sub-pillar', Vertical: 'Industry', Spoke: 'Guide', Alternativa: 'Alternative', VS: 'Comparison', Herramienta: 'Tool', Asset: 'Resource', Producto: 'Product', Recurso: 'Resource' };
+
+// Textos fijos de la plantilla en cada idioma.
+const T = {
+  es: { lang: 'es', locale: 'es_419', inLanguage: 'es-419', inicio: 'Inicio', migas: 'Migas de pan', empieza: 'Empieza gratis', verPrecios: 'Ver precios', nota: ['Sin tarjeta de crédito', 'Pro gratis 14 días', 'En español'],
+    faqLabel: 'Preguntas frecuentes', faqTitulo: 'Lo que más nos preguntan', sigue: 'Sigue leyendo', crear: 'Crear cuenta gratis', wa: 'Hablar por WhatsApp', waTexto: 'Hola, quiero saber más de Acuarius' },
+  en: { lang: 'en', locale: 'en_US', inLanguage: 'en', inicio: 'Home', migas: 'Breadcrumbs', empieza: 'Start free', verPrecios: 'See pricing', nota: ['No credit card', '14 days of Pro, free', 'Built for Latin America'],
+    faqLabel: 'Frequently asked questions', faqTitulo: 'What people ask us most', sigue: 'Keep reading', crear: 'Create free account', wa: 'Chat on WhatsApp', waTexto: 'Hi, I’d like to learn more about Acuarius' },
+};
 
 // Nombres cortos para las migas de pan. Lo que no esté aquí se deriva del
 // último tramo de la URL.
@@ -104,6 +125,9 @@ const GTM_BODY = extraer(/<!-- Google Tag Manager \(noscript\) -->[\s\S]*?<!-- E
 // páginas generadas salían con el favicon cortado.
 const ICONO = extraer(/<link rel="icon"[^>]*>\n<link rel="icon"[^>]*>\n<link rel="apple-touch-icon"[^>]*>/, 'el favicon');
 const PIE = extraer(/<footer>[\s\S]*?<\/footer>/, 'el pie');
+const pieEn = aplicarPares(PIE, PARES_PIE);
+if (pieEn.faltan.length) throw new Error(`El pie de partners.html cambió; actualiza fuente-en/pie.mjs: «${pieEn.faltan[0].slice(0, 80)}»`);
+const PIE_EN = pieEn.texto;
 
 const ESTILO_SEO = `<style>
 /* Páginas SEO: lo que partners.html no trae. Mismos tokens. */
@@ -161,7 +185,8 @@ const sinEtiquetas = (s) => String(s).replace(/<[^>]+>/g, '');
 const nombreCorto = (p) => p.title.replace(/\s*\|\s*Acuarius$/, '');
 const publicadas = () => MAPA.filter((p) => p.estado === 'publicada');
 
-function migas(url) {
+function migas(url, idioma = 'es') {
+  if (idioma === 'en') return migasEn(url);
   const tramos = url.split('/').filter(Boolean);
   const lista = [{ nombre: 'Inicio', url: '/' }];
   let ruta = '/';
@@ -170,6 +195,22 @@ function migas(url) {
     const enMapa = MAPA.find((p) => p.url === ruta);
     // Un tramo intermedio sin página propia (p. ej. /alternativas/) no se enlaza.
     const nombre = MIGAS[ruta] || MIGAS_EXTRA[ruta] || t.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase());
+    lista.push({ nombre, url: enMapa && enMapa.estado === 'publicada' ? ruta : null });
+  }
+  return lista;
+}
+
+// Migas en inglés: se recorre la URL en inglés y cada tramo que tenga par
+// español publicado se enlaza, con su nombre corto en inglés.
+function migasEn(urlEs) {
+  const tramos = enDe(urlEs).split('/').filter(Boolean).slice(1);
+  const lista = [{ nombre: 'Home', url: '/en/' }];
+  let ruta = '/en/';
+  for (const t of tramos) {
+    ruta += t + '/';
+    const es = esDe(ruta);
+    const enMapa = es && MAPA.find((p) => p.url === es);
+    const nombre = (es && EN[es]?.miga) || t.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase());
     lista.push({ nombre, url: enMapa && enMapa.estado === 'publicada' ? ruta : null });
   }
   return lista;
@@ -197,13 +238,14 @@ function seccionHTML(s) {
   return `<section class="s-sec"><div class="s-in">${cab}${cuerpo}</div></section>`;
 }
 
-function jsonLD(p, c) {
-  const url = DOMINIO + p.url;
+function jsonLD(p, c, idioma = 'es') {
+  const url = DOMINIO + (idioma === 'en' ? enDe(p.url) : p.url);
+  const m = migas(p.url, idioma);
   const grafo = [
-    { '@type': 'WebPage', '@id': url, url, name: p.title, description: p.description, inLanguage: 'es-419',
-      isPartOf: { '@type': 'WebSite', name: 'Acuarius', url: DOMINIO + '/' } },
-    { '@type': 'BreadcrumbList', itemListElement: migas(p.url).map((m, i) => ({
-      '@type': 'ListItem', position: i + 1, name: m.nombre, ...(m.url || i === migas(p.url).length - 1 ? { item: DOMINIO + (m.url || p.url) } : {}),
+    { '@type': 'WebPage', '@id': url, url, name: p.title, description: p.description, inLanguage: T[idioma].inLanguage,
+      isPartOf: { '@type': 'WebSite', name: 'Acuarius', url: DOMINIO + (idioma === 'en' ? '/en/' : '/') } },
+    { '@type': 'BreadcrumbList', itemListElement: m.map((x, i) => ({
+      '@type': 'ListItem', position: i + 1, name: x.nombre, ...(x.url || i === m.length - 1 ? { item: x.url ? DOMINIO + x.url : url } : {}),
     })) },
   ];
   if (c.faq?.length) {
@@ -214,21 +256,27 @@ function jsonLD(p, c) {
   if (c.jsonld) grafo.push(...c.jsonld);
   if (p.nivel === 'Pilar' && p.cluster === 1) {
     grafo.push({ '@type': 'SoftwareApplication', name: 'Acuarius', applicationCategory: 'BusinessApplication',
-      operatingSystem: 'Web', url: DOMINIO + '/', inLanguage: 'es',
+      operatingSystem: 'Web', url: DOMINIO + (idioma === 'en' ? '/en/' : '/'), inLanguage: idioma,
       offers: [['Free', '0'], ['Pro', '39']].map(([name, price]) => ({ '@type': 'Offer', name, price, priceCurrency: 'USD' })) });
   }
   // </script> dentro del JSON cerraría la etiqueta antes de tiempo.
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': grafo }).replace(/</g, '\\u003c');
 }
 
-function pagina(p) {
-  const c = CONTENIDO[p.url];
-  const url = DOMINIO + p.url;
-  const m = migas(p.url);
-  const rel = relacionadas(p);
+function pagina(pEs, idioma = 'es') {
+  const en = idioma === 'en';
+  const t = T[idioma];
+  // En inglés, la meta y el cuerpo salen de contenido-en; lo demás (clúster,
+  // nivel, estado) de la fila española.
+  const p = en ? { ...pEs, kw: EN[pEs.url].kw, title: EN[pEs.url].title, description: EN[pEs.url].description, h1: EN[pEs.url].h1 } : pEs;
+  const c = en ? EN[pEs.url] : CONTENIDO[pEs.url];
+  const ruta = en ? enDe(pEs.url) : pEs.url;
+  const url = DOMINIO + ruta;
+  const m = migas(pEs.url, idioma);
+  const rel = relacionadas(pEs).map((o) => en ? { ...o, title: EN[o.url].title, nivel: NIVEL_EN[o.nivel] || o.nivel } : o);
   const flecha = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
   return `<!DOCTYPE html>
-<html lang="es">
+<html lang="${t.lang}">
 <head>
 ${GTM_HEAD}
 <meta charset="UTF-8">
@@ -236,9 +284,10 @@ ${GTM_HEAD}
 <title>${esc(p.title)}</title>
 <meta name="description" content="${esc(p.description)}">
 <link rel="canonical" href="${url}">
+${hreflang(pEs.url)}
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="es_419">
+<meta property="og:locale" content="${t.locale}">
 <meta property="og:site_name" content="Acuarius">
 <meta property="og:title" content="${esc(p.title)}">
 <meta property="og:description" content="${esc(p.description)}">
@@ -250,48 +299,48 @@ ${ICONO}
 ${ESTILO_BASE}
 ${ESTILO_SEO}
 ${MENU_CSS}
-<script type="application/ld+json">${jsonLD(p, c)}</script>
+<script type="application/ld+json">${jsonLD(p, c, idioma)}</script>
 <script src="https://app.acuarius.app/origen.js" defer></script>
 </head>
 <body>
 ${GTM_BODY}
 
-${menuHTML(p.url)}
+${menuHTML(ruta, idioma)}
 
 <section class="p-hero s-hero">
   <div class="hero-overlay"></div>
   <div class="hero-bg"><div class="hero-bg-grid"></div></div>
   <div class="p-hero-inner">
-    <div class="s-migas" role="navigation" aria-label="Migas de pan">${m.map((x, i) => i === m.length - 1 ? `<span aria-current="page">${esc(x.nombre)}</span>` : (x.url ? `<a href="${x.url}">${esc(x.nombre)}</a>` : esc(x.nombre)) + '<span>›</span>').join('')}</div>
+    <div class="s-migas" role="navigation" aria-label="${t.migas}">${m.map((x, i) => i === m.length - 1 ? `<span aria-current="page">${esc(x.nombre)}</span>` : (x.url ? `<a href="${x.url}">${esc(x.nombre)}</a>` : esc(x.nombre)) + '<span>›</span>').join('')}</div>
     ${c.badge ? `<div class="hero-badge"><span class="hero-badge-dot"></span>${esc(c.badge)}</div>` : ''}
     <h1>${esc(p.h1)}</h1>
     <p class="hero-sub">${c.sub}</p>
     <div class="hero-actions">
-      <a href="${REGISTRO}" class="btn-primary btn-primary-lg">Empieza gratis ${flecha}</a>
-      <a href="/precios/" class="btn-outline-lg">Ver precios</a>
+      <a href="${REGISTRO}" class="btn-primary btn-primary-lg">${t.empieza} ${flecha}</a>
+      <a href="/precios/" class="btn-outline-lg">${t.verPrecios}</a>
     </div>
-    <div class="hero-note"><span>Sin tarjeta de crédito</span><span>·</span><span>Pro gratis 14 días</span><span>·</span><span>En español</span></div>
+    <div class="hero-note">${t.nota.map((x) => `<span>${x}</span>`).join('<span>·</span>')}</div>
   </div>
 </section>
 
 ${c.secciones.map(seccionHTML).join('\n')}
 
-${c.faq?.length ? `<section class="s-sec"><div class="s-in"><div class="section-label" style="text-align:center">Preguntas frecuentes</div><h2 class="section-title" style="text-align:center">Lo que más nos preguntan</h2><div class="s-faq">${c.faq.map((f) => `<details><summary>${f.q}</summary><p>${f.a}</p></details>`).join('')}</div></div></section>` : ''}
+${c.faq?.length ? `<section class="s-sec"><div class="s-in"><div class="section-label" style="text-align:center">${t.faqLabel}</div><h2 class="section-title" style="text-align:center">${t.faqTitulo}</h2><div class="s-faq">${c.faq.map((f) => `<details><summary>${f.q}</summary><p>${f.a}</p></details>`).join('')}</div></div></section>` : ''}
 
-${rel.length ? `<section class="s-sec"><div class="s-in"><div class="section-label">${esc(CLUSTERS[p.cluster])}</div><h2 class="section-title">Sigue leyendo</h2><div class="s-rel">${rel.map((o) => `<a href="${o.url}"><small>${esc(o.nivel)}</small>${esc(nombreCorto(o))}</a>`).join('')}</div></div></section>` : ''}
+${rel.length ? `<section class="s-sec"><div class="s-in"><div class="section-label">${esc((en ? CLUSTERS_EN : CLUSTERS)[p.cluster])}</div><h2 class="section-title">${t.sigue}</h2><div class="s-rel">${rel.map((o) => `<a href="${o.url}"><small>${esc(o.nivel)}</small>${esc(nombreCorto(o))}</a>`).join('')}</div></div></section>` : ''}
 
 <section class="cta-section">
   <div class="cta-inner">
     <h2 class="cta-title">${esc(c.cta.h2)}</h2>
     <p class="cta-sub">${esc(c.cta.sub)}</p>
     <div class="cta-actions">
-      <a href="${REGISTRO}" class="btn-primary btn-primary-lg" style="background:white;color:var(--blue)">Crear cuenta gratis</a>
-      <a href="https://wa.me/573219972333?text=${encodeURIComponent('Hola, quiero saber más de Acuarius')}" class="btn-outline-lg">Hablar por WhatsApp</a>
+      <a href="${REGISTRO}" class="btn-primary btn-primary-lg" style="background:white;color:var(--blue)">${t.crear}</a>
+      <a href="https://wa.me/573219972333?text=${encodeURIComponent(t.waTexto)}" class="btn-outline-lg">${t.wa}</a>
     </div>
   </div>
 </section>
 
-${PIE}
+${en ? PIE_EN : PIE}
 
 <script>
 // Conversión: clic en CTA hacia la app → dataLayer, igual que el home.
@@ -312,7 +361,8 @@ ${MENU_JS}
 
 // ── Sitemap, robots y mapa legible ──────────────────────────────────────────
 function sitemap() {
-  const urls = ['/', '/en/', '/precios/', '/partners',...publicadas().map((p) => p.url), ...NOVEDADES];
+  const es = ['/', '/precios/', '/partners', ...publicadas().map((p) => p.url), ...NOVEDADES];
+  const urls = [...es, ...es.map(enDe).filter(Boolean)];
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${DOMINIO}${u}</loc></url>`).join('\n')}
@@ -347,12 +397,21 @@ if (errores.length) {
   console.error(`✗ ${errores.length} problema(s); no se escribió nada:\n  ` + errores.join('\n  '));
   process.exit(1);
 }
-for (const p of publicadas()) {
-  const destino = join(RAIZ, p.url, 'index.html');
-  mkdirSync(dirname(destino), { recursive: true });
-  writeFileSync(destino, pagina(p));
+const sinIngles = publicadas().filter((p) => !EN[p.url] || !enDe(p.url)).map((p) => p.url);
+if (sinIngles.length && !PARCIAL) {
+  console.error(`✗ páginas sin versión en inglés (contenido-en/ o fuente-en/urls.mjs); no se escribió nada:\n  ${sinIngles.join('\n  ')}`);
+  process.exit(1);
 }
+const salida = [];
+for (const p of publicadas()) {
+  salida.push([join(RAIZ, p.url, 'index.html'), pagina(p)]);
+  if (sinIngles.includes(p.url)) continue;
+  const { html, sinPar } = aIngles(pagina(p, 'en'));
+  if (sinPar.length) { console.error(`✗ ${p.url} en inglés enlaza a páginas sin par en fuente-en/urls.mjs: ${sinPar.join(', ')}`); process.exit(1); }
+  salida.push([join(RAIZ, enDe(p.url), 'index.html'), html]);
+}
+for (const [destino, html] of salida) { mkdirSync(dirname(destino), { recursive: true }); writeFileSync(destino, html); }
 writeFileSync(join(RAIZ, 'sitemap.xml'), sitemap());
 writeFileSync(join(RAIZ, 'robots.txt'), ROBOTS);
 writeFileSync(join(RAIZ, 'fuente-seo', 'MAPA.md'), mapaMD());
-console.log(`✓ ${publicadas().length} páginas, sitemap.xml, robots.txt y MAPA.md (${MAPA.length} URLs en el mapa).`);
+console.log(`✓ ${publicadas().length} páginas (+ ${salida.length - publicadas().length} en inglés), sitemap.xml, robots.txt y MAPA.md (${MAPA.length} URLs en el mapa).`);

@@ -1,4 +1,5 @@
-// Traducción de la portada (index.html) al inglés, frase por frase.
+// Traducción de la portada (index.html) al inglés, frase por frase. La usa
+// fuente-en/build.mjs, igual que paginas/*.mjs para las demás páginas a mano.
 //
 // Cada par es [texto exacto en index.html, texto en inglés]. build.mjs los
 // aplica del más largo al más corto y FALLA si alguno ya no aparece: así,
@@ -129,9 +130,8 @@ export const PARES = [
   ['✓ Califica y reparte cada lead al asesor que le toca', '✓ Qualifies each lead and routes it to the right rep'],
   ['✓ Pide nombre y correo antes de pasarte la conversación', '✓ Asks for name and email before handing you the conversation'],
   ['✓ Llena los campos de la ficha mientras conversa', '✓ Fills in the lead record while it chats'],
-  // Las páginas del agente y del inbox existen solo en español.
-  ['<a href="/agente-ia/" class="btn-primary btn-primary-lg">Conoce el agente de IA</a>', '<a href="#planes" class="btn-primary btn-primary-lg">See pricing</a>'],
-  ['<a href="/crm/whatsapp/" style="padding:14px 22px;border:1.5px solid var(--border);border-radius:14px;font-weight:600;color:var(--text);text-decoration:none">Inbox de WhatsApp</a>', '<a href="https://app.acuarius.app/registro" style="padding:14px 22px;border:1.5px solid var(--border);border-radius:14px;font-weight:600;color:var(--text);text-decoration:none">Try it free</a>'],
+    ['>Conoce el agente de IA<', '>Meet the AI agent<'],
+  ['>Inbox de WhatsApp</a>', '>WhatsApp inbox</a>'],
   ['Agente de IA · WhatsApp', 'AI agent · WhatsApp'],
   ['Hola, ¿tienen apartamentos en arriendo en el norte?', 'Hi, do you have apartments for rent on the north side?'],
   ['¡Claro! Tengo tres opciones en el norte. ¿Cuál es tu presupuesto mensual?', 'Sure! I have three options on the north side. What’s your monthly budget?'],
@@ -141,9 +141,9 @@ export const PARES = [
   // ── Precios ──
   ['<p class="section-label">Precios</p>', '<p class="section-label">Pricing</p>'],
   ['Empieza gratis. Crece desde 39 USD al mes', 'Start free. Grow from 39 USD a month'],
-  ['Una sola licencia con 3 usuarios, 1.000 contactos y el agente de IA para WhatsApp. Sumas solo lo que necesites: usuarios, contactos, mensajes del agente o clientes.', 'One license with 3 users, 1,000 contacts and the AI agent for WhatsApp. Add only what you need: users (9 USD each), contacts, agent messages or clients.'],
-  ['<a href="/precios/" class="btn-primary btn-primary-lg">Ver precios y calcular el tuyo</a>', '<a href="https://app.acuarius.app/registro" class="btn-primary btn-primary-lg">Try 14 days free</a>'],
-  ['<a href="https://app.acuarius.app/registro" style="padding:14px 22px;border:1.5px solid var(--border);border-radius:14px;font-weight:600;color:var(--text);text-decoration:none">Probar 14 días gratis</a>', '<a href="/precios/" hreflang="es" style="padding:14px 22px;border:1.5px solid var(--border);border-radius:14px;font-weight:600;color:var(--text);text-decoration:none">Price calculator (in Spanish)</a>'],
+  ['Una sola licencia con 3 usuarios, 1.000 contactos y el agente de IA para WhatsApp. Sumas solo lo que necesites: usuarios, contactos, mensajes del agente o clientes.', 'One license with 3 users, 1,000 contacts and the AI agent for WhatsApp. Add only what you need: users, contacts, agent messages or clients.'],
+  ['>Ver precios y calcular el tuyo<', '>See pricing and calculate yours<'],
+  ['>Probar 14 días gratis<', '>Try 14 days free<'],
 
   // ── Preguntas frecuentes ──
   ['Preguntas frecuentes', 'Frequently asked questions'],
@@ -171,32 +171,32 @@ export const PARES = [
   ['>Hablar con el equipo<', '>Talk to the team<'],
   ['Sin tarjeta de crédito · 14 días gratis · Cancela cuando quieras', 'No credit card · 14 days free · Cancel anytime'],
 
-  // ── Pie ── (lo que no tiene versión en inglés se marca como tal)
+  // ── Pie ── (los enlaces los pasa a inglés aIngles)
   ['La plataforma donde vive toda tu estrategia de ventas: CRM, marketing, automatización y agentes de IA. Hecha para latinoamérica, en español y con precios justos.', 'The platform where your entire sales strategy lives: CRM, marketing, automation and AI agents. Built for Latin America, with fair pricing.'],
   ['<div class="footer-col-title">Producto</div>', '<div class="footer-col-title">Product</div>'],
-  ['<a href="#crm">CRM y pipeline</a>', '<a href="#crm">CRM and pipeline</a>'],
+  ['>CRM y pipeline<', '>CRM and pipeline<'],
   ['<a href="#ciclo">La plataforma completa</a>', '<a href="#ciclo">The complete platform</a>'],
-  ['<a href="#agentes">Agentes de IA</a>', '<a href="#agentes">AI agent</a>'],
-  ['<a href="#como-funciona">Cómo funciona</a>', '<a href="#como-funciona">How it works</a>'],
-  ['<a href="/precios/">Precios</a>', '<a href="#planes">Pricing</a>'],
-  ['<a href="/novedades/">Novedades</a>', '<a href="/novedades/" hreflang="es">What’s new (Spanish)</a>'],
-  ['<a href="/partners">Programa de Partners</a>', '<a href="/partners" hreflang="es">Partner program (Spanish)</a>'],
+  ['>Agentes de IA<', '>AI agent<'],
+  ['>Cómo funciona<', '>How it works<'],
+  ['<a href="/precios/">Precios</a>', '<a href="/precios/">Pricing</a>'],
+  ['<a href="/novedades/">Novedades</a>', '<a href="/novedades/">What’s new</a>'],
+  ['>Programa de Partners<', '>Partner program<'],
   ['<a href="https://app.acuarius.app">Iniciar sesión</a>', '<a href="https://app.acuarius.app">Sign in</a>'],
-  ['<div class="footer-col-title">Soluciones</div>', '<div class="footer-col-title">Guides (in Spanish)</div>'],
-  ['<a href="/crm/">CRM para pymes</a>', '<a href="/crm/" hreflang="es">CRM for small businesses</a>'],
-  ['<a href="/crm/whatsapp/">CRM con WhatsApp</a>', '<a href="/crm/whatsapp/" hreflang="es">WhatsApp CRM</a>'],
-  ['<a href="/crm/gratis/">CRM gratis</a>', '<a href="/crm/gratis/" hreflang="es">Free CRM</a>'],
-  ['<a href="/crm/inmobiliarias/">CRM inmobiliario</a>', '<a href="/crm/inmobiliarias/" hreflang="es">Real estate CRM</a>'],
-  ['<a href="/crm/clinicas/">CRM para clínicas</a>', '<a href="/crm/clinicas/" hreflang="es">CRM for clinics</a>'],
-  ['<a href="/crm/restaurantes/">CRM para restaurantes</a>', '<a href="/crm/restaurantes/" hreflang="es">CRM for restaurants</a>'],
-  ['<a href="/crm/pipeline-de-ventas/">Pipeline de ventas</a>', '<a href="/crm/pipeline-de-ventas/" hreflang="es">Sales pipeline</a>'],
-  ['<a href="/mejores-crm-con-whatsapp/">Mejores CRM con WhatsApp</a>', '<a href="/mejores-crm-con-whatsapp/" hreflang="es">Best WhatsApp CRMs</a>'],
-  ['<a href="/alternativas/hubspot/">Alternativas a HubSpot</a>', '<a href="/alternativas/hubspot/" hreflang="es">HubSpot alternatives</a>'],
-  ['<a href="/benchmarks/">Benchmarks LatAm</a>', '<a href="/benchmarks/" hreflang="es">Latin America benchmarks</a>'],
-  ['<a href="/calculadora-presupuesto-google-ads/">Calculadora de presupuesto</a>', '<a href="/calculadora-presupuesto-google-ads/" hreflang="es">Google Ads budget calculator</a>'],
-  ['<a href="/privacy.html">Política de privacidad</a>', '<a href="/privacy.html" hreflang="es">Privacy policy (Spanish)</a>'],
-  ['<a href="/terms.html">Términos de servicio</a>', '<a href="/terms.html" hreflang="es">Terms of service (Spanish)</a>'],
-  ['<a href="/reembolsos.html">Reembolsos y cancelación</a>', '<a href="/reembolsos.html" hreflang="es">Refunds and cancellation (Spanish)</a>'],
+  ['<div class="footer-col-title">Soluciones</div>', '<div class="footer-col-title">Solutions</div>'],
+  ['>CRM para pymes<', '>CRM for small businesses<'],
+  ['>CRM con WhatsApp<', '>WhatsApp CRM<'],
+  ['>CRM gratis<', '>Free CRM<'],
+  ['>CRM inmobiliario<', '>Real estate CRM<'],
+  ['>CRM para clínicas<', '>CRM for clinics<'],
+  ['>CRM para restaurantes<', '>CRM for restaurants<'],
+  ['>Pipeline de ventas<', '>Sales pipeline<'],
+  ['>Mejores CRM con WhatsApp<', '>Best WhatsApp CRMs<'],
+  ['>Alternativas a HubSpot<', '>HubSpot alternatives<'],
+  ['>Benchmarks LatAm<', '>Latin America benchmarks<'],
+  ['>Calculadora de presupuesto<', '>Google Ads budget calculator<'],
+  ['>Política de privacidad<', '>Privacy policy<'],
+  ['>Términos de servicio<', '>Terms of service<'],
+  ['>Reembolsos y cancelación<', '>Refunds and cancellation<'],
   ['<div class="footer-col-title" style="margin-top:22px">Contacto</div>', '<div class="footer-col-title" style="margin-top:22px">Contact</div>'],
   ['· Operado y facturado por Aixion Labs Solutions LLC · 15723 Chapel Lake Dr, Cypress, TX 77429, EE. UU.', '· Operated and billed by Aixion Labs Solutions LLC · 15723 Chapel Lake Dr, Cypress, TX 77429, USA'],
   ['Hecho con ❤️ para latinoamérica', 'Made with ❤️ for Latin America'],
@@ -204,4 +204,9 @@ export const PARES = [
 
 // Nombres propios del tablero de muestra: pueden llevar tildes sin ser texto
 // en español sin traducir.
-export const NOMBRES = ['Carolina Restrepo', 'Andrés Villamil', 'Distribuciones Lara', 'Paula Céspedes', 'Grupo Miralta', 'Sebastián Ortiz', 'Inversiones Bahía', 'Natalia Guzmán', 'Clínica del Norte', 'Mauricio Peña'];
+export const CABEZA = {
+  title: 'Acuarius — CRM with an AI agent for WhatsApp, built for Latin America',
+  description: 'CRM with an AI agent for WhatsApp: sales pipeline, WhatsApp and Instagram inbox, automations, campaigns and reports in one platform. Built for Latin America, from 39 USD a month.',
+};
+
+export const PERMITIDOS = ['Carolina Restrepo', 'Andrés Villamil', 'Distribuciones Lara', 'Paula Céspedes', 'Grupo Miralta', 'Sebastián Ortiz', 'Inversiones Bahía', 'Natalia Guzmán', 'Clínica del Norte', 'Mauricio Peña'];

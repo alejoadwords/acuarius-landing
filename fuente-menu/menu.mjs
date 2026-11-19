@@ -13,6 +13,8 @@
 // Todo lleva el prefijo am-: el estilo base de partners.html aplica reglas a
 // la etiqueta <nav> y a .nav-*, y aquí no se usan para no heredarlas.
 
+import { enDe, esDe } from '../fuente-en/urls.mjs';
+
 const REGISTRO = 'https://app.acuarius.app/registro';
 const LOGIN = 'https://app.acuarius.app/login.html';
 const DEMO = 'https://app.acuarius.app/reunion/alejandro-reunion';
@@ -97,6 +99,45 @@ export const MENU = {
 // Precios va suelto, sin desplegable, como en toda la competencia.
 export const PRECIOS = '/precios/';
 
+// Textos del menú en inglés, por el mismo orden que MENU. Los enlaces son los
+// de MENU: se pasan a su URL en inglés con fuente-en/urls.mjs.
+const EN = {
+  producto: { titulo: 'Product', columnas: [
+    ['AI agent', [['AI agent for WhatsApp', 'Answers, qualifies and hands you the customer with their details, 24/7.'], ['Lead qualification and routing', 'Every lead to the right board and the right rep.']]],
+    ['Conversations', [['WhatsApp inbox', 'Your whole team on one number, in real time.'], ['Templates and broadcasts', 'Message first and send campaigns approved by Meta.']]],
+    ['CRM', [['CRM and pipeline', 'Your stages, your reps and every deal in sight.'], ['Products and proposals', 'Catalog, quotes with tax and payment links.'], ['Scheduling and meetings', 'Let customers book you without the back-and-forth.']]],
+    ['Marketing', [['Automations', 'Follow-up goes out on its own, by email or WhatsApp.'], ['Email and WhatsApp campaigns', 'The right message for each segment.'], ['Forms and pages', 'Every lead from your site and your ads, straight to the CRM.']]],
+    ['Analytics and ads', [['Reports', 'Sales, team and marketing, as a PDF or a live link.'], ['Google and Meta Ads', 'Which campaign really sells, not just which one gets clicks.'], ['NPS surveys', 'Measure satisfaction and act in time.']]],
+  ], franja: [['Integrations', 'Shopify, WooCommerce, VTEX, Google Calendar, Meta, Google Ads and API'], ['What’s new', 'What’s new every two weeks, with video guides']] },
+  soluciones: { titulo: 'Solutions', columnas: [
+    ['By industry', [['Real estate', 'Rentals and sales, each with its own process.'], ['Clinics and healthcare', 'Appointments, reminders and patient follow-up.'], ['Restaurants', 'Reservations and orders that come in on WhatsApp.'], ['Online stores', 'Shopify, WooCommerce and VTEX connected to the CRM.']]],
+    ['By company type', [['Small businesses', 'Your whole sales process in one place.'], ['Marketing agencies', 'Many clients, each with their own data and reports.'], ['Free CRM', 'Start without paying and grow when you need to.']]],
+    ['Compare', [['Best WhatsApp CRMs', 'The full comparison for Latin America.'], ['Acuarius vs HubSpot', ''], ['Acuarius vs Kommo', '']]],
+  ], destacada: ['Guide', 'Which WhatsApp CRM is right for you?', 'What each one really includes, compared for Latin America.', 'Read the comparison'] },
+  recursos: { titulo: 'Resources', columnas: [
+    ['Learn', [['What’s new', 'Every new feature, explained on video.'], ['Video academy', 'Learn to use Acuarius step by step.'], ['Latin America benchmarks', 'Ad and lead costs by country and industry.']]],
+    ['Free tools', [['WhatsApp link generator', 'Your wa.me link with the message ready.'], ['WhatsApp pricing calculator', 'What Meta charges per message in your country.'], ['Google Ads budget calculator', '']]],
+    ['Company', [['Partner program', 'Recurring commission for recommending Acuarius.'], ['Talk to us', 'On WhatsApp, during business hours.']]],
+  ], destacada: ['Video guide', 'Custom fields that fill themselves', 'Create them, let the agent fill them and use them in automations.', 'See the guide'] },
+};
+
+// MENU con los textos y enlaces en inglés. Falla si un enlace interno no tiene
+// par: el menú en inglés nunca lleva a una página en español sin decirlo.
+function menuIngles() {
+  const url = (u) => { if (/^https?:/.test(u)) return u.replace(encodeURIComponent('Hola, quiero saber más de Acuarius'), encodeURIComponent('Hi, I’d like to learn more about Acuarius')); const en = enDe(u); if (!en) throw new Error(`menú: ${u} no tiene URL en inglés (fuente-en/urls.mjs)`); return en; };
+  const out = {};
+  for (const [k, m] of Object.entries(MENU)) {
+    const t = EN[k];
+    out[k] = {
+      titulo: t.titulo,
+      columnas: m.columnas.map((c, i) => ({ ...c, titulo: t.columnas[i][0], enlaces: c.enlaces.map((e, j) => ({ ...e, t: t.columnas[i][1][j][0], d: t.columnas[i][1][j][1] || undefined, url: url(e.url), alterna: e.alterna && url(e.alterna) })) })),
+      franja: m.franja && m.franja.map((f, i) => ({ ...f, t: t.franja[i][0], d: t.franja[i][1], url: url(f.url) })),
+      destacada: m.destacada && { ...m.destacada, etiqueta: t.destacada[0], t: t.destacada[1], d: t.destacada[2], cta: t.destacada[3], url: url(m.destacada.url) },
+    };
+  }
+  return out;
+}
+
 // URLs propias que el sitio debería tener según el menú (para el mapa).
 export const PENDIENTES = Object.values(MENU).flatMap((m) => [...m.columnas.flatMap((c) => c.enlaces), ...(m.franja || [])]).filter((e) => e.pendiente).map((e) => ({ url: e.url, t: e.t, alterna: e.alterna || null }));
 
@@ -127,36 +168,49 @@ function panel(clave, m) {
   </div></div>`;
 }
 
-// `activo`: ruta de la página actual, para marcar Precios o Novedades.
-export function menuHTML(activo = '') {
-  const claves = Object.keys(MENU);
-  const botones = claves.map((k) => `<button class="am-item" type="button" aria-expanded="false" aria-controls="am-p-${k}" data-am="${k}">${esc(MENU[k].titulo)} ${CHEVRON}</button>`).join('');
+// Textos fijos del menú en cada idioma.
+const UI = {
+  es: { inicio: 'Acuarius, inicio', principal: 'Principal', precios: 'Precios', login: 'Iniciar sesión', demo: 'Agendar demo', registro: 'Crear cuenta gratis', abrir: 'Abrir menú', otro: 'EN', otroLargo: 'English', otroTitulo: 'English version', otroLang: 'en' },
+  en: { inicio: 'Acuarius, home', principal: 'Main', precios: 'Pricing', login: 'Sign in', demo: 'Book a demo', registro: 'Create free account', abrir: 'Open menu', otro: 'ES', otroLargo: 'Ver en español', otroTitulo: 'Ver en español', otroLang: 'es' },
+};
+
+// `activo`: ruta de la página actual (en su idioma), para marcar Precios y
+// para que ES / EN lleve a la misma página en el otro idioma.
+export function menuHTML(activo = '', idioma = 'es') {
+  const en = idioma === 'en';
+  const M = en ? menuIngles() : MENU;
+  const u = UI[idioma];
+  const precios = en ? enDe(PRECIOS) : PRECIOS;
+  const inicio = en ? '/en/' : '/';
+  const otra = en ? (esDe(activo) || '/') : (enDe(activo) || '/en/');
+  const claves = Object.keys(M);
+  const botones = claves.map((k) => `<button class="am-item" type="button" aria-expanded="false" aria-controls="am-p-${k}" data-am="${k}">${esc(M[k].titulo)} ${CHEVRON}</button>`).join('');
   const cajon = claves.map((k) => {
-    const m = MENU[k];
+    const m = M[k];
     const grupos = m.columnas.map((c) => { const l = c.enlaces.map((e) => enlace(e, 'am-lk', `<b>${esc(e.t)}</b>`)).filter(Boolean); return l.length ? `<div class="am-h">${esc(c.titulo)}</div>${l.join('')}` : ''; }).join('');
     const extra = (m.franja || []).map((f) => enlace(f, 'am-lk', `<b>${esc(f.t)}</b>`)).filter(Boolean).join('');
     return `<div class="am-acc"><button type="button" aria-expanded="false">${esc(m.titulo)} ${CHEVRON}</button><div class="am-acc-c">${grupos}${extra}</div></div>`;
   }).join('');
-  const preciosAct = activo.startsWith(PRECIOS) ? ' aria-current="page"' : '';
+  const preciosAct = activo.startsWith(precios) ? ' aria-current="page"' : '';
   return `<!-- MENU:INICIO (generado por fuente-menu/menu.mjs; no editar a mano) -->
 <header class="am-nav" id="am-nav">
   <div class="am-in">
-    <a href="/" class="am-logo" aria-label="Acuarius, inicio"><img src="/logo.svg" alt="Acuarius" width="135" height="24"></a>
-    <div class="am-items" role="navigation" aria-label="Principal">${botones}<a class="am-item" href="${PRECIOS}"${preciosAct}>Precios</a></div>
+    <a href="${inicio}" class="am-logo" aria-label="${u.inicio}"><img src="/logo.svg" alt="Acuarius" width="135" height="24"></a>
+    <div class="am-items" role="navigation" aria-label="${u.principal}">${botones}<a class="am-item" href="${precios}"${preciosAct}>${u.precios}</a></div>
     <div class="am-ctas">
-      <a class="am-txt" href="/en/" hreflang="en" lang="en" title="English version">EN</a>
-      <a class="am-txt" href="${LOGIN}">Iniciar sesión</a>
-      <a class="am-borde" href="${DEMO}">Agendar demo</a>
-      <a class="am-pri" href="${REGISTRO}">Crear cuenta gratis ${FLECHA}</a>
-      <button class="am-hamb" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="am-cajon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <a class="am-txt" href="${otra}" hreflang="${u.otroLang}" lang="${u.otroLang}" title="${u.otroTitulo}">${u.otro}</a>
+      <a class="am-txt" href="${LOGIN}">${u.login}</a>
+      <a class="am-borde" href="${DEMO}">${u.demo}</a>
+      <a class="am-pri" href="${REGISTRO}">${u.registro} ${FLECHA}</a>
+      <button class="am-hamb" type="button" aria-label="${u.abrir}" aria-expanded="false" aria-controls="am-cajon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
-  ${claves.map((k) => panel(k, MENU[k])).join('\n  ')}
+  ${claves.map((k) => panel(k, M[k])).join('\n  ')}
 </header>
 <div class="am-cajon" id="am-cajon">
   ${cajon}
-  <a class="am-solo" href="${PRECIOS}">Precios</a>
-  <div class="am-cajon-ctas"><a class="am-pri" href="${REGISTRO}">Crear cuenta gratis</a><a class="am-borde" href="${DEMO}">Agendar demo</a><a class="am-txt" href="${LOGIN}">Iniciar sesión</a><a class="am-txt" href="/en/" hreflang="en" lang="en">English</a></div>
+  <a class="am-solo" href="${precios}">${u.precios}</a>
+  <div class="am-cajon-ctas"><a class="am-pri" href="${REGISTRO}">${u.registro}</a><a class="am-borde" href="${DEMO}">${u.demo}</a><a class="am-txt" href="${LOGIN}">${u.login}</a><a class="am-txt" href="${otra}" hreflang="${u.otroLang}" lang="${u.otroLang}">${u.otroLargo}</a></div>
 </div>
 <!-- MENU:FIN -->`;
 }

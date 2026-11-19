@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>What’s new in Acuarius</title>
+  <link>https://acuarius.app/en/whats-new/</link>
+  <atom:link href="https://acuarius.app/en/whats-new/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>What’s new in Acuarius every two weeks, feature by feature.</description>
+  <language>en</language>
+  <item>
+    <title>Product catalog in the CRM: from quote to sale</title>
+    <link>https://acuarius.app/en/whats-new/products-in-the-crm/</link>
+    <guid>https://acuarius.app/en/whats-new/products-in-the-crm/</guid>
+    <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
+    <category>CRM</category>
+    <description>Having your product catalog in the CRM means what you sell, with its price, VAT, photo, and payment link, lives in the same place as your customers. In Acuarius you build it in CRM → Products, by hand or from a CSV file. When you add products to a deal, its value is calculated automatically, and later you see in Analytics what sells most.</description>
+  </item>
+  <item>
+    <title>CRM custom fields: your business data on every contact record</title>
+    <link>https://acuarius.app/en/whats-new/crm-custom-fields/</link>
+    <guid>https://acuarius.app/en/whats-new/crm-custom-fields/</guid>
+    <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
+    <category>CRM</category>
+    <description>Custom fields in the Acuarius CRM are the contact details that don't come built in: budget, property type, EPS (health insurer), or event date. You create them in CRM → Custom fields with their type. They get filled in on the record, in forms, on import, or by your WhatsApp agent, and you use them to filter, automate, segment campaigns, and personalize messages.</description>
+  </item>
+  <item>
+    <title>WhatsApp for sales teams: one number, the whole inbox live</title>
+    <link>https://acuarius.app/en/whats-new/real-time-whatsapp/</link>
+    <guid>https://acuarius.app/en/whats-new/real-time-whatsapp/</guid>
+    <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
+    <category>Conversations</category>
+    <description>In Acuarius, WhatsApp for sales teams is a shared inbox: your WhatsApp Business number connects to Conversations and your whole team replies from there. Messages appear live, without reloading, with ✓ sent, ✓✓ delivered, and blue ✓✓ read. You search chats by name or phone, discard spam, reply with templates after 24 hours, and move each conversation to the pipeline under your name.</description>
+  </item>
+  <item>
+    <title>WhatsApp AI agent: nobody reaches your rep without contact details</title>
+    <link>https://acuarius.app/en/whats-new/whatsapp-ai-agent-contact-details/</link>
+    <guid>https://acuarius.app/en/whats-new/whatsapp-ai-agent-contact-details/</guid>
+    <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
+    <category>AI agent</category>
+    <description>A WhatsApp AI agent is an assistant that answers your business's chats with the information you give it: context, FAQs, and catalog. In Acuarius it qualifies each person, sends them to the right sales process and, if you turn on the option, asks for name and email before handing the conversation to a rep. That way nobody reaches your team without contact details.</description>
+  </item>
+  <item>
+    <title>Meeting scheduling link: let your client pick the time without the back-and-forth over chat</title>
+    <link>https://acuarius.app/en/whats-new/meeting-scheduling-link/</link>
+    <guid>https://acuarius.app/en/whats-new/meeting-scheduling-link/</guid>
+    <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
+    <category>Calendar</category>
+    <description>A meeting scheduling link is your own page, like app.acuarius.app/reunion/your-name-demo, that shows only the times you are free based on your hours and your Google Calendar. The person picks a day and time and leaves their details. The meeting is created in your Google account with a Meet link, they get the invitation by email, and they enter your CRM as a lead assigned to you.</description>
+  </item>
+  <item>
+    <title>Automatic NPS survey and repeat purchases: listen to your customer and bring them back</title>
+    <link>https://acuarius.app/en/whats-new/repeat-purchase-and-nps-survey/</link>
+    <guid>https://acuarius.app/en/whats-new/repeat-purchase-and-nps-survey/</guid>
+    <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
+    <category>Sales</category>
+    <description>An NPS survey asks the customer, from 0 to 10, how likely they are to recommend you. In Acuarius it goes out automatically by email with the «NPS survey» step in an automation, tags each customer as a promoter, passive or detractor, creates a task to call anyone who scores 0 to 6 within 24 hours, and with «New purchase» records the repeat purchase as a new opportunity.</description>
+  </item>
+  <item>
+    <title>Click to WhatsApp ads: from conversation to sale, campaign by campaign</title>
+    <link>https://acuarius.app/en/whats-new/click-to-whatsapp-meta-ads/</link>
+    <guid>https://acuarius.app/en/whats-new/click-to-whatsapp-meta-ads/</guid>
+    <pubDate>Mon, 02 Nov 2026 17:00:00 GMT</pubDate>
+    <category>Ads</category>
+    <description>Click to WhatsApp ads are Meta ads (Facebook and Instagram) that open a chat with your business instead of a web page. Acuarius links each of those chats to its campaign, ad set and ad, sends them to the sales board you choose and shows you, campaign by campaign, how many conversations ended in a sale. It can also report those sales back to Meta.</description>
+  </item>
+</channel>
+</rss>
