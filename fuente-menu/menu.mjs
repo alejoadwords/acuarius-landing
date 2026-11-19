@@ -144,6 +144,7 @@ export function menuHTML(activo = '') {
     <a href="/" class="am-logo" aria-label="Acuarius, inicio"><img src="/logo.svg" alt="Acuarius" width="135" height="24"></a>
     <div class="am-items" role="navigation" aria-label="Principal">${botones}<a class="am-item" href="${PRECIOS}"${preciosAct}>Precios</a></div>
     <div class="am-ctas">
+      <a class="am-txt" href="/en/" hreflang="en" lang="en" title="English version">EN</a>
       <a class="am-txt" href="${LOGIN}">Iniciar sesión</a>
       <a class="am-borde" href="${DEMO}">Agendar demo</a>
       <a class="am-pri" href="${REGISTRO}">Crear cuenta gratis ${FLECHA}</a>
@@ -155,7 +156,7 @@ export function menuHTML(activo = '') {
 <div class="am-cajon" id="am-cajon">
   ${cajon}
   <a class="am-solo" href="${PRECIOS}">Precios</a>
-  <div class="am-cajon-ctas"><a class="am-pri" href="${REGISTRO}">Crear cuenta gratis</a><a class="am-borde" href="${DEMO}">Agendar demo</a><a class="am-txt" href="${LOGIN}">Iniciar sesión</a></div>
+  <div class="am-cajon-ctas"><a class="am-pri" href="${REGISTRO}">Crear cuenta gratis</a><a class="am-borde" href="${DEMO}">Agendar demo</a><a class="am-txt" href="${LOGIN}">Iniciar sesión</a><a class="am-txt" href="/en/" hreflang="en" lang="en">English</a></div>
 </div>
 <!-- MENU:FIN -->`;
 }
