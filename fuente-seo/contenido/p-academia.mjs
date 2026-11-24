@@ -31,8 +31,8 @@ const VIDEOS = [
   "cat": "primeros-pasos",
   "t": "Tus primeros 30 minutos en Acuarius — deja tu cuenta lista",
   "d": "Importa tus contactos, conecta el formulario que ya tienes en tu web, activa la bienvenida automática y arma tu proceso de venta.",
-  "dur": "2:56",
-  "id": "9cewSgD222o"
+  "dur": "2:38",
+  "id": "MMgjFbp4S1M"
  },
  {
   "cat": "primeros-pasos",
@@ -73,8 +73,8 @@ const VIDEOS = [
   "cat": "crm",
   "t": "Tareas: que ningún seguimiento se te olvide",
   "d": "Tu lista de pendientes por asesor, la tarea automática de primer contacto, tareas desde las automatizaciones y el resumen de cada mañana.",
-  "dur": "2:16",
-  "id": "87AJsr7nd78"
+  "dur": "2:17",
+  "id": "eKQam-fUqJI"
  },
  {
   "cat": "crm",
@@ -108,15 +108,15 @@ const VIDEOS = [
   "cat": "marketing",
   "t": "Fuentes de prospectos: formularios, webhooks y chats conectados a tu CRM",
   "d": "Crea un formulario o conecta el que ya tienes, recibe prospectos de Hotmart, Zapier o Make y decide cuándo un chat entra a tu pipeline.",
-  "dur": "2:21",
-  "id": "eZ4Q2voIgso"
+  "dur": "2:38",
+  "id": "2GS-vDr0OUk"
  },
  {
   "cat": "marketing",
   "t": "Propuestas comerciales con IA: créalas, envíalas y cóbralas",
   "d": "Desde la ficha del prospecto: monto, enlace de pago, cuatro estilos redactados con IA, firma del cliente y pago, estados de cada propuesta y Ganado al marcarla pagada.",
-  "dur": "1:51",
-  "id": "j7YStHfsR7o"
+  "dur": "1:49",
+  "id": "xIzDRTkwr-E"
  },
  {
   "cat": "marketing",
