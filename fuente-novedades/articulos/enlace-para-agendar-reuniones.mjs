@@ -9,7 +9,7 @@ export const ARTICULO = {
   edicion: 1,
   resumen: 'Comparte un enlace con tus horas libres. Quien lo abre elige día y hora, la reunión se crea en tu Google Calendar con Meet y la persona entra al CRM.',
   respuesta: 'Un enlace para agendar reuniones es una página propia, como app.acuarius.app/reunion/tu-nombre-demo, que muestra solo las horas en que estás libre según tu horario y tu Google Calendar. La persona elige día y hora y deja sus datos. La reunión se crea en tu Google con enlace de Meet, le llega la invitación por correo y entra a tu CRM como lead asignado a ti.',
-  video: { id: 'ubVfMIR_Sf4', titulo: 'Agenda del CRM: tareas, reuniones y sincronización con Google Calendar', subido: '2026-08-07', segundos: 144, propio: false },
+  video: { id: 'YGTOLEr-D10', titulo: "Agenda y enlaces de reunión: tu calendario con Google y un enlace para que te agenden", subido: '2026-11-23', segundos: 104, propio: false },
   ilustracion: 'agenda',
   secciones: [
     {

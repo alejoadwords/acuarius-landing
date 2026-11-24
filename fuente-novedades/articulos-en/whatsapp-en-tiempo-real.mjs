@@ -12,7 +12,7 @@ export const ARTICULO = {
   edicion: 1,
   resumen: "Your team handles the company WhatsApp from Acuarius: messages show up on their own, you see if they were read, and you move each chat to the pipeline under your name.",
   respuesta: "In Acuarius, WhatsApp for sales teams is a shared inbox: your WhatsApp Business number connects to Conversations and your whole team replies from there. Messages appear live, without reloading, with ✓ sent, ✓✓ delivered, and blue ✓✓ read. You search chats by name or phone, discard spam, reply with templates after 24 hours, and move each conversation to the pipeline under your name.",
-  video: { id: "LW-DJTNFNak", titulo: "The inbox: all your conversations in one place", subido: "2026-10-21", segundos: 131, propio: false },
+  video: { id: 'rM4pfm06f4I', titulo: "The inbox: WhatsApp, Instagram and web chat in one place, with the contact at hand", subido: '2026-11-22', segundos: 122, propio: false },
   ilustracion: "whatsapp",
   secciones: [
     {

@@ -9,7 +9,7 @@ export const ARTICULO = {
   edicion: 1,
   resumen: 'Tu equipo atiende el WhatsApp de la empresa desde Acuarius: los mensajes llegan solos, ves si se leyeron y pasas cada chat al pipeline a tu nombre.',
   respuesta: 'En Acuarius, WhatsApp para equipos de ventas es una bandeja compartida: tu número de WhatsApp Business se conecta a Conversaciones y todo tu equipo atiende desde ahí. Los mensajes aparecen en vivo, sin recargar, con ✓ enviado, ✓✓ entregado y ✓✓ azul leído. Buscas chats por nombre o teléfono, descartas el spam, respondes con plantillas tras 24 horas y pasas cada conversación al pipeline a tu nombre.',
-  video: { id: 'LW-DJTNFNak', titulo: 'El inbox: todas tus conversaciones en un solo lugar', subido: '2026-10-21', segundos: 131, propio: false },
+  video: { id: 'rM4pfm06f4I', titulo: "El inbox: WhatsApp, Instagram y chat web en un solo lugar, con el contacto a la mano", subido: '2026-11-22', segundos: 122, propio: false },
   ilustracion: 'whatsapp',
   secciones: [
     {

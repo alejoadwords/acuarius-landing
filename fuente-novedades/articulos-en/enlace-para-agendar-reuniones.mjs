@@ -9,7 +9,7 @@ export const ARTICULO = {
   edicion: 1,
   resumen: 'Share a link with your free time slots. Whoever opens it picks a day and time, the meeting is created in your Google Calendar with Meet, and the person lands in your CRM.',
   respuesta: 'A meeting scheduling link is your own page, like app.acuarius.app/reunion/your-name-demo, that shows only the times you are free based on your hours and your Google Calendar. The person picks a day and time and leaves their details. The meeting is created in your Google account with a Meet link, they get the invitation by email, and they enter your CRM as a lead assigned to you.',
-  video: { id: 'ubVfMIR_Sf4', titulo: 'CRM calendar: tasks, meetings and Google Calendar sync', subido: '2026-08-07', segundos: 144, propio: false },
+  video: { id: 'YGTOLEr-D10', titulo: "Calendar and meeting links: your Google calendar and a link to get booked", subido: '2026-11-23', segundos: 104, propio: false },
   ilustracion: 'agenda',
   secciones: [
     {

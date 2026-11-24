@@ -15,17 +15,17 @@ const VIDEOS = [
  },
  {
   "cat": "primeros-pasos",
-  "t": "Tour completo de Acuarius — CRM y marketing en un solo lugar",
-  "d": "Dónde está cada cosa y para qué sirve: Inicio y el Pulso, CRM, Marketing, Plataformas de pauta, Conversaciones, Análisis, Comando K y el soporte dentro de la app.",
-  "dur": "3:57",
-  "id": "NEXArTIcM_c"
+  "t": "Tour completo de Acuarius: el CRM con IA para vender por WhatsApp",
+  "d": "Un recorrido por toda la plataforma: Inicio con tu ruta de arranque, el CRM con Contactos, Empresas y Oportunidades, Marketing, Plataformas de pauta, Conversaciones con Agentes IA, Análisis y el atajo Comando K.",
+  "dur": "2:29",
+  "id": "uGcLL8DP2SA"
  },
  {
   "cat": "primeros-pasos",
-  "t": "Tu prueba Pro de 14 días en Acuarius — qué incluye y cómo aprovecharla",
-  "d": "Qué incluye la prueba, sus cupos mensuales, un orden para aprovecharla semana a semana y qué pasa cuando termina.",
-  "dur": "2:09",
-  "id": "j05ZT7bsFZk"
+  "t": "Tu prueba Pro de 14 días en Acuarius: qué incluye y cómo seguir",
+  "d": "Qué incluye la prueba, sus cupos, un orden para aprovecharla y cómo seguir al terminar: la licencia Pro, los complementos y el pago con tarjeta, mensual o anual.",
+  "dur": "2:18",
+  "id": "fiVI7EZz-Z8"
  },
  {
   "cat": "primeros-pasos",
@@ -50,24 +50,31 @@ const VIDEOS = [
  },
  {
   "cat": "crm",
-  "t": "El pipeline y la ficha del prospecto",
-  "d": "El tablero por etapas, mover y cerrar negocios, buscar y filtrar, evitar duplicados, la ficha completa del prospecto y el Copiloto con IA.",
-  "dur": "2:39",
-  "id": "VJvmwWSeMeU"
+  "t": "Contactos, Empresas y Oportunidades: tu CRM, más ordenado",
+  "d": "Cada persona una sola vez, con todas sus oportunidades e historial; las empresas con sus contactos; y varias oportunidades por persona sin duplicarla.",
+  "dur": "2:21",
+  "id": "3gIrqOuNBIQ"
  },
  {
   "cat": "crm",
-  "t": "Procesos de venta: tableros con las etapas de tu negocio",
-  "d": "Crea hasta 10 procesos de venta, cada uno con sus etapas, colores y probabilidad de cierre, y elige el proceso por defecto para los prospectos nuevos.",
-  "dur": "1:27",
-  "id": "FlWZq8bgvkU"
+  "t": "Oportunidades: el tablero de ventas y la ficha de cada negocio",
+  "d": "El tablero de oportunidades por etapa y la ficha de cada negocio: mover de etapa, ganado o perdido con su motivo, filtros, vista de lista, actividad con menciones, tareas, citas y propuestas.",
+  "dur": "2:14",
+  "id": "oLX_YnzVNkM"
+ },
+ {
+  "cat": "crm",
+  "t": "Procesos de venta: tableros con las etapas reales de tu negocio",
+  "d": "Crea hasta diez procesos con sus propias etapas, la probabilidad de cierre y qué pasa al entrar a cada etapa: una cita, una tarea o una nota.",
+  "dur": "1:26",
+  "id": "YkUFhIEF5kE"
  },
  {
   "cat": "crm",
   "t": "Importa tu base en minutos: Excel, CSV o Google Sheets",
-  "d": "Pasa tus contactos a Acuarius: revisa las columnas, ponle una etiqueta al grupo, decide qué hacer con los repetidos y quién los atiende.",
-  "dur": "1:50",
-  "id": "shozxp5u_KQ"
+  "d": "Sube un Excel o CSV o pega desde Google Sheets, asigna las columnas, elige si van a un proceso o solo como contactos, la etiqueta, los repetidos, quién los atiende y revisa el cupo antes de importar.",
+  "dur": "1:45",
+  "id": "GxIbWoUu3dI"
  },
  {
   "cat": "crm",
@@ -78,31 +85,38 @@ const VIDEOS = [
  },
  {
   "cat": "crm",
-  "t": "Etiquetas en el CRM: el sistema que conecta filtros, campañas y automatizaciones",
-  "d": "Una etiqueta bien puesta te sirve para segmentar, disparar flujos y medir después.",
-  "dur": "2:21",
-  "id": "7vltri_n8S4"
+  "t": "Etiquetas: organiza tus prospectos y escríbele a cada grupo",
+  "d": "Ponlas desde la ficha, mira tu catálogo, conoce las que se ponen solas, filtra el tablero, elige a quién le llega una campaña y arranca automatizaciones con una etiqueta.",
+  "dur": "1:32",
+  "id": "uRvGgpObIx0"
  },
  {
   "cat": "crm",
-  "t": "Agenda del CRM: tareas, reuniones y sincronización con Google Calendar",
-  "d": "Todo lo que tienes que hacer hoy, sincronizado con el calendario que ya usas.",
-  "dur": "2:24",
-  "id": "ubVfMIR_Sf4"
+  "t": "Agenda y enlaces de reunión: tu calendario con Google y un enlace para que te agenden",
+  "d": "La agenda del equipo y el filtro por asesor, tu propio Google Calendar, reuniones con Meet e invitación al prospecto, y tu enlace para que te agenden en tus horas libres.",
+  "dur": "1:44",
+  "id": "YGTOLEr-D10"
  },
  {
   "cat": "marketing",
-  "t": "Tu primera campaña de correo — paso a paso",
-  "d": "Asunto y preencabezado, plantilla o redacción con IA, imagen y botón, a quién le llega, prueba y revisión antes de enviar o programar.",
-  "dur": "2:02",
-  "id": "WsKoAfDXNq0"
+  "t": "Tu primera campaña de correo: diseña el correo y envíalo a tu base",
+  "d": "Diseña el correo con el constructor (bases, textos, variables, bloques y vista en celular) y envíalo en una campaña: asunto, plantilla, audiencia, prueba y revisión antes de enviar o programar.",
+  "dur": "2:07",
+  "id": "WafxNvvoIBw"
  },
  {
   "cat": "marketing",
-  "t": "Automatizaciones — seguimiento que sale solo",
-  "d": "Lanzadores, acciones, esperas, condiciones y ramas, y el horario de envío que permite la ley.",
-  "dur": "2:02",
-  "id": "_hbP-UkHnbc"
+  "t": "Automatizaciones en Acuarius: recetas listas y flujos a tu medida",
+  "d": "Más de 40 recetas listas, el paquete recomendado para tu negocio y el editor: lanzador, quién entra y cuándo sale, pasos, condiciones, lienzo y resultados de los últimos 30 días.",
+  "dur": "1:57",
+  "id": "k-hOTMLX63Y"
+ },
+ {
+  "cat": "marketing",
+  "t": "Prospección: encuentra en Google a tus próximos clientes",
+  "d": "Busca negocios por tipo y zona, mira su teléfono, web y calificación, filtra y agrégalos a tu CRM sin duplicados.",
+  "dur": "1:43",
+  "id": "OvtdmmR47JI"
  },
  {
   "cat": "marketing",
@@ -127,17 +141,17 @@ const VIDEOS = [
  },
  {
   "cat": "conversaciones",
-  "t": "El inbox: todas tus conversaciones en un solo lugar",
-  "d": "Atiende WhatsApp e Instagram con tu agente de IA o tu equipo: filtros, ventana de 24 horas, notas internas, respuestas rápidas, mensajes programados y Pasar al pipeline.",
-  "dur": "2:10",
-  "id": "LW-DJTNFNak"
+  "t": "El inbox: WhatsApp, Instagram y chat web en un solo lugar, con el contacto a la mano",
+  "d": "La bandeja en vivo, filtros por red y estado, agente o equipo, el panel del contacto (datos, etapa, responsable, campos, notas y seguimiento), respuestas rápidas, plantillas de WhatsApp, tonos y Pasar al pipeline.",
+  "dur": "2:02",
+  "id": "rM4pfm06f4I"
  },
  {
   "cat": "conversaciones",
-  "t": "Agentes IA — atiende tus chats y califica prospectos",
-  "d": "Crea tu agente de IA, conéctalo a tus chats, define cómo califica a cada prospecto y pruébalo antes de encenderlo sin gastar tu cupo.",
-  "dur": "2:38",
-  "id": "ntRgbc6J2Nk"
+  "t": "Agentes de IA: atiende tus chats, califica y pasa el cliente a tu equipo",
+  "d": "Identidad y contexto del negocio, opciones del agente, preguntas frecuentes, canales, calificación y proceso, el probador, corregir respuestas y Mejoras, y cómo trabaja en vivo.",
+  "dur": "1:59",
+  "id": "23J7T2r_SxA"
  },
  {
   "cat": "analisis",
@@ -218,7 +232,7 @@ export const FILAS = [
 export const CONTENIDO = {
   '/academia/': {
     badge: VIDEOS.length + ' videos · gratis · en español',
-    sub: 'Videos cortos, de dos a cuatro minutos, para dejar tu cuenta lista y sacarle provecho a cada módulo. Se reproducen aquí mismo.',
+    sub: 'Videos cortos, de uno a cuatro minutos, para dejar tu cuenta lista y sacarle provecho a cada módulo. Se reproducen aquí mismo.',
     secciones: [
       { tipo: 'html', label: 'Videos', h2: 'Aprende Acuarius paso a paso', html: academiaHTML() },
       { tipo: 'texto', label: 'Por dónde empezar', h2: '¿Por dónde empiezo?',
