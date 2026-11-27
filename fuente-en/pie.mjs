@@ -28,7 +28,7 @@ export const PARES_PIE = [
   ['>Términos de servicio<', '>Terms of service<'],
   ['>Reembolsos y cancelación<', '>Refunds and cancellation<'],
   ['<div class="footer-col-title" style="margin-top:22px">Contacto</div>', '<div class="footer-col-title" style="margin-top:22px">Contact</div>'],
-  ['· Operado y facturado por Aixion Labs Solutions LLC · 15723 Chapel Lake Dr, Cypress, TX 77429, EE. UU.', '· Operated and billed by Aixion Labs Solutions LLC · 15723 Chapel Lake Dr, Cypress, TX 77429, USA'],
+  ['· Bogotá, Colombia', '· Bogotá, Colombia'],
   ['Hecho con ❤️ para latinoamérica', 'Made with ❤️ for Latin America'],
 ];
 

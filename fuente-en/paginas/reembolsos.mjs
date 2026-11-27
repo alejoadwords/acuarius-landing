@@ -12,8 +12,8 @@ export const PARES = [
    `<h1>Refund, Cancellation and Dispute Policy</h1>`],
   [`<p class="updated">Vigente desde el 27 de noviembre de 2026</p>`,
    `<p class="updated">Effective as of November 27, 2026</p>\n\n  <p>This English version is a courtesy translation. If it differs from the Spanish version, the Spanish version prevails.</p>`],
-  [`<p>Esta política explica cómo cancelar tu suscripción a Acuarius, cuándo puedes pedir un reembolso y qué hacer si ves un cobro que no reconoces. Hace parte de los <a href="https://acuarius.app/terms.html">Términos de Servicio</a>. Acuarius es una marca operada y facturada por Aixion Labs Solutions LLC (Texas, Estados Unidos).</p>`,
-   `<p>This policy explains how to cancel your Acuarius subscription, when you can request a refund and what to do if you see a charge you do not recognize. It is part of the <a href="https://acuarius.app/terms.html">Terms of Service</a>. Acuarius is a brand operated and billed by Aixion Labs Solutions LLC (Texas, United States).</p>`],
+  [`<p>Esta política explica cómo cancelar tu suscripción a Acuarius, cuándo puedes pedir un reembolso y qué hacer si ves un cobro que no reconoces. Hace parte de los <a href="https://acuarius.app/terms.html">Términos de Servicio</a>. Acuarius es una marca operada por Johana Liliana Soler Beltran (Colombia); los cobros los factura Aixion Labs Solutions LLC (Texas, Estados Unidos).</p>`,
+   `<p>This policy explains how to cancel your Acuarius subscription, when you can request a refund and what to do if you see a charge you do not recognize. It is part of the <a href="https://acuarius.app/terms.html">Terms of Service</a>. Acuarius is a brand operated by Johana Liliana Soler Beltran (Colombia); charges are billed by Aixion Labs Solutions LLC (Texas, United States).</p>`],
 
   // 1
   [`<h2>1. Prueba gratuita</h2>`, `<h2>1. Free trial</h2>`],
@@ -74,10 +74,10 @@ export const PARES = [
    `<li><strong>Email:</strong> <a href="mailto:support@acuarius.app">support@acuarius.app</a></li>`],
   [`<li><strong>Teléfono y WhatsApp:</strong> +57 321 997 2333</li>`,
    `<li><strong>Phone and WhatsApp:</strong> +57 321 997 2333</li>`],
-  [`<li><strong>Dirección:</strong> Aixion Labs Solutions LLC (Acuarius), 15723 Chapel Lake Dr, Cypress, TX 77429, Estados Unidos</li>`,
-   `<li><strong>Address:</strong> Aixion Labs Solutions LLC (Acuarius), 15723 Chapel Lake Dr, Cypress, TX 77429, United States</li>`],
+  [`<li><strong>Dirección:</strong> Johana Liliana Soler Beltran (Acuarius), Carrera 87 77-23, 111051 Bogotá D.C., Colombia</li>`,
+   `<li><strong>Address:</strong> Johana Liliana Soler Beltran (Acuarius), Carrera 87 77-23, 111051 Bogotá D.C., Colombia</li>`],
 
   // Pie propio de la página
-  [`<p class="footer">© 2026 Acuarius · Operado y facturado por Aixion Labs Solutions LLC · 15723 Chapel Lake Dr, Cypress, TX 77429, EE. UU.</p>`,
-   `<p class="footer">© 2026 Acuarius · Operated and billed by Aixion Labs Solutions LLC · 15723 Chapel Lake Dr, Cypress, TX 77429, USA</p>`],
+  [`<p class="footer">© 2026 Acuarius · Bogotá, Colombia</p>`,
+   `<p class="footer">© 2026 Acuarius · Bogotá, Colombia</p>`],
 ];

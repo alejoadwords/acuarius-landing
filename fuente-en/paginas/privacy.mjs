@@ -4,23 +4,23 @@
 
 export const CABEZA = {
   title: 'Personal Data Processing Policy — Acuarius',
-  description: 'How Acuarius (Aixion Labs Solutions LLC) processes personal data: what we collect, why, who we share it with, how long we keep it and your rights.',
+  description: 'How Acuarius processes personal data: what we collect, why, who we share it with, how long we keep it and your rights.',
 };
 
 export const PARES = [
   [`<h1>Política de Tratamiento de Datos Personales</h1>`,
    `<h1>Personal Data Processing Policy</h1>`],
-  [`<p class="updated">Vigente desde el 4 de noviembre de 2026</p>`,
-   `<p class="updated">Effective as of November 4, 2026</p>\n\n  <p>This English version is a courtesy translation. If it differs from the Spanish version, the Spanish version prevails.</p>`],
+  [`<p class="updated">Vigente desde el 27 de noviembre de 2026</p>`,
+   `<p class="updated">Effective as of November 27, 2026</p>\n\n  <p>This English version is a courtesy translation. If it differs from the Spanish version, the Spanish version prevails.</p>`],
   [`<p>Esta política explica cómo tratamos los datos personales en Acuarius (<a href="https://app.acuarius.app">app.acuarius.app</a> y <a href="https://acuarius.app">acuarius.app</a>), conforme a la Ley 1581 de 2012, el Decreto 1377 de 2013 (compilado en el Decreto 1074 de 2015) y demás normas colombianas de protección de datos, y a las leyes de los demás países donde prestamos el servicio.</p>`,
    `<p>This policy explains how we process personal data at Acuarius (<a href="https://app.acuarius.app">app.acuarius.app</a> and <a href="https://acuarius.app">acuarius.app</a>), in accordance with Ley 1581 de 2012, Decreto 1377 de 2013 (compiled into Decreto 1074 de 2015) and other Colombian data protection regulations, and with the laws of the other countries where we provide the service.</p>`],
 
   // 1
   [`<h2>1. Responsable del tratamiento</h2>`, `<h2>1. Data controller</h2>`],
-  [`<li><strong>Responsable:</strong> Aixion Labs Solutions LLC, sociedad que opera y factura la marca Acuarius (Texas, Estados Unidos; File Number 805940283)</li>`,
-   `<li><strong>Controller:</strong> Aixion Labs Solutions LLC, the company that operates and bills the Acuarius brand (Texas, United States; File Number 805940283)</li>`],
-  [`<li><strong>Dirección:</strong> 15723 Chapel Lake Dr, Cypress, TX 77429, Estados Unidos</li>`,
-   `<li><strong>Address:</strong> 15723 Chapel Lake Dr, Cypress, TX 77429, United States</li>`],
+  [`<li><strong>Responsable:</strong> Johana Liliana Soler Beltran, persona natural que opera la marca Acuarius (Colombia)</li>`,
+   `<li><strong>Controller:</strong> Johana Liliana Soler Beltran, the individual who operates the Acuarius brand (Colombia)</li>`],
+  [`<li><strong>Dirección:</strong> Carrera 87 77-23, 111051 Bogotá D.C., Colombia</li>`,
+   `<li><strong>Address:</strong> Carrera 87 77-23, 111051 Bogotá D.C., Colombia</li>`],
   [`<li><strong>En Colombia:</strong> Check In Col SAS, NIT 900.825.601-2, Carrera 53 #106-280, Centro Empresarial, Barranquilla, presta el servicio de SMS; frente a los datos de ese servicio actúa también como responsable.</li>`,
    `<li><strong>In Colombia:</strong> Check In Col SAS, NIT 900.825.601-2, Carrera 53 #106-280, Centro Empresarial, Barranquilla, provides the SMS service; with respect to the data of that service, it also acts as a controller.</li>`],
   [`<li><strong>Correo:</strong> <a href="mailto:support@acuarius.app">support@acuarius.app</a></li>`,
@@ -167,8 +167,8 @@ export const PARES = [
    `<p>If we change this policy, we will update the effective date and, if the change is significant, we will notify you by email or within the platform before it takes effect.</p>`],
 
   // Pie propio de la página
-  [`<p class="footer">© 2026 Acuarius · Operado y facturado por Aixion Labs Solutions LLC · 15723 Chapel Lake Dr, Cypress, TX 77429, EE. UU.</p>`,
-   `<p class="footer">© 2026 Acuarius · Operated and billed by Aixion Labs Solutions LLC · 15723 Chapel Lake Dr, Cypress, TX 77429, USA</p>`],
+  [`<p class="footer">© 2026 Acuarius · Bogotá, Colombia</p>`,
+   `<p class="footer">© 2026 Acuarius · Bogotá, Colombia</p>`],
 ];
 
 // Normas y autoridad colombianas: se citan por su nombre oficial, sin traducir.
