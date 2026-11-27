@@ -246,6 +246,6 @@ export const CONTENIDO = {
       { q: '¿Cada cuánto hay videos nuevos?', a: 'Cada función nueva importante sale con su guía en video en <a href="/novedades/">Novedades</a>, que publicamos cada quincena.' },
       { q: '¿Puedo ver los videos dentro de Acuarius?', a: 'Sí. Dentro de la aplicación, la sección Academia tiene los mismos videos, ordenados por módulo.' },
     ],
-    cta: { h2: 'Practica mientras aprendes', sub: 'Crea tu cuenta y sigue los videos con tus propios datos: tienes 14 días de Pro gratis, sin tarjeta.' },
+    cta: { h2: 'Practica mientras aprendes', sub: 'Crea tu cuenta y sigue los videos con tus propios datos: tienes 14 días de Pro gratis y hoy no se cobra nada.' },
   },
 };

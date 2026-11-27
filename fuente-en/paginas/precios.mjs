@@ -7,25 +7,21 @@ const correo = (s) => encodeURIComponent(s);
 
 export const CABEZA = {
   title: 'Acuarius Pricing: CRM with an AI Agent from 39 USD',
-  description: 'Acuarius pricing: a free-forever plan and one license from 39 USD a month with 3 users, 1,000 contacts and an AI agent. Calculate your exact price.',
+  description: 'Acuarius pricing: one Pro license from 39 USD a month with 3 users, 1,000 contacts and an AI agent, plus a 14-day free trial. Calculate your exact price.',
 };
 
 export const PARES = [
   // ── Hero ──
   ['<p class="section-label">Precios</p>', '<p class="section-label">Pricing</p>'],
   ['Precios de Acuarius, sin letra pequeña', 'Acuarius pricing, no fine print'],
-  ['Empieza gratis y, cuando crezcas, una sola licencia desde 39 USD al mes. Sumas solo lo que necesites: usuarios, contactos, mensajes del agente o clientes.',
-    'Start free and, as you grow, a single license from 39 USD a month. Add only what you need: users, contacts, agent messages or clients.'],
+  ['Empieza con 14 días gratis de Pro y sigue con una sola licencia desde 39 USD al mes. Sumas solo lo que necesites: usuarios, contactos, mensajes del agente o clientes.',
+    'Start with 14 free days of Pro, then keep a single license from 39 USD a month. Add only what you need: users, contacts, agent messages or clients.'],
 
   // ── Planes ──
   ['<p class="section-label">Planes y precios</p>', '<p class="section-label">Plans and pricing</p>'],
   ['Simple y transparente', 'Simple and transparent'],
   ['Sin sorpresas. Sin letra pequeña. El plan que necesitas al precio justo para LatAm.', 'No surprises. No fine print. The plan you need at a fair price for Latin America.'],
-  ['Acceso permanente con funciones esenciales para explorar la plataforma', 'Permanent access with the essential features to explore the platform'],
-  ['<span class="plan-price-period">/ mes</span>', '<span class="plan-price-period">/ month</span>'],
-  ['Sin tarjeta de crédito · Siempre gratis', 'No credit card · Always free'],
-  ['<strong>CRM con hasta 50 contactos</strong> · pipeline, tareas y agenda', '<strong>CRM with up to 50 contacts</strong> · pipeline, tasks and calendar'],
-  ['Crear cuenta gratis', 'Create a free account'],
+  ['Prueba 14 días gratis', 'Start 14-day free trial'],
   ['<div class="plan-badge">Más popular</div>', '<div class="plan-badge">Most popular</div>'],
   ['Para pymes, emprendedores y freelancers que quieren su operación de ventas completa en un solo sitio', 'For small businesses, entrepreneurs and freelancers who want their whole sales operation in one place'],
   ['>USD / mes<', '>USD / month<'],
@@ -69,7 +65,7 @@ export const PARES = [
   ['id="calc-plan">Plan Pro<', 'id="calc-plan">Pro plan<'],
   ['Todo incluido · Cancela cuando quieras', 'All included · Cancel anytime'],
   ['Empieza gratis 14 días', 'Start your 14-day free trial'],
-  ['Sin tarjeta. Sin compromiso.', 'No card. No commitment.'],
+  ['Hoy no se cobra nada. Cancela cuando quieras.', 'Nothing charged today. Cancel anytime.'],
   ['<span>Usuarios con acceso</span>', '<span>Users with access</span>'],
   ['Personas de tu equipo dentro de la plataforma', 'People on your team inside the platform'],
   ['aria-label="Menos usuarios"', 'aria-label="Fewer users"'],
@@ -152,9 +148,9 @@ export const PARES = [
   ['¿Cuánta gente de mi equipo puede trabajar en el CRM?', 'How many people on my team can work in the CRM?'],
   ['La licencia incluye 3 usuarios y puedes sumar más por 9 USD al mes cada uno. Los invitas por correo, cada uno entra con su propia cuenta y trabaja los leads que tiene asignados. Los leads se reparten por turnos entre el equipo o fijos a una persona según la fuente, y tú ves el rendimiento de cada comercial en el reporte.',
     'The license includes 3 users and you can add more for 9 USD a month each. You invite them by email, each one signs in with their own account and works the leads assigned to them. Leads are assigned in rotation across the team or to one fixed person depending on the source, and you see each salesperson’s performance in the report.'],
-  ['¿Necesito tarjeta de crédito para la prueba gratuita?', 'Do I need a credit card for the free trial?'],
-  ['No. Puedes empezar tu prueba de 14 días completamente gratis, sin ingresar ningún método de pago. Solo necesitas tu email o cuenta de Google.',
-    'No. You can start your 14-day trial completely free, without entering any payment method. All you need is your email or Google account.'],
+  ['¿Necesito una tarjeta para la prueba gratuita?', 'Do I need a card for the free trial?'],
+  ['Sí. Para empezar los 14 días registras una tarjeta a través de Stripe, pero hoy no se cobra nada. Si no cancelas antes de que termine la prueba, al día siguiente se cobra el plan Pro mensual (39 USD) y se renueva cada mes hasta que lo canceles. Antes de ese cobro puedes elegir tu plan y sus complementos, y puedes cancelar desde tu cuenta en cualquier momento de la prueba, sin costo.',
+    'Yes. To start the 14 days you add a card through Stripe, but nothing is charged today. If you don’t cancel before the trial ends, the monthly Pro plan (39 USD) is charged the next day and renews every month until you cancel. Before that charge you can choose your plan and its add-ons, and you can cancel from your account at any time during the trial, at no cost.'],
   ['¿Puedo usar Acuarius si soy freelancer con múltiples clientes?', 'Can I use Acuarius as a freelancer with multiple clients?'],
   ['Sí. Cada cliente es un perfil aparte, con su propio pipeline, sus leads, sus conexiones de Google Ads y Meta y sus reportes. Tu licencia incluye tu negocio y cada cliente adicional cuesta 9 USD al mes. Cambias de cliente con un clic y el agente sabe exactamente con quién estás trabajando.',
     'Yes. Each client is a separate profile, with its own pipeline, leads, Google Ads and Meta connections, and reports. Your license includes your business, and each additional client costs 9 USD a month. You switch clients in one click and the agent knows exactly who you’re working with.'],
@@ -164,10 +160,10 @@ export const PARES = [
 
   // ── CTA final ──
   ['Deja de perder ventas<br>que ya tenías.', 'Stop losing sales<br>you already had.'],
-  ['Ordena tus contactos, dale un responsable a cada uno y mide lo que se cierra. Empieza gratis hoy con 14 días del plan Pro completo, sin tarjeta de crédito.',
-    'Organize your contacts, give each one an owner and measure what closes. Start free today with 14 days of the full Pro plan, no credit card required.'],
+  ['Ordena tus contactos, dale un responsable a cada uno y mide lo que se cierra. Empieza con 14 días gratis del plan Pro completo: hoy no se cobra nada.',
+    'Organize your contacts, give each one an owner and measure what closes. Start with 14 free days of the full Pro plan: nothing is charged today.'],
   ['subject=Quiero%20hablar%20con%20el%20equipo%20de%20Acuarius&body=Hola%2C%20me%20gustar%C3%ADa%20conocer%20Acuarius%20antes%20de%20crear%20la%20cuenta.',
     'subject=' + correo('I want to talk to the Acuarius team') + '&body=' + correo('Hi, I would like to learn about Acuarius before creating an account.')],
   ['>Hablar con el equipo<', '>Talk to the team<'],
-  ['Sin tarjeta de crédito · 14 días gratis · Cancela cuando quieras', 'No credit card · 14 days free · Cancel anytime'],
+  ['14 días gratis · Hoy no se cobra nada · Cancela cuando quieras', '14 days free · Nothing charged today · Cancel anytime'],
 ];

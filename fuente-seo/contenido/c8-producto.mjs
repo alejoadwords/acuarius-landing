@@ -168,7 +168,7 @@ CONTENIDO['/herramientas/enlace-de-whatsapp/'] = {
     { tipo: 'texto', label: 'Y después', h2: 'Cuando empiecen a escribirte',
       parrafos: [
         'Un enlace trae conversaciones; atenderlas es otro tema. Si varias personas de tu equipo responden el mismo número, o si te escriben de noche, conviene tener los chats en una <a href="/crm/whatsapp/">bandeja de WhatsApp compartida</a> y un <a href="/agente-ia/">agente de IA que responda</a> mientras nadie está disponible.',
-        'En Acuarius, cada persona que te escribe queda como contacto en tu CRM, con su conversación, su etapa y el asesor que la atiende. Puedes empezar gratis.',
+        'En Acuarius, cada persona que te escribe queda como contacto en tu CRM, con su conversación, su etapa y el asesor que la atiende. Puedes probarlo 14 días gratis.',
       ] },
   ],
   faq: [
@@ -178,5 +178,5 @@ CONTENIDO['/herramientas/enlace-de-whatsapp/'] = {
     { q: '¿Puedo cambiar el mensaje después?', a: 'El mensaje va dentro del enlace. Si lo cambias, se crea un enlace nuevo y tienes que reemplazarlo donde lo pegaste.' },
     { q: '¿Cómo lo convierto en código QR?', a: 'Copia el enlace y pégalo en cualquier generador de códigos QR. Al escanearlo, se abre el chat con tu mensaje.' },
   ],
-  cta: { h2: 'Que cada chat se convierta en una venta', sub: 'Con Acuarius, las conversaciones de WhatsApp llegan a tu CRM y un agente de IA responde mientras tu equipo vende. Empieza gratis.' },
+  cta: { h2: 'Que cada chat se convierta en una venta', sub: 'Con Acuarius, las conversaciones de WhatsApp llegan a tu CRM y un agente de IA responde mientras tu equipo vende. Pruébalo 14 días gratis.' },
 };

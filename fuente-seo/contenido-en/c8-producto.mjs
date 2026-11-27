@@ -167,7 +167,7 @@ PAGINAS['/herramientas/enlace-de-whatsapp/'] = {
     { tipo: 'texto', label: 'What comes next', h2: 'When people start messaging you',
       parrafos: [
         'A link brings conversations; handling them is another matter. If several people on your team answer the same number, or if people message you at night, it helps to have your chats in a <a href="/crm/whatsapp/">shared WhatsApp inbox</a> and an <a href="/agente-ia/">AI agent that replies</a> while nobody is available.',
-        'In Acuarius, everyone who messages you becomes a contact in your CRM, with their conversation, their stage and the rep handling them. You can start for free.',
+        'In Acuarius, everyone who messages you becomes a contact in your CRM, with their conversation, their stage and the rep handling them. You can try it free for 14 days.',
       ] },
   ],
   faq: [
@@ -177,5 +177,5 @@ PAGINAS['/herramientas/enlace-de-whatsapp/'] = {
     { q: 'Can I change the message later?', a: 'The message is part of the link. If you change it, a new link is created and you have to replace it wherever you pasted it.' },
     { q: 'How do I turn it into a QR code?', a: 'Copy the link and paste it into any QR code generator. When someone scans it, the chat opens with your message.' },
   ],
-  cta: { h2: 'Turn every chat into a sale', sub: 'With Acuarius, your WhatsApp conversations go into your CRM and an AI agent replies while your team sells. Start for free.' },
+  cta: { h2: 'Turn every chat into a sale', sub: 'With Acuarius, your WhatsApp conversations go into your CRM and an AI agent replies while your team sells. Try it free for 14 days.' },
 };

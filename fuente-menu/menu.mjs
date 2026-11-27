@@ -64,7 +64,7 @@ export const MENU = {
       { titulo: 'Por tipo de empresa', enlaces: [
         { t: 'Pymes', d: 'Todo tu proceso comercial en un solo lugar.', url: '/crm/' },
         { t: 'Agencias de marketing', d: 'Varios clientes, cada uno con sus datos y reportes.', url: '/agencias/' },
-        { t: 'CRM gratis', d: 'Empieza sin pagar y crece cuando lo necesites.', url: '/crm/gratis/' },
+        { t: 'CRM gratis', d: '14 días con todo Pro: hoy no se cobra nada.', url: '/crm/gratis/' },
       ] },
       { titulo: 'Comparar', enlaces: [
         { t: 'Mejores CRM con WhatsApp', d: 'La comparativa completa para LatAm.', url: '/mejores-crm-con-whatsapp/' },
@@ -111,7 +111,7 @@ const EN = {
   ], franja: [['Integrations', 'Shopify, WooCommerce, VTEX, Google Calendar, Meta, Google Ads and API'], ['What’s new', 'What’s new every two weeks, with video guides']] },
   soluciones: { titulo: 'Solutions', columnas: [
     ['By industry', [['Real estate', 'Rentals and sales, each with its own process.'], ['Clinics and healthcare', 'Appointments, reminders and patient follow-up.'], ['Restaurants', 'Reservations and orders that come in on WhatsApp.'], ['Online stores', 'Shopify, WooCommerce and VTEX connected to the CRM.']]],
-    ['By company type', [['Small businesses', 'Your whole sales process in one place.'], ['Marketing agencies', 'Many clients, each with their own data and reports.'], ['Free CRM', 'Start without paying and grow when you need to.']]],
+    ['By company type', [['Small businesses', 'Your whole sales process in one place.'], ['Marketing agencies', 'Many clients, each with their own data and reports.'], ['Free CRM', '14 days of full Pro: nothing charged today.']]],
     ['Compare', [['Best WhatsApp CRMs', 'The full comparison for Latin America.'], ['Acuarius vs HubSpot', ''], ['Acuarius vs Kommo', '']]],
   ], destacada: ['Guide', 'Which WhatsApp CRM is right for you?', 'What each one really includes, compared for Latin America.', 'Read the comparison'] },
   recursos: { titulo: 'Resources', columnas: [
@@ -170,8 +170,8 @@ function panel(clave, m) {
 
 // Textos fijos del menú en cada idioma.
 const UI = {
-  es: { inicio: 'Acuarius, inicio', principal: 'Principal', precios: 'Precios', login: 'Iniciar sesión', demo: 'Agendar demo', registro: 'Crear cuenta gratis', abrir: 'Abrir menú', otro: 'EN', otroLargo: 'English', otroTitulo: 'English version', otroLang: 'en' },
-  en: { inicio: 'Acuarius, home', principal: 'Main', precios: 'Pricing', login: 'Sign in', demo: 'Book a demo', registro: 'Create free account', abrir: 'Open menu', otro: 'ES', otroLargo: 'Ver en español', otroTitulo: 'Ver en español', otroLang: 'es' },
+  es: { inicio: 'Acuarius, inicio', principal: 'Principal', precios: 'Precios', login: 'Iniciar sesión', demo: 'Agendar demo', registro: 'Prueba gratis', abrir: 'Abrir menú', otro: 'EN', otroLargo: 'English', otroTitulo: 'English version', otroLang: 'en' },
+  en: { inicio: 'Acuarius, home', principal: 'Main', precios: 'Pricing', login: 'Sign in', demo: 'Book a demo', registro: 'Start free trial', abrir: 'Open menu', otro: 'ES', otroLargo: 'Ver en español', otroTitulo: 'Ver en español', otroLang: 'es' },
 };
 
 // `activo`: ruta de la página actual (en su idioma), para marcar Precios y
@@ -305,7 +305,7 @@ button,input,select,textarea{font-family:var(--font-body)}
   .am-cajon-ctas .am-borde{display:flex}
   body.am-bloqueo{overflow:hidden}
 }
-/* Logo, «Crear cuenta gratis» y hamburguesa suman 377 px: más angosto, la hamburguesa se salía de la pantalla y no se podía abrir el menú. */
+/* Logo, el botón de registro y hamburguesa suman 377 px: más angosto, la hamburguesa se salía de la pantalla y no se podía abrir el menú. */
 @media(max-width:400px){
   .am-in{padding:0 12px;gap:8px}.am-logo img{height:20px}.am-ctas{gap:4px}
   .am-ctas .am-pri{padding:8px 12px}.am-pri svg{display:none}

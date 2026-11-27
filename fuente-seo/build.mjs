@@ -58,10 +58,10 @@ const NIVEL_EN = { Pilar: 'Pillar', 'Sub-pilar': 'Sub-pillar', Vertical: 'Indust
 
 // Textos fijos de la plantilla en cada idioma.
 const T = {
-  es: { lang: 'es', locale: 'es_419', inLanguage: 'es-419', inicio: 'Inicio', migas: 'Migas de pan', empieza: 'Empieza gratis', verPrecios: 'Ver precios', nota: ['Sin tarjeta de crédito', 'Pro gratis 14 días', 'En español'],
-    faqLabel: 'Preguntas frecuentes', faqTitulo: 'Lo que más nos preguntan', sigue: 'Sigue leyendo', crear: 'Crear cuenta gratis', wa: 'Hablar por WhatsApp', waTexto: 'Hola, quiero saber más de Acuarius' },
-  en: { lang: 'en', locale: 'en_US', inLanguage: 'en', inicio: 'Home', migas: 'Breadcrumbs', empieza: 'Start free', verPrecios: 'See pricing', nota: ['No credit card', '14 days of Pro, free', 'Built for Latin America'],
-    faqLabel: 'Frequently asked questions', faqTitulo: 'What people ask us most', sigue: 'Keep reading', crear: 'Create free account', wa: 'Chat on WhatsApp', waTexto: 'Hi, I’d like to learn more about Acuarius' },
+  es: { lang: 'es', locale: 'es_419', inLanguage: 'es-419', inicio: 'Inicio', migas: 'Migas de pan', empieza: 'Empieza gratis', verPrecios: 'Ver precios', nota: ['Pro gratis 14 días', 'Hoy no se cobra nada', 'En español'],
+    faqLabel: 'Preguntas frecuentes', faqTitulo: 'Lo que más nos preguntan', sigue: 'Sigue leyendo', crear: 'Prueba 14 días gratis', wa: 'Hablar por WhatsApp', waTexto: 'Hola, quiero saber más de Acuarius' },
+  en: { lang: 'en', locale: 'en_US', inLanguage: 'en', inicio: 'Home', migas: 'Breadcrumbs', empieza: 'Start free', verPrecios: 'See pricing', nota: ['14 days of Pro, free', 'Nothing charged today', 'Built for Latin America'],
+    faqLabel: 'Frequently asked questions', faqTitulo: 'What people ask us most', sigue: 'Keep reading', crear: 'Start 14-day free trial', wa: 'Chat on WhatsApp', waTexto: 'Hi, I’d like to learn more about Acuarius' },
 };
 
 // Nombres cortos para las migas de pan. Lo que no esté aquí se deriva del

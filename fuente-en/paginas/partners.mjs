@@ -43,8 +43,8 @@ export const PARES = [
   [`<div class="section-label">Cómo funciona</div>`, `<div class="section-label">How it works</div>`],
   [`Recomiendas, tu cliente paga, tú cobras cada mes.`, `You recommend, your client pays, you get paid every month.`],
   [`<div class="step-title">Te postulas</div>`, `<div class="step-title">You apply</div>`],
-  [`Creas tu cuenta gratis en Acuarius y llenas tu postulación. La revisamos y te avisamos por correo.`,
-   `Create your free Acuarius account and fill out your application. We review it and let you know by email.`],
+  [`Creas tu cuenta en Acuarius, que empieza con 14 días gratis de Pro, y llenas tu postulación. La revisamos y te avisamos por correo.`,
+   `Create your Acuarius account, which starts with 14 free days of Pro, and fill out your application. We review it and let you know by email.`],
   [`<div class="step-title">Compartes tu enlace</div>`, `<div class="step-title">You share your link</div>`],
   [`Al aprobarte recibes tu enlace propio. Cada cuenta que se crea por ahí queda ligada a ti, sin que tengas que reportarla.`,
    `Once approved, you get your own link. Every account created through it is tied to you, without you having to report it.`],
@@ -130,8 +130,8 @@ export const PARES = [
   [`>Preguntas frecuentes<`, `>FAQ<`],
   [`Lo que necesitas saber antes de empezar`, `What you need to know before you start`],
   [`¿Cuánto cuesta ser Partner?`, `How much does it cost to become a Partner?`],
-  [`Nada. Solo necesitas una cuenta de Acuarius, que puede ser la gratuita, y llenar tu postulación desde la sección Partners.`,
-   `Nothing. You just need an Acuarius account, which can be the free one, and to fill out your application from the Partners section.`],
+  [`Nada. Solo necesitas una cuenta de Acuarius, que puede estar en su prueba de 14 días, y llenar tu postulación desde la sección Partners.`,
+   `Nothing. You just need an Acuarius account, which can be in its 14-day trial, and to fill out your application from the Partners section.`],
   [`¿Sobre qué se calcula la comisión?`, `What is the commission calculated on?`],
   [`Sobre la factura completa de su licencia: la licencia más los usuarios, contactos y clientes adicionales que tenga, mensual o anual. Si paga en otra moneda, se convierte a USD con la tasa del día del cobro. Los SMS y los paquetes de mensajes del agente no generan comisión.`,
    `On the full bill for their license: the license plus any extra users, contacts and clients they have, monthly or yearly. If they pay in another currency, it's converted to USD at the exchange rate on the day of the charge. SMS and AI agent message packs don't earn commission.`],
@@ -159,7 +159,7 @@ export const PARES = [
 
   // ── CTA FINAL ──
   [`Deja de recomendar gratis.`, `Stop recommending for free.`],
-  [`Si ya le dices a tus clientes qué herramienta usar, que esa recomendación te pague todos los meses. Postúlate hoy: la cuenta es gratis y la revisamos rápido.`,
-   `If you already tell your clients which tool to use, let that recommendation pay you every month. Apply today: the account is free and we review it quickly.`],
+  [`Si ya le dices a tus clientes qué herramienta usar, que esa recomendación te pague todos los meses. Postúlate hoy: postularte no cuesta nada y revisamos tu postulación rápido.`,
+   `If you already tell your clients which tool to use, let that recommendation pay you every month. Apply today: applying costs nothing and we review your application quickly.`],
   [`Sin costo de entrada · 20 % mientras tu cliente pague · Comisiones en USD`, `No cost to join · 20% for as long as your client pays · Commissions in USD`],
 ];

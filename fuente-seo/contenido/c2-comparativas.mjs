@@ -65,10 +65,10 @@ export const CONTENIDO = {
     faq: [
       { q: '¿Cuál es el mejor CRM con WhatsApp para pymes?', a: 'Depende del tamaño y del presupuesto. Para una pyme latinoamericana de pocos usuarios que vende por WhatsApp, lo más importante es que incluya la API oficial, una bandeja compartida y un pipeline sin cobrar cada cosa por separado. En esa comparación, Acuarius incluye todo en 39 USD al mes con tres usuarios.' },
       { q: '¿Qué diferencia hay entre WhatsApp Business y un CRM con WhatsApp?', a: 'WhatsApp Business funciona en un teléfono y para pocas personas. Un CRM con WhatsApp usa la API oficial para que todo el equipo atienda el mismo número, cada chat quede asociado a un cliente y puedas medir qué conversaciones terminan en venta.' },
-      { q: '¿Hay un CRM con WhatsApp gratis?', a: 'Algunos tienen planes gratis sin WhatsApp. En Acuarius, el plan Free incluye CRM para 50 contactos, y la bandeja de WhatsApp se puede probar 14 días gratis en el plan Pro. <a href="/crm/gratis/">Ver CRM gratis</a>.' },
+      { q: '¿Hay un CRM con WhatsApp gratis?', a: 'Algunos tienen planes gratis sin WhatsApp. En Acuarius puedes probar el CRM con la bandeja de WhatsApp 14 días gratis, con todo lo del plan Pro, y hoy no se cobra nada. <a href="/crm/gratis/">Ver la prueba gratis</a>.' },
       { q: '¿Cuánto cobra Meta por los mensajes de WhatsApp?', a: 'Meta cobra por las conversaciones que la empresa inicia con plantillas, con una tarifa que depende del país y del tipo de mensaje. Ese costo es el mismo en cualquier CRM que use la API oficial.' },
     ],
-    cta: { h2: 'Prueba el CRM con WhatsApp que más incluye', sub: '14 días gratis del plan Pro, sin tarjeta de crédito.' },
+    cta: { h2: 'Prueba el CRM con WhatsApp que más incluye', sub: '14 días gratis del plan Pro: hoy no se cobra nada.' },
   },
 
   '/alternativas/hubspot/': {
@@ -118,7 +118,7 @@ export const CONTENIDO = {
       { q: '¿Cuánto cuesta HubSpot Professional?', a: 'Desde 90 a 100 USD por usuario al mes, más una incorporación obligatoria de 1.500 USD, según su página de precios consultada en octubre de 2026.' },
       { q: '¿Puedo llevarme mis datos de HubSpot?', a: 'Sí. HubSpot permite exportar contactos y negocios en CSV, y el importador de Acuarius los carga reconociendo las columnas.' },
     ],
-    cta: { h2: 'Todo lo que usas de HubSpot, con WhatsApp y sin pagar de más', sub: 'Prueba Acuarius 14 días gratis, sin tarjeta.' },
+    cta: { h2: 'Todo lo que usas de HubSpot, con WhatsApp y sin pagar de más', sub: 'Prueba Acuarius 14 días gratis: hoy no se cobra nada.' },
   },
 
   '/alternativas/kommo/': {
@@ -161,7 +161,7 @@ export const CONTENIDO = {
       { q: '¿Cuál es la alternativa a Kommo más barata?', a: 'Con tres usuarios, Acuarius Pro cuesta 39 USD al mes con pago mensual, frente a 75 USD al mes de Kommo Base pagados por seis meses.' },
       { q: '¿Puedo migrar mis contactos de Kommo?', a: 'Sí. Exporta tus leads de Kommo en CSV o Excel e impórtalos en Acuarius; el importador reconoce las columnas.' },
     ],
-    cta: { h2: 'Vende por WhatsApp pagando mes a mes', sub: 'Prueba Acuarius 14 días gratis, sin tarjeta y sin permanencia.' },
+    cta: { h2: 'Vende por WhatsApp pagando mes a mes', sub: 'Prueba Acuarius 14 días gratis, sin permanencia: hoy no se cobra nada.' },
   },
 
   '/comparativas/acuarius-vs-kommo/': {
@@ -175,7 +175,7 @@ export const CONTENIDO = {
           ['Con 3 usuarios', '75 a 135 USD al mes', '39 USD al mes'],
           ['Con 5 usuarios', '125 a 225 USD al mes', '57 USD al mes'],
           ['Pago mínimo', '6 meses por adelantado', 'Mensual; anual con 2 meses gratis'],
-          ['Plan gratis', 'No (prueba gratuita)', 'Sí, para 50 contactos'],
+          ['Plan gratis', 'No (prueba gratuita)', 'No (prueba de Pro de 14 días)'],
           ['WhatsApp e Instagram', 'Sí', 'Sí'],
           ['Agente de IA', 'Desde el plan Advanced', 'Incluido en Pro: 500 respuestas al mes'],
           ['Pipeline de ventas', 'Sí', 'Sí, hasta 10 pipelines'],
@@ -196,7 +196,7 @@ export const CONTENIDO = {
           { t: 'Gana Kommo', d: 'Si tu equipo ya sabe usar Salesbot y tienes bots armados que no quieres rehacer.' },
           { t: 'Gana Acuarius', d: 'Si eres una pyme de 2 a 10 personas y quieres pagar mes a mes un precio predecible, con el agente de IA incluido.' },
           { t: 'Gana Acuarius', d: 'Si además del chat necesitas campañas de correo, propuestas con firma y pago, y reportes de ventas sin sumar herramientas.' },
-          { t: 'Gana Acuarius', d: 'Si quieres empezar gratis: el plan Free no vence y la prueba de Pro dura 14 días sin tarjeta.' },
+          { t: 'Gana Acuarius', d: 'Si quieres probar antes de pagar: la prueba dura 14 días con todo lo del plan Pro y hoy no se cobra nada.' },
           { t: 'Empate', d: 'Los dos usan la API oficial de WhatsApp, y en los dos Meta cobra aparte las plantillas.' },
         ] },
       { tipo: 'pasos', label: 'Migrar', h2: 'Cómo cambiar de Kommo a Acuarius sin perder nada',
@@ -223,7 +223,7 @@ export const CONTENIDO = {
       { tipo: 'tabla', label: 'Resumen', h2: 'HubSpot vs Acuarius en una tabla',
         cab: ['', 'HubSpot', 'Acuarius'],
         filas: [
-          ['Plan gratis', 'Sí, hasta 2 usuarios', 'Sí, 50 contactos'],
+          ['Plan gratis', 'Sí, hasta 2 usuarios', 'No (prueba de Pro de 14 días)'],
           ['Plan de entrada', 'Starter: desde ~20 USD por usuario al mes', 'Pro: 39 USD al mes con 3 usuarios'],
           ['WhatsApp nativo', 'Desde Marketing Hub o Service Hub Professional', 'Incluido en Pro'],
           ['Costo con WhatsApp y 3 usuarios', '~300 USD al mes + 1.500 USD de incorporación', '39 USD al mes'],
@@ -260,7 +260,7 @@ export const CONTENIDO = {
       { q: '¿Puedo usar Acuarius y HubSpot a la vez?', a: 'Sí. Acuarius tiene webhooks y una API pública, así que puedes enviar los leads o los eventos que necesites a otras herramientas.' },
       { q: '¿Cuánto tarda la migración?', a: 'Para una pyme, normalmente una tarde: exportas contactos y negocios de HubSpot en CSV, los importas en Acuarius y recreas tus etapas.' },
     ],
-    cta: { h2: 'WhatsApp, CRM y agente de IA por 39 USD al mes', sub: 'Prueba Acuarius 14 días gratis, sin tarjeta.' },
+    cta: { h2: 'WhatsApp, CRM y agente de IA por 39 USD al mes', sub: 'Prueba Acuarius 14 días gratis: hoy no se cobra nada.' },
   },
 
   '/alternativas/agencyanalytics/': {
@@ -304,6 +304,6 @@ export const CONTENIDO = {
       { q: '¿Acuarius tiene reportes para clientes?', a: 'Sí. Cada informe se comparte con un enlace vivo o en PDF, con leads, ventas y pauta del cliente. El enlace no expone los datos personales de los leads.' },
       { q: '¿Cuántos clientes puedo manejar en Acuarius?', a: 'Los que necesites. La licencia de 39 USD al mes incluye un negocio y cada cliente adicional cuesta 9 USD al mes, con su propio pipeline. Por encima de 30 clientes hay planes a medida.' },
     ],
-    cta: { h2: 'Reporta ventas, no solo clics', sub: 'Prueba Acuarius 14 días gratis, sin tarjeta.' },
+    cta: { h2: 'Reporta ventas, no solo clics', sub: 'Prueba Acuarius 14 días gratis: hoy no se cobra nada.' },
   },
 };

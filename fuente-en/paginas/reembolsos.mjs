@@ -10,17 +10,21 @@ export const CABEZA = {
 export const PARES = [
   [`<h1>Política de reembolsos, cancelación y disputas</h1>`,
    `<h1>Refund, Cancellation and Dispute Policy</h1>`],
-  [`<p class="updated">Vigente desde el 4 de noviembre de 2026</p>`,
-   `<p class="updated">Effective as of November 4, 2026</p>\n\n  <p>This English version is a courtesy translation. If it differs from the Spanish version, the Spanish version prevails.</p>`],
+  [`<p class="updated">Vigente desde el 27 de noviembre de 2026</p>`,
+   `<p class="updated">Effective as of November 27, 2026</p>\n\n  <p>This English version is a courtesy translation. If it differs from the Spanish version, the Spanish version prevails.</p>`],
   [`<p>Esta política explica cómo cancelar tu suscripción a Acuarius, cuándo puedes pedir un reembolso y qué hacer si ves un cobro que no reconoces. Hace parte de los <a href="https://acuarius.app/terms.html">Términos de Servicio</a>. Acuarius es una marca operada y facturada por Aixion Labs Solutions LLC (Texas, Estados Unidos).</p>`,
    `<p>This policy explains how to cancel your Acuarius subscription, when you can request a refund and what to do if you see a charge you do not recognize. It is part of the <a href="https://acuarius.app/terms.html">Terms of Service</a>. Acuarius is a brand operated and billed by Aixion Labs Solutions LLC (Texas, United States).</p>`],
 
   // 1
   [`<h2>1. Prueba gratuita</h2>`, `<h2>1. Free trial</h2>`],
-  [`<li>Las cuentas nuevas pueden probar el plan Pro durante 14 días, sin tarjeta de crédito.</li>`,
-   `<li>New accounts can try the Pro plan for 14 days, without a credit card.</li>`],
-  [`<li>Al terminar la prueba no se te cobra nada: si no te suscribes, tu cuenta pasa al plan gratuito con sus límites.</li>`,
-   `<li>When the trial ends you are not charged anything: if you do not subscribe, your account moves to the free plan with its limits.</li>`],
+  [`<li>Las cuentas nuevas tienen 14 días de prueba del plan Pro. Para empezarla registras una tarjeta a través de Stripe; durante la prueba no se cobra nada.</li>`,
+   `<li>New accounts get a 14-day trial of the Pro plan. To start it, you add a card through Stripe; nothing is charged during the trial.</li>`],
+  [`<li>Si no cancelas antes de que termine la prueba, al día siguiente se cobra el plan Pro mensual al precio publicado y se renueva cada mes hasta que lo canceles. Antes del primer cobro puedes elegir tu plan y sus complementos.</li>`,
+   `<li>If you do not cancel before the trial ends, the monthly Pro plan is charged the next day at the published price and renews every month until you cancel. Before the first charge you can choose your plan and its add-ons.</li>`],
+  [`<li>Puedes cancelar en cualquier momento de la prueba desde tu cuenta, sin costo.</li>`,
+   `<li>You can cancel at any time during the trial from your account, at no cost.</li>`],
+  [`<li>Las cuentas creadas antes del 27 de noviembre de 2026 conservan la prueba con la que empezaron, que no pedía tarjeta. Es una prueba por empresa.</li>`,
+   `<li>Accounts created before November 27, 2026 keep the trial they started with, which did not require a card. One trial per business.</li>`],
 
   // 2
   [`<h2>2. Cómo cancelar</h2>`, `<h2>2. How to cancel</h2>`],

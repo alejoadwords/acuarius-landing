@@ -17,7 +17,7 @@ export const PARES = [
   ['CRM con pipeline, inbox de WhatsApp, un agente de IA que responde y califica, automatizaciones y reportes de cierre. Desde el primer contacto hasta la venta firmada — sin saltar entre siete herramientas.', 'A CRM with a sales pipeline, a WhatsApp inbox, an AI agent that answers and qualifies, automations and closing reports. From the first message to the signed deal, without jumping between seven tools.'],
   ['Empieza gratis — 14 días de Pro', 'Start free: 14 days of Pro'],
   ['>Ver el CRM<', '>See the CRM<'],
-  ['Sin tarjeta de crédito</span>', 'No credit card</span>'],
+  ['Hoy no se cobra nada</span>', 'Nothing charged today</span>'],
   ['14 días de Pro gratis</span>', '14 days of Pro, free</span>'],
   ['Cancela cuando quieras</span>', 'Cancel anytime</span>'],
   ['CRM y clientes', 'CRM and customers'],
@@ -115,8 +115,8 @@ export const PARES = [
   ['Así de simple', 'It’s that simple'],
   ['Empieza en minutos,<br>no en semanas', 'Get started in minutes,<br>not weeks'],
   ['Sin curvas de aprendizaje complicadas. Sin configuraciones interminables. El primer día ya tienes tus contactos ordenados y a alguien respondiendo por cada uno.', 'No steep learning curve. No endless setup. On day one your contacts are organized and someone owns each of them.'],
-  ['Crea tu cuenta gratis', 'Create your free account'],
-  ['Regístrate en segundos con tu correo o con Google. Sin tarjeta de crédito. Arrancas con 14 días del plan Pro completo, sin restricciones.', 'Sign up in seconds with your email or Google. No credit card. You start with 14 days of the full Pro plan, no restrictions.'],
+  ['Empieza tu prueba gratis', 'Start your free trial'],
+  ['Regístrate en segundos con tu correo o con Google y deja tu tarjeta: hoy no se cobra nada. Arrancas con 14 días del plan Pro completo, sin restricciones.', 'Sign up in seconds with your email or Google and add your card: nothing is charged today. You start with 14 days of the full Pro plan, no restrictions.'],
   ['Trae tus contactos y tus canales', 'Bring in your contacts and channels'],
   ['Importa tu base en CSV, conecta el formulario de tu web con una línea de código y vincula Google Ads o Meta en un clic. Desde ahí, los leads entran solos.', 'Import your list from a CSV, connect your website form with one line of code and link Google Ads or Meta in one click. From then on, leads come in on their own.'],
   ['Tu equipo vende y tú mides', 'Your team sells, you measure'],
@@ -140,7 +140,7 @@ export const PARES = [
 
   // ── Precios ──
   ['<p class="section-label">Precios</p>', '<p class="section-label">Pricing</p>'],
-  ['Empieza gratis. Crece desde 39 USD al mes', 'Start free. Grow from 39 USD a month'],
+  ['14 días gratis. Después, desde 39 USD al mes', '14 days free. Then from 39 USD a month'],
   ['Una sola licencia con 3 usuarios, 1.000 contactos y el agente de IA para WhatsApp. Sumas solo lo que necesites: usuarios, contactos, mensajes del agente o clientes.', 'One license with 3 users, 1,000 contacts and the AI agent for WhatsApp. Add only what you need: users, contacts, agent messages or clients.'],
   ['>Ver precios y calcular el tuyo<', '>See pricing and calculate yours<'],
   ['>Probar 14 días gratis<', '>Try 14 days free<'],
@@ -156,8 +156,8 @@ export const PARES = [
   ['De tres formas. Puedes crear un formulario en Acuarius y compartirlo o incrustarlo; puedes conectar el formulario que ya tienes pegando una línea de código en tu web, sin rehacer nada; o puedes recibir los datos desde cualquier plataforma externa por webhook. En los tres casos el lead entra al pipeline con su etiqueta, su responsable asignado y su tarea de seguimiento.', 'Three ways. You can build a form in Acuarius and share or embed it; you can connect the form you already have by pasting one line of code on your site, without rebuilding anything; or you can receive the data from any external platform via webhook. In all three cases the lead enters the pipeline with its tag, an assigned owner and a follow-up task.'],
   ['¿Cuánta gente de mi equipo puede trabajar en el CRM?', 'How many people on my team can work in the CRM?'],
   ['La licencia incluye 3 usuarios y puedes sumar más por 9 USD al mes cada uno. Los invitas por correo, cada uno entra con su propia cuenta y trabaja los leads que tiene asignados. Los leads se reparten por turnos entre el equipo o fijos a una persona según la fuente, y tú ves el rendimiento de cada comercial en el reporte.', 'The license includes 3 users, and you can add more for 9 USD a month each. You invite them by email, each one signs in with their own account and works the leads assigned to them. Leads are distributed in rotation across the team or fixed to one person depending on the source, and you see each rep’s performance in the report.'],
-  ['¿Necesito tarjeta de crédito para la prueba gratuita?', 'Do I need a credit card for the free trial?'],
-  ['No. Puedes empezar tu prueba de 14 días completamente gratis, sin ingresar ningún método de pago. Solo necesitas tu email o cuenta de Google.', 'No. You can start your 14-day trial completely free, without entering any payment method. All you need is your email or Google account.'],
+  ['¿Necesito una tarjeta para la prueba gratuita?', 'Do I need a card for the free trial?'],
+  ['Sí. Para empezar los 14 días registras una tarjeta a través de Stripe, pero hoy no se cobra nada. Si no cancelas antes de que termine la prueba, al día siguiente se cobra el plan Pro mensual (39 USD) y se renueva cada mes hasta que lo canceles. Antes de ese cobro puedes elegir tu plan y sus complementos, y puedes cancelar desde tu cuenta en cualquier momento de la prueba, sin costo.', 'Yes. To start the 14 days you add a card through Stripe, but nothing is charged today. If you don’t cancel before the trial ends, the monthly Pro plan (39 USD) is charged the next day and renews every month until you cancel. Before that charge you can choose your plan and its add-ons, and you can cancel from your account at any time during the trial, at no cost.'],
   ['¿Puedo usar Acuarius si soy freelancer con múltiples clientes?', 'Can I use Acuarius if I’m a freelancer with several clients?'],
   ['Sí. Cada cliente es un perfil aparte, con su propio pipeline, sus leads, sus conexiones de Google Ads y Meta y sus reportes. Tu licencia incluye tu negocio y cada cliente adicional cuesta 9 USD al mes. Cambias de cliente con un clic y el agente sabe exactamente con quién estás trabajando.', 'Yes. Each client is a separate profile, with its own pipeline, leads, Google Ads and Meta connections and reports. Your license covers your own business, and each additional client costs 9 USD a month. You switch clients in one click and the agent knows exactly who you’re working with.'],
   ['¿Mis datos de campañas están seguros?', 'Is my campaign data secure?'],
@@ -165,11 +165,11 @@ export const PARES = [
 
   // ── Llamado final ──
   ['Deja de perder ventas<br>que ya tenías.', 'Stop losing sales<br>you already had.'],
-  ['Ordena tus contactos, dale un responsable a cada uno y mide lo que se cierra. Empieza gratis hoy con 14 días del plan Pro completo, sin tarjeta de crédito.', 'Organize your contacts, give each one an owner and measure what closes. Start free today with 14 days of the full Pro plan, no credit card.'],
-  ['        Crear cuenta gratis\n', '        Create free account\n'],
+  ['Ordena tus contactos, dale un responsable a cada uno y mide lo que se cierra. Empieza con 14 días gratis del plan Pro completo: hoy no se cobra nada.', 'Organize your contacts, give each one an owner and measure what closes. Start with 14 free days of the full Pro plan: nothing is charged today.'],
+  ['        Prueba 14 días gratis\n', '        Start 14-day free trial\n'],
   ['mailto:support@acuarius.app?subject=Quiero%20hablar%20con%20el%20equipo%20de%20Acuarius&body=Hola%2C%20me%20gustar%C3%ADa%20conocer%20Acuarius%20antes%20de%20crear%20la%20cuenta.', 'mailto:support@acuarius.app?subject=I%27d%20like%20to%20talk%20to%20the%20Acuarius%20team&body=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Acuarius%20before%20creating%20an%20account.'],
   ['>Hablar con el equipo<', '>Talk to the team<'],
-  ['Sin tarjeta de crédito · 14 días gratis · Cancela cuando quieras', 'No credit card · 14 days free · Cancel anytime'],
+  ['14 días gratis · Hoy no se cobra nada · Cancela cuando quieras', '14 days free · Nothing charged today · Cancel anytime'],
 
   // ── Pie ── (los enlaces los pasa a inglés aIngles)
   ['La plataforma donde vive toda tu estrategia de ventas: CRM, marketing, automatización y agentes de IA. Hecha para latinoamérica, en español y con precios justos.', 'The platform where your entire sales strategy lives: CRM, marketing, automation and AI agents. Built for Latin America, with fair pricing.'],

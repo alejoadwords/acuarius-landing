@@ -134,6 +134,6 @@ export const PAGINAS = {
       { q: 'How often are new videos added?', a: 'Every major new feature comes with its video guide in <a href="/novedades/">What\'s new</a>, which we publish every two weeks.' },
       { q: 'Can I watch the videos inside Acuarius?', a: 'Yes. Inside the app, the Academy section has the same videos, organized by module.' },
     ],
-    cta: { h2: 'Practice while you learn', sub: 'Create your account and follow the videos with your own data: you get 14 days of Pro free, no credit card.' },
+    cta: { h2: 'Practice while you learn', sub: 'Create your account and follow the videos with your own data: you get 14 days of Pro free and nothing is charged today.' },
   },
 };
