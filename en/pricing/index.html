@@ -241,8 +241,10 @@ section{padding:96px 40px}
 .plan-divider{height:1px;background:var(--border);margin:20px 0}
 .plan-card.custom .plan-divider{background:rgba(255,255,255,.15)}
 .plan-features{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px}
-.plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--muted)}
-.plan-features li svg{color:var(--success);flex-shrink:0;margin-top:2px}
+/* Bloque con el ícono a un lado: con flex, cada trozo de texto y cada <strong> era
+   una columna aparte y la frase salía partida en pedazos (27-11-2026). */
+.plan-features li{position:relative;padding-left:24px;font-size:13px;line-height:1.5;color:var(--muted)}
+.plan-features li svg{position:absolute;left:0;top:3px;color:var(--success)}
 .plan-card.custom .plan-features li{color:rgba(255,255,255,.75)}
 .plan-card.custom .plan-features li svg{color:#34D399}
 .plan-cta{display:block;text-align:center;padding:12px;border-radius:var(--r);font-weight:600;font-size:14px;text-decoration:none;transition:all .2s;font-family:var(--font-body)}
